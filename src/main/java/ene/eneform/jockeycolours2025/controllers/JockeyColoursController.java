@@ -20,7 +20,7 @@ public class JockeyColoursController {
 private final EntityManager entityManager;
         @GetMapping("/")
         public String index(ModelMap model) {
-            //log.info("In RestController");
+            log.info("In RestController");
             System.out.println("In RestController");
             TypedQuery<AdditionalRaceMonthItem> q = entityManager.createNamedQuery("selectAdditionalRaceMonth", AdditionalRaceMonthItem.class);
             q.setParameter("monthOffset", 0);
