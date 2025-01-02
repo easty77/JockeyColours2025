@@ -7,6 +7,22 @@
 </head>
 <body>
 Hello from JockeyColours templates
-<span th:text="${data}" />
+<table>
+    <tr><th>Date</th>
+        <th>Course</th>
+        <th>Name</th>
+        <th>Race Type</th>
+    </tr>
+
+
+    <tr th:each="race:${races}">
+        <td th:text="${race.Date}"></td>
+        <td th:text="${race.Course}"></td>
+        <td th:text="${race.Name}"></td>
+        <td th:text="${race.Race_Type}"></td>
+    </tr>
+
+
+</table>
 </body>
 </html>
