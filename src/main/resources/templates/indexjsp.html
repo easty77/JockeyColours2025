@@ -1,0 +1,217 @@
+<%-- 
+    Document   : index
+    Created on : 06-Jun-2012, 10:47:54
+    Author     : Simon
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Horse Racing, Colours">
+        <title>JockeyColours.com | Horse Racing | Welcome</title>
+         <link href = "//v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel = "stylesheet">
+         <link href="//v4-alpha.getbootstrap.com/assets/css/docs.min.css" rel="stylesheet">
+<!--       <link type="text/css" rel="StyleSheet" href="/JockeyColours/design/ene.css" /> -->
+     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      
+      <!--[if lt IE 9]>
+      <script src = "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src = "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src = "//v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
+      <style>
+body {
+  margin: 20px;
+}
+</style>
+      </head>
+    <body>
+        <h1>Jockeycolours.com</h1>
+<%@ include file="/buttons.jsp" %>
+<div class="bg-primary"> 
+    <h1>Welcome</h1> 
+    <p>Welcome to the home of Jockey Silks.</p> 
+</div>        
+<p>
+<b>JockeyColours.com is a web site dedicated to the wonderful world of Horse Racing and in particular the colourful racing silks - the Jockey Colours!</b>
+</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+<!-- Content -->    
+
+<div id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="card">
+    <div class="card-header" role="tab" id="headingZero">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
+          Latest
+        </a>
+      </h5>
+    </div>
+    <div id="collapseZero" class="collapse" role="tabpanel" aria-labelledby="headingZero">
+      <!-- Sub-panels -->
+        <div class="panel-group" id="sub_accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#sub_accordion" href="#collapse7">
+                May</a>
+              </h5>
+            </div>
+            <div id="collapse7" class="panel-collapse collapse in">
+              <div class="panel-body">
+                  <ul>
+                      <li><b>Kempton @ Christmas</b>:
+                          <ul>
+                              <li><a href="/horses/Might_Bite.html">Might Bite</a> is leader of the new generation of chasers with victory in the <a href="/JockeyColours/career/jump2018/chase.jsp#769729">King George</a></li>
+                              <li>Black Corton wins for Nicholls, but he's unlikely to be the next <a href="/JockeyColours/career/jump2018/chase.jsp#775085">Kauto Star</a></li>
+                              <li><a href="/JockeyColours/career/jump2018/hurdle.jsp#775086">Christmas Hurdle</a> is a formality for <a href="/horses/Buveur_D'Air.html">Buveur D'Air</a></li>
+                          </ul>    
+                      </li>
+                      <li><b>23rd @ Ascot</b>:Rags to riches tale as <a href="/horses/Sam_Spinner.html">Sam Spinner</a> wins the <a href="/JockeyColours/career/jump2018/hurdle.jsp#775091">Long Walk</a></li>
+                      <li><b>9th @ Sandown</b>:
+                          <ul>
+                              <li><a href="/horses/Sceau_Royal.html">Sceau Royal</a> is impressive when disposing of fancied rivals in the <a href="/JockeyColours/career/jump2018/chase.jsp#774692">Henry VIII</a>
+                              <li><a href="/horses/Politologue.html">Politologue</a> comes of age when beating odds on <a href="/horses/Fox_Norton.html">Fox Norton</a> in the <a href="/JockeyColours/career/jump2018/chase.jsp#774694">Tingle Creek</a>
+                          </ul>
+                      <li><b>2nd</b>:
+                          <ul>
+                              <li>The Hennessy (now <a href="/JockeyColours/career/jump2018/hcapchase.jsp#771133">Ladbrokes Trophy</a>) is won by Total Recall, with <a href="/horses/Whisper.html">Whisper</a> only a neck behind, giving the winner a stone.</li>
+                              <li><a href="/horses/Buveur_D'Air.html">Buveur D'Air</a> wins, as a 6-1 on shot should (and then some), in the <a href="/JockeyColours/career/jump2018/hurdle.jsp#773299">Fighting Fifth</a>.</li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+      <!-- End sub-panels -->
+    </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingOne">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Owners
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+<a href="/JockeyColours/owners/owners.jsp">Owners</a> have been registering colours in the UK since 1762.  Search for and view jockey colours, ancient and modern, by owner's name or colour description.
+<p>
+In November 2009 Isinglass made a plea to all racing historians or racing anoraks to help him track down the colours warn by the winners of the Classics.
+<br />Since then the marvellous <a href="http://theracingforum.co.uk/forums/topic/classic-winners-owners-colours/" target="_blank">Classic Winners - Owner Colours</a> thread on the <a href="http://www.theracingforum.co.uk" target="_blank">Racing Forum</a> website
+has been turning up historic winners of all the <a href="/JockeyColours/owners/top_races.jsp">top races</a> around the world.
+<br />Many thanks to Isinglass, Ile de Bourbon, Ivanjica, Slewman et al.
+</p>
+      
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingTwo">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Racehorses
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="card-block">
+Relive the careers of your favourite <a href="/JockeyColours/career/index.jsp">racehorses</a> via the Career 1-2-3 Colour Charts.
+<br />National Hunt favourites such as <a href="/horses/Coneygree.html">Coneygree</a> and <a href="/horses/Hurricane_Fly.html">Hurricane Fly</a> mingle with legends of the flat like <a href="/horses/Frankel.html">Frankel</a> and <a href="/horses/Sea_The_Stars.html">Sea The Stars</a>.
+<br />Going back to the seventies, there are the immortals <a href="/horses/Mill_Reef.html">Mill Reef</a> and <a href="/horses/Brigadier_Gerard.html">Brigadier Gerard</a>, and from the sixties the phenomenal <a href="/horses/Park_Top.html">Park Top</a>.
+<br />Still some missing silks in the earlier charts, so please contact me if you can fill in the blanks.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingThree">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Flat 2020
+        </a>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="card-block">
+          The highlights of the season so far, seen via the <a href="/JockeyColours/career/career.jsp?distance=classics&name=Classics&category=threeyear&year=2020&type=flat">Classics</a> and the separate programmes for <a href="/JockeyColours/career/timeform.jsp?category=threeyear&year=2020&type=flat">Three Year-Olds</a> and <a href="/JockeyColours/career/timeform.jsp?category=older&year=2020&type=flat">Older Horses</a>.
+        <!--  and the other Group Ones in <a href="/JockeyColours/career/flat2017/group1.jsp">UK</a>, <a href="/JockeyColours/career/flat2017/ireland.jsp">Ireland</a> and <a href="/JockeyColours/career/flat2017/france.jsp">France</a>.
+          Plus a special feature on <a href="/JockeyColours/career/flat2017/royal_ascot/royal_ascot1.jsp">Royal Ascot</a>. -->
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingFour">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Ante-Post
+        </a>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="card-block">
+          The Big Races to look forward to later this <a href="/JockeyColours/ante_post/oddschecker.jsp?page=flat2020">Summer</a> and at next year's <a href="/JockeyColours/ante_post/oddschecker.jsp?page=cheltenham2021">Cheltenham Festival</a>.
+<!--           <br />Older horses <a href="/horses/Highland_Reel.html">Highland Reel</a> and <a href="/horses/Ribchester.html">Ribchester</a> are the early favourites in the <a href="/JockeyColours/ante_post/flat2019.jsp#King George VI Stakes">King George</a> and <a href="/JockeyColours/ante_post/flat2019.jsp#Sussex Stakes">Sussex Stakes</a> respectively.
+          <br />Reigning National Hunt champions <a href="/horses/Sizing_John.html">Sizing John</a>, <a href="/horses/Buveur_D'Air.html">Buveur D'Air</a> and<a href="/horses/Altior.html">Altior</a> are favourites to follow up in 2017, but which are the dark horses that provide value at this early stage? -->
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingFive">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            Meetings
+        </a>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="card-block">
+          Aintree and Punchestown are on the up, and might have four top races every day, but only <a href="/JockeyColours/meeting/cheltenham/index.jsp">Cheltenham</a> and <a href="/JockeyColours/meeting/royal_ascot/index.jsp">Royal Ascot</a> can sustain the quality from first race through to the last, every day of the meeting.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingSix">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          Palette
+        </a>
+      </h5>
+    </div>
+    <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+      <div class="card-block">
+ <p>
+Almost 300 different colours are used when drawing the <a href="/JockeyColours/career/index.jsp">Racehorses</a> and <a href="/JockeyColours/owners/owners.jsp">Owners</a> pages of this site.
+Here is a list of all the <a href="/JockeyColours/palette/index.jsp">colours</a> used and their RGB definitions.
+</p>
+<p>
+<a href="/JockeyColours/palette/tartan.jsp">Tartan</a> has been a familiar part of jockey colours in the UK for over <a href="/JockeyColours/owners/owners.jsp?search_string=&cs_op=contains&colours_string=tartan&year=" target="_blank">160 years</a>.
+The numbers and varieties are diminishing as new Tartan registrations are no longer accepted.
+Here are samples of many existing tartans - not just those used in jockey colours.
+<br />Thanks to Thomas Insell at <a href="http://www.tinsel.org/tinsel/Java/Tartan/" target="_blank">www.tinsel.org</a> for his inspirational Java code and Sett list.
+</p>
+<p>
+    <a href="/JockeyColours/palette/samples.jsp">Samples</a> of the latest designs incorporating logos from Australian Racing created by Rob Meredith of <a href="http://www.footyjumpers.com" target="_blank">FootyJumpers.com</a>
+</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Content End -->
+        </div>   
+    </div>
+</div> 
+<%@ include file="/footer.jsp" %>
+    </body>
+</html>
