@@ -1,6 +1,6 @@
-package ene.eneform.jockeycolours2025.repositories;
+package ene.eneform.jockeycolours.repositories;
 
-import ene.eneform.jockeycolours2025.entities.AdditionalRaceMonthItem;
+import ene.eneform.jockeycolours.entities.AdditionalRaceMonthItem;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

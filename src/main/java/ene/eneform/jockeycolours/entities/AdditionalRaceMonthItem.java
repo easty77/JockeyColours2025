@@ -1,4 +1,4 @@
-package ene.eneform.jockeycolours2025.entities;
+package ene.eneform.jockeycolours.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -76,25 +76,25 @@ import java.time.LocalDate;
 @Entity
 public class AdditionalRaceMonthItem {
     @Id
-    public String Name;
-    public LocalDate Date;
-    public String Course;
-    public String Race_Type;
-    String Wikipedia;
-    String fr_wikipedia;
-    String Winner;
-    String DOW;
-    String GS;
-    Integer Year;
-    String Country;
-    String Track;
-    Integer Furlongs;
-    Integer Grade;
-    String Age;
-    String Sex;
-    Integer Month;
+    public String name;
+    public LocalDate date;
+    public String course;
+    public String raceType;
+    public String wikipedia;
+    public String frWikipedia;
+    public String winner;
+    public String dow;
+    public String gs;
+    public Integer year;
+    public String country;
+    public String track;
+    public Integer furlongs;
+    public Integer grade;
+    public String age;
+    public String sex;
+    public Integer month;
     @Column(name = "Class")
-    String ClassType;
-    Integer Hcap;
-    String SE;
+    public String classType;
+    public Integer hcap;
+    public String se;
 }

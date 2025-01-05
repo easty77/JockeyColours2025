@@ -1,4 +1,4 @@
-package ene.eneform.jockeycolours2025;
+package ene.eneform.jockeycolours;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,0 +1,62 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JockeyColours</title>
+</head>
+<body>
+Hello from JockeyColours templates
+<table>
+    <tr><th>Date</th>
+        <th>Course</th>
+        <th>Name</th>
+        <th>Race Type</th>
+        <th>Wikipedia</th>
+        <th>Winner</th>
+        <th>DOW</th>
+        <th>GS</th>
+        <th>Year</th>
+        <th>Country</th>
+        <th>Track</th>
+        <th>Furlongs</th>
+        <th>Grade</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Month</th>
+        <th>Class</th>
+        <th>Handicap</th>
+        <th>SE</th>
+    </tr>
+
+
+    <tr th:each="race:${races}">
+        <td th:text="${race.date}"></td>
+        <td th:text="${race.course}"></td>
+        <td><a th:href="@{/JockeyColours/admin/historic123/owner_colours.jsp(name=${race.name})}"><span th:text="${race.name}"></span></span></a></td>
+        <td th:text="${race.raceType}"></td>
+        <td>
+            <a th:href="@{https://en.wikipedia.org/wiki/{raceWikipedia}(raceWikipedia=${race.wikipedia})}" th:if="${race.wikipedia}">en</a>
+             <br th:if="${race.wikipedia != '' and race.frWikipedia !=''}"/>
+             <a th:href="@{https://fr.wikipedia.org/wiki/{raceWikipedia}(raceWikipedia=${race.frWikipedia})}" th:if="${race.frWikipedia}">fr</a>
+        </td>
+        <td th:text="${race.winner}"></td>
+        <td th:text="${race.dow}"></td>
+        <td><a th:href="@{http://www.galopp-sieger.de/galoppsieger/en/sieger(rennkz=${race.gs})}"><span th:text="${race.gs}"></span></a></td>
+        <td th:text="${race.year}"></td>
+        <td th:text="${race.country}"></td>
+        <td th:text="${race.track}"></td>
+        <td th:text="${race.furlongs}"></td>
+        <td th:text="${race.grade}"></td>
+        <td th:text="${race.age}"></td>
+        <td th:text="${race.sex}"></td>
+        <td th:text="${race.month}"></td>
+        <td th:text="${race.classType}"></td>
+        <td th:text="${race.hcap}"></td>
+        <td th:text="${race.se}"></td>
+    </tr>
+
+
+</table>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package ene.eneform.jockeycolours2025;
+package ene.eneform.jockeycolours;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
