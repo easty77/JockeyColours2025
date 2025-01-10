@@ -8,11 +8,18 @@ package ene.eneform.jockeycolours.controllers;
 
 import ene.eneform.colours.bos.ENEColoursDBEnvironment;
 
+import ene.eneform.colours.service.WikipediaService;
 import ene.eneform.mero.config.ENEColoursEnvironment;
+import ene.eneform.utils.ENEStatement;
+import ene.eneform.utils.SmartformConnectionPool;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.io.FileNotFoundException;
 
 /**
  *
@@ -20,13 +27,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/colours")
+@RequiredArgsConstructor
 public class ColoursController {
+    private final WikipediaService wikipediaService;
     @GetMapping("/resetEnvironment")
     public String resetEnvironment(ModelMap model) {
         ENEColoursEnvironment.getInstance().reset();
         ENEColoursDBEnvironment.getInstance().reset();
         model.put("message", "resetEnvironment");
         return "message";
+    }
+    @GetMapping("/createWikipediaOwner")
+    public String createWikipediaOwner(@RequestParam String ownerName,
+                                       @RequestParam String jockeyColours,
+                                       @RequestParam String comment,
+                                       @RequestParam String compress,
+                                       ModelMap model) {
+        ENEStatement statement = SmartformConnectionPool.getInstance().getENEStatement();
+        boolean bCompress = !compress.equals("No");
+        try {
+            wikipediaService.generateWikipediaOwner(ownerName, jockeyColours, comment, "en", bCompress, true);
+        }
+        catch(Exception e) {
+            model.put("error", "generateWikipediaOwner");
+            return "error";
+        }
+        model.put("message", "generateWikipediaOwner");
+        return "message";
+
     }
 
     /*
