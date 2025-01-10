@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="800px" height="600px" viewBox="0 0 800 600" enable-background="new 0 0 800 600" xml:space="preserve">
+<defs>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="#FFD100"/>
+   </linearGradient> 
+   <linearGradient id="colour2">
+     <stop offset="100%" stop-color="#DE0000"/>
+   </linearGradient> 
+ </defs>
+<polygon fill="url(#colour2)" stroke="#FFD100" stroke-width="2" points="300.626,308.501 351.626,236.501 402.626,308.501 
+	351.626,380.501 "/>
+<g>
+	<polygon fill="url(#colour1)" points="387.623,233.754 413.122,197.754 438.622,233.754 413.122,269.754 	"/>
+	<polygon fill="url(#colour1)" points="387.623,383.249 413.122,347.249 438.622,383.249 413.122,419.249 	"/>
+	<polygon fill="url(#colour1)" points="264.629,383.249 290.129,347.249 315.629,383.249 290.129,419.249 	"/>
+	<polygon fill="url(#colour1)" points="264.629,233.754 290.129,197.754 315.629,233.754 290.129,269.754 	"/>
+</g>
+</svg>

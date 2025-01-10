@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="643.46px" height="850.39px" viewBox="0 0 643.46 850.39" enable-background="new 0 0 643.46 850.39" xml:space="preserve">
+<defs>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="red"/>
+   </linearGradient>
+</defs>
+<polygon fill="url(#colour1)" points="354.275,235.34 308.561,185.328 302.333,180.667 296.867,185.328 251.152,235.34 262.562,241.652 296.518,204.503 
+	296.518,391.868 308.625,391.868 308.625,204.191 342.865,241.652 "/>
+</svg>

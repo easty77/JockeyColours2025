@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : expands.xml
+    Created on : 31 August 2011, 21:38
+    Author     : Simon
+    Description:
+        Purpose of the document follows.
+-->
+
+<expands>
+    <language id="en">
+        <!-- GENERAL -->
+        
+             <expand>
+                    <from>(back and front|front and back)+ and on cap</from>
+                    <to>on jacket and cap</to>
+                    <label>back and front and on cap</label>
+                    </expand>
+            <expand>
+                    <from>(back and front|front and back)+</from>
+                    <to>on jacket</to>
+                    <label>back and front</label>
+                    </expand>
+             <expand>
+                    <from>,[\s\w']*on back,</from>
+                    <to>,</to>
+                    <label>something on back</label>
+                    </expand>
+            <expand>
+                    <from>(dark|light|royal|sky|oxford|cambridge|eton|harrow|myrtle)+ and (dark|light|royal|sky|oxford|cambridge|eton|harrow|sage)+ ($COLOUR_LIST)+</from>
+                    <to>$1 $3 and $2 $3</to>
+                    <label>dark and light</label>
+                    </expand>
+                    <!-- blue front, green back, blue cap -->
+           <expand>
+                    <from>on back and on each shoulder</from>
+                    <to>on each shoulder</to>
+                    <label>back and each shoulder</label>
+                    </expand>
+            <expand>
+                    <from>[^,]+([\s\w]+)front,([\s\w]+)back</from>
+                    <to>$1</to>
+                    <label>front and back</label>
+                    </expand>
+           <expand>
+                    <from>[^,]+[\s\w]*on back[\s\w]*[,\.]+</from>
+                    <to></to>
+                    <label>on back</label>
+                    </expand>
+           <expand>
+                    <from> on front[\s]*([,\.]+)</from>
+                    <to>$1</to>
+                    <label>on front</label>
+                    </expand>
+          <expand>
+                    <from>[,\s]+($COLOUR_LIST)+ back[\s]*\.</from>
+                    <to>.</to>
+                    <label>colour back</label>
+                    </expand>
+                    <!-- 19th Century syntax -->
+           <expand>
+                    <from>^($COLOUR_LIST)+ jacket and ($COLOUR_LIST)+ cap</from>
+                    <to>$1, $2 cap</to>
+                    <label>colour jacket and colour cap</label>
+                    </expand>
+          <expand>
+                    <from>^($COLOUR_LIST)+, ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) and ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|sleeves), (reversed cap|cap reversed)+</from>
+                    <to>$1, $2 $3, $2 $4, $2 cap, $1 $3</to>
+                    <label>colour, jacket pattern and pattern, reversed cap</label>
+                    </expand>
+          <expand>
+                    <from>^($COLOUR_LIST)+, ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) on body, (reversed cap|cap reversed)+</from>
+                    <to>$1, $2 $3 on body, $2 cap, $1 $3</to>
+                    <label>colour, jacket pattern on body, reversed cap</label>
+                    </expand>
+         <expand>
+                    <from>^($COLOUR_LIST)+, ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST), (reversed cap|cap reversed)+</from>
+                    <to>$1, $2 $3, $2 cap, $1 $3</to>
+                    <label>colour, jacket pattern, reversed cap</label>
+                    </expand>
+         <expand>
+                    <from>^($COLOUR_LIST)+ and ($COLOUR_LIST)+ halved, sleeves and cap reversed</from>
+                    <to>$1 and $2 halved, sleeves reversed, $2 and $1 halved cap</to>
+                    <label>sleeves and cap reversed</label>
+                    </expand>
+<!-- Black and flame (halved), sleeves and cap reversed -->
+         <expand>
+                    <from>^($COLOUR_LIST)+[\s]*and[\s]*($COLOUR_LIST)+ (stripe|hoop)[\s]*(,|\.)</from>
+                    <to>$1 and $2 $3s$4</to>
+                    <label>colour, colour stripe</label>
+                    </expand>
+           <expand>
+                    <from>^($COLOUR_LIST)+ jacket and cap</from>
+                    <to>$1, $1 cap</to>
+                    <label>colour jacket and cap</label>
+                    </expand>
+          <expand>
+                    <from>^($COLOUR_LIST)+[,]* and ($COLOUR_LIST)+ sleeves</from>
+                    <to>$1, $2 sleeves</to>
+                    <label>colour, and colours sleeves</label>
+                    </expand>
+           <expand>
+                    <from>^($COLOUR_LIST)+ jacket([,\.]+)</from>
+                    <to>$1$2</to>
+                    <label>colour jacket</label>
+                    </expand>
+                    <!-- 18th Century syntax -->
+            <expand>
+                    <from>,[\s]*and</from>
+                    <to>,</to>
+                    <label>cap same</label>
+                    </expand>
+            <expand>
+                    <from>,[\s]*cap the same</from>
+                    <to></to>
+                    <label>cap the same</label>
+                    </expand>
+             <expand>
+                    <from>,[\s]*cap same</from>
+                    <to></to>
+                    <label>cap same</label>
+                    </expand>
+             <expand>
+                    <from> and cap same</from>
+                    <to></to>
+                    <label>and cap same</label>
+                    </expand>
+            <expand>
+                    <from> and cap the same</from>
+                    <to></to>
+                    <label>and cap the same</label>
+                    </expand>
+            <expand>
+                    <from>($COLOUR_LIST)+ colour(\s|,|\.)</from>
+                    <to>$1$2</to>
+                    <label>colour</label>
+                    </expand>
+            <expand>
+                    <from>($COLOUR_LIST)+ coloured(\s|,|\.)</from>
+                    <to>$1$2</to>
+                    <label>coloured</label>
+                    </expand>
+            <expand>
+                    <from>($COLOUR_LIST)+\-colour(\s|,|\.)</from>
+                    <to>$1$2</to>
+                    <label>coloured</label>
+                    </expand>
+          <expand>
+                    <from>^($COLOUR_LIST)+ and ($COLOUR_LIST)+ cap\.</from>
+                    <to>$1, $2 cap.</to>
+                    <label>and cap</label>
+                    </expand>
+          <expand>
+                    <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ stripe[\s]*(,| and| with|\.)+</from>
+                    <to>$1 and $2 stripes$3</to>
+                    <label>trimmed with</label>
+                    </expand>
+           <expand>
+                    <from>($COLOUR_LIST)+[,]* trimmed with ($COLOUR_LIST)+[\s]*(,| and| with|\.)+</from>
+                    <to>$1, $2 collar and cuffs$3</to>
+                    <label>trimmed with</label>
+                    </expand>
+           <expand>
+                    <from>($COLOUR_LIST)+[,]* turned up with ($COLOUR_LIST)+[\s]*(,| and| with|\.)+</from>
+                    <to>$1, $2 collar and cuffs$3</to>
+                    <label>turned up with</label>
+                    </expand>
+          <expand>
+                    <from>^($COLOUR_LIST)+ waistcoat</from>
+                    <to>white, $1 waistcoat</to>
+                    <label>waistcoat only</label>
+                    </expand>
+          <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|$CAP_PATTERN_LIST)+ with ($COLOUR_LIST)+ piping</from>
+                    <to>$1 and $3 $2 with piping</to>
+                    <label>piping</label>
+                    </expand>
+          <expand>
+                    <from>($COLOUR_LIST)+ over ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|$CAP_PATTERN_LIST)+</from>
+                    <to>$1 and $2 over $3</to>
+                    <label>over</label>
+                    </expand>
+
+    <!--         <expand>
+                    <from>,[\w\s]+logo</from>
+                    <to></to>
+                    <label>logo</label>
+                    </expand>
+-->
+<!-- Black, Red and White Checked Band, Checked Armbands and Checked cap -->
+             <expand>
+              <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ checked (jacket|sleeves|cap|$JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+[\s]*(,|and|with)+[\s]*checked (jacket|sleeves|cap|$JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+[\s]*(,| and| with|\.)+</from>
+                    <to>$1 and $2 checked $3, $1 and $2 checked $5$6</to>
+                    <label>checked and checked</label>
+                    </expand>
+
+<!-- Black, Hot Pink and Emerald Green Stripes, Striped cap -->
+             <expand>
+              <from>($COLOUR_LIST)+, ($COLOUR_LIST)+ and ($COLOUR_LIST)+ (stripes|striped)+[\s]*(,|and|with)+[\s]*(stripes|striped) (jacket|sleeves|cap|$JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+[\s]*(,| and| with|\.)+</from>
+                    <to>$1, $2 and $3 stripes, $1, $2 and $3 striped $7$8</to>
+                    <label>3 colour stripes and striped</label>
+                    </expand>
+
+             <expand>
+              <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ (stripes|striped)[\s]*(,|and|with)+[\s]*(stripes|striped) (jacket|sleeves|cap|$JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+[\s]*(,| and| with|\.)+</from>
+                    <to>$1 and $2 stripes, $1 and $2 striped $6$7</to>
+                    <label>2 colour stripes and striped</label>
+                    </expand>
+<!-- blue and red check collar, cuffs and cap -->
+            <expand>
+              <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ check (sleeves|$JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+, ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+ and cap</from>
+                    <to>$1 and $2 check $3, $1 and $2 check $4, $1 and $2 check cap</to>
+                    <label>2 colour check pattern and pattern and cap</label>
+                    </expand>
+
+            <!-- black and gold check sash and cap  -->
+             <expand>
+              <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ check (sleeves|$JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+ and cap</from>
+                    <to>$1 and $2 check $3, $1 and $2 check cap</to>
+                    <label>2 colour check pattern and cap</label>
+                    </expand>
+<!-- black check hoop, armlets and cap -->
+             <expand>
+              <from>($COLOUR_LIST)+ check (sleeves|$JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+, ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+ and cap</from>
+                    <to>$1 check $2, $1 check $3, $1 check cap</to>
+                    <label>1 colour check pattern and pattern and cap</label>
+                    </expand>
+
+       <!-- JACKET, SLEEVES, CAP -->
+       <!-- White and Black Solid Disc, Striped sleeves, Quartered cap -->
+       <!-- TO DO: restrict expansion to category=2 patterns -->
+             <expand>
+              <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ sleeves[\s]*(,|and)+[\s]*($CAP_PATTERN_LIST)+ cap(,|\.| and| with)+</from>
+                    <to>$1 and $2 $3, $1 and $2 $4 sleeves, $1 and $2 $6 cap$7</to>
+                    <label>colour and color jacket pattern, pattern sleeves, pattern cap</label>
+                    </expand>
+ 
+       <!-- Yellow and Lime Green Lemon, Diamond Check sleeves -->
+       <!-- TO DO: restrict expansion to category=2 patterns -->
+             <expand>
+              <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ sleeves[\s]*([,|\.])+</from>
+                    <to>$1 and $2 $3, $1 and $2 $4 sleeves$5</to>
+                    <label>colour and color jacket pattern, pattern sleeves</label>
+                    </expand>
+      
+       <!-- Royal blue, yellow hoops, halved sleeves -->
+       <!-- 20170124 Important because hoops must also appear on cap, and only happens if sleeve colours are specified explicitly -->
+             <expand>
+              <from>($COLOUR_LIST)+,[\s]*($COLOUR_LIST)+[\s]*($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ sleeves[\s]*([,|\.])+</from>
+                    <to>$1, $2 $3, $1 and $2 $4 sleeves$5</to>
+                    <label>colour, color jacket pattern, pattern sleeves</label>
+             </expand>
+
+        <!-- straw sleeves, collar, belt, buttons and cap -->
+             <expand>
+              <from>($COLOUR_LIST)+ sleeves, ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+ and cap\.</from>
+                    <to>$1 sleeves, $1 $2, $1 $3, $1 $4, $1 cap.</to>
+                    <label>colour sleeves, pattern, pattern, pattern and cap</label>
+                    </expand>
+
+            <!-- white stripes, collar, cuffs and cap -->
+             <expand>
+              <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ and cap\.</from>
+                    <to>$1 $2, $1 $3, $1 $4, $1 cap.</to>
+                    <label>colour pattern, pattern, pattern and cap</label>
+                    </expand>
+
+            <!-- purple collar, cuffs and cap, striped sleeves -->
+            <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ and cap[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ sleeves\.</from>
+                    <to>$1 $2, $4 sleeves, $1 $3, $1 cap.</to>
+                    <label>colour pattern, pattern and cap, pattern sleeves</label>
+                    </expand>
+
+<!--  Black Collar, Cuffs and Visor -->
+            <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+\.</from>
+                    <to>$1 $2, $1 $3 and $1 $4.</to>
+                    <label>colour jacket pattern, sleeves pattern and cap pattern</label>
+                    </expand>
+<!-- emerald green belt, collar, cuffs, seams and cap -->
+            <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+ and cap\.</from>
+                    <to>$1 $2, $1 $3, $1 $4, $1 $5 and $1 cap.</to>
+                    <label>colour four patterns and cap</label>
+                    </expand>
+<!--  black sleeves, light blue collar, cuffs and cap -->
+             <expand>
+                    <from>($COLOUR_LIST)+ sleeves, ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ and (cap|pom pom|tassle|bobble|peak|button)</from>
+                    <to>$2 $3, $1 sleeves, $2 $4, $2 $5</to>
+                    <label>colour sleeves, jacket pattern, sleeve pattern and cap</label>
+                    </expand>
+
+             <!--       blue and red check collar, cuffs and cap -->
+             <expand>
+                    <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ (check|checked) ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ and (cap|pom pom|tassle|bobble|peak|button)</from>
+                    <to>$1 and $2 $3 $4, $1 and $2 $3 $5, $1 and $2 $3 $6</to>
+                    <label>checked jacket pattern, sleeve pattern and cap</label>
+                    </expand>
+             <!-- yellow braid, seams and cap -->
+            <!-- Orange Epaulettes, Armbands and cap with Royal Blue Diamond -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST|$JACKET_PATTERN_LIST)+ and (cap|pom pom|tassle|bobble|peak|button)</from>
+                    <to>$1 $2, $1 $3, $1 $4</to>
+                    <label>colour pattern, pattern and cap</label>
+                    </expand>
+            <!-- green hoop, armlets, collar, cuffs and spots on cap -->
+           <expand>
+                    <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST|$JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST|$JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST|$JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST|$JACKET_PATTERN_LIST)+[\s]* and ($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 $2, $1 $3, $1 $4, $1 $5, $1 $6 on cap.</to>
+                    <label>colour pattern, pattern, pattern, pattern, pattern on cap</label>
+                    </expand>
+
+            <!-- royal blue cross of lorraine, chevrons on sleeves, diamonds on cap -->
+            <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ on sleeves[\s]*,[\s]*($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 $2, $1 $3 on sleeves, $1 $4 on cap.</to>
+                    <label>colour pattern, pattern on sleeves, pattern on cap</label>
+                    </expand>
+
+            <!-- white cross belts, hooped sleeves and hooped cap -->
+           <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ cap\.</from>
+                    <to>$1 $2, $3 sleeves, $4 cap.</to>
+                    <label>colour pattern, pattern sleeves and pattern cap</label>
+                    </expand>
+
+            <!-- light green triple diamond, diabolo on sleeves and star on cap -->
+           <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ on sleeves and ($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 $2, $1 $3 on sleeves, $1 $4 on cap.</to>
+                    <label>colour pattern, colour sleeves and pattern cap</label>
+                    </expand>
+
+           <!-- dark green chevron, cuffs on sleeves and quartered cap -->
+           <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ on sleeves and ($CAP_PATTERN_LIST)+ cap\.</from>
+                    <to>$1 $2, $1 $3 on sleeves, $1 $4 on cap.</to>
+                    <label>colour pattern, colour sleeves and pattern cap</label>
+                    </expand>
+
+            <!-- large royal blue spots, hooped sleeves and spots on cap -->
+           <expand>
+                    <from>(large|one|two) ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 $2 $3, $4 sleeves, $2 $5 on cap.</to>
+                    <label>large colour pattern, pattern sleeves and pattern on cap</label>
+                    </expand>
+
+            <!-- yellow epaulets, striped sleeves and star on cap -->
+           <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 $2, $3 sleeves, $1 $4 on cap.</to>
+                    <label>colour pattern, pattern sleeves and pattern on cap</label>
+                    </expand>
+
+            <!-- emerald green stars, sleeves and stars on cap -->
+            <!-- purple diamond, armlets and diamond on cap -->
+           <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*(sleeves|$SLEEVE_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 $2, $1 $3, $1 $4 on cap.</to>
+                    <label>colour pattern, sleeves and pattern on cap</label>
+                    </expand>
+
+<!-- Teal And Cream Armbands, Striped Cap -->
+           <expand>
+                    <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+, ($CAP_PATTERN_LIST)+ cap</from>
+                    <to>$1 and $2 $3, $1 and $2 $4 cap</to>
+                    <label>colour and colour sleeves pattern, pattern cap</label>
+                    </expand>
+
+         <!-- NEW 20170113 - grey sleeves, beige stars and cap -->
+            <expand>
+                    <from>($COLOUR_LIST)+ sleeves, ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ and cap</from>
+                    <to>$1 sleeves, $2 $3, $1 cap, $2 $3</to>
+                    <label>colour and pattern for sleeves repeated on cap</label>
+                    </expand>
+
+        <!-- white and red check sleeves and check cap -->
+            <expand>
+                    <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ cap</from>
+                    <to>$1 and $2 $3 sleeves, $1 and $2 $4 cap</to>
+                    <label>colour and colour pattern sleeves and pattern cap</label>
+                    </expand>
+
+          <!-- yellow striped sleeves and quartered cap -->
+           <expand>
+                    <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ cap</from>
+                    <to>$1 $2 sleeves, $1 $3 cap</to>
+                    <label>colour pattern sleeves and pattern cap</label>
+                    </expand>
+<!-- violet striped sleeves, collar and cuffs -->
+           <expand>
+                    <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves, ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+ and ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|cap)+</from>
+                    <to>$1 $2 sleeves, $1 $3, $1 $4</to>
+                    <label>colour pattern sleeves, pattern, pattern</label>
+                    </expand>
+
+          <!-- black collar, sash, sleeves and cap with gold spots -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST)+[\s]*,[\s]*(sleeves|$SLEEVE_PATTERN_LIST)+ and cap(,|\.| with)+</from>
+                    <to>$1 $2, $1 $3, $1 $4, $1 cap$5</to>
+                    <label>colour pattern, pattern, sleeves and cap</label>
+                    </expand>
+            <!-- black sleeves, facings, collar and cap -->
+            <!-- scarlet hoop, armlets, collar and cap -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST|sleeves)[\s]*,[\s]*($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST)+[\s]*and cap(,|\.| with)+</from>
+                    <to>$1 $2, $1 $3, $1 $4, $1 cap$5</to>
+                    <label>colour sleeves, pattern, pattern and cap</label>
+                    </expand>
+
+           <!--  mauve stars, sleeves and cap -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*(sleeves|$SLEEVE_PATTERN_LIST)+ and cap\.</from>
+                    <to>$1 $2, $1 $3, $1 cap.</to>
+                    <label>colour pattern, sleeves and cap</label>
+                    </expand>
+
+          <!-- purple, silver grey sleeves and quartered cap, red sash -->
+          <expand>
+                    <from>($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+ (sleeves|$SLEEVE_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ cap[\s]*,[\s]*($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+\.</from>
+                    <to>$1, $5 $6, $2 $3, $1 and $2 $4 cap.</to>
+                    <label>colour, colour sleeves/cuffs/armlets and pattern cap, colour pattern</label>
+                    </expand>
+
+          <!-- gold sleeves, sash and cap -->
+          <!-- Aqua, Black sleeves, Armbands and cap - not much sense in armbands on sleeves, but at least it now gets cap colour correct -->
+          <expand>
+                    <from>($COLOUR_LIST)+ (sleeves|$SLEEVE_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST|$JACKET_PATTERN_LIST)+ and cap\.</from>
+                    <to>$1 $3, $1 $2, $1 cap.</to>
+                    <label>colour sleeves/cuffs/armlets, pattern and cap</label>
+                    </expand>
+
+          <!-- dark blue bars on sleeves, collar and cap -->
+          <expand>
+                  <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ on sleeves[\s]*,[\s]*($JACKET_PATTERN_LIST)+ and cap\.</from>
+                  <to>$1 $2 on sleeves, $1 $3, $1 cap.</to>
+                  <label>colour pattern on sleeves, pattern and cap</label>
+                  </expand>
+
+          <!-- cap and sleeves in reverse order -->
+          <!-- pale blue disc, cap and striped sleeves -->
+          <expand>
+                  <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+[\s]*,[\s]*cap and ($SLEEVE_PATTERN_LIST)+ sleeves\.</from>
+                  <to>$1 $2, $1 $3 sleeves, $1 cap.</to>
+                  <label>colour pattern, cap and pattern sleeves</label>
+                  </expand>
+
+<!-- Gold, turquoise blue sleeves, quartered cap, white sash - cap pattern comes from colours BEFORE it -->
+<!-- 20120604 - add space at beginning, else quartered matches red -->
+         <expand>
+                  <from> ($COLOUR_LIST),[\s]*($COLOUR_LIST)[\s]*sleeves,[\s]*($CAP_PATTERN_LIST) cap[\s]*([,|.]+)</from>
+                  <to> $1, $2 sleeves, $1 and $2 $3 cap$4</to>
+                  <label>colour, colour sleeves, pattern cap</label>
+                  </expand>
+        <!-- JACKET and SLEEVES -->
+
+           <expand>
+                    <from>,[\s]*([\w\s]+) hoop on (body|jacket) and sleeves</from>
+                    <to>,$1 hoop, $1 armlets</to>
+                    <label>hoop on body and sleeves</label>
+                    </expand>
+            <!-- black skull and crossbones on jacket and sleeves -->
+            <!-- 20121130 - explicity specify "on jacket" as must not propagate -->
+            <expand>
+                    <from>,[\s]*([\w\s]+) on (body|jacket) and sleeves</from>
+                    <to>,$1 on jacket, $1 on sleeves</to>
+                    <label>on jacket and sleeves</label>
+                    </expand>
+
+<!--      on body, sleeves and cap -->
+            <expand>
+                    <from>,([\w\s]+) on (body|jacket), sleeves and cap</from>
+                    <to>,$1, $1 on sleeves, $1 on cap</to>
+                    <label>on jacket, sleeves and cap</label>
+                    </expand>
+
+            <expand>
+                    <from>,([\w\s]+) on (body|jacket) and sleeves</from>
+                    <to>,$1, $1 on sleeves</to>
+                    <label>on jacket and sleeves</label>
+                    </expand>
+
+<!-- yellow sleeves and spots on body and on black cap -->
+         <expand>
+                    <from>($COLOUR_LIST)+ sleeves and ($JACKET_PATTERN_LIST)+ on body and on ($COLOUR_LIST)+ cap</from>
+                    <to>$1 $2 on body, $1 sleeves, $3 cap, $1 $2</to>
+                    <label>colour sleeves and pattern on body and on colour cap</label>
+                    </expand>
+<!-- dark blue cross on body and on white cap -->
+         <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ on body and on ($COLOUR_LIST)+ cap</from>
+                    <to>$1 $2 on body, $3 cap, $1 $2</to>
+                    <label>colour pattern on body and on colour cap</label>
+                    </expand>
+
+           <!-- old gold cap and stars on body-->
+           <expand>
+                    <from>($COLOUR_LIST)+ (sleeves|cap) and ($JACKET_PATTERN_LIST)+ on (body|jacket)</from>
+                    <to>$1 $3 on $4, $1 $2</to>
+                    <label>colour pattern and pattern on body</label>
+                    </expand>
+
+          <!--  black seams on body and star on cap -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ on (body|jacket) and ($CAP_PATTERN_LIST)+ on cap</from>
+                    <to>$1 $2 on $3, $1 $4 on cap</to>
+                    <label>colour pattern on body and pattern on cap</label>
+                    </expand>
+        <!-- yellow star on body and cap and seams on sleeves -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ on (body|jacket) and cap and ($SLEEVE_PATTERN_LIST)+ on sleeves</from>
+                    <to>$1 $2 on $3, $1 $4 on sleeves, $1 $2 on cap</to>
+                    <label>colour pattern on body and cap pattern on sleeves</label>
+                    </expand>
+
+            <!-- yellow cross belts, collar and cuffs - TWO JACKET PATTERNS -->
+            <!-- scarlet collar, sash and sleeves - TWO JACKET PATTERNS -->
+            <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST)+ and (sleeves|$SLEEVE_PATTERN_LIST)+</from>
+                    <to>$1 $2 and $3, $1 $4</to>
+                    <label>colour jacket pattern, jacket pattern and sleeves/cuffs/armlets</label>
+                    </expand>
+
+<!-- Claret, turquoise collar, cuffs and turquoise cap, claret spots -->
+       <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|$CAP_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|$CAP_PATTERN_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|$CAP_PATTERN_LIST)+</from>
+                    <to>$1 $2, $1 $3, $4 $5</to>
+                    <label>colour pattern, pattern and colour pattern</label>
+                    </expand>
+                    <!-- NOT Claret, turquoise collar, cuffs and turquoise cap, claret spots, first letter of turquoise t is a pattern! -->
+            <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|$CAP_PATTERN_LIST)+[\s]*,[\s]*($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|$CAP_PATTERN_LIST)+ and ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|$CAP_PATTERN_LIST)+</from>
+                    <to>$1 $2, $1 $3, $4</to>
+                    <label>colour pattern, pattern and pattern</label>
+                    </expand>
+
+            <!-- black hoop, armlets -->
+            <!-- but not brown and red halved, sleeves reversed -->
+           <expand>
+                     <from>(^|,)+[\s]*($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST|$JACKET_PATTERN_LIST)+[\s]*(,|and)[\s]*(sleeves|$SLEEVE_PATTERN_LIST|$JACKET_PATTERN_LIST|$CAP_PATTERN_LIST|cap)+(,|\.| and)+</from>
+                    <to>$1$2 $3, $2 $5$6</to>
+                    <label>colour jacket pattern, sleeves/cuffs/collar/armlets/cap</label>
+                    </expand>
+
+
+
+            <!-- red stars, chevrons on sleeves -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*,[\s]*($SLEEVE_PATTERN_LIST)+ on sleeves</from>
+                    <to>$1 $2, $1 $3 on sleeves</to>
+                    <label>colour pattern, pattern on sleeves</label>
+                    </expand>
+
+            <!-- royal blue triple diamond and diamonds on sleeves -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+ and ($SLEEVE_PATTERN_LIST)+ on sleeves</from>
+                    <to>$1 $2, $1 $3 on sleeves</to>
+                    <label>colour pattern and pattern on sleeves</label>
+                    </expand>
+
+          <!-- cream sleeves and sash -->
+          <!-- black armlets and collar -->
+          <expand>
+                    <from>($COLOUR_LIST)+ (sleeves|$SLEEVE_PATTERN_LIST)+ and ($JACKET_PATTERN_LIST)+([,\.]+)</from>
+                    <to>$1 $3, $1 $2$4</to>
+                    <label>colour sleeves/armlets/cuffs and jacket pattern</label>
+                    </expand>
+
+<!-- white hooped sleeves and collar -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves and ($JACKET_PATTERN_LIST)+([,\.]+)</from>
+                    <to>$1 $2 sleeves, $1 $3$4</to>
+                    <label>colour pattern sleeves and jacket pattern</label>
+                    </expand>
+
+<!-- jade green sleeves, cap and hoop on body -->
+         <expand>
+                    <from>($COLOUR_LIST)+ sleeves, cap and ($JACKET_PATTERN_LIST)+ on body</from>
+                    <to>$1 $2 on body, $1 sleeves, $1 cap</to>
+                    <label>colour sleeves, cap and jacket pattern on body</label>
+                    </expand>
+<!-- black cap and sleeves with white spots -->
+         <expand>
+                    <from>($COLOUR_LIST)+ cap and sleeves with ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+</from>
+                    <to>$1 sleeves with $2 $3, $1 cap</to>
+                    <label>colour cap and sleeves with colour sleeves pattern</label>
+                    </expand>
+<!-- pink cross belts, hooped sleeves and spots on black cap -->
+         <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+, ($SLEEVE_PATTERN_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ on ($COLOUR_LIST)+ cap</from>
+                    <to>$1 $2, $1 $3 sleeves, $5 cap, $1 $4</to>
+                    <label>colour jacket pattern, pattern sleeves and cap pattern on colour cap</label>
+                    </expand>
+<!-- green sleeves and hoop on white cap -->
+         <expand>
+                    <from>($COLOUR_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ on ($COLOUR_LIST)+ cap</from>
+                    <to>$1 sleeves, $3 cap, $1 $2</to>
+                    <label>colour sleeves and pattern on colour cap</label>
+                    </expand>
+<!-- black sleeves, stripes on body -->
+             <expand>
+                   <from>($COLOUR_LIST)+ (sleeves|cap)[\s]*(with|and|,)+[\s]*($JACKET_PATTERN_LIST) on body(,|\.| and)+</from>
+                    <to>$1 $2, $1 $4 on body$5</to>
+                    <label>colour sleeves/cap, pattern on body</label>
+                    </expand>
+            <!-- red sleeves, collar -->
+            <!-- black and white check, gold sleeves with checked armbands NOT SURE, PROBABLY b+w checked armbands! MAYBE NEED SPECIAL RULES FOR CHECKED -->
+           <expand>
+                   <from>($COLOUR_LIST)+ sleeves[\s]*(with|and|,)+[\s]*($SLEEVE_PATTERN_LIST|$JACKET_PATTERN_LIST|cap)(,|\.| and)+</from>
+                    <to>$1 sleeves, $1 $3$4</to>
+                    <label>colour sleeves, pattern</label>
+                    </expand>
+<!-- pink and turquoise checked band and armbands -->
+          <expand>
+                    <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ (check|checked)+ (band|hoop|sash) and (armbands|armlets)+([,\.]+)</from>
+                    <to>$1 and $2 checked $4, $1 and $2 checked $5$6</to>
+                    <label>2 colour checked band and armlets</label>
+                    </expand>
+<!-- Red Diamond Band and Armbands -->
+          <expand>
+                    <from>($COLOUR_LIST)+ (diamond|checked)+ (band|hoop|sash) and (armbands|armlets)+([,\.]+)</from>
+                    <to>$1 $2 $3, $1 $2 $4$5</to>
+                    <label>colour diamond band and armlets</label>
+                    </expand>
+
+             <!-- JACKET and CAP -->
+            <!-- dark blue and lime green one two three logo and hooped cap DOES THIS EVER OCCUR? -->
+            <!-- BUT NOT black, red, white and blue sash and hooped cap -->
+            <expand>
+                    <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+[\s]*'([\s\w]+)'[\s]*($JACKET_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ cap</from>
+                    <to>$1 and $2 '$3' $4, $1 and $2 $5 cap</to>
+                    <label>colour and colour pattern and pattern cap</label>
+                    </expand>
+
+            <!-- yellow diamond on body and cap -->
+            <!-- 20111223 specify explicitly on body, so can set to not propagate -->
+            <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ (for|on) (body|jacket) and (cap|sleeves)+</from>
+                    <to>$1 $2 on $4, $1 $2 on $5</to>
+                    <label>colour pattern on body and cap</label>
+                    </expand>  
+
+            <!-- yellow sleeves, dark blue stars and stars on cap -->
+            <!-- this is really sleeves and cap, but must come before expand colour pattern and pattern on cap just below -->
+            <expand>
+                   <from>($COLOUR_LIST)+ sleeves[\s]*,[\s]*($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 sleeves, $2 $3, $2 $4 on $1 cap.</to>
+                    <label>colour sleeves, colour pattern and pattern on cap</label>
+                    </expand>
+
+          <!-- silver braid and tassle on black cap -->
+            <expand>
+                   <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ on ($COLOUR_LIST)+ cap\.</from>
+                    <to>$1 $2, $4 cap, $1 $3.</to>
+                    <label>colour pattern and pattern on colour cap</label>
+                    </expand>
+
+            <!-- red armlets, collar and spots on cap -->
+            <expand>
+                   <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+, ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 $2, $1 $3, $1 $4 on cap.</to>
+                    <label>colour pattern, pattern and pattern on cap</label>
+                    </expand>
+            <!-- maroon star and star on cap -->
+            <expand>
+                   <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 $2, $1 $3 on cap.</to>
+                    <label>colour pattern and pattern on cap</label>
+                    </expand>
+            <!-- SE 20120122 dark blue diabolo, diamond on light blue cap -->
+            <expand>
+                   <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+, ($CAP_PATTERN_LIST)+ on ($COLOUR_LIST)+ cap\.</from>
+                    <to>$1 $2, $1 $3 on $4 cap.</to>
+                    <label>colour pattern, pattern on colour cap</label>
+                    </expand>
+
+            <!-- grey seams and cap -->
+            <expand>
+                   <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ and cap</from>
+                    <to>$1 $2, $1 cap</to>
+                    <label>colour pattern and cap</label>
+                    </expand>
+
+           <!--  black, red, white and blue sash and hooped cap -->
+            <expand>
+                   <from>^($COLOUR_LIST)+, ($COLOUR_LIST)+, ($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ cap</from>
+                    <to>$1, $2, $3 and $4 $5, $2, $3 and $4 $6 cap</to>
+                    <label>4 colour pattern and pattern cap</label>
+                    </expand>
+
+            <!--  Red, Blue and White Band and Armbands but if at start of line then is only 2 colour-->
+            <!-- 20121128 - must be at start of line, otherwise "navy blue, red and light blue hoop" matches on blue rather than navy blue-->
+            <expand>
+                   <from>^($COLOUR_LIST)+, ($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ and (sleeves|$SLEEVE_PATTERN_LIST)+</from>
+                    <to>$1, $2 and $3 $4, $1, $2 and $3 $5</to>
+                    <label>3 colour pattern and sleeves/armlets/cuffs</label>
+                    </expand>
+
+            <!--  red and light blue hoop and armlets -->
+            <expand>
+                   <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ and (sleeves|$SLEEVE_PATTERN_LIST)+</from>
+                    <to>$1 and $2 $3, $1 and $2 $4</to>
+                    <label>colour and colour pattern and sleeves/armlets/cuffs</label>
+                    </expand>
+
+            <!--silver yoke and cuffs, yellow collar -->
+            <!-- but not red yoke and cuffs, black seams, black cap -->
+            <!-- SE 20120120 reverse order: white, blue diamond and sleeves, white seams N.B seams refer to the sleeves -->
+            <expand>
+                   <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ and (sleeves|$SLEEVE_PATTERN_LIST)+[\s]*,[\s]*($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+([,\.]+)</from>
+                    <to>$1 $2, $1 $3, $4 $5$6</to>
+                    <label>colour pattern and sleeves/armlets/cuffs, colour pattern</label>
+                    </expand>
+
+            <!-- light blue chevron and sleeves/armlets/cuffs -->
+            <!-- pink epaulettes and armlets -->
+            <expand>
+                   <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ and (sleeves|$SLEEVE_PATTERN_LIST)+</from>
+                    <to>$1 $2, $1 $3</to>
+                    <label>colour pattern and sleeves/armlets/cuffs</label>
+                    </expand>
+
+          <!-- light blue circled 'h' and cuffs -->
+          <expand>
+        		  <from>($COLOUR_LIST)+ ([\s\w']+) and (sleeves|$SLEEVE_PATTERN_LIST)+([,\.]+)</from>
+                  <to>$1 $2, $1 $3$4</to>
+                  <label>colour anything and sleeves/armlets/cuffs</label>
+                  </expand>
+
+            <!-- SLEEVES and CAP -->
+
+            <!-- beige and black chevrons on sleeves, quartered cap -->
+          <expand>
+                    <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ on sleeves, ($CAP_PATTERN_LIST)+ cap\.</from>
+                    <to>$1 and $2 $3 on sleeves, $1 and $2 $4 cap.</to>
+                    <label>two colour pattern on sleeves and no colour pattern cap</label>
+                    </expand>
+
+        <!-- emerald green and black hooped sleeves, quartered cap -->
+        <expand>
+                    <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves, ($CAP_PATTERN_LIST)+ cap\.</from>
+                    <to>$1 and $2 $3 sleeves, $1 and $2 $4 cap.</to>
+                    <label>two colour pattern sleeves and no colour pattern cap</label>
+                    </expand>
+        <!-- yellow sleeves, royal blue armlets, quartered cap -->
+         <expand>
+                    <from>($COLOUR_LIST)+ sleeves, ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+, ($CAP_PATTERN_LIST)+ cap\.</from>
+                    <to>$1 sleeves, $2 $3, $1 and $2 $4 cap.</to>
+                    <label>sleeves and colour pattern sleeves and no colour pattern cap</label>
+                    </expand>
+
+             <!-- white striped sleeves and hoop on yellow cap -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ on ($COLOUR_LIST)+ cap\.</from>
+                    <to>$1 $2 sleeves, $1 $3 on $4 cap.</to>
+                    <label>colour pattern sleeves and pattern on colour cap</label>
+                    </expand>
+          <!-- turquoise striped sleeves and spots on cap -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 $2 sleeves, $1 $3 on cap.</to>
+                    <label>colour pattern sleeves and pattern on cap</label>
+                    </expand>
+
+
+           <!-- yellow diamonds on sleeves and cap -->
+          <expand>
+                    <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ on sleeves and cap\.</from>
+                    <to>$1 $2 on sleeves, $1 $2 on cap.</to>
+                    <label>colour pattern on sleeves and cap</label>
+                    </expand>
+<!-- diamonds on sleeves and on cap -->
+          <expand>
+                    <from>($SLEEVE_PATTERN_LIST)+ on sleeves and on cap\.</from>
+                    <to>$1 on sleeves, $1 on cap.</to>
+                    <label>pattern on sleeves and on cap</label>
+                    </expand>
+
+            <!-- black armlets and spots on red cap -->
+          <expand>
+                    <from>($COLOUR_LIST)+ (sleeves|$SLEEVE_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ on ($COLOUR_LIST)+ cap\.</from>
+                    <to>$1 $2, $1 $3 on $4 cap.</to>
+                    <label>colour sleeves/armlets/cuffs and pattern on colour cap</label>
+                    </expand>
+
+            <!-- white armlets and diamond on cap -->
+         <expand>
+                    <from>($COLOUR_LIST)+ (sleeves|$SLEEVE_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ on cap\.</from>
+                    <to>$1 $2, $1 $3 on cap.</to>
+                    <label>colour sleeves/armlets/cuffs and pattern on cap</label>
+                    </expand>
+<!-- black sleeves and quartered cap -->
+            <expand>
+                    <from>($COLOUR_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ cap</from>
+                    <to>$1 sleeves, $1 $2 cap</to>
+                    <label>colour sleeves and pattern cap</label>
+                    </expand>
+
+            <!-- white sleeves/armlets/cuffs and cap -->
+            <expand>
+                    <from>($COLOUR_LIST)+ (sleeves|$SLEEVE_PATTERN_LIST)+ and cap</from>
+                    <to>$1 $2, $1 cap</to>
+                    <label>colour sleeves/armlets/cuffs and cap</label>
+                    </expand>
+
+            <!-- white hooped sleeves and cap with black spots -->
+            <expand>
+                   <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves and cap with</from>
+                    <to>$1 $2 sleeves, $1 cap with</to>
+                    <label>colour pattern sleeves and cap with pattern</label>
+                    </expand>
+            <!-- red and white hooped sleeves and cap -->
+            <expand>
+                   <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves and cap</from>
+                    <to>$1 and $2 $3 sleeves, $1 and $2 $3 cap</to>
+                    <label>colour and colour pattern sleeves and cap</label>
+                    </expand>
+
+            <!-- white hooped sleeves and cap -->
+            <expand>
+                   <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves and cap</from>
+                    <to>$1 $2 sleeves, $1 $2 cap</to>
+                    <label>colour pattern sleeves and cap</label>
+                    </expand>
+
+            <!-- hooped sleeves and cap -->
+            <expand>
+                   <from>($SLEEVE_PATTERN_LIST)+ sleeves and cap</from>
+                    <to>$1 sleeves, $1 cap</to>
+                    <label>pattern sleeves and cap</label>
+                    </expand>
+            <!-- yellow halved sleeves and peak (of cap) -->
+            <expand>
+                   <from>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves and ($CAP_PATTERN_LIST)+[\s]*(of cap|on cap|\.)+</from>
+                    <to>$1 $2 sleeves, $1 $3 on cap.</to>
+                    <label>colour pattern sleeves and cap pattern</label>
+                    </expand>
+            <!-- green sleeves and peak (of cap) -->
+            <expand>
+                   <from>($COLOUR_LIST)+ sleeves and ($CAP_PATTERN_LIST)+[\s]*(of cap|on cap|\.)+</from>
+                    <to>$1 sleeves, $1 $2 on cap.</to>
+                    <label>colour sleeves and cap pattern</label>
+                    </expand>
+<!--  light blue sleeves and peak of black cap -->
+            <expand>
+                   <from>($COLOUR_LIST)+ sleeves and ($CAP_PATTERN_LIST)+ of ($COLOUR_LIST)+ cap</from>
+                    <to>$1 sleeves, $3 cap, $1 $2</to>
+                    <label>colour sleeves and pattern of colour cap</label>
+                    </expand>
+
+<!-- aquamarine sleeves, cap and tassle on cap -->
+            <expand>
+                   <from> ($COLOUR_LIST) sleeves, cap and ($CAP_PATTERN_LIST)+ on cap</from>
+                    <to> $1 sleeves, $1 cap, $1 $2</to>
+                    <label>colour sleeves, cap and pattern on cap</label>
+                    </expand>
+
+<!-- Black and White Checked sleeves, Checked cap -->
+<!-- may no longer be used due to earlier expansion of all checked -->
+           <expand>
+                   <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ checked sleeves[\s]*,[\s]*checked cap</from>
+                    <to>$1 and $2 checked sleeves, $1 and $2 checked cap</to>
+                    <label>colour and colour checked sleeves, checked cap</label>
+                    </expand>
+
+<!-- White and Cerise Stars sleeves and Quartered cap -->
+<!-- extended from checked to all sleeve patterns -->
+           <expand>
+                   <from>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST) sleeves[\s]*and[\s]*($CAP_PATTERN_LIST) cap</from>
+                    <to>$1 and $2 $3 sleeves, $1 and $2 $4 cap</to>
+                    <label>colour and colour pattern sleeves and pattern cap</label>
+                    </expand>
+
+            <!-- pink sleeves and red cap - replace and with comma -->
+            <!-- black, white star, hooped sleeves and white cap -->
+            <expand>
+                    <from> (sleeves|$SLEEVE_PATTERN_LIST)+ (and a|and)+ ($COLOUR_LIST)+ cap</from>
+                    <to> $1, $3 cap</to>
+                     <label>sleeves/armlets/cuffs and pattern/colour cap</label>
+                     </expand>
+
+            <!-- striped sleeves black cap - insert comma -->
+            <expand>
+                    <from>sleeves ($COLOUR_LIST)+ cap</from>
+                     <to>sleeves, $1 cap</to>
+                     <label>sleeves pattern/colour cap</label>
+                     </expand>
+
+            <!-- sleeves, maroon spots and maroon spots on cap (replace and with comma!) -->
+            <expand>
+                      <from>sleeves[\s]*,[\s]*($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ and ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ on cap\.</from>
+                      <to>sleeves, $1 $2, $3 $4 on cap.</to>
+                      <label>sleeves, colour pattern and colour pattern on cap</label>
+                      </expand>
+
+            <!-- sleeves, beige stars and cap -->
+            <expand>
+                    <from>sleeves[\s]*,[\s]*($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ and cap</from>
+                    <to>sleeves, $1 $2, $1 cap</to>
+                    <label>sleeves, colour pattern and cap</label>
+                    </expand>
+
+            <!-- violet sleeves with amber cap -->
+            <expand>
+                    <from>($COLOUR_LIST)+[\s]+sleeves[\s]+with[\s]+($COLOUR_LIST)+[\s]+cap</from>
+                    <to>$1 sleeves, $2 cap</to>
+                    <label>colour sleeves with colour cap</label>
+                    </expand>
+            <!-- scarlet collar and sash -->
+            <!-- 20120927 - SVG patterns include w - so matches against white if no whitespade or punctuation afterwards -->
+           <expand>
+                   <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ (and a|and) ($JACKET_PATTERN_LIST)+([\s,\.]+)</from>
+                    <to>$1 $2, $1 $4$5</to>
+                    <label>colour pattern and jacket pattern</label>
+                    </expand>
+<!-- black cap with red diamond and gold tassle -->
+           <expand>
+                   <from>($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ (and a|and) ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+([,\.]+)</from>
+                    <to>$1 $2, $4 $5$6</to>
+                    <label>colour pattern and colour cap pattern</label>
+                    </expand>
+
+           <!-- cap with black diamond and peak -->
+          <!-- but not grey seams and white diamond gem, -->
+          <expand>
+                   <from>($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ (and a|and) ($CAP_PATTERN_LIST)+([,\.]+)</from>
+                    <to>$1 $2, $1 $4$5</to>
+                    <label>colour pattern and cap pattern</label>
+                    </expand>
+            <!-- Hunting pink, white cap, diamonds and hooped sleeves -->
+            <expand>
+                    <from>($COLOUR_LIST)+ cap, ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+ and ($SLEEVE_PATTERN_LIST)+ sleeves</from>
+                    <to>$1 $2, $1 $3 sleeves, $1 cap</to>
+                    <label>colour cap, pattern and pattern sleeves</label>
+                    </expand>
+           <!-- in reverse order -->
+           <!-- primrose cap, hoop and armlets -->
+            <expand>
+                    <from>($COLOUR_LIST)+ cap, ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|sleeves)+ and ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|sleeves)+</from>
+                    <to>$1 $2, $1 $3, $1 cap</to>
+                    <label>colour cap, pattern and pattern</label>
+                    </expand>
+
+           <!--  black cap and sash -->
+            <expand>
+                    <from>($COLOUR_LIST)+ cap and ($JACKET_PATTERN_LIST)+([,\.]+)</from>
+                    <to>$1 $2, $1 cap$3</to>
+                    <label>colour cap and jacket pattern</label>
+                    </expand>
+            <expand>
+                    <from>narrow ($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+</from>
+                    <to>$1 and $2 narrow $3</to>
+                    <label>narrow colour and colour pattern</label>
+                    </expand>
+           <!--  black cap and hooped sleeves -->
+           <!-- NOT quartered cap and hooped sleeves -->
+            <expand>
+                    <from>(^|,)+[\s]*($COLOUR_LIST)+ cap and ($SLEEVE_PATTERN_LIST)+ (sleeves|$SLEEVE_PATTERN_LIST)+</from>
+                    <to>$1$2 $3 $4, $2 cap</to>
+                    <label>colour cap and pattern sleeves/cuffs/armlets</label>
+                    </expand>
+<!-- black cap chequered in red -->
+            <expand>
+                    <from>($COLOUR_LIST)+ (jacket|sleeves|cap) ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST|$CAP_PATTERN_LIST)+ in ($COLOUR_LIST)+</from>
+                    <to>$1 and $4 $3 $2</to>
+                    <label>colour item pattern in colour</label>
+                    </expand>
+
+            <expand>
+                    <from>one ($COLOUR_LIST)+[\s]*(and|,)[\s]*one ($COLOUR_LIST)+ sleeve</from>
+                    <to>$1 and $3 alternate sleeves</to>
+                    <label>one and one sleeve</label>
+                    </expand>
+            <expand>
+                    <from>one ($COLOUR_LIST) sleeve, one ($COLOUR_LIST)+ sleeve</from>
+                    <to>$1 and $2 alternate sleeves</to>
+                    <label>one and one sleeve</label>
+                    </expand>
+            <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ in ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+</from>
+                    <to>$1 $2, $3 $4</to>
+                    <label>colour pattern in colour pattern</label>
+                    </expand>
+           <expand>
+                    <from>($CAP_PATTERN_LIST)+ and ($CAP_PATTERN_LIST)+ on cap</from>
+                    <to>$1 on cap, $2 on cap</to>
+                    <label>pattern and pattern on cap</label>
+                    </expand>
+    </language>
+   <language id="fr">
+         <expand>
+                    <from>^c </from>
+                    <to></to>
+                    <label>c for casaque</label>
+                    </expand>
+         <expand>
+                    <from>^casaque </from>
+                    <to></to>
+                    <label>casaque</label>
+                    </expand>
+            <expand>
+                    <from>un manche ($COLOUR_LIST)+[\s]*un manche ($COLOUR_LIST)+</from>
+                    <to>m alternate $1 et $2</to>
+                    <label>one and one manche</label>
+                    </expand>
+           <expand>
+                    <from>un m ($COLOUR_LIST)+[\s]*un m ($COLOUR_LIST)+</from>
+                    <to>m alternate $1 et $2</to>
+                    <label>one and one m</label>
+                    </expand>
+         <!-- NOIR CX ST-A CERISE ET VERT POIGN VERT COL CER T NOI -->
+         <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ et ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ t </from>
+                    <to>$1 $2 $3 et $4 $7 $8, m $1 $5 $6, t </to>
+                    <label>jacket pattern colour et colour sleeve pattern colour t </label>
+                    </expand>
+                    
+         <!-- RAYEE GRIS ET BLEU BRASS BLEUS T GRISE -->
+         <expand>
+                    <from>^($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ et ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+ t </from>
+                    <to>$1 $2 et $3, m $1 $2 et $3 $4 $5, t </to>
+                    <label>jacket pattern colour et colour sleeve pattern colour t </label>
+                    </expand>
+         <!-- RAYEE NOIR ET JAUNE COL ET POIG BLANC T VIOLETTE -->
+         <expand>
+                    <from>^($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ et ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ et ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+ t </from>
+                    <to>$1 $2 et $3 $4 $6, m $1 $2 et $3 $5 $6, t </to>
+                    <label>jacket pattern colour et colour jacket pattern et sleeve pattern colour t </label>
+                    </expand>
+                    <!-- NOIRE 1 CHEVRON ET T JAUNES UNE ETOILE NOIRE  -->
+         <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ et t ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ ($COLOUR_LIST)+</from>
+                    <to>$1 $2 $3, t $3 $4 $5</to>
+                    <label>colour jacket pattern et t colour cap pattern colour</label>
+                    </expand>
+                    <!-- GROS-BLEU CERCLE BRASS ROUGES ET BLEU-CL T BLANCH -->
+         <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+ et ($COLOUR_LIST)+ t </from>
+                    <to>$1 $2 $4 et $5 m $1 $3 $4 et $5, t </to>
+                    <label>colour jacket pattern sleeve pattern colour et colour t</label>
+                    </expand>
+                    
+         <!-- ECARTELEE GRIS ET ROUGE M CERCLEES ET T ECARTELEE GRIS ET ROUGE -->
+         <expand>
+                    <from> m ($SLEEVE_PATTERN_LIST)+ et t ($CAP_PATTERN_LIST)+ ($COLOUR_LIST)+ et ($COLOUR_LIST)+\.</from>
+                    <to> m $1 $3 $4, t $2 $3 $4.</to>
+                    <label>m sleeve pattern et t cap pattern colour et colour</label>
+                    </expand>
+         <!-- BLANC DISQUE ROUGE EPAUL VERTES brass ET T ROUGES -->
+         <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+\.</from>
+                    <to>$1 $2 $3 $4 $5, m $1 $6 $7, t $7.</to>
+                    <label>colour jacket pattern colour jacket pattern colour sleeve pattern et t colour</label>
+                    </expand>
+        <!-- bleu clair epaulettes brassards vert clair -->
+        <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+ t </from>
+                    <to>$1 $2 $4, m $1 $3 $4 t </to>
+                    <label>colour jacket pattern sleeve pattern colour</label>
+                    </expand>
+                    
+        <!-- BLEUE CEINT EPAUL ET T BLANCHES -->
+         <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($JACKET_PATTERN_LIST)+ et t ($COLOUR_LIST)+\.</from>
+                    <to>$1 $2 $4 $3 $4, t $4.</to>
+                    <label>colour jacket pattern jacket pattern et t colour</label>
+                    </expand>
+        <!-- DENTEE MI-BLANC MI-ROUGE -->            
+        <expand>
+                    <from>^($JACKET_PATTERN_LIST)+ mi\-($COLOUR_LIST)+ mi\-($COLOUR_LIST)+</from>
+                    <to>$1 $2 et $3</to>
+                    <label>pattern mi mi</label>
+                    </expand>
+        <!-- MI-NOIR MI-BLEU EN DIAGONALE -->
+        <expand>
+                    <from>mi\-($COLOUR_LIST)+ mi\-($COLOUR_LIST)+ en diagonale</from>
+                    <to>demi_diagonal $1 et $2</to>
+                    <label>demi_diagonal</label>
+                    </expand>
+    <!-- M MI-BLANC MI-BLEU-CLAIR -->
+         <expand>
+                    <from>mi[\-\s]+($COLOUR_LIST)+ mi[\-\s]+($COLOUR_LIST)+</from>
+                    <to>demi $1 et $2</to>
+                    <label>demi</label>
+                    </expand>
+    <!-- M MI-BLANC/BLEU-CLAIR -->
+         <expand>
+                    <from>mi[\-\s]+($COLOUR_LIST)+/($COLOUR_LIST)+</from>
+                    <to>demi $1 et $2</to>
+                    <label>demi</label>
+                    </expand>
+         <!-- BLANCHE CEINT ET BRASS BLEUS ET ROUGES T BLANCHE -->
+        <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ et ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+ et ($COLOUR_LIST)+</from>
+                    <to>$1 $2 $4 et $5, m $1 $3 $4 et $5</to>
+                    <label>colour jacket pattern et sleeve pattern colour et colour</label>
+                    </expand>
+                    
+         <!-- GROS-BLEU CR ST-ANDRE BRASS ET T BLEU-CLAIR ETOILE GROS-BLEU -->           
+        <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ ($COLOUR_LIST)+\.</from>
+                    <to>$1 $2 $4, m $1 $3 $4, t $4 $5 $6.</to>
+                    <label>colour jacket pattern sleeve pattern et t colour cap pattern colour</label>
+                    </expand>
+         <!-- GROS BLEU CERCLE brass ET T ROUGES -->
+         <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+\.</from>
+                    <to>$1 $2 $4, m $1 $3 $4, t $4.</to>
+                    <label>colour jacket pattern sleeve pattern et t colour</label>
+                    </expand>
+        <!-- M ET T BLEUES ETOILES BLANCHES -->
+         <expand>
+                    <from>m et t ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)</from>
+                    <to>m $1 $2 $3, t $1 $2 $3</to>
+                    <label>m et t colour pattern colour</label>
+                    </expand>
+         <!-- M ET T CERCLEES JAUNE ET BLEU-CLAIR -->
+         <expand>
+                    <from>m et t ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+( | et |\-|/)($COLOUR_LIST)+</from>
+                    <to>m $1 $2 et $4, t $1 $2 et $4</to>
+                    <label>m et t pattern colour et colour</label>
+                    </expand>
+                    <!-- GROS-BLEU CEINT EPAUL ET M BLANCHES T -->
+          <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($JACKET_PATTERN_LIST)+ et m ($COLOUR_LIST)+ t </from>
+                    <to>$1 $2 $4 $3 $4, m $4 t </to>
+                    <label>colour jacket pattern jacket pattern et m colour t</label>
+                    </expand>
+                   
+         <!-- M MI BL-CL GR-BL T  -->
+         <expand>
+                    <from>m mi ($COLOUR_LIST)+ ($COLOUR_LIST)+ t</from>
+                    <to>m demi $1 et $2 t</to>
+                    <label>m mi colour colour t colour</label>
+                    </expand>
+         <!-- GROS-BLEU UNE ETOILE M ET T BLEUES -->
+         <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ m et t ($COLOUR_LIST)+</from>
+                    <to>$1 $2 $3, m $3, t $3</to>
+                    <label>colour jacket pattern m et t colour</label>
+                    </expand>
+          <!--  GRISE 3 LOSANGES ET M GR-BLEU BRASS ET T GRIS 1 LOS GR-BLEU -->
+          <!-- need separate expands for t colour and t colour pattern colour, as no stop character to ensure that FULL colour name is extracted -->
+          <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) et m ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ ($COLOUR_LIST)+\.</from>
+                    <to>$1 $2 $3, m $3 $4 $5, t $5 $6 $7.</to>
+                    <label>colour jacket pattern et m colour sleeve pattern et t colour cap pattern colour</label>
+                    </expand>
+        <!-- ROSE CROIX DE SAINT ANDRE ET M BLEU-CLAIR brassards et t rose -->                    
+          <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) et m ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+\.</from>
+                    <to>$1 $2 $3, m $3 $4 $5, t $5.</to>
+                    <label>colour jacket pattern et m colour sleeve pattern et t colour</label>
+                    </expand>
+        <!-- BLANCHE M JAUNES CX DE ST-ANDRE ET T VERTES -->
+          <expand>
+                    <from>^($COLOUR_LIST)+ m ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) et t ($COLOUR_LIST)+</from>
+                    <to>$1 $3 $4, m $2, t $4</to>
+                    <label>colour m colour jacket pattern et t colour</label>
+                    </expand>
+         <!-- CHEVRONNEE GRENAT JAUNE M CERCLEES T JAUNE ETOILES GRENAT -->
+          <expand>
+                    <from>^($JACKET_PATTERN_LIST) ($COLOUR_LIST)+ ($COLOUR_LIST)+ m ($SLEEVE_PATTERN_LIST)+ t</from>
+                    <to>$1 $2 $3, m $4 $2 $3 t</to>
+                    <label>jacket pattern colour m sleeve pattern t</label>
+                    </expand>
+                   
+        <!-- JAUNE CEINTURE ET BRASSARDS BLEUS -->
+         <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) et ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+</from>
+                    <to>$1 $2 $4, m $1 $3 $4</to>
+                    <label>colour jacket pattern et sleeve pattern colour</label>
+                    </expand>
+         <!-- BLANCHE CEINTURE EPAULETTES BRASSARDS ET T ORANGE -->
+         <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) ($JACKET_PATTERN_LIST) ($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+</from>
+                    <to>$1 $2 $5 $3 $5, m $1 $4 $5, t $5</to>
+                    <label>colour jacket pattern jacket pattern et sleeve pattern et t colour</label>
+                    </expand>
+                   
+         <!-- BLANCHE CEINT EPAUL ET BRASS GROS-BLEU T ROUGE -->
+         <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) ($JACKET_PATTERN_LIST) et ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+</from>
+                    <to>$1 $2 $5 $3 $5, m $1 $4 $5</to>
+                    <label>colour jacket pattern jacket pattern et sleeve pattern colour</label>
+                    </expand>
+         <!-- VERT-CL BRETELLES MAUVES BRASS JAUNES -->           
+        <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+</from>
+                    <to>$1 $2 $3, m $1 $4 $5</to>
+                    <label>colour jacket pattern colour sleeve pattern colour</label>
+                    </expand>
+         <!-- ROUGE BANDE VERTE BRASS ET T BLANCS -->
+         <expand>
+                    <from>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+\.</from>
+                    <to>$1 $2 $3, m $1 $4 $5, t $5.</to>
+                    <label>colour jacket pattern colour sleeve pattern et t colour</label>
+                    </expand>
+         <!-- GROS-VERT BRASSARDS ET T JAUNES UNE ETOILE GROS-VERT -->
+         <expand>
+                    <from>^($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ ($COLOUR_LIST)+\.</from>
+                    <to>$1, m $1 $2 $3, t $3 $4 $5.</to>
+                    <label>colour sleeve pattern et t colour</label>
+                    </expand>
+         <!-- MARRON BRASS ET T VERTS -->
+         <expand>
+                    <from>^($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+\.</from>
+                    <to>$1, m $1 $2 $3, t $3.</to>
+                    <label>colour sleeve pattern et t colour</label>
+                    </expand>
+          <!-- ROUGE BRASS ET CHEVRON OR T ROUGE -->
+         <expand>
+                    <from>^($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ et ($JACKET_PATTERN_LIST) ($COLOUR_LIST)+</from>
+                    <to>$1 $3 $4, m $1 $2 $4</to>
+                    <label>colour sleeve pattern et jacket pattern colour</label>
+                    </expand>
+         <!-- NOIRE CROIX ET M JAUNES -->
+         <expand>
+                    <from>($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ et m ($COLOUR_LIST)</from>
+                    <to>$1 $2 $3, m $3</to>
+                    <label>colour jacket pattern et m colour</label>
+                    </expand>
+                    <!-- un losange et t gris -->
+         <expand>
+                    <from>($JACKET_PATTERN_LIST)+ et t ($COLOUR_LIST)\.</from>
+                    <to>$1 $2, t $2.</to>
+                    <label>jacket pattern et t colour</label>
+                    </expand>
+         <!-- brassards et t gris -->
+         <expand>
+                    <from>($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+\.</from>
+                    <to>$1 $2, t $2.</to>
+                    <label>sleeve pattern et t colour</label>
+                    </expand>
+        <!-- M BLANC BRASS ET T JAUNES 1 ETOI ROUGE -->
+        <expand>
+                    <from>m ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ et t ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ ($COLOUR_LIST)+\.</from>
+                    <to>m $1 $2 $3, t $3 $4 $5.</to>
+                    <label>m colour sleeve pattern et t colour cap pattern colour</label>
+                    </expand>
+         <expand>
+                    <from>m et t ($COLOUR_LIST)</from>
+                    <to>m $1, t $1</to>
+                    <label>m et t colour</label>
+                    </expand>
+         <expand>
+                    <from>($COLOUR_LIST)+ m ($COLOUR_LIST)+</from>
+                    <to>$1, m $2</to>
+                    <label>colour m colour</label>
+                    </expand>
+           <expand>
+                    <from>($COLOUR_LIST)+ t ($COLOUR_LIST)+</from>
+                    <to>$1, t $2</to>
+                    <label>colour t colour</label>
+                    </expand>
+                    
+    </language>
+</expands>

@@ -1,0 +1,16 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="300" viewBox="0 0 260 300">
+<defs>
+   <linearGradient id="colour0">
+     <stop offset="100%" stop-color="gray"/>
+   </linearGradient>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="red"/>
+   </linearGradient>
+</defs>
+<g>
+<path d="m 6.5,6.5 0,70.556376999999983 C 6.5,217.94823 110.38712,282.97591 130,293.5 c 19.61288,-10.52409 123.5,-75.55177 123.5,-216.443623 L 253.5,6.5 6.5,6.5 z" style="fill:black;" />
+<path transform="scale(0.35) translate(40, 50)" style="fill:yellow;" d="m48,234 73-226 73,226-192-140h238z"/>     
+<path transform="scale(0.35) translate(440, 50)" style="fill:yellow;" d="m48,234 73-226 73,226-192-140h238z"/>     
+<path transform="scale(0.35) translate(240, 400)" style="fill:yellow;" d="m48,234 73-226 73,226-192-140h238z"/>     
+</g>     
+</svg>

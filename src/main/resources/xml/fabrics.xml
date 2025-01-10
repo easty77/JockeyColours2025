@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : fabrics.xml
+    Created on : 27 June 2012 10:06
+    Author     : Simon
+    Description:
+        Purpose of the document follows.
+-->
+
+<fabrics>
+    <language id="en">
+
+    <fabric id="anderson tartan" class="ENETartanItem" data="Anderson" />
+    <fabric id="baillie tartan" class="ENETartanItem" data="Baillie" />
+    <fabric id="barclay tartan" class="ENETartanItem" data="Barclay_Dress" />
+    <fabric id="blackwatch tartan" class="ENETartanItem" data="Black_Watch" />
+    <fabric id="buchanan tartan" class="ENETartanItem" data="Buchanan" />
+    <fabric id="cameron tartan" class="ENETartanItem" data="Cameron" />
+    <fabric id="campbell tartan" class="ENETartanItem" data="Campbell" />
+    <fabric id="colquhoun tartan" class="ENETartanItem" data="Colquhoun" />
+    <fabric id="comyn tartan" class="ENETartanItem" data="Comyn" />
+    <fabric id="cumming tartan" class="ENETartanItem" data="Cumming" />
+    <fabric id="davidson tartan" class="ENETartanItem" data="Davidson" />
+    <fabric id="douglas tartan" class="ENETartanItem" data="Douglas" />
+    <fabric id="duff tartan" class="ENETartanItem" data="MacDuff" />
+    <fabric id="ferguson tartan" class="ENETartanItem" data="Ferguson_of_Balquhidder" />
+    <fabric id="forbes tartan" class="ENETartanItem" data="Forbes" />
+    <fabric id="fraser tartan" class="ENETartanItem" data="Fraser" />
+    <fabric id="gordon tartan" class="ENETartanItem" data="Gordon" />
+    <fabric id="graham tartan" class="ENETartanItem" data="Graham_of_Menteith" />
+    <fabric id="grant tartan" class="ENETartanItem" data="Grant" />
+    <fabric id="hunting robertson tartan" class="ENETartanItem" data="Robertson" />
+    <fabric id="gunn tartan" class="ENETartanItem" data="Gunn" />
+    <fabric id="hay tartan" class="ENETartanItem" data="Hay" />
+    <fabric id="henderson tartan" class="ENETartanItem" data="Henderson" />
+    <fabric id="inglis tartan" class="ENETartanItem" data="Inglis" />
+    <fabric id="kerr tartan" class="ENETartanItem" data="Kerr" />
+    <fabric id="lamont tartan" class="ENETartanItem" data="Lamont" />
+    <fabric id="leslie tartan" class="ENETartanItem" data="Leslie_Hunting" />
+    <fabric id="lindsay tartan" class="ENETartanItem" data="Lindsay" />
+    <fabric id="macarthur tartan" class="ENETartanItem" data="MacArthur" />
+    <fabric id="macbeth tartan" class="ENETartanItem" data="MacBeth" />
+    <fabric id="macdonald tartan" class="ENETartanItem" data="MacDonald" />
+    <fabric id="macduff tartan" class="ENETartanItem" data="MacDuff" />
+    <fabric id="mcfarlane tartan" class="ENETartanItem" data="MacFarlane" />
+    <fabric id="macgregor tartan" class="ENETartanItem" data="MacGregor" />
+    <fabric id="mackay tartan" class="ENETartanItem" data="MacKay" />
+    <fabric id="macintye tartan" class="ENETartanItem" data="Inglis" />
+    <fabric id="mackenzie tartan" class="ENETartanItem" data="MacKenzie" />
+    <fabric id="mackintosh tartan" class="ENETartanItem" data="MacKintosh" />
+    <fabric id="maclaren tartan" class="ENETartanItem" data="MacLaren" />
+    <fabric id="maclean tartan" class="ENETartanItem" data="MacLean" />
+    <fabric id="mclean hunting tartan" class="ENETartanItem" data="MacLean_VS" />
+    <fabric id="macleod tartan" class="ENETartanItem" data="MacLeod" />
+    <fabric id="macmillan tartan" class="ENETartanItem" data="MacMillan" />
+    <fabric id="macpherson hunting tartan" class="ENETartanItem" data="MacPherson_Hunting" />
+    <fabric id="macqueen tartan" class="ENETartanItem" data="MacQueen" />
+    <fabric id="maxwell tartan" class="ENETartanItem" data="Maxwell" />
+    <fabric id="mcallister tartan" class="ENETartanItem" data="MacAlister" />
+    <fabric id="mcalpine tartan" class="ENETartanItem" data="MacAlpine" />
+    <fabric id="mccallum tartan" class="ENETartanItem" data="MacCallum" />
+    <fabric id="mcculloch or ross hunting tartan" class="ENETartanItem" data="Ross_Hunting" />
+    <fabric id="mcdonald tartan" class="ENETartanItem" data="MacDonald" />
+    <fabric id="mcewen tartan" class="ENETartanItem" data="MacEwan" />
+    <fabric id="mcgregor tartan" class="ENETartanItem" data="MacGregor" />
+    <fabric id="mcintyre tartan" class="ENETartanItem" data="MacIntyre_LC" />
+    <fabric id="mclean tartan" class="ENETartanItem" data="MacLean" />
+    <fabric id="mcpherson tartan" class="ENETartanItem" data="MacPherson" />
+    <fabric id="mclachlan tartan" class="ENETartanItem" data="MacLachlan" comments="Melbourne Cup 1933" />
+    <fabric id="mclaren tartan" class="ENETartanItem" data="MacLaren" />
+    <fabric id="mcleod tartan" class="ENETartanItem" data="MacLeod" />
+    <fabric id="mcneil tartan" class="ENETartanItem" data="MacNeil" />
+    <fabric id="mcneill tartan" class="ENETartanItem" data="MacNeil" />
+    <fabric id="malcolm tartan" class="ENETartanItem" data="Malcolm" />
+    <fabric id="melville tartan" class="ENETartanItem" data="Melville" />
+    <fabric id="montgomerie tartan" class="ENETartanItem" data="Montgomery" />
+    <fabric id="morrison tartan" class="ENETartanItem" data="Morrison" />
+    <fabric id="munro tartan" class="ENETartanItem" data="Munro" />
+    <fabric id="murray tartan" class="ENETartanItem" data="Murray" />
+    <fabric id="nicol tartan" class="ENETartanItem" data="MacNicol" />
+    <fabric id="oliphant tartan" class="ENETartanItem" data="Oliphant" />
+    <fabric id="rob roy tartan" class="ENETartanItem" data="Rob_Roy" />
+    <fabric id="rob roy" class="ENETartanItem" data="Rob_Roy" />
+    <fabric id="ross hunting tartan" class="ENETartanItem" data="Ross_Hunting" />
+    <fabric id="royal stewart tartan" class="ENETartanItem" data="Stewart_Royal" />
+    <fabric id="sinclair tartan" class="ENETartanItem" data="Sinclair" />
+    <fabric id="red sinclair tartan" class="ENETartanItem" data="Sinclair" />
+    <fabric id="robertson tartan" class="ENETartanItem" data="Robertson" />
+    <fabric id="ross tartan" class="ENETartanItem" data="Ross" />
+    <fabric id="royal stuart tartan" class="ENETartanItem" data="Stewart_Royal" />
+    <fabric id="shepherd tartan" class="ENETartanItem" data="Shepherd" />
+    <fabric id="scott tartan" class="ENETartanItem" data="Scott" />
+    <fabric id="scot tartan" class="ENETartanItem" data="Scott" />
+    <fabric id="stewart tartan" class="ENETartanItem" data="Stewart_Dress" />
+    <fabric id="stuart tartan" class="ENETartanItem" data="Stewart_Dress" />
+    <fabric id="sutherland tartan" class="ENETartanItem" data="Sutherland" />
+    <fabric id="wallace tartan" class="ENETartanItem" data="Wallace" />
+    <fabric id="white anderson tartan" class="ENETartanItem" data="Anderson" />
+    <fabric id="dark blue tartan" class="ENETartanItem" data="Arbuthnott" />    <!-- Melbourne Cup -->
+    <fabric id="tartan" class="ENETartanItem" data="Stewart_Royal" />
+
+    <fabric id="shepherd's plaid" class="ENETartanItem" data="Shepherd" />
+    <fabric id="plaid" class="ENETartanItem" data="Shepherd" />
+
+    <fabric id="bird's eye" class="BirdsEye" data="white, blue" />
+    <fabric id="navy blue bird's eye" class="BirdsEye" data="white, navy blue" />
+    <fabric id="blue, white bird's eye" class="BirdsEye" data="blue, white" />
+    <fabric id="navy blue, white bird's eye" class="BirdsEye" data="navy blue, white" />
+    <fabric id="blue bird's eye" class="BirdsEye" data="white, blue" />
+    <fabric id="bird's eye blue" class="BirdsEye" data="white, blue" />
+    <fabric id="bird's eye blue" class="BirdsEye" data="white, blue" />
+    <fabric id="blue and white bird's eye" class="BirdsEye" data="white, blue" />
+    <fabric id="red bird's eye" class="BirdsEye" data="white, red" />
+    <fabric id="pink bird's eye" class="BirdsEye" data="white, pink" />
+    <fabric id="black bird's eye" class="BirdsEye" data="white, black" />
+    <fabric id="black and white bird's eye" class="BirdsEye" data="white, black" />
+    <fabric id="scarlet bird's eye" class="BirdsEye" data="white, scarlet" />
+    <fabric id="maroon bird's eye" class="BirdsEye" data="white, maroon" />
+    <fabric id="green bird's eye" class="BirdsEye" data="white, green" />
+
+    <fabric id="patchwork" class="Patchwork" />
+    <fabric id="jazz" class="Jazz" />
+    </language>
+    <language id="fr">
+    <fabric id="ecossaise" class="ENETartanItem" data="Stewart_Royal" />
+    <fabric id="bleu petits pois blanc" class="BirdsEye" data="white, blue" />
+    </language>
+</fabrics>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="220 360 100 100">
+<defs>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="yellow"/>
+   </linearGradient>
+   <linearGradient id="colour2">
+     <stop offset="100%" stop-color="red"/>
+   </linearGradient>
+ </defs>
+	<g id="MP">
+		
+			<ellipse transform="matrix(1 -4.229313e-004 4.229313e-004 1 -0.174 0.126)" fill="url(#colour1)" cx="297.755" cy="411.395" rx="46.181" ry="44.965"/>
+		<g>
+			<path fill="url(#colour2)" d="M300.555,391.5v42.968h-6.3v-32.356l-8.209,32.356h-5.79l-8.369-32.293v32.293h-6.204V391.5h10.308
+				l7.063,29.896l7.701-29.896H300.555z"/>
+			<path fill="url(#colour2)" d="M318.785,391.5c4.708,0,8.006,0.938,9.895,2.817c1.888,1.886,2.831,5.872,2.831,11.971
+				c0,5.967-0.928,9.9-2.783,11.802c-1.856,1.9-5.054,2.854-9.593,2.854h-6.841v13.524h-6.459V391.5H318.785z M318.88,412.144
+				c1.952,0,3.425-0.163,4.422-0.489c0.997-0.327,1.497-2.117,1.497-5.372c0-2.386-0.313-3.902-0.938-4.555
+				c-0.627-0.648-2.074-0.975-4.344-0.975h-7.223v11.391H318.88z"/>
+		</g>
+	</g>
+   </svg>

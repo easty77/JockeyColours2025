@@ -1,0 +1,23 @@
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" height="2000" width="2000" version="1.1">
+<defs>
+   <linearGradient id="colour0">
+     <stop offset="100%" stop-color="blue"/>
+   </linearGradient>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="yellow"/>
+   </linearGradient>
+   <linearGradient id="colour2">
+     <stop offset="100%" stop-color="red"/>
+   </linearGradient>
+ </defs>
+    <g>
+      <ellipse transform="matrix(1.1777974,0,0,1.2355931,-53.099034,-99.270172)" fill="url(#colour1)"  stroke="none"
+         id="ellipse9"
+         cy="415.767"
+         clip-path="url(#Jacket_CP)"
+         cx="297.301"
+         ry="35.101"
+         rx="36.4" />
+	<path d="M 267,435 283.88645,392 297,429.76458 314.328,392 327,435" fill="none" stroke="url(#colour2)" stroke-width="5" />
+    </g>
+</svg>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 40 30"
+   height="30"
+   width="40">
+  <defs>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="red"/>
+   </linearGradient>
+</defs>     
+  <g
+     transform="translate(-81.90588,-118.08698)"
+     id="layer1">
+    <g transform="scale(1.3193181,0.75796731)">
+      <path fill="url(#colour1)"
+         d="m 90.249568,155.79429 v 38.96887 l -7.154084,-0.17631 v -26.12966 l -3.668596,18.1077 -6.947809,0.0882 -3.040434,-17.5982 v 25.532 l -7.356665,0.17631 v -38.96887 l 11.650201,0.0881 c 0.388116,2.32689 0.800489,5.06815 1.237121,8.22379 l 1.40692,9.84943 2.328698,-18.07322 z" />
+    </g>
+  </g>
+</svg>

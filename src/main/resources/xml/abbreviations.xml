@@ -1,0 +1,438 @@
+﻿<definitions>
+	<language id="en">
+<word value="">
+<abbreviation value="oneach" />
+<abbreviation value="velvet" />       // queen's cap
+<abbreviation value="satin" />       // crimson satin
+<abbreviation value="a" />       // a hooped cap
+</word>
+
+<word value="andrew's"><abbreviation value="andrews" /></word>
+<word value="apple green"><abbreviation value="apple-green" /></word>
+<word value="armlets">
+<abbreviation value="arml." />
+<abbreviation value="armlet" />
+<abbreviation value="armelts" />
+</word>
+<word value="armbands"><abbreviation value="armband" /></word>  
+
+<word value="bari">
+<abbreviation value="barry" />
+<abbreviation value="barri" />
+</word> 
+<word value="bird's"><abbreviation value="birds" /></word>
+<word value="bird's eye">
+<abbreviation value="birds-eye" />
+<abbreviation value="bird's-eye" />
+</word>
+<word value="braid"><abbreviation value="braids" /></word>
+<word value="brick red"><abbreviation value="brick-red" /></word>
+<word value="burgundy"><abbreviation value="burgandy" /></word>
+
+<word value="capucine"><abbreviation value="capucin" /></word>
+<word value="checked"><abbreviation value="checkered" /></word>
+<word value="checks"><abbreviation value="blocks" /></word>
+<word value="chevrons">
+<abbreviation value="cherverons" />
+<abbreviation value="chevons" />
+<abbreviation value="cheverons" />
+</word>
+<word value="collar">
+<abbreviation value="coll" />
+<abbreviation value="coll." />
+</word>
+<word value="cross belts">
+<abbreviation value="crossbelts" />
+<abbreviation value="cross-belts" />
+</word>
+<word value="crossbones"><abbreviation value="cross-bones" /></word>
+
+
+<word value="dark"><abbreviation value="dk" /><abbreviation value="dk." /></word>
+<word value="dark blue">
+<abbreviation value="dkblue" />
+<abbreviation value="darkblue" />
+<abbreviation value="dk.blue" />
+</word>
+<word value="dark green"><abbreviation value="darkgreen" /></word>
+<word value="diabolo">
+<abbreviation value="diabalo" />
+<abbreviation value="diablo" />
+</word>
+
+<word value="eau de nil"><abbreviation value="eau-de-nil" /></word>
+<word value="ecru"><abbreviation value="écru" /></word>
+<word value="emerald">
+<abbreviation value="em" />
+<abbreviation value="em." />
+<abbreviation value="emerlad" />
+<abbreviation value="enerald" />
+</word>
+<word value="emerald green">
+<abbreviation value="emgreen" />
+<abbreviation value="em.green" />
+</word>
+<word value="epaulets">
+<abbreviation value="epauletes" />
+<abbreviation value="epaulet" />
+<abbreviation value="epaulettes" />
+</word>
+<word value="extended triangle"><abbreviation value="extendedtriangle" /></word>
+
+<word value="fern leaf"><abbreviation value="fernleaf" /></word>
+<word value="fleur de lys"><abbreviation value="fleur-de-lys" /></word>
+<word value="fluorescent"><abbreviation value="fluro" /></word>
+<word value="four leaf"><abbreviation value="fourleaf" /></word>     
+
+<word value="green">
+<abbreviation value="grn" />
+</word>
+<word value="grey"><abbreviation value="gray" /></word>
+
+<word value="halved">
+<abbreviation value="hlvd" />
+<abbreviation value="hlvd." />
+<abbreviation value="havled" />
+</word>
+<word value="hooped cap"><abbreviation value="hoopedcap" /></word>
+<word value="horseshoe"><abbreviation value="horse-shoe" /></word>
+<word value="horseshoes"><abbreviation value="horse-shoes" /></word>
+	
+<word value="khaki"><abbreviation value="kharki" /></word>
+<word value="light and"><abbreviation value="ltand" /></word>
+<word value="light"><abbreviation value="lt" /><abbreviation value="lt." /></word>
+<word value="light blue">
+<abbreviation value="ltblue" />
+<abbreviation value="lt.blue" />
+<abbreviation value="lightblue" />
+</word>
+<word value="light green"><abbreviation value="lightgreen" /></word>
+<word value="lys"><abbreviation value="lis" /></word>   // fleur de lis
+
+<word value="mcpherson"><abbreviation value="mcphersen" /></word>
+
+<word value="one"><abbreviation value="1" /></word>
+
+<word value="patrick's"><abbreviation value="patricks" /></word>
+<word value="pom pom"><abbreviation value="pompom" /></word>
+
+<word value="quartered">
+<abbreviation value="qtd" />
+<abbreviation value="qtd." />
+</word>
+<word value="quartered cap">
+<abbreviation value="qtdcap" />
+<abbreviation value="quartecap" />
+</word>
+
+<word value="reseda"><abbreviation value="réséda" /></word>
+<word value="royal blue">
+<abbreviation value="royalblue" />
+<abbreviation value="r/blue" />
+</word>
+
+<word value="sage green"><abbreviation value="sage-green" /></word>
+<word value="sea green"><abbreviation value="sea-green" /></word>
+<word value="seams"><abbreviation value="seam" /></word>
+<word value="shepherd's"><abbreviation value="shepherds" /></word>
+<word value="silver grey"><abbreviation value="silver-grey" /></word>
+<word value="sky blue"><abbreviation value="sky-blue" /></word>
+<word value="sleeves">
+<abbreviation value="slvs" />
+<abbreviation value="slvs." />
+<abbreviation value="sleeeves" />
+<abbreviation value="arms" />
+</word>
+<word value="star"><abbreviation value="sar" /></word>
+<word value="star"><abbreviation value="sta" /></word>
+<word value="stars on"><abbreviation value="starson" /></word>
+
+<word value="tassle">
+<abbreviation value="tassel" />
+<abbreviation value="tassell" />
+</word>
+<word value="terracotta"><abbreviation value="terra-cotta" /></word>
+<word value="three"><abbreviation value="3" /></word>
+<word value="triangular panel"><abbreviation value="tri panel" /></word>
+<word value="tricoloured"><abbreviation value="tri-coloured" /></word>
+<word value="two"><abbreviation value="2" /></word>
+
+<word value="vermillion"><abbreviation value="vermilion" /></word>
+
+<word value="yoke"><abbreviation value="yolk" /></word>  
+</language>
+<language id="fr">
+<word value="">
+<abbreviation value="avec" />
+</word>
+
+<word value="un">
+<abbreviation value="un" />      
+<abbreviation value="une" />      
+<abbreviation value="1" />      
+</word>
+<word value="deux">
+<abbreviation value="2" />      
+</word>
+<word value="trois">
+<abbreviation value="3" />      
+</word>
+<word value="/">
+<abbreviation value=" et " />      
+</word>
+
+<word value="t">
+<abbreviation value="toque" />
+</word>
+
+<word value="saint">
+<abbreviation value="st" />
+</word>
+<word value="andre">
+<abbreviation value="and" />
+</word>
+<word value="saint andre">
+<abbreviation value="st-a" /><abbreviation value="st-and" /><abbreviation value="st-andre" /><abbreviation value="saint-andre" />
+</word>
+<word value="bande">
+<abbreviation value="bde" />
+</word>
+<word value="brandebourgs">
+<abbreviation value="bran" /><abbreviation value="brand" />
+</word>
+<word value="brassards">
+    <abbreviation value="br" />
+    <abbreviation value="bra" />
+    <abbreviation value="bras" />
+    <abbreviation value="brasards" />
+    <abbreviation value="brassads" />
+    <abbreviation value="brass" />
+    <abbreviation value="brassa" />
+    <abbreviation value="brassar" />
+    <abbreviation value="brassard" />
+</word>
+<word value="bretelles">
+<abbreviation value="bretelle" /><abbreviation value="bret" />
+</word>
+<word value="ceinture">
+<abbreviation value="cein" /><abbreviation value="ceint" />
+</word>
+<word value="cerclee">
+<abbreviation value="ce" /><abbreviation value="cerc" /><abbreviation value="cercl" /><abbreviation value="cerclees" /><abbreviation value="cerlcees" />
+</word>
+<word value="cerclee">
+<abbreviation value="cercle" /><abbreviation value="cer" />
+</word>
+<word value="chevron">
+<abbreviation value="chevon" />
+</word>
+<word value="chevronnee">
+<abbreviation value="ch" />
+<abbreviation value="chev" />
+<abbreviation value="chevr" />
+<abbreviation value="chevro" />
+<abbreviation value="chevrons" />
+<abbreviation value="chevronn" />
+<abbreviation value="chevronne" />
+<abbreviation value="chevronnes" />
+<abbreviation value="chevonnees" />
+<abbreviation value="chevronnees" />
+</word>
+<word value="croix">
+<abbreviation value="cr" /><abbreviation value="cx" /><abbreviation value="crx" />
+</word>
+<word value="coutures">
+<abbreviation value="cou" /><abbreviation value="cout" /><abbreviation value="coutu" /><abbreviation value="couture" />
+</word>
+<word value="croissant">
+<abbreviation value="croiss" />
+</word>
+<word value="damier">
+<abbreviation value="dam" /><abbreviation value="damiers" />
+</word>
+<word value="diabolo">
+<abbreviation value="diabolos" /><abbreviation value="diab" /><abbreviation value="diabs" /><abbreviation value="diabo" /><abbreviation value="diabol" />
+</word>
+<word value="disque">
+<abbreviation value="disq" /><abbreviation value="dis" />
+</word>
+<word value="echarpe">
+<abbreviation value="ech" /><abbreviation value="echarp" />
+</word>
+<word value="ecartelee">
+<abbreviation value="ec" /><abbreviation value="eca" /><abbreviation value="ecar" /><abbreviation value="ecart" /><abbreviation value="ecartele" /><abbreviation value="ecartelle" />
+</word>
+<word value="epaulettes">
+<abbreviation value="epau" /><abbreviation value="epaul" /><abbreviation value="epaulet" /><abbreviation value="epaulets" /><abbreviation value="epaulette" />
+</word>
+<word value="etoiles">
+<abbreviation value="etoil" /><abbreviation value="etoi" /><abbreviation value="eto" /><abbreviation value="ets" /><abbreviation value="etoils" />
+</word>
+<word value="lorraine">
+<abbreviation value="lorr" /><abbreviation value="lor" /><abbreviation value="lorrai" />
+</word>
+<word value="losanges">
+<abbreviation value="lo" /><abbreviation value="los" /><abbreviation value="losa" /><abbreviation value="losan" /><abbreviation value="losang" />
+</word>
+<word value="poignets">
+<abbreviation value="poig" /><abbreviation value="poign" />
+</word>
+<word value="pois">
+<abbreviation value="poi" />
+</word>
+<word value="pom pom">
+<abbreviation value="pomp" />
+</word>
+<word value="rayee">
+<abbreviation value="ra" /><abbreviation value="ray" /><abbreviation value="raye" /><abbreviation value="rayees" />
+</word>
+<word value="triangle">
+<abbreviation value="triang" />
+</word>
+
+<word value="argent">
+    <abbreviation value="argentes" />
+    </word>
+<word value="beige">
+    <abbreviation value="bei" /><abbreviation value="beig" /><abbreviation value="beiges" />
+    </word>
+    <word value="blanc">
+    <abbreviation value="bla" />
+    <abbreviation value="blc" />
+    <abbreviation value="blan" />
+    <abbreviation value="blanch" />
+    <abbreviation value="blanche" />
+    <abbreviation value="blanches" />
+    <abbreviation value="blancs" />
+    </word>
+    <word value="bleu">
+    <abbreviation value="bl" /><abbreviation value="ble" /><abbreviation value="bleue" /><abbreviation value="bleues" /><abbreviation value="bleuet" /><abbreviation value="bleus" />
+    </word>
+    <word value="cerise">
+    <abbreviation value="ceri" /><abbreviation value="ceris" />
+    </word>
+    <word value="clair">
+    <abbreviation value="cl" /><abbreviation value="clai" /><abbreviation value="claire" />
+    </word>
+    <word value="bleu clair">
+    <abbreviation value="bleu-clair" />
+    <abbreviation value="bl-c" />
+    <abbreviation value="bl-cl" />
+    <abbreviation value="ble-c" />
+    <abbreviation value="ble-cl" />
+    <abbreviation value="bl-cla" />
+    <abbreviation value="bl-clai" />
+    <abbreviation value="bl-clair" />
+    <abbreviation value="ble-clair" />
+    <abbreviation value="bleu-c" />
+    <abbreviation value="bleu-cl" />
+    <abbreviation value="bleu-cla" />
+    <abbreviation value="bleu-clai" />
+    <abbreviation value="blc" />
+    </word>
+    <word value="ecossaise">
+    <abbreviation value="ecossai" /><abbreviation value="ecossaises" />
+    </word>
+    <word value="fonce">
+    <abbreviation value="f" />
+    </word>
+    <word value="fuchsia">
+    <abbreviation value="fuschi" /><abbreviation value="fuschia" />
+    </word>
+    <word value="grenat">
+    <abbreviation value="gre" /><abbreviation value="gren" /><abbreviation value="grena" /><abbreviation value="grent" /><abbreviation value="gernat" />
+    </word>
+    <word value="gros">
+    <abbreviation value="g" /><abbreviation value="gr" />
+    </word>
+    <word value="gris perle">
+    <abbreviation value="gris-perle" />
+    </word>
+    <word value="gris">
+    <abbreviation value="gri" /><abbreviation value="grise" /><abbreviation value="grises" />
+    </word>
+    <word value="gros bleu">
+        <abbreviation value="gros-bl" />
+        <abbreviation value="gros-ble" />
+        <abbreviation value="gro-bleu" />
+        <abbreviation value="gros-bleu" />
+        <abbreviation value="gros-bleue" />
+        <abbreviation value="g-bl" />
+        <abbreviation value="g-bleu" />
+        <abbreviation value="gr-b" />
+        <abbreviation value="gb" />
+        <abbreviation value="g-b" />
+        <abbreviation value="gr-bl" />
+        <abbreviation value="gr-ble" />
+        <abbreviation value="gr-bleu" />
+    </word>
+    <word value="gros vert">
+        <abbreviation value="gros-ver" />
+        <abbreviation value="gros-vert" />
+        <abbreviation value="gr-ve" />
+        <abbreviation value="gr-vt" />
+        <abbreviation value="gr-ver" />
+        <abbreviation value="gr-vert" />
+        <abbreviation value="g-vert" />
+        <abbreviation value="g-ver" />
+        <abbreviation value="gr-v" />
+        <abbreviation value="g-ve" />
+        <abbreviation value="g-vt" />
+        <abbreviation value="g-v" />
+    </word>
+    <word value="jaune">
+    <abbreviation value="ja" /><abbreviation value="jau" /><abbreviation value="jaun" /><abbreviation value="jaunes" />
+    </word>
+    <word value="marron">
+    <abbreviation value="marr" /><abbreviation value="marro" /><abbreviation value="mar" /><abbreviation value="marro" />
+    </word>
+    <word value="mauve">
+    <abbreviation value="mauv" /><abbreviation value="mauves" /><abbreviation value="mau" />
+    </word>
+    <word value="noir">
+    <abbreviation value="no" /><abbreviation value="noi" /><abbreviation value="noire" /><abbreviation value="noires" /><abbreviation value="noirs" />
+    </word>
+    <word value="orange">
+    <abbreviation value="ora" /><abbreviation value="oran" /><abbreviation value="orang" /><abbreviation value="oranges" />
+    </word>
+    <word value="rose">
+    <abbreviation value="ro" /><abbreviation value="ros" /><abbreviation value="roses" />
+    </word>
+    <word value="rouge">
+    <abbreviation value="rou" />
+    <abbreviation value="roug" />
+    <abbreviation value="rouges" />
+    <abbreviation value="rg" />
+    <abbreviation value="rge" />
+    </word>
+    <word value="turquoise">
+    <abbreviation value="turquoises" />
+    </word>
+    <word value="vert clair">
+    <abbreviation value="v-cl" />
+    <abbreviation value="ve-c" />
+    <abbreviation value="ve-cl" />
+    <abbreviation value="ver-c" />
+    <abbreviation value="ver-cl" />
+    <abbreviation value="vert-c" />
+    <abbreviation value="vert-cl" />
+    <abbreviation value="vert-cla" />
+    <abbreviation value="vert-clai" />
+    <abbreviation value="vert-clair" />
+    <abbreviation value="vt-cl" />
+    </word>
+    <word value="vert">
+    <abbreviation value="v" /><abbreviation value="ve" /><abbreviation value="ver" /><abbreviation value="verte" /><abbreviation value="vertes" /><abbreviation value="verts" /><abbreviation value="vertsrts" />
+    </word>
+    <word value="vieil or">
+    <abbreviation value="vieil-or" />
+    </word>
+    <word value="vieil">
+     <abbreviation value="vi" />
+    </word>
+    <word value="violet">
+    <abbreviation value="vio" /><abbreviation value="viol" /><abbreviation value="viole" /><abbreviation value="violets" /><abbreviation value="violett" /><abbreviation value="violette" /><abbreviation value="violettes" />
+    </word>
+
+</language>
+</definitions>

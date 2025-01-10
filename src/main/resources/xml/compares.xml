@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : compares.xml
+    Created on : 01 September 2011, 08:11
+    Author     : Simon
+    Description:
+        Purpose of the document follows.
+-->
+
+<compares>
+    <language id="en">
+    <jacket>
+         <!--  one red and one green stripe -->
+         <compare id="OneAndOneStripePattern">
+            <match>^($COLOUR_LIST)+, one ($COLOUR_LIST)+ and one ($COLOUR_LIST) stripe+[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="one and one stripes">
+                    <colour id="2" />
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+        <!--  light blue sash with white stripe -->
+         <compare id="SashWithPattern">
+            <match>^($COLOUR_LIST)+, ($COLOUR_LIST)+ sash with ($COLOUR_LIST) ($JACKET_PATTERN_LIST)+[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="sash with+4">
+                    <colour id="2" />
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+        <!-- aqua, orange quarters and black diamond -->
+        	<!--  black and white quartered, emerald green collar -->
+        <compare id="Jacket2Pattern">
+            <match>^($COLOUR_LIST)+[\s]*(and|,|with)+[\s]*($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*(and|,|with)[\s]*($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="4">
+                    <colour id="3" />
+                </pattern>
+                <pattern id="7">
+                    <colour id="6" />
+                </pattern>
+            </process>
+        </compare>
+          	  <!-- Black, white, yellow, grey and brown hoops -->
+        <compare id="FiveColourPattern">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[,\.]+</match>
+            <process>
+        	                String strColour1 = matcher.group(1);
+                String strColour2 = matcher.group(2);
+                String strColour3 = matcher.group(3);
+                String strColour4 = matcher.group(4);
+                String strColour5 = matcher.group(5);
+                String strPattern1 = matcher.group(6);
+                <colour id="1" />
+                <pattern id="6+\4">
+                    <colour id="2" />
+                    <colour id="3" />
+                    <colour id="4" />
+                    <colour id="5" />
+                </pattern>
+            </process>
+        </compare>
+        <!-- blue, yellow, green and red hoop -->
+        <compare id="FourColourPattern">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="5+\3">
+                    <colour id="2" />
+                    <colour id="3" />
+                    <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+	<!--	old gold, purple and green hoops -->
+        <!-- Green; blue and purple hoop on body (as below but with on body)-->
+        <compare id="ThreeColourPatternOnBody">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ on (body|jacket)[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="4" propagate="no">
+                    <colour id="2" />
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+        <compare id="ThreeColourPattern">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[,\.]+</match>
+            <process>
+                <colour id="1" />    
+                <pattern id="4+\2"> <!-- hoops becomes hoops2 -->
+                    <colour id="2" />
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+
+        <compare id="JacketCommaOnJacketPattern">
+            <match>^($COLOUR_LIST)[\s]*,[\s]*($COLOUR_LIST) ($JACKET_PATTERN_LIST) on (body|jacket)[\.,]*</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3" propagate="no">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+<!-- 	 Pink, royal blue chevron -->
+<!-- 	 Mustn't match: Black, grey chevrons on sleeves -->
+        <compare id="JacketCommaPattern">
+            <match>^($COLOUR_LIST)(|\sbody)[\s]*,[\s]*($COLOUR_LIST) ($JACKET_PATTERN_LIST)[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="4">
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+        <!-- white, dynamic syndications logo -->
+        <compare id="JacketCommaNoColourPattern">
+            <match>^($COLOUR_LIST)[\s]*,[\s]*($JACKET_PATTERN_LIST)[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2">
+                </pattern>
+            </process>
+        </compare>
+    <!-- blue, cerise 'ALR' in diamond frame -->
+        <compare id="JacketCommaQuoteOnPattern">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+[\s\w]+'(\w+)' (on|in) ($JACKET_PATTERN_LIST)+[,\.]+</match>
+            <process>
+
+                <colour id="1" />
+                <pattern id="5">
+                    <colour id="1" />
+                </pattern>
+                <pattern id="text">
+                    <colour id="2" />
+                    <text id="3" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- 	 Pink, red 'AP' -->
+<!-- 	 red, white running 'w',  - ignore running or any other description for now -->
+        <compare id="JacketCommaQuotePattern">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+[\s\w]*'(\w+)'[\s\w]*[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="text">
+                    <colour id="2" />
+                    <text id="3" />
+                </pattern>
+            </process>
+        </compare>
+	<!-- 	black 'h' -->
+        <compare id="JacketSecondaryQuotePattern">
+            <match>^($COLOUR_LIST)+ '([\s\w]+)'[,\.]+</match>
+            <process>
+                <pattern id="text">
+                    <colour id="1" />
+                    <text id="2" />
+                </pattern>
+            </process>
+        </compare>
+        <compare id="JacketCommaSplitOnJacketPattern">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*(large|four|five|three|two|one|broad|one broad|three large|narrow|broad|two broad) ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST) on (body|jacket)[,\.]*</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2+4" propagate="no">
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+<!-- 	 Pink, large royal blue spots -->
+        <compare id="JacketCommaSplitPattern">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*(large|four|five|three|two|one|broad|one broad|three large|narrow|broad|two broad|graduated) ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2+4">
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+        <!-- blue, with green and purple stripes -->
+        <compare id="3ColourJacketPattern">
+            <match>^($COLOUR_LIST) (and|with) ($COLOUR_LIST) and ($COLOUR_LIST) ($JACKET_PATTERN_LIST)[\s]*(|,|\.)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="5+\2">
+                    <colour id="3" />
+                    <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+	<!-- 	 black and white checked band -->
+        <compare id="2ColourJacketCheckedPattern">
+            <match>^($COLOUR_LIST)+ (and|with) ($COLOUR_LIST)+ (checked|check) ($JACKET_PATTERN_LIST)+( and| with|,|\.)+</match>
+            <process>
+                <pattern id="checked+5">    <!-- checked implies 2 colours, so no need to add 2 suffix -->
+                    <colour id="1" />
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+	<!-- 	 Pink and light blue, halved - UK, 1920 -->
+        <compare id="2ColourCommaJacketPattern">
+            <match>^($COLOUR_LIST)+ and ($COLOUR_LIST)+, ($JACKET_PATTERN_LIST)+[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+	<!-- 	 red and white stripes -->
+        <compare id="2ColourJacketPattern">
+            <match>^($COLOUR_LIST)+ (and|with) ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+( and| with|,|\.)+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="4">
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+	<!-- 	 Black and tan stripes on body (as above plus on body) -->
+        <compare id="2ColourJacketPatternOnBody">
+            <match>^($COLOUR_LIST)+ (and|with) ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ on (body|jacket)( and| with|,|\.)+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="4" propagate="no">
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+	<!-- 	 white, royal blue diamond on body -->
+        <compare id="ColourPatternOnBody">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ on (body|jacket)[\s]*(,|\.|and|with)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3" propagate="no">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+        <compare id="ColourSplitPatternOnBody">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*(one|two|large) ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ on body[\s]*(,|\.|and|with)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2+4" propagate="no">
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+<!-- 	 cerise with a white circle -->
+        <compare id="ColourWithAPattern">
+            <match>^($COLOUR_LIST)+ with a ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+        <!-- white, dark blue and lime green one two three logo -->
+       <compare id="2ColourLogoPattern">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+ and ($COLOUR_LIST)+[\s]*'([\s\w]*)'[\s]*logo[\s]*(,|and|with|\.)+</match>
+            <process>
+                 <colour id="1" />
+               <pattern id="logo">     <!-- don't currently care how many colours in logo - so don't add 2 suffix -->
+                    <colour id="2" />
+                    <colour id="3" />
+                    <text id="4" />
+                </pattern>
+            </process>
+        </compare>
+        <compare id="ColourLogoPattern">
+            <match>^($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+[\s]*'([\s\w]*)'[\s]*logo[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="logo">
+                    <colour id="2" />
+                    <text id="3" />
+                </pattern>
+            </process>
+        </compare>
+        <compare id="LogoPattern">
+            <match>^($COLOUR_LIST)+[\s]*(,|with|and)[\s]*'([\s\w]*)'[\s]*logo[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="logo">
+                    <colour id="black" />
+                    <text id="3" />
+                </pattern>
+            </process>
+        </compare>
+<!-- Black and yellow stripes, with broad white hoop -->
+        <compare id="SecondarySplitJacketColourPattern">
+            <match>^[\s]*(large|four|five|three|two|one|broad|one broad|three large|narrow|broad|two broad) ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*(,|\.|and|with|$)</match>
+            <process>
+                <pattern id="1+3">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+        <!-- 	 emerald green collar - needs ^ to prevent matching on first pass [,\s\.$]+ -->
+	<!-- BUT NOT white sleeves, dark blue diamonds -->
+        <compare id="SecondaryJacketColourPattern">
+            <match>^[\s]*($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+[\s]*(,|\.|and|with|$)</match>
+            <process>
+                <pattern id="2">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+	<!-- 	 red -->
+        <!-- 20110917 - needs to have terminator else matches "colour pattern", so + not * -->
+        <compare id="JacketColour">
+            <match>^($COLOUR_LIST)[\s]*(,|\.|with|body)+</match>
+            <process>
+                <colour id="1" />
+            </process>
+        </compare>
+         <compare id="JacketColourPatternOnBody">
+            <match>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ on body[\s]*(,|\.|$)+</match>
+            <process>
+                <pattern id="2" propagate="no">
+                    <colour id="1" />
+                </pattern>
+           </process>
+        </compare>
+	<!-- 	 Green and gold; quartered cap - UK, 1920 no pattern specified - assume halved?? -->
+        <compare id="2ColourNoJacketPattern">
+            <match>^($COLOUR_LIST)+ and ($COLOUR_LIST)+[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="halved">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+       
+   </jacket>
+    <!-- this is between jacket and sleeves, so is it ever fired?? Yes! Perhaps need 4th parse for secondary items? -->
+    <!-- 20120927 firing in place of cap pattern, so restrict to start of description -->
+        <compare id="SecondaryJacketPattern">
+            <match>^(with|and|,)*[\s]*($JACKET_PATTERN_LIST)+(,|\.|$)+</match>
+            <process>
+                <pattern id="2">
+                 </pattern>
+            </process>
+        </compare>
+    <sleeves>
+	<!-- SLEEVE PATTERNS -->
+        <!-- 20110907 replace armlet|cuffs with more general SLEEVE_PATTERN_LIST as variations for these in AUS, same for hoop|hoops etc -->
+<!-- TWO PATTERNS -->
+
+<!-- red, purple and gold hooped sleeves -->
+        <compare id="Sleeve3ColourPattern">
+            <match>($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves(,|\.| and)+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="4+\2">
+                    <colour id="2" />
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+<!-- White and Black Striped sleeves with Orange Cuffs -->
+        <compare id="2ColourPatternSleevesWithColourPattern">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves with ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+(,|\.| and)+</match>
+            <process>
+                 <colour id="1" />
+                 <pattern id="3">
+                    <colour id="2" />
+                </pattern>
+                 <pattern id="5">
+                    <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+<!-- red striped sleeves with black band -->
+       <compare id="ColourPatternSleevesWithColourPattern">
+            <match>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves with ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+(,|\.| and)+</match>
+            <process>
+                 <pattern id="2">
+                    <colour id="1" />
+                </pattern>
+                 <pattern id="4">
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+<!-- Yellow sleeves with Green Vee Armband -->
+        <compare id="ColourSleevesWithColourPattern">
+            <match>($COLOUR_LIST)+ sleeves with ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+(,|\.| and)+</match>
+            <process>
+                 <colour id="1" />
+                 <pattern id="3">
+                    <colour id="2" />
+                </pattern>
+             </process>
+        </compare>
+
+<!-- two black hoops on sleeves -->
+        <compare id="SleevesSplitPattern">
+            <match>(large|three|two|one|inverted)+ ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ on sleeves(,|\.| and)+</match>
+            <process>
+                 <pattern id="1+3" propagate="no">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+<!-- Red Sleeves, Teal And Cream Armbands -->
+        <compare id="SleevesComma2ColourPattern">
+            <match>($COLOUR_LIST) sleeves[\s]*(,|with|and)+[\s]*($COLOUR_LIST)+ and ($COLOUR_LIST)+[\s]*($SLEEVE_PATTERN_LIST)+[\s]*(,|\.|and)+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="5+\2">
+                    <colour id="3" />
+                    <colour id="4" />
+               </pattern>
+            </process>
+        </compare>
+
+<!--  red sleeves with one yellow star -->
+<!-- beige sleeves, inverted dark green chevrons -->
+        <compare id="SleevesCommaSplitPattern">
+            <match>($COLOUR_LIST) sleeves[\s]*(,|with|and)+[\s]*(large|three|two|one|inverted)+[\s]*($COLOUR_LIST)+[\s]*($SLEEVE_PATTERN_LIST)+[\s]*(,|\.|and)+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3+5">
+                    <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- white spots on royal blue sleeves -->
+        <compare id="Sleeve2ColourOnPattern">
+            <match>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ on ($COLOUR_LIST)+ sleeves(,|\.| and)+</match>
+            <process>
+                <colour id="3" />
+                <pattern id="2">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+
+	<!-- NEED THIS RULE BECAUSE IMPLIES THAT PATTERN (seams) is only for sleeves -->
+<!-- grey sleeves, yellow seams -->
+<!-- grey sleeves with yellow seams -->
+<!-- 20110909 - make optional , should be applied across the board TO DO -->
+        <compare id="SleevesCommaPattern">
+            <match>($COLOUR_LIST)+ sleeves[\s]*(,|with|and)[\s]*($COLOUR_LIST)*[\s]*($SLEEVE_PATTERN_LIST)+(,|\.| and)+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="4">
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- 	 red sleeves with one yellow star -->
+        <compare id="SleevesSleevesSplitPattern">
+            <match>^($COLOUR_LIST)+ sleeves[\s]*(,|with|and)[\s]*one ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="one+3">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- 	 two black armlets -->
+        <compare id="SleevesSplitPattern">
+            <match>^(large|one|two|three|inverted|graduated)[\s]*($COLOUR_LIST)+[\s]*($SLEEVE_PATTERN_LIST)[,\.]+</match>
+            <process>
+                <pattern id="1+3">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+<!-- yellow and white halved sleeves -->
+        <compare id="Sleeve2ColourPattern">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves(,|\.| and)+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+ <!-- orange halved sleeves -->
+        <compare id="Sleeve1ColourPattern">
+            <match>($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ sleeves(,|\.| and)+</match>
+
+            <process>
+                <pattern id="2">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+<!-- light blue and dark blue diabolo on sleeves -->
+<!-- contrast with, turquoise and black hoop on sleeves -->
+<!-- how to resolve??  special category for SYMMETRICAL patterns??--> 
+       <compare id="Sleeve2ColourSymmetricPatternOn">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+ (diabolo|stripes|hoops) on sleeves(,|\.| and)+</match>
+            <process>
+               <colour id="1" />
+                 <pattern id="3" propagate="no">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+      <compare id="Sleeve2ColourPatternOn">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ on sleeves(,|\.| and)+</match>
+            <process>
+                 <pattern id="3" propagate="no">
+                    <colour id="1" />
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+        <compare id="Sleeve2ColourWithPatternOn">
+            <match>($COLOUR_LIST)+ with ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ on sleeves(,|\.| and)+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3" propagate="no">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- Blue; red and blue sleeves; red cap - UK 1920, no pattern specified assume halved ?? -->
+        <compare id="Sleeve2ColourNoPattern">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+ sleeves[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="halved">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- red diamonds on sleeves -->
+        <compare id="SleeveColourPattern">
+            <match>($COLOUR_LIST) ($SLEEVE_PATTERN_LIST) on sleeves(,|\.| and)</match>
+            <process>
+                <pattern id="2" propagate="no">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- diabolo on sleeves,  NOT SURE EVER USED -->
+        <compare id="SleeveOnPattern">
+            <match>($SLEEVE_PATTERN_LIST)+ on sleeves(,|\.| and)+</match>
+            <process>
+                <pattern id="1" propagate="no">
+                </pattern>
+            </process>
+        </compare>
+
+  <!-- striped sleeves -->
+  <!-- 20110908 - move pattern before colour because quartered matches red! -->
+        <compare id="SleevePattern">
+            <match>($SLEEVE_PATTERN_LIST)+ sleeves(,|\.| and)+</match>
+
+            <process>
+                <pattern id="1">
+                </pattern>
+            </process>
+        </compare>
+
+<!-- yellow sleeves -->
+        <compare id="SleeveColour">
+            <match>($COLOUR_LIST) sleeves(,|\.| and)+</match>
+            <process>
+                <colour id="1" />
+            </process>
+        </compare>
+
+<!--
+        <compare id="TwoColourArmletPattern">
+            <match>($COLOUR_LIST)+, ($COLOUR_LIST)+ and ($COLOUR_LIST)+[\s]*([\w]*) (armlet|armlets|cuffs|armbands)(,|\.| and)+</match>
+            <process>
+                <pattern id="4+5+\3">
+                    <colour id="1" />
+                    <colour id="2" />
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+-->
+        <!-- red and light blue armlet/cuffs -->
+<!-- this list id specifically armlet etc, as otherwise matches on cap pattern before cap gets a chance! -->
+        <compare id="TwoColourArmletPattern">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+[\s]*([\w]*) (armlet|armlets|cuffs|armbands)(,|\.| and)+</match>
+            <process>
+                <pattern id="3+4+\2">
+                    <colour id="1" />
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+        <compare id="CheckedArmletPattern">
+            <match>($COLOUR_LIST)+[\s]*(checked|diamond|chevron|one|vee)+ (armlet|armlets|cuffs|armbands)(,|\.| and)+</match>
+            <process>
+                <pattern id="2+3">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+
+ <!-- red armlet/cuffs -->
+ <!-- this list id specifically armlet etc, as otherwise matches on cap pattern before cap gets a chance! -->
+       <compare id="ArmletPattern">
+            <match>($COLOUR_LIST)+[\s]*(armlet|armlets|cuffs|armbands)(,|\.| and)+</match>
+            <process>
+                <pattern id="2">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- sleeves reversed -->
+        <compare id="SleevesPattern">
+            <match>sleeves ($SLEEVE_PATTERN_LIST)[\s]*(,|\.|and)</match>
+            <process>
+                <pattern id="1">
+                </pattern>
+            </process>
+        </compare>
+
+
+        <!-- white cuffs -->
+        <compare id="SecondarySleevesPatternEnd">
+            <match>^[\s]*($COLOUR_LIST) ($SLEEVE_PATTERN_LIST)[\s]*(\.|$)</match>
+            <process>
+                <pattern id="2">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+
+        <!-- SLEEVES - but mustn't match before Cap, need to test this expression for NOT cap -->
+        <!-- NOT cap check does not wqork, so remove - what uses this?
+        <compare id="SecondarySleevesPatternMiddle">
+            <match>(^|and|,)[\s]*($COLOUR_LIST) ($SLEEVE_PATTERN_LIST)[\s]*(,|and)((?!cap).)*</match>
+            <process>
+                <pattern id="3">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare> -->
+   </sleeves>
+
+
+
+    <cap>
+        <!-- black cap, gold stripe, gold tassle -->
+        <compare id="CapPlus2Pattern">
+            <match>($COLOUR_LIST)+ cap, +($COLOUR_LIST) ($CAP_PATTERN_LIST), ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)\.</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3">
+                    <colour id="2" />
+                 </pattern>
+               <pattern id="5">
+                    <colour id="4" />
+                 </pattern>
+            </process>
+        </compare>
+
+<!-- 	red, yellow, royal blue and dark blue quartered cap -->
+        <compare id="FourColourCapPattern">
+            <match>($COLOUR_LIST)+[\s,]+($COLOUR_LIST)+[\s,]+($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($CAP_PATTERN_LIST) cap\.</match>
+            <process>
+                <colour id="1" />
+                <pattern id="5+\3">
+                    <colour id="2" />
+                    <colour id="3" />
+                    <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+
+ <!-- 	 red, white and blue quartered cap -->
+        <compare id="ThreeColourCapPattern">
+            <match>($COLOUR_LIST)+[\s]*,[\s]*($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ cap[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="4+\2">
+                    <colour id="2" />
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- green cap, black stripe, black peak -->
+        <compare id="CapColourPatternPeak">
+            <match>($COLOUR_LIST)+ cap, ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+, ($COLOUR_LIST)+ peak[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3">
+                    <colour id="2" />
+                </pattern>
+               <pattern id="peak">
+                    <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+
+ 	 <!-- emerald green cap and tassle -->
+        <compare id="CapColourPattern">
+            <match>($COLOUR_LIST)+ cap and ($CAP_PATTERN_LIST)+[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+
+ 	 <!-- red and gold halved cap with fleur de lys -->
+        <compare id="Cap2ColourWithPattern">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ cap with[\s]*($COLOUR_LIST)*[\s]*($CAP_PATTERN_LIST)+[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3">
+                    <colour id="2" />
+                </pattern>
+                <pattern id="5">
+                    <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- brown cap with pink and white diamonds -->
+         <compare id="ColourCapWith2ColourPattern">
+            <match>(^|,)($COLOUR_LIST)+ cap with ($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+[,|\.]+</match>
+            <process>
+                 <colour id="2" />
+               <pattern id="5">
+                   <colour id="3" />
+                   <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+
+        <!-- Black sleeves and Checked cap -->
+         <compare id="ColourCapPatternColourPattern">
+            <match>(^|,)($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ cap with ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+[\s]*[,|\.|and ]+</match>
+            <process>
+                <pattern id="3">
+                   <colour id="2" />
+                 </pattern>
+                <pattern id="5">
+                    <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+
+        <!-- quartered cap with black peak  - need check on first char else primrose matches rose!  Can't put ^in [] -->
+        <!-- remove blank as first char option, and add  ColourCapPatternColourPattern -->
+        <compare id="CapPatternColourPattern">
+            <match>(^|,)($CAP_PATTERN_LIST)+ cap with ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+[,|\.|and ]+</match>
+            <process>
+                <pattern id="2">
+                 </pattern>
+                <pattern id="4">
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+
+	 <!-- white and royal blue check cap -->
+         <!-- yellow and blue diamond check cap -->
+        <compare id="Cap2ColourPattern">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ cap[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="3">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+ 	 <!-- royal blue and yellow cap - from US racing, assume to be quartered -->
+         <!-- Dark brown; red and black cap, with gold tassel - UK 1920 -->
+        <compare id="TwoCapColour">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+ cap[ with|,|\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="quartered">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+        <!-- SE 20120119 move after previous, else "black and blue quartered cap, red peak" becomes "red cap, red peak" -->
+        <!-- SE 20120119 remove + after last ] else "red cap, white peak matches red cap, whit as order is irrelevant -->
+        <!-- TO DO remove + from all selections matching on and or with -->
+         <!-- scarlet cap with black star -->
+        <compare id="CapColourColourPattern">
+            <match>(^|,|and)[\s]*($COLOUR_LIST) cap[\s]*(with|and|,)+[\s]*($COLOUR_LIST) ($CAP_PATTERN_LIST)(,|\.|and |with)</match>
+            <process>
+                <colour id="2" />
+                <pattern id="5">
+                    <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+
+         <!-- white cap with pom pom -->
+ 	 <!-- black is temporary, so can see writing -->
+        <compare id="ColourCapWithPattern">
+            <match>^($COLOUR_LIST)+ cap with ($CAP_PATTERN_LIST)+[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2">
+                    <colour id="black" />
+                </pattern>
+            </process>
+        </compare>
+
+	 <!-- green and black emblem star on white cap -->
+        <compare id="OnColourCapPattern">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ on ($COLOUR_LIST)+ cap[,\.]+</match>
+            <process> -->
+                <colour id="4" />
+                <pattern id="3">
+                    <colour id="1" />
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+        <!-- white star on maroon cap -->
+        <compare id="OnColourCapPattern">
+            <match>($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ on ($COLOUR_LIST)+ cap[,\.]+</match>
+            <process> 
+                <colour id="3" />
+                <pattern id="2">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+
+ 	 <!-- scarlet quartered cap -->
+        <!-- 20120602 added (^|and|,)[\s]*, amended 20120620 as cannot get ^ (or \A) to work in an OR condition, but works OK on CapPattern and SecondaryCapPattern!  -->
+        <compare id="ColourCapPattern">
+            <match>^($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ cap[,\.]+</match>
+            <process>
+                <pattern id="2">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+
+
+ 	 <!-- red and blue checked stripe on cap -->
+        <compare id="On2CapPattern">
+            <match>($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ on cap[,\.]+</match>
+            <process>
+                <pattern id="3">
+                    <colour id="1" />
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+ 	 <!-- white cap with red and blue checked stripe -->
+        <compare id="With2CapPattern">
+            <match>($COLOUR_LIST)+ cap[\s]*(with|,)[\s]*($COLOUR_LIST)+ and ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+[,\.]+</match>
+            <process>
+               <colour id="1" />
+               <pattern id="5">
+                    <colour id="3" />
+                    <colour id="4" />
+                </pattern>
+            </process>
+        </compare>
+
+         <!-- white star on cap -->
+        <compare id="OnCapPattern">
+            <match>($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ on cap[,\.]+</match>
+            <process>
+                <pattern id="2">
+                    <colour id="1" />
+                </pattern>
+            </process>
+        </compare>
+
+<!-- 	 gold cap, one maroon hoop -->
+        <compare id="CapSplitPattern">
+            <match>^($COLOUR_LIST)+ cap[\s]*(,|with)[\s]*one ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)[,\.]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="one+4">
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+
+ 	 <!-- tassle on cap -->
+        <compare id="CapOnPattern">
+            <match>($CAP_PATTERN_LIST)+ on cap[,\.]+</match>
+            <process>
+                <pattern id="1">
+                </pattern>
+            </process>
+        </compare>
+
+
+<!-- 	red, white and blue cap - from US racing, assume to be quartered COMMA OPTIONAL FOR NOW -->
+        <compare id="ThreeCapColour">
+            <match>($COLOUR_LIST)+[\s,]+($COLOUR_LIST)+ and ($COLOUR_LIST)+ cap\.</match>
+            <process>
+                <colour id="1" />
+                <pattern id="quartered+\2">
+                    <colour id="2" />
+                    <colour id="3" />
+                </pattern>
+            </process>
+        </compare>
+
+         <!-- royal blue cap -->
+         <!-- moved in front of pattern cap, so rose cap is the colour, not the image -->
+         <!-- needs space, comma or start else red matches before quartered! -->
+        <compare id="CapColour">
+            <match>(^|and|,)[\s]*($COLOUR_LIST)+ cap[,\.]+</match>
+            <process>
+                <colour id="2" />
+            </process>
+        </compare>
+
+         <!-- striped cap -->
+         <!-- 20120602 added (^|and|,)[\s]* -->
+        <compare id="CapPattern">
+            <match>(^|and|,)[\s]*($CAP_PATTERN_LIST)+ cap[,|\.| and| with]</match>
+            <process>
+                <pattern id="2">
+                </pattern>
+            </process>
+        </compare>
+
+
+  	<!-- 	 blue peak - needs ^ to prevent matching on first pass -->
+        <compare id="SecondaryCapPattern">
+            <match>^(with|and|,)*[\s]*($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+[,\.]+</match>
+            <process>
+                <pattern id="3">
+                    <colour id="2" />
+                </pattern>
+            </process>
+        </compare>
+
+    </cap>
+    </language>
+   <language id="fr">
+       <jacket>
+           <!-- Dentee is used two ways, when colour either side it is a chevron hoop -->
+      <compare id="JacketDentee">
+            <match>^($COLOUR_LIST)+ dentee ($COLOUR_LIST)+[,\.\s]+</match>
+            <process>
+                <colour id="1" />
+                <pattern id="chevron hoop">
+                     <colour id="2" />
+               </pattern>
+             </process>
+        </compare>
+      <compare id="TwoJacketPatternSymmetric">
+            <match>^($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ et ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+( m| t|,|\.)</match>
+            <process>
+                <colour id="2" />
+                <pattern id="1">
+                     <colour id="3" />
+               </pattern>
+                <pattern id="4">
+                     <colour id="5" />
+               </pattern>
+            </process>
+        </compare>
+      <compare id="TwoJacketPatternSymmetric">
+            <match>^($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+( | et |\-|/)($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+( m| t|,|\.)</match>
+            <process>
+                <colour id="2" />
+                <pattern id="1">
+                     <colour id="4" />
+               </pattern>
+                <pattern id="5">
+                     <colour id="6" />
+               </pattern>
+            </process>
+        </compare>
+       <compare id="JacketThreeColourPattern">
+            <match>^($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ ($COLOUR_LIST)+ ($COLOUR_LIST)+( m| t|,|\.)</match>
+            <process>
+                <colour id="2" />
+                <pattern id="1+\2">
+                     <colour id="3" />
+                     <colour id="4" />
+               </pattern>
+             </process>
+        </compare>
+       <compare id="JacketTwoColourPatternPatternColour">
+            <match>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ et ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+( m| t|,|\.)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2+\2">
+                     <colour id="3" />
+                     <colour id="4" />
+                </pattern>
+              <pattern id="5">
+                     <colour id="6" />
+                </pattern>
+             </process>
+        </compare>
+       <compare id="JacketTwoColourPattern">
+            <match>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ et ($COLOUR_LIST)+( m| t|,|\.)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2+\2">
+                     <colour id="3" />
+                     <colour id="4" />
+               </pattern>
+             </process>
+        </compare>
+        NOIR CX ST-A CERISE ET VERT POIGN VERT COL CERISE
+       <compare id="TwoJacketColourPattern">
+            <match>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+( m| t|,|\.)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2">
+                     <colour id="3" />
+               </pattern>
+                <pattern id="4">
+                     <colour id="5" />
+               </pattern>
+            </process>
+        </compare>
+       <compare id="TwoJacketPattern">
+            <match>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST)+ et ($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+( m| t|,|\.)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2">
+                     <colour id="4" />
+               </pattern>
+                <pattern id="3">
+                     <colour id="4" />
+               </pattern>
+            </process>
+        </compare>
+        <compare id="JacketColour">
+            <match>^($COLOUR_LIST)[\s]*(,|\.)+</match>
+            <process>
+                <colour id="1" />
+            </process>
+        </compare>
+       <compare id="JacketPatternSymmetric">
+            <match>^($JACKET_PATTERN_LIST)+ ($COLOUR_LIST)+( | et |\-|/)($COLOUR_LIST)+[\s]*(,|\.)</match>
+            <process>
+                <colour id="2" />
+                <pattern id="1">
+                     <colour id="4" />
+               </pattern>
+            </process>
+        </compare>
+       <compare id="JacketPattern">
+            <match>^($COLOUR_LIST)+ ($JACKET_PATTERN_LIST|$SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+[\s]*(,|\.)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2">
+                     <colour id="3" />
+               </pattern>
+            </process>
+        </compare>
+           
+       </jacket>
+       <sleeves>
+       <compare id="SleeveTwoColourPattern">
+            <match>m ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+ et ($COLOUR_LIST)+(,|\.)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2+\2">
+                     <colour id="3" />
+                     <colour id="4" />
+               </pattern>
+             </process>
+        </compare>
+        <!-- M CHEVR VERT OR BRASS VERT -->
+        <compare id="TwoSleeve2ColourPattern">
+            <match>m ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+( | et )($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+( |,|\.)</match>
+            <process>
+                <colour id="2" />
+                <pattern id="1">
+                     <colour id="4" />
+               </pattern>
+                <pattern id="5">
+                     <colour id="6" />
+               </pattern>
+            </process>
+        </compare>
+        <compare id="TwoSleevePattern">
+            <match>m ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ et ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+( |,|\.)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2">
+                     <colour id="4" />
+               </pattern>
+                <pattern id="3">
+                     <colour id="4" />
+               </pattern>
+            </process>
+        </compare>
+       <compare id="SleevesPatternSymmetric">
+            <match>m ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+( | et |\-|/)($COLOUR_LIST)+[\s]*(,|\.)</match>
+            <process>
+                <colour id="2" />
+                <pattern id="1">
+                     <colour id="4" />
+               </pattern>
+            </process>
+        </compare>
+        <compare id="SleevesPattern">
+            <match>m ($COLOUR_LIST)+ ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+[\s]*(,|\.)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2">
+                     <colour id="3" />
+               </pattern>
+            </process>
+        </compare>
+       <compare id="SleevesPatternOnly">
+            <match>m ($SLEEVE_PATTERN_LIST)+ ($COLOUR_LIST)+[\s]*(,|\.)</match>
+            <process>
+                <pattern id="2">
+                     <colour id="3" />
+               </pattern>
+            </process>
+        </compare>
+       <compare id="SleeveColour">
+            <match>^m ($COLOUR_LIST)[\s]*(,|\.)+</match>
+            <process>
+                <colour id="1" />
+            </process>
+        </compare>
+      </sleeves>
+       <cap>
+           <!-- T CERCLEE GRENAT ET OR GLAND OR -->
+        <compare id="TwoSleeve2ColourPattern">
+            <match>t ($CAP_PATTERN_LIST)+ ($COLOUR_LIST)+( | et )($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ ($COLOUR_LIST)+( |,|\.)</match>
+            <process>
+                <colour id="2" />
+                <pattern id="1">
+                     <colour id="4" />
+               </pattern>
+                <pattern id="5">
+                     <colour id="6" />
+               </pattern>
+            </process>
+        </compare>
+        <compare id="CapColourPeak">
+            <match>(^|\s|,)t ($COLOUR_LIST)+[\s]+p ($COLOUR_LIST)+(,|\.)+</match>
+            <process>
+                <colour id="2" />
+                <pattern id="peak">
+                     <colour id="3" />
+               </pattern>
+            </process>
+        </compare>
+        <compare id="CapColour">
+            <match>(^|\s|,)t ($COLOUR_LIST)+[\s]*(,|\.)+</match>
+            <process>
+                <colour id="2" />
+            </process>
+        </compare>
+       <compare id="CapPatternSymmetric">
+            <match>t ($CAP_PATTERN_LIST)+ ($COLOUR_LIST)+( | et |\-|/)($COLOUR_LIST)+[\s]*(,|\.)</match>
+            <process>
+                <colour id="2" />
+                <pattern id="1">
+                     <colour id="4" />
+               </pattern>
+            </process>
+        </compare>
+        <compare id="CapPattern">
+            <match>t ($COLOUR_LIST)+ ($CAP_PATTERN_LIST)+ ($COLOUR_LIST)+[\s]*(,|\.)</match>
+            <process>
+                <colour id="1" />
+                <pattern id="2">
+                     <colour id="3" />
+               </pattern>
+            </process>
+        </compare>
+       </cap>
+   </language>
+</compares>
+ 

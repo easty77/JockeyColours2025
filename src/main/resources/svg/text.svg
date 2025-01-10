@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 120 50" xml:space="preserve">
+<defs>
+  <linearGradient id="colour1">
+     <stop offset="100%" stop-color="red"/>
+   </linearGradient>
+</defs>
+<g id="text" fill="url(#colour1)" stroke="none">
+    <text id="text_content" x="0" y="0" font-family="Arial" font-size="80" font-style="bold">%TEXT%</text>
+</g>
+</svg>

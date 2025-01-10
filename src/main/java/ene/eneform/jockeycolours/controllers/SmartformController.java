@@ -5,7 +5,6 @@
 
 package ene.eneform.jockeycolours.controllers;
 
-import ene.eneform.smartform.bos.SmartformEnvironment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SmartformController {
     @GetMapping("/resetEnvironment")
     public String resetEnvironment(ModelMap model) {
-        SmartformEnvironment.getInstance().reset();
+ //      SmartformEnvironment.getInstance().reset();
         model.put("message", "resetEnvironment");
         return "message";
     }

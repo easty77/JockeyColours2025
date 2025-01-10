@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="91pt"
+   height="137pt"
+   id="svg2">
+	 <defs>
+   <linearGradient id="colour0">
+     <stop offset="100%" stop-color="white"/>
+   </linearGradient>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="#010080"/>
+   </linearGradient>
+ </defs>
+  <g
+     transform="translate(0,-0.100003)"
+     id="g4761">
+    <g
+       transform="translate(134.2849,6)"
+       id="g4751">
+      <path
+         d="M 69.65815 -108.6887 A 30.910805 30.910805 0 1 1  7.8365402,-108.6887 A 30.910805 30.910805 0 1 1  69.65815 -108.6887 z"
+         transform="matrix(1.110573,0,0,1.110573,-120.3288,181.2382)"
+         style="fill:url(#colour1);fill-opacity:1"
+         id="path3872" />
+      <path
+         d="M -136.71609 26.685387 A 10.380296 10.380296 0 1 1  -157.47669,26.685387 A 10.380296 10.380296 0 1 1  -136.71609 26.685387 z"
+         transform="matrix(2.158536,0,0,2.158536,240.2158,2.930099)"
+         style="fill:url(#colour0);fill-opacity:1"
+         id="path3876" />
+    </g>
+    <rect
+       width="11.955668"
+       height="170.33575"
+       x="51.010044"
+       y="0.91424847"
+       style="fill:url(#colour1);fill-opacity:1"
+       id="rect1328" />
+    <rect
+       width="113.05375"
+       height="11.103493"
+       x="0.46100253"
+       y="60.979721"
+       style="fill:url(#colour1);fill-opacity:1"
+       id="rect2203" />
+  </g>
+</svg>

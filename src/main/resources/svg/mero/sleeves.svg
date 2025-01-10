@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="300 200 100 350" xml:space="preserve">
+<defs>
+   <linearGradient id="colour0">
+     <stop offset="100%" stop-color="gray"/>
+   </linearGradient>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="red"/>
+   </linearGradient>
+   <linearGradient id="colour2">
+     <stop offset="100%" stop-color="orange"/>
+   </linearGradient>
+   <linearGradient id="colour3">
+     <stop offset="100%" stop-color="yellow"/>
+   </linearGradient>
+   <linearGradient id="colour4">
+     <stop offset="100%" stop-color="blue"/>
+   </linearGradient>
+   <linearGradient id="colour5">
+     <stop offset="100%" stop-color="green"/>
+   </linearGradient>
+   <linearGradient id="colour6">
+     <stop offset="100%" stop-color="pink"/>
+   </linearGradient>
+<pattern height="200" id="Harlequin_sleeves_PT" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="200" patternTransform="scale(0.5 0.5)">
+      <polygon points="50,-50 25,0 50,50 75,0" fill="url(#colour2)" style="stroke:black;stroke-width:0"/> <!-- 3 -->
+      <polygon points="25,0 0,50 25,100 50,50" fill="url(#colour0)" style="stroke:black;stroke-width:0"/>  <!-- 1 -->
+      <polygon points="75,0 50,50 75,100 100,50" fill="url(#colour3)" style="stroke:black;stroke-width:0"/>   <!-- 4 -->
+      <polygon points="25,100 0,150 25,200 50,151" fill="url(#colour3)" style="stroke:black;stroke-width:0"/>
+      <polygon points="75,100 50,150 75,200 100,150" fill="url(#colour0)" style="stroke:black;stroke-width:0"/>
+      <polygon points="125,0 100,50 125,100 150,50" fill="url(#colour0)" style="stroke:black;stroke-width:0"/>
+      <polygon points="175,0 150,50 175,100 200,50" fill="url(#colour3)" style="stroke:black;stroke-width:0"/>
+      <polygon points="100,50 75,100 100,150 125,100" fill="url(#colour4)" style="stroke:black;stroke-width:0"/>
+      <polygon points="175,100 150,150 175,200 200,150" fill="url(#colour0)" style="stroke:black;stroke-width:0"/>
+      <polygon points="125,100 100,150 125,200 150,150" fill="url(#colour3)" style="stroke:black;stroke-width:0"/>
+      <polygon points="50,50 25,100 50,150 75,100" fill="url(#colour1)" style="stroke:yellow;stroke-width:0"/>			<!-- 2 -->
+      <polygon points="150,50 125,100 150,150 175,100" fill="url(#colour1)" style="stroke:black;stroke-width:0"/>   
+      <polygon points="0,50 -25,100 0,150 25,100" fill="url(#colour5)" style="stroke:black;stroke-width:0"/>
+      <polygon points="200,50 175,100 200,150 225,100" fill="url(#colour5)" style="stroke:black;stroke-width:0"/>
+      <polygon points="0,-50 -25,0 0,50 25,0" fill="url(#colour4)" style="stroke:white;stroke-width:0"/>	
+      <polygon points="100,-50 75,0 100,50 125,0" fill="url(#colour1)" style="stroke:black;stroke-width:0"/>		
+      <polygon points="150,-50 125,0 150,50 175,0" fill="url(#colour5)" style="stroke:black;stroke-width:0"/>
+      <polygon points="200,-50 175,0 200,50 225,0" fill="url(#colour4)" style="stroke:white;stroke-width:0"/>	
+      <polygon points="50,150.475 25,200.475 50,250 75,200" fill="url(#colour2)" style="stroke:black;stroke-width:0"/>
+      <polygon points="0,150 -25,200 0,250 25,200" fill="url(#colour4)" style="stroke:white;stroke-width:0"/>				
+      <polygon points="100,150 75,200 100,250 125,200" fill="url(#colour1)" style="stroke:black;stroke-width:0"/>   
+      <polygon points="150,150 125,200 150,250 175,200" fill="url(#colour5)" style="stroke:black;stroke-width:0"/>
+      <polygon points="200,150 175,200 200,250 225,200" fill="url(#colour4)" style="stroke:white;stroke-width:0"/>	
+    </pattern>
+<pattern id="Sleeves_check_PT" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="scale(20,20)">
+<rect x="0" y="0" width="5" height="5" fill="url(#colour0)" />
+<path d="M0,0V5H1V0zM2,0V5H3V0zM4,0V5H5V0zM0,0H5V1H0zM0,2H5V3H0zM0,4H5V5H0z" fill="url(#colour1)" fill-rule="evenodd" />
+</pattern>
+<pattern id="Sleeves_hoops_PT" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="translate(0 20) scale(1,25)">
+<rect x="0" y="0" width="5" height="5" fill="url(#colour0)" />
+<path d="M0,0H5V1H0zM0,2H5V3H0zM0,4H5V5H0z" fill="url(#colour1)" fill-rule="evenodd" />
+</pattern>
+<pattern id="Sleeves_hoops3_PT" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="scale(1,25)">
+<rect x="0" y="0" width="6" height="6" fill="url(#colour0)" />
+<path d="M0,0H6V1H0z" fill="url(#colour1)" fill-rule="evenodd" />
+<path d="M0,1H6V2H0z" fill="url(#colour2)" fill-rule="evenodd" />
+<path d="M0,3H6V4H0z" fill="url(#colour1)" fill-rule="evenodd" />
+<path d="M0,4H6V5H0z" fill="url(#colour2)" fill-rule="evenodd" />
+</pattern>
+<pattern id="Sleeves_hoops4_PT" x="0" y="0" width="6" height="8" patternUnits="userSpaceOnUse" patternTransform="translate(0,-70) scale(1,25)">
+<rect x="0" y="0" width="6" height="8" fill="url(#colour0)" />
+<path d="M0,2H6V4H0z" fill="url(#colour1)" fill-rule="evenodd" />
+<path d="M0,4H6V6H0z" fill="url(#colour2)" fill-rule="evenodd" />
+<path d="M0,6H6V8H0z" fill="url(#colour3)" fill-rule="evenodd" />
+</pattern>
+<pattern id="Sleeves_stripes_top_left_PT" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="translate(5,0) rotate(10) scale(10,1)">
+<rect x="0" y="0" width="5" height="5" fill="url(#colour0)" />
+<path d="M0,0V5H1V0zM2,0V5H3V0zM4,0V5H5V0z" fill="url(#colour1)" fill-rule="evenodd" />
+</pattern>
+<pattern id="Sleeves_stripes_top_right_PT" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="translate(11,0) rotate(-10) scale(10,1)">
+<rect x="0" y="0" width="5" height="5" fill="url(#colour0)" />
+<path d="M0,0V5H1V0zM2,0V5H3V0zM4,0V5H5V0z" fill="url(#colour1)" fill-rule="evenodd" />
+</pattern>
+<pattern id="Sleeves_stripes_bottom_left_PT" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="translate(0.5, 0)rotate(-2) scale(10,1)">
+<rect x="0" y="0" width="5" height="5" fill="url(#colour0)" />
+<path d="M0,0V5H1V0zM2,0V5H3V0zM4,0V5H5V0z" fill="url(#colour1)" fill-rule="evenodd" />
+</pattern>
+<pattern id="Sleeves_stripes_bottom_right_PT" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="translate(4,0) rotate(2) scale(10,1)">
+<rect x="0" y="0" width="5" height="5" fill="url(#colour0)" />
+<path d="M0,0V5H1V0zM2,0V5H3V0zM4,0V5H5V0zz" fill="url(#colour1)" fill-rule="evenodd" />
+</pattern>
+<pattern id="cuffs_check_PT" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(35 0 0) scale(10,10)">
+<rect x="0" y="0" width="5" height="5" fill="url(#colour1)" />
+<path d="M0,0V5H1V0zM2,0V5H3V0zM4,0V5H5V0zM0,0H5V1H0zM0,2H5V3H0zM0,4H5V5H0z" fill="url(#colour2)" fill-rule="evenodd" />
+</pattern>
+<path id="Sleeves_Right" fill="url(#colour0)" stroke="none" d="M367.582,330.111l-17.986,39.438l6.512,145.262l30.818,4.365l12.846-96.311 C394.809,381.977,391.371,364.205,367.582,330.111L367.582,330.111z"/>
+<path id="Sleeves_Left" fill="url(#colour0)" stroke="none" d="M227.929,330.111l17.985,39.438l-6.511,145.262 l-30.818,4.365l-12.846-96.311C200.703,381.977,204.14,364.205,227.929,330.111L227.929,330.111z"/>
+<clipPath id="Sleeves_CP">
+        <use xlink:href="#Sleeves_Path"  overflow="visible"/>
+</clipPath>
+<clipPath id="Sleeves_Left_CP">
+        <use xlink:href="#Sleeves_Left"  overflow="visible"/>
+</clipPath>
+<clipPath id="Sleeves_Right_CP">
+        <use xlink:href="#Sleeves_Right"  overflow="visible"/>
+</clipPath>
+<clipPath id="cuffs_CP">
+        <use xlink:href="#Cuffs" overflow="visible"/>
+</clipPath>
+</defs>
+<g id="Sleeves" fill="url(#colour0)" stroke="none" clip-path="url(#Sleeves_CP)">
+<path id="Sleeves_Path" d="M367.582,330.111l-17.986,39.438l6.512,145.262l30.818,4.365l12.846-96.311
+				C394.809,381.977,391.371,364.205,367.582,330.111L367.582,330.111z M227.929,330.111l17.985,39.438l-6.511,145.262
+				l-30.818,4.365l-12.846-96.311C200.703,381.977,204.14,364.205,227.929,330.111L227.929,330.111z"/>
+</g>
+<!-- New Patterns -->
+<rect id="Hooped_Sleeves_2016" display="none" clip-path="url(#Sleeves_CP)" fill="url(#Sleeves_hoops_PT)" stroke="none" x="180" y="350" width="240" height="170" />
+<rect id="Hooped_Sleeves_3_colour" display="none" clip-path="url(#Sleeves_CP)" fill="url(#Sleeves_hoops3_PT)" stroke="none" x="180" y="330" width="240" height="190" />
+<rect id="Hooped_Sleeves_4_colour" display="none" clip-path="url(#Sleeves_CP)" fill="url(#Sleeves_hoops4_PT)" stroke="none" x="180" y="330" width="240" height="190" />
+<rect id="Two_Hoops" display="none" clip-path="url(#Sleeves_CP)" fill="url(#Sleeves_hoops_PT)" stroke="none" x="180" y="350" width="240" height="120" />
+<rect id="Sleeves_Check" display="none" clip-path="url(#Sleeves_CP)" fill="url(#Sleeves_check_PT)" stroke="none" x="180" y="330" width="240" height="190" />
+<rect id="Halved" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="none" fill-rule="evenodd" clip-rule="evenodd" x="196" y="421" width="203" height="97"/>
+<g id="Striped_Sleeves_2016">
+<rect clip-path="url(#Sleeves_CP)" fill="url(#Sleeves_stripes_bottom_left_PT)" stroke="none" fill-rule="evenodd" clip-rule="evenodd" x="196" y="420" width="50" height="97"/>
+<rect clip-path="url(#Sleeves_CP)" fill="url(#Sleeves_stripes_bottom_right_PT)" stroke="none" fill-rule="evenodd" clip-rule="evenodd" x="350" y="420" width="50" height="97"/>
+<rect clip-path="url(#Sleeves_CP)" fill="url(#Sleeves_stripes_top_left_PT)" stroke="none" fill-rule="evenodd" clip-rule="evenodd" x="196" y="330" width="50" height="91"/>
+<rect clip-path="url(#Sleeves_CP)" fill="url(#Sleeves_stripes_top_right_PT)" stroke="none" fill-rule="evenodd" clip-rule="evenodd" x="350" y="330" width="50" height="91"/>
+</g>
+<!-- Patterns -->
+<g id="Star_Sleeves" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="none">
+			<polygon id="Star_6_" display="inline" points="384.961,357.428 385.596,376.037 367.943,382.39 386.014,387.61
+				386.504,406.256 396.969,390.794 			"/>
+			<polygon id="Star_7_" display="inline" points="398.024,431.138 392.557,448.938 373.799,449.185
+				389.177,460.013 383.559,477.8 398.493,466.596 			"/>
+			<polygon id="Star_8_" display="inline" points="211.269,355.521 209.974,374.097 227.389,381.071
+				209.146,385.647 207.994,404.264 198.085,388.44 			"/>
+			<polygon id="Star_9_" display="inline" points="198.256,431.033 204.497,448.577 223.249,448.005
+				208.357,459.495 214.747,477.019 199.336,466.478 			"/>
+		</g>
+<g id="Diamond_Sleeves" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="none">
+			<g id="Diamonds_3_" display="inline">
+				<g>
+					<polygon points="206.433,503.358 220.522,517.891 231.066,498.527 216.978,483.992 					"/>
+					<polygon points="195.628,402.133 209.716,416.666 220.261,397.3 206.172,382.766 					"/>
+					<polygon points="199.178,436.086 213.266,450.616 223.811,431.254 209.722,416.721 					"/>
+					<polygon points="202.753,469.935 216.842,484.467 227.386,465.103 213.298,450.571 					"/>
+					<polygon points="192.077,368.173 206.166,382.708 216.71,363.343 202.622,348.808 					"/>
+					<polygon points="231.176,498.505 245.265,513.038 255.809,493.675 241.721,479.14 					"/>
+					<polygon points="220.371,397.279 234.459,411.812 245.004,392.447 230.915,377.912 					"/>
+					<polygon points="223.92,431.232 238.009,445.766 248.553,426.401 234.465,411.867 					"/>
+					<polygon points="227.496,465.08 241.584,479.615 252.129,460.25 238.041,445.717 					"/>
+				</g>
+				<polygon points="216.82,363.319 230.909,377.855 241.453,358.489 227.364,343.956 				"/>
+				<polygon points="213.14,329.897 227.229,344.433 237.773,325.067 223.684,310.535 				"/>
+				<polygon points="192.077,368.173 206.166,382.708 216.71,363.343 202.622,348.808 				"/>
+				<polygon points="241.375,358.582 255.465,373.115 266.009,353.75 251.92,339.215 				"/>
+			</g>
+			<g id="Diamonds_2_" display="inline">
+				<g>
+					<polygon points="388.719,502.533 374.189,516.197 364.081,499.005 378.609,485.339 					"/>
+					<polygon points="402.138,410.379 387.61,424.044 377.5,406.851 392.028,393.185 					"/>
+					<polygon points="397.712,441.287 383.184,454.951 373.073,437.759 387.603,424.093 					"/>
+					<polygon points="393.262,472.101 378.734,485.766 368.625,468.572 383.152,454.909 					"/>
+					<polygon points="406.565,379.467 392.036,393.133 381.927,375.938 396.456,362.273 					"/>
+					<polygon points="363.971,498.989 349.442,512.653 339.334,495.461 353.861,481.795 					"/>
+					<polygon points="377.39,406.835 362.862,420.5 352.753,403.307 367.281,389.641 					"/>
+					<polygon points="372.964,437.743 358.437,451.406 348.326,434.215 362.854,420.549 					"/>
+					<polygon points="368.515,468.557 353.986,482.222 343.877,465.028 358.404,451.365 					"/>
+				</g>
+				<polygon points="381.817,375.923 367.289,389.589 357.18,372.395 371.708,358.729 				"/>
+				<polygon points="386.36,345.491 371.833,359.157 361.724,341.964 376.251,328.3 				"/>
+				<polygon points="406.565,379.467 392.036,393.133 381.927,375.938 396.456,362.273 				"/>
+				<polygon points="357.256,372.476 342.727,386.141 332.617,368.947 347.146,355.281 				"/>
+				<polygon points="361.798,342.044 347.27,355.71 337.161,338.516 351.688,324.852 				"/>
+			</g>
+		</g>
+<path id="Single_Stripe_Sleeves" display="none" clip-path="url(#Sleeves_CP)" fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour1)" stroke="none" 
+    d="m 233,342 -4.667,-11.999 -4.167,5 -19.78,90.219 9.18316,64.52188 3.96637,27.32337 9.04824,-1.17368 L 214,425 z m 147.969,84 -11.58271,91.22625 9.38192,1.17369 2.96532,-27.65706 L 390.583,426.221 370,332.834 l -2.666,-3.5 -5.365,13.666 z"   />
+<path id="Striped_Sleeves_Straight" display="none" clip-path="url(#Sleeves_CP)" fill-rule="evenodd" clip-rule="evenodd" fill="#EF1216"  stroke="none"
+      d="M375.305,519.5h-12.044v-197h12.044V519.5z M401,322.5h-12.045v197H401V322.5z M218.305,322.5h-12.044v197h12.044V322.5z
+			 M244,322.5h-12.044v197H244V322.5z"/>
+<path id="Spot_Sleeves_v1" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="none" d="M390.098,376.167
+			c0,6.865-5.564,12.431-12.431,12.431s-12.432-5.565-12.432-12.431s5.565-12.432,12.432-12.432S390.098,369.302,390.098,376.167z
+			 M385.874,415.058c-6.866,0-12.432,5.566-12.432,12.432s5.565,12.431,12.432,12.431s12.431-5.565,12.431-12.431
+			S392.74,415.058,385.874,415.058z M377.668,475.069c-6.866,0-12.432,5.566-12.432,12.432s5.565,12.431,12.432,12.431
+			c6.865,0,12.431-5.565,12.431-12.431S384.533,475.069,377.668,475.069z M205.109,376.846c0,6.865,5.565,12.431,12.431,12.431
+			s12.432-5.565,12.432-12.431s-5.566-12.432-12.432-12.432S205.109,369.98,205.109,376.846z M196.902,428.168
+			c0,6.865,5.565,12.431,12.431,12.431s12.432-5.565,12.432-12.431s-5.566-12.432-12.432-12.432S196.902,421.303,196.902,428.168z
+			 M205.109,488.18c0,6.865,5.565,12.431,12.431,12.431s12.432-5.565,12.432-12.431s-5.566-12.432-12.432-12.432
+			S205.109,481.314,205.109,488.18z"/>
+<g id="Spot_Sleeves" display="none" fill="url(#colour1)" stroke="none">
+      <path
+     d="m 45.063077,228.43567 a 15.820016,18.216988 0 1 1 -31.640032,0 15.820016,18.216988 0 1 1 31.640032,0 z"
+     transform="matrix(0.80888192,0,0,0.82087114,194.11705,238.12253)"
+      />
+  <path
+     d="m 45.063077,228.43567 a 15.820016,18.216988 0 1 1 -31.640032,0 15.820016,18.216988 0 1 1 31.640032,0 z"
+     transform="matrix(0.80888192,0,0,0.82087114,201.54766,190.12253)"
+      />
+  <path
+     d="m 45.063077,228.43567 a 15.820016,18.216988 0 1 1 -31.640032,0 15.820016,18.216988 0 1 1 31.640032,0 z"
+     transform="matrix(0.80888192,0,0,0.82087114,197.71251,289.12253)"
+      />
+  <path
+     d="m 45.063077,228.43567 a 15.820016,18.216988 0 1 1 -31.640032,0 15.820016,18.216988 0 1 1 31.640032,0 z"
+     transform="matrix(0.80888192,0,0,0.82087114,349.20115,190.12253)"
+      />
+  <path
+     d="m 45.063077,228.43567 a 15.820016,18.216988 0 1 1 -31.640032,0 15.820016,18.216988 0 1 1 31.640032,0 z"
+     transform="matrix(0.80888192,0,0,0.82087114,353.99509,238.12253)"
+      />
+  <path
+     d="m 45.063077,228.43567 a 15.820016,18.216988 0 1 1 -31.640032,0 15.820016,18.216988 0 1 1 31.640032,0 z"
+     transform="matrix(0.80888192,0,0,0.82087114,351.11873,289.12253)"
+      />
+</g>
+<g id="US_Dots_Sleeves" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="url(#colour1)">
+       <circle display="inline" cx="371" cy="358" r="8"/>
+       <circle display="inline" cx="386" cy="432" r="8"/>
+       <circle display="inline" cx="371" cy="500" r="8"/>
+       <circle display="inline" cx="223" cy="358" r="8"/>
+       <circle display="inline" cx="210" cy="432" r="8"/>
+       <circle display="inline" cx="223" cy="500" r="8"/>
+		</g>
+<g id="Circle_Sleeves" display="none" clip-path="url(#Sleeves_CP)" fill="none" stroke="url(#colour1)">
+       <circle display="inline" stroke-width="5" cx="373" cy="405" r="12"/>
+       <circle display="inline" stroke-width="5" cx="222" cy="405" r="12"/>
+ 		</g>
+<g id="Single_Spot_Sleeves" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="none">
+       <circle display="inline" cx="373" cy="405" r="17"/>
+       <circle display="inline" cx="222" cy="405" r="17"/>
+ 		</g>
+<path id="Diagonal_Sleeves" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="none" d="M349.635,368.14l24.057-28.673
+			l10.646,17.37l-33.572,39.805L349.635,368.14z M389.482,500.961l-13.922,16.395l11.365,1.82L389.482,500.961z M398.929,431.681
+			l-44.206,51.531l1.214,28.844l37.612-44.034L398.929,431.681z M392.508,378.311l-40.619,48.102l1.495,28.509l43.999-52.046
+			L392.508,378.311z M244.632,396.475L211.06,356.67l10.646-17.37l24.056,28.673L244.632,396.475z M208.472,519.009l11.365-1.82
+			l-13.922-16.395L208.472,519.009z M201.849,467.854l37.612,44.034l1.214-28.844l-44.206-51.531L201.849,467.854z M198.015,402.708
+			l43.999,52.046l1.495-28.509l-40.619-48.102L198.015,402.708z"/>
+<path id="Arm_Bands" display="none" fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour1)" stroke="none" d="M351.209,404.501l45.125-6.5c0,0,5.166,28.333,3,29
+			c-2.167,0.667-46.668,3.666-46.668,3.666L351.209,404.501z M243.864,404.501l-45.125-6.5c0,0-5.167,28.333-3,29
+			s46.667,3.666,46.667,3.666L243.864,404.501z"/>
+<g id="Armlets_Stripe" display="none">
+<path fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour1)" stroke="none" d="M351.209,404.501l45.125-6.5c0,0,5.166,28.333,3,29
+			c-2.167,0.667-46.668,3.666-46.668,3.666L351.209,404.501z M243.864,404.501l-45.125-6.5c0,0-5.167,28.333-3,29
+			s46.667,3.666,46.667,3.666L243.864,404.501z"/>
+<path clip-path="url(#Sleeves_CP)" fill="none" d="M353 405 L420 398" stroke-width="5.0" transform="translate(0 13)" stroke="url(#colour2)" />
+<path clip-path="url(#Sleeves_CP)" fill="none" d="M242 405 L180 398" stroke-width="5.0" transform="translate(0 13)" stroke="url(#colour2)" />
+</g>
+<g id="Armlets_Piping" display="none">
+<path fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour1)" stroke="none" d="M351.209,404.501l45.125-6.5c0,0,5.166,28.333,3,29
+			c-2.167,0.667-46.668,3.666-46.668,3.666L351.209,404.501z M243.864,404.501l-45.125-6.5c0,0-5.167,28.333-3,29
+			s46.667,3.666,46.667,3.666L243.864,404.501z"/>
+      <path stroke="url(#colour2)" stroke-width="5.0" fill="none" d="M353 404.501 L396.334 398.001 M399.334 427.001 C397.167 427.668 352.666 430.667 354 430.667"/>
+      <path stroke="url(#colour2)" stroke-width="5.0" fill="none" d="M242 404.501 L198.739 398.001 M195.739 427.001 C197.906 427.668 242.406 430.667 241 430.667"/>
+</g>
+<path id="Half_Arm_Band" display="none" fill="url(#colour1)" stroke="none" clip-path="url(#Sleeves_CP)" d="M351.92,417.268l-0.711-12.767l45.125-6.5
+			c0,0,1.23,6.752,2.238,13.741C386,416,351.92,417.268,351.92,417.268z M243.083,418.503l0.78-14.002l-45.125-6.5
+			c0,0-1.265,6.937-2.281,14.026C206.25,415.75,243.083,418.503,243.083,418.503z"/>
+<g id="Arm_Bands_2colour" display="none">
+    <path fill="url(#colour2)" stroke="none" clip-path="url(#Sleeves_CP)" d="M351.209,404.501l45.125-6.5c0,0,5.166,28.333,3,29
+			c-2.167,0.667-46.668,3.666-46.668,3.666L351.209,404.501z M243.864,404.501l-45.125-6.5c0,0-5.167,28.333-3,29
+			s46.667,3.666,46.667,3.666L243.864,404.501z"/>
+    <path fill="url(#colour1)" stroke="none" clip-path="url(#Sleeves_CP)" d="M351.92,417.268l-0.711-12.767l45.125-6.5
+			c0,0,1.23,6.752,2.238,13.741C386,416,351.92,417.268,351.92,417.268z M243.083,418.503l0.78-14.002l-45.125-6.5
+			c0,0-1.265,6.937-2.281,14.026C206.25,415.75,243.083,418.503,243.083,418.503z"/>
+    </g>
+<g id="Arm_Bands1" display="none" fill="url(#colour1)">
+<path id="Arm_Bands_1" clip-path="url(#Sleeves_CP)" d="M351.209,404.501l45.125-6.5c0,0,5.166,28.333,3,29
+			c-2.167,0.667-46.668,3.666-46.668,3.666L351.209,404.501z M243.864,404.501l-45.125-6.5c0,0-5.167,28.333-3,29
+			s46.667,3.666,46.667,3.666L243.864,404.501z"/>
+                        </g>
+<g id="Half_Arm_Band1" display="none" fill="url(#colour1)" stroke="none">
+<path id="Half_Arm_Band_1" clip-path="url(#Sleeves_CP)" d="M351.92,417.268l-0.711-12.767l45.125-6.5
+			c0,0,1.23,6.752,2.238,13.741C386,416,351.92,417.268,351.92,417.268z M243.083,418.503l0.78-14.002l-45.125-6.5
+			c0,0-1.265,6.937-2.281,14.026C206.25,415.75,243.083,418.503,243.083,418.503z"/>
+                        </g>
+<g id="Arm_Bands_2colour1" display="none">
+    <use xlink:href="#Arm_Bands_1" fill="url(#colour1)" stroke="none" />
+    <use xlink:href="#Half_Arm_Band_1" fill="url(#colour2)" stroke="none" />
+    </g>
+<rect id="Halved_2015" x="196.25" y="421" display="none" clip-path="url(#Sleeves_CP)" fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour1)" width="202.667" height="97.333"/>
+<g id="Diamond_Bands" display="none" clip-path="url(#Sleeves_CP)">
+			<g display="inline">
+				<polygon fill="url(#colour1)" points="400.219,414.284 389.174,435.691 376.116,415.45 387.16,394.046 				"/>
+				<polygon fill="url(#colour1)" points="376.219,415.284 365.174,436.691 352.116,416.45 363.16,395.046 				"/>
+			</g>
+			<g display="inline">
+				<polygon fill="url(#colour1)" points="194.886,411.131 205.931,432.537 218.988,412.297 207.944,390.893 				"/>
+				<polygon fill="url(#colour1)" points="218.886,412.131 229.931,433.537 242.988,413.297 231.944,391.893 				"/>
+			</g>
+		</g>
+<path id="Cuffs" display="none" fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour1)" stroke="#999999" d="M240.114,498.951l-0.711,15.859
+		l-30.818,4.365l-3.746-28.084C212.874,495.855,225.703,498.949,240.114,498.951L240.114,498.951z M355.396,498.951l0.711,15.859
+		l30.818,4.365l3.746-28.084C382.637,495.855,369.809,498.949,355.396,498.951L355.396,498.951z"/>
+<g id="checked_cuffs" clip-path="url(#Sleeves_CP)" display="none"><rect clip-path="url(#cuffs_CP)" fill="url(#cuffs_check_PT)" x="200" y="400" width="200" height="200" /></g>
+<g id="Cuffs_2Colours" display="none">
+<path fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour1)" d="M240.114,498.951l-0.711,15.859
+		l-30.818,4.365l-3.746-28.084C212.874,495.855,225.703,498.949,240.114,498.951L240.114,498.951z M355.396,498.951l0.711,15.859
+		l30.818,4.365l3.746-28.084C382.637,495.855,369.809,498.949,355.396,498.951L355.396,498.951z"/>
+<path d="m 240.5859,505.55765 -1.1829,9.25235 -30.818,4.365 -0.67862,-10.15165 c 9.04285,-1.32063 18.38325,-2.76334 32.67952,-3.4657 z m 115.5211,9.25235 30.818,4.365 0.91458,-10.15165 c -5.19613,-0.56453 -14.58213,-2.71964 -31.73572,-3.9376 -1.61901,1.12855 1.69175,7.6754 0.003,9.72425 z"
+         id="Half Cuffs"
+         fill="url(#colour2)" />
+</g>      
+<path id="SE_fat_armlet" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" d="M396.146,390.331l-48.086,8.232l1.779,37.967l3.028-0.242
+			c14.954-1.2,39.216-3.214,45.792-4.199C399.449,431.969,396.146,390.331,396.146,390.331z M194,433.5
+			c6.896,0.996,33.419,1.604,48.204,2.788l3.028,0.242l1.78-37.967l-47.522-8.137C199.49,390.427,193.083,433.367,194,433.5z"/>
+<g id="SE_double_diamond_bands" display="none" clip-path="url(#Sleeves_CP)">
+			<defs>
+				<path id="SVGID_1_"  fill="url(#colour1)" d="M396.146,390.331l-48.086,8.232l1.779,37.967l3.028-0.242c14.954-1.2,39.216-3.214,45.792-4.199
+					C399.449,431.969,396.146,390.331,396.146,390.331z M194,433.5c6.896,0.996,33.419,1.604,48.204,2.788l3.028,0.242l1.78-37.967
+					l-47.522-8.137C199.49,390.427,193.083,433.367,194,433.5z"/>
+			</defs>
+			<use xlink:href="#SVGID_1_"  display="inline" overflow="visible" fill="url(#colour1)"/>
+			<clipPath id="SVGID_2_" display="inline">
+				<use xlink:href="#SVGID_1_"  overflow="visible"/>
+			</clipPath>
+			<path display="inline" fill="url(#colour2)" clip-path="url(#SVGID_2_)" d="M397.592,404.183l-9.547,14.371l-13.202-11.105l9.544-14.373
+				L397.592,404.183z M388.048,418.574l-9.545,14.373l13.202,11.106l9.547-14.372L388.048,418.574z M361.62,396.344l-9.544,14.373
+				l13.202,11.105l9.547-14.371L361.62,396.344z M365.281,421.843l-9.545,14.373l13.203,11.105l9.546-14.371L365.281,421.843z"/>
+			<path display="inline" fill="url(#colour2)" clip-path="url(#SVGID_2_)" d="M210.665,391.829l10.73,13.511l-12.211,12.187l-10.733-13.508
+				L210.665,391.829z M196.971,429.736l10.733,13.509l12.211-12.188l-10.731-13.511L196.971,429.736z M221.413,405.341
+				l10.733,13.509l12.211-12.188l-10.73-13.51L221.413,405.341z M219.933,431.059l10.732,13.509l12.212-12.188l-10.731-13.51
+				L219.933,431.059z"/>
+		</g>
+<path id = "SE_left_arm" display="none" clip-path="url(#Sleeves_CP)" fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour1)" stroke="none" d="M367.582,330.111
+			l-17.986,39.438l6.512,145.262l30.818,4.365l12.846-96.311C394.809,381.977,391.371,364.205,367.582,330.111L367.582,330.111z"/>
+<path id="SE_right_arm" display="none" clip-path="url(#Sleeves_CP)" fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour1)" stroke="none" d="M227.929,330.111
+			l17.985,39.438l-6.511,145.262l-30.818,4.365l-12.846-96.311C200.703,381.977,204.14,364.205,227.929,330.111L227.929,330.111z"/>
+
+<g id="reverse_halved" display="none" fill="url(#colour1)" stroke="none">
+<rect id="top right" x="300" y="321" clip-path="url(#Sleeves_CP)" fill-rule="evenodd" clip-rule="evenodd" width="100" height="100"/>
+<rect id="bottom left" x="196.25" y="421" clip-path="url(#Sleeves_CP)" fill-rule="evenodd" clip-rule="evenodd" width="100" height="97.333"/>
+</g>
+<g id="vertical halves" display="none" fill="url(#colour1)" stroke="none">
+    <path d="m 236.30508,350.11017 -16.22881,74.64407 2.21187,91.92373 17.11486,-1.86597 3.07158,-80.43912 2.77342,-65.82388 z m 123.0678,-1.36091 18.23172,75.31007 -2.88984,93.27965 -17.88976,-3.18798 -2.63566,-76.74422 -4.0887,-68.39075 z"
+       clip-path="url(#Sleeves_CP)" />
+</g>    
+<g id="Diablo_sleeves" display="none" fill="url(#colour1)" stroke="none">
+    <g id="Diablo_2_" clip-path="url(#Sleeves_CP)">
+            <polyline fill-rule="evenodd" clip-rule="evenodd" points="197.232,523.333 219.817,424.695 194,335.333"/>
+            <polygon fill-rule="evenodd" clip-rule="evenodd" points="219.817,424.695 248.333,335.333 241.667,517.667"/>
+    </g>
+    <g id="Diablo_1_" clip-path="url(#Sleeves_CP)">
+            <polyline fill-rule="evenodd" clip-rule="evenodd" points="356.333,519.667 373.817,424.695 348,335.333"/>
+            <polygon fill-rule="evenodd" clip-rule="evenodd" points="373.817,424.695 402.333,335.333 399.101,523.333"/>
+    </g>
+</g>
+<g id="Chevron_Sleeves" display="none" fill="url(#colour1)" stroke="none">
+        <path d="M351.627,414.854l1.178,26.273l19.581-14.795l24.183,19.843l3.203-23.31
+                c-0.104-0.858-0.207-1.692-0.311-2.531l-26.408-21.669L351.627,414.854z"/>
+        <polygon points="362.157,515.982 386.334,520.667 386.417,520.06 372.2,508.395 		"/>
+        <path d="M379.199,348.25l-5.585-4.583l-0.503,0.38l-18.134,13.701l-5.382,11.801l0.86,19.189l22.597-17.073
+                l21.715,17.818C391.73,374.764,387.388,362.544,379.199,348.25z"/>
+        <polygon points="353.957,466.845 355.152,493.516 371.719,480.999 389.751,495.795 393.266,470.22 372.28,453.001"/>
+        <path d="M196.118,419.771c-0.125,1.02-0.251,2.044-0.379,3.094l2.951,22.126l24.695-18.659l19.274,15.815
+                l1.22-27.213l-19.828-16.27L196.118,419.771z"/>
+        <polygon points="209.011,519.115 232.254,515.823 223.2,508.395 		"/>
+        <path d="M239.79,356.119l-15.176-12.452l-0.503,0.38l-9.438,7.13c-7.098,12.984-11.054,24.463-13.879,38.061
+                l23.258-17.573l20.995,17.227l0.867-19.343L239.79,356.119z"/>
+        <polygon points="201.912,469.146 205.253,494.195 222.719,480.999 240.273,495.403 241.503,467.954 
+                223.28,453.001 		"/>
+</g>
+<g id="Sleeves_Seams" display="none" fill="url(#colour1)" stroke="none">
+     <path d="m 396.337,423.903 -12.665,94.447 -0.067,0.497 0.497,0.065 1.914,0.25 0.493,0.064 0.067,-0.494 12.752,-94.561 0.004,-0.031 v -0.032 l 0.002,-0.252 v -0.031 l -0.004,-0.032 c -5.012,-41.275 -7.985,-59.374 -31.574,-93.181 l -0.078,-0.112 -0.124,-0.057 -1.35,-0.617 c -0.032,-0.013 -0.649,2.723 -0.649,2.723 l -0.242,-0.19 c 22.264,32.973 26.006,50.367 31.023,91.671 l 10e-4,-0.127 z" />
+    <path d="m 230.371,332.02 -1.336,-2.706 c -0.034,0.014 -1.383,0.631 -1.383,0.631 l -0.124,0.057 -0.078,0.112 c -23.589,33.807 -26.563,51.905 -31.574,93.181 l -0.003,0.032 v 0.031 l 0.001,0.252 v 0.032 l 0.004,0.031 12.752,95.144 0.058,0.434 h 0.438 1.958 0.571 l -0.076,-0.566 -12.71,-95.28 0.001,0.127 c 5.027,-41.386 8.831,-58.802 31.739,-91.694 l -0.238,0.182 z" />
+    <path d="m 247.06939,368.5997 -4.76985,1.01694 c -0.26036,-0.51879 -14.63465,-31.77436 -17.49251,-36.93234 l 4.82047,-3.5519 c 4.96579,10.04981 5.09524,10.94741 9.35128,21.10238 1.30667,3.11773 7.1522,15.03289 8.09061,18.36492 z" />
+    <path d="m 350.988,370.108 2.87637,-0.71909 c 0.113,-0.283 11.42599,-27.43221 16.97299,-36.89121 l -5.01903,-3.83273 c -5.658,9.651 -16.20458,37.9445 -16.67258,39.1075 z" />
+    <path d="m 47.60046,168.15534 4.670568,-1.11623 -8.16674,147.20816 -3.116064,0.9588 z" transform="translate(195,200)" />
+    <path d="m 349.30684,367.43624 4.37271,2.2736 6.23213,145.01682 -2.87637,0.2397 z" />
+</g>
+<g id="chevron_armbands" display="none" fill="url(#colour1)" stroke="none">
+		<g clip-path="url(#Sleeves_CP)">
+			<polygon points="243.643,443.354 250.359,437.363 211.073,393.314 178.646,428.235 185.241,434.359 
+				210.938,406.686 243.643,443.354 			"/>
+		</g>
+		<g clip-path="url(#Sleeves_CP)">
+			<polygon points="346.363,443.354 339.646,437.363 378.933,393.314 411.359,428.235 404.765,434.359 
+				379.067,406.686 346.363,443.354 			"/>
+		</g>
+     </g>
+<g id="two_chevron_armbands" display="none" fill="url(#colour1)" stroke="none">
+		<g clip-path="url(#Sleeves_CP)">
+			<polygon points="243.643,443.354 250.359,437.363 211.073,393.314 178.646,428.235 185.241,434.359 
+				210.938,406.686 243.643,443.354 			"/>
+		</g>
+		<g clip-path="url(#Sleeves_CP)">
+			<polygon points="243.643,417.354 250.359,411.363 211.073,367.314 178.646,402.235 185.241,408.359 
+				210.938,380.686 243.643,417.354 			"/>
+		</g>
+		<g clip-path="url(#Sleeves_CP)">
+			<polygon points="346.363,443.354 339.646,437.363 378.933,393.314 411.359,428.235 404.765,434.359 
+				379.067,406.686 346.363,443.354 			"/>
+		</g>
+		<g clip-path="url(#Sleeves_CP)">
+			<polygon points="346.363,417.354 339.646,411.363 378.933,367.314 411.359,402.235 404.765,408.359 
+				379.067,380.686 346.363,417.354 			"/>
+		</g>
+     </g>
+                <g id="Spiked_Yoke" display="none" fill="url(#colour1)" stroke="none">
+		<path clip-path="url(#Sleeves_CP)" d="M203.443,333.638l-4.227,27.17l22.163-25.361
+			L211,369.667l35.167-24.5l5.171,36.341l15.333-36.68l17.406,35.819l11.625-35.846l17.664,37.499l9.975-36.254l17.541,32.822
+			l5.103-31.803l22.563,25.041l-3.006-22.158L393.667,363l-24-36.667l21.385,5.41c0,0-48.474-20.201-56.405-21.893
+			c-7.933-1.692-107.226-4.829-112.262,3.286S203.443,333.638,203.443,333.638z"/>
+                </g>
+	<g id="ww_hoop" display="none">
+    <path
+       d="m 196.90187,406.40596 c 1.313,0.097 2.582,-0.556 3.263,-1.7 l 6.712,-11.279 4.995,12.137 c 0.538,1.31 1.8,2.17 3.229,2.168 1.416,0.003 2.694,-0.848 3.239,-2.153 l 9.979,-23.942 15.39,1.128 0.313,-6.996 -17.707,-1.298 c -1.502,-0.11 -2.906,0.753 -3.486,2.144 l -7.699,18.47 -4.443,-10.796 c -0.506,-1.226 -1.658,-2.062 -2.981,-2.159 -1.322,-0.097 -2.585,0.562 -3.264,1.701 l -5.936,9.975 c -0.757,3.953 -1.438,8.099 -2.084,12.521 0.078,0.017 0.153,0.04 0.233,0.052 0.083,0.012 0.164,0.021 0.247,0.027 z"
+       fill="url(#colour1)" />
+    <path
+       d="m 200.71386,432.4957 6.157,-10.348 4.583,11.136 c 0.584,1.416 1.915,2.38 3.442,2.492 1.527,0.111 2.985,-0.648 3.769,-1.963 l 19.308,-32.441 6.963,0.511 0.362,-8.078 -9.226,-0.677 c -1.527,-0.112 -2.985,0.648 -3.769,1.963 l -16.451,27.642 -4.582,-11.136 c -0.584,-1.416 -1.915,-2.38 -3.442,-2.492 -1.527,-0.112 -2.985,0.648 -3.769,1.963 l -6.158,10.348 -1.035,-2.515 c -0.248,1.973 -0.498,3.986 -0.751,6.075 l 1.265,9.484 c 1.364,-0.047 2.625,-0.775 3.334,-1.964 z"
+       fill="url(#colour1)" />
+    <path
+       d="m 386.71245,404.14078 c 0.545,1.305 1.823,2.156 3.239,2.153 1.429,0.002 2.69,-0.858 3.229,-2.168 l 3.098,-7.526 c -0.746,-4.319 -1.563,-8.395 -2.501,-12.317 l -3.854,9.365 -7.699,-18.47 c -0.58,-1.39 -1.984,-2.254 -3.486,-2.144 l -28.711,2.105 0.314,6.996 26.394,-1.936 z"
+       fill="url(#colour1)" />
+    <path
+       d="m 387.96605,434.15168 c 0.783,1.314 2.241,2.074 3.769,1.963 1.527,-0.112 2.858,-1.076 3.442,-2.492 l 4.097,-9.955 c -0.604,-4.942 -1.192,-9.548 -1.8,-13.883 -0.94,0.414 -1.708,1.17 -2.113,2.152 l -4.582,11.136 -16.451,-27.642 c -0.783,-1.315 -2.241,-2.07501 -3.769,-1.963 l -20.23,1.483 0.362,8.079 17.967,-1.318 z"
+       fill="url(#colour1)" />
+	</g>
+		<g id="Thin_hoop_pairs" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="none">
+			<g>
+				<rect x="196" y="482.431" fill-rule="evenodd" clip-rule="evenodd" width="203.5" height="11.069"/>
+				<rect x="196" y="467.672" fill-rule="evenodd" clip-rule="evenodd" width="203.5" height="11.07"/>
+			</g>
+			<g>
+				<rect x="196" y="439.04" fill-rule="evenodd" clip-rule="evenodd" width="203.5" height="11.069"/>
+				<rect x="196" y="424.281" fill-rule="evenodd" clip-rule="evenodd" width="203.5" height="11.07"/>
+			</g>
+			<g>
+				<rect x="196" y="395.648" fill-rule="evenodd" clip-rule="evenodd" width="203.5" height="11.07"/>
+				<rect x="196" y="380.891" fill-rule="evenodd" clip-rule="evenodd" width="203.5" height="11.069"/>
+			</g>
+			<g>
+				<rect x="196" y="352.258" fill-rule="evenodd" clip-rule="evenodd" width="203.5" height="11.07"/>
+				<rect x="196" y="337.5" fill-rule="evenodd" clip-rule="evenodd" width="203.5" height="11.069"/>
+			</g>
+		</g>
+<!-- Archived -->
+<path id="Check_2015" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="none" d="M394.236,495.046l-26.154-3.894l3.863-25.937
+			l26.152,3.894L394.236,495.046z M368.268,491.208l-26.153-3.894l-3.86,25.936l26.152,3.895L368.268,491.208z M400.042,362.481
+			l-12.173-1.312l-3.861,25.936l12.171,1.311L400.042,362.481z M383.479,387.384l-26.155-3.895l-3.862,25.936l26.156,3.896
+			L383.479,387.384z M361.146,357.435l-26.157-3.894l-3.861,25.935l26.156,3.895L361.146,357.435z M391.07,335.263l-26.154-3.894
+			l-3.859,25.934l26.152,3.895L391.07,335.263z M353.476,409.5l-26.155-3.894l-3.861,25.935l26.155,3.896L353.476,409.5z
+			 M402.247,417.179l-22.821-3.895l-3.861,25.937l22.822,3.895L402.247,417.179z M375.752,439.277l-26.156-3.895l-3.861,25.937
+			l26.156,3.894L375.752,439.277z M198.44,468.442l26.153-3.894l3.862,25.936l-26.154,3.895L198.44,468.442z M232.132,516.478
+			l26.153-3.895l-3.862-25.937l-26.153,3.895L232.132,516.478z M199.708,388.998l12.822-2.56l-3.861-25.936l-12.822,2.561
+			L199.708,388.998z M216.921,412.652l26.155-3.895l-3.861-25.936l-26.155,3.895L216.921,412.652z M239.254,382.703l26.156-3.895
+			l-3.862-25.935l-26.156,3.894L239.254,382.703z M209.329,360.53l26.153-3.895l-3.861-25.934l-26.154,3.894L209.329,360.53z
+			 M246.923,434.77l26.156-3.896l-3.862-25.935l-26.155,3.894L246.923,434.77z M197.484,442.447l23.489-3.894l-3.861-25.937
+			l-23.489,3.895L197.484,442.447z M224.647,464.546l26.156-3.894l-3.862-25.937l-26.156,3.894L224.647,464.546z"/>
+<path id="Striped_Sleeves_2015" display="none" clip-path="url(#Sleeves_CP)" fill-rule="evenodd" clip-rule="evenodd" stroke="none" fill="url(#colour1)" d="
+			M238,353.5l-12.5,76L225,516l7.833-0.666L234,432l11.248-63.451L238,353.5z M233,342l-4.667-11.999l-4.167,5l-19.78,90.219
+			l0.841,66.524l3.299,26.656l5.044-0.84L214,425L233,342z M357,353.834l12.469,76.666l0.5,86.5l-8-2l-1-82l-11.248-63.451
+			L357,353.834z M380.969,426l0.43,92.561l5.044,0.84l3.299-26.656l0.841-66.524L370,332.834l-2.666-3.5L361.969,343L380.969,426z"
+			/>
+                
+<g id="Hooped_Sleeves_2015" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="none">
+			<path display="inline" fill-rule="evenodd" clip-rule="evenodd" d="M394.822,394.167l-43.666,3.5l-1.167-29
+				l37.5-1.5C391.322,369.667,394.822,394.167,394.822,394.167z M398.156,417.167l-46,3.667l1,27l43.333-3l3.261-21.969
+				L398.156,417.167z M392.656,469.5l-38.167,3.5l1.5,26.167c-7.603-1.382,28.595-0.215,33.5-2.667L392.656,469.5z"/>
+			<path display="inline" fill-rule="evenodd" clip-rule="evenodd" d="M208,367.167l37.5,1.5l-1.167,29l-43.667-3.5
+				C200.667,394.167,204.167,369.667,208,367.167z M195.739,422.865L199,444.834l43.333,3l1-27l-46-3.667L195.739,422.865z
+				 M206,496.5c4.905,2.452,41.103,1.285,33.5,2.667L241,473l-38.167-3.5L206,496.5z"/>
+		</g>
+<g id="Hooped_Sleeves_3_colour_2015" display="none" clip-path="url(#Sleeves_CP)">
+			<path display="inline" fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour1)" stroke="none" d="M195.989,422.833l1.333,8l45.344,2.334
+				l1-22.091l-46-3L195.989,422.833z M208.322,514c4.667,0.167,39.103-4.464,31.5-3.333l1.511-17.909l-35.177,0.409L208.322,514z
+				 M398.156,408.076l-46,3l1,22.091l45.344-2.334l1.334-8L398.156,408.076z M389.666,493.167l-35.177-0.409L356,510.667
+				c-7.603-1.131,26.834,3.5,31.5,3.333L389.666,493.167z"/>
+			<path display="inline" fill-rule="evenodd" clip-rule="evenodd" fill="url(#colour2)" stroke="none" d="M208.333,367.167l37.5,1.228l-1.167,23.727
+				L201,389.258C201,389.258,204.5,369.213,208.333,367.167z M202.989,473.167c4.905,2.006,45.447,0.869,37.844,2l1.5-21.409
+				l-42.344-3.425L202.989,473.167z M394.822,389.258l-43.666,2.863l-1.167-23.727l37.5-1.228
+				C391.322,369.213,394.822,389.258,394.822,389.258z M395.834,450.333l-42.345,3.425l1.5,21.409
+				c-7.603-1.131,32.938,0.006,37.845-2L395.834,450.333z"/>
+		</g>
+<g id="Two_Hoops_2015" display="none" clip-path="url(#Sleeves_CP)" fill="url(#colour1)" stroke="none">
+			<path display="inline" fill-rule="evenodd" clip-rule="evenodd" d="M394.822,394.167l-43.666,3.5l-1.167-29
+				l37.5-1.5C391.322,369.667,394.822,394.167,394.822,394.167z M398.156,417.167l-46,3.667l1,27l43.333-3l3.261-21.969
+				L398.156,417.167z"/>
+			<path display="inline" fill-rule="evenodd" clip-rule="evenodd" d="M208,367.167l37.5,1.5l-1.167,29l-43.667-3.5
+				C200.667,394.167,204.167,369.667,208,367.167z M195.739,422.865L199,444.834l43.333,3l1-27l-46-3.667L195.739,422.865z"/>
+		</g>
+<g id="Shadows">
+	<path id="Buttons_1_" stroke="none" fill-rule="evenodd" clip-rule="evenodd" fill="none" d="M297.755,475.947c-2.133,0-3.874,1.762-3.874,3.922
+		s1.741,3.922,3.874,3.922s3.875-1.762,3.875-3.922S299.889,475.947,297.755,475.947L297.755,475.947z M297.756,347.598
+		c2.133,0,3.875,1.762,3.875,3.922s-1.741,3.922-3.875,3.922c-2.134,0-3.875-1.762-3.875-3.922S295.623,347.598,297.756,347.598
+		L297.756,347.598z M297.755,443.861c-2.133,0-3.874,1.76-3.874,3.92s1.741,3.922,3.874,3.922s3.875-1.762,3.875-3.922
+		S299.889,443.861,297.755,443.861L297.755,443.861z M297.755,411.773c-2.133,0-3.874,1.762-3.874,3.922s1.741,3.922,3.874,3.922
+		s3.875-1.762,3.875-3.922S299.889,411.773,297.755,411.773L297.755,411.773z M297.755,379.686c-2.133,0-3.874,1.762-3.874,3.922
+		s1.741,3.922,3.874,3.922s3.875-1.762,3.875-3.922S299.889,379.686,297.755,379.686L297.755,379.686z"/>
+	<path id="Under_Collar" fill="black" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M290.659,337.227c1.546,0.695,3.164,1.301,4.841,1.803
+		c0.781,0.234,1.534,0.518,2.254,0.846c0.721-0.328,1.474-0.611,2.255-0.846c1.678-0.502,3.295-1.107,4.842-1.803l0.002-12.221
+		c0.001-7.407,6.637-10.185,9.219-15.557c-4.369-3.027-10.08-4.865-16.317-4.865s-11.948,1.838-16.318,4.865
+		c2.582,5.372,9.218,8.149,9.22,15.557L290.659,337.227L290.659,337.227z"/>
+	<path id="Border_1_jacket" stroke="none" fill-rule="evenodd" clip-rule="evenodd" fill="#666666" d="M289.718,378.5
+		c0,45.549,0.001,91.098-0.018,136.646 M367.716,331.613l-4.128,9.037c-0.449,0.986-1.794,0.363-1.334-0.646l4.314-9.465
+		l-43.479-16.021c-0.087,1.86-0.383,3.54-0.901,5.277c-0.323,1.081-1.688,0.576-1.393-0.476c0.531-1.887,0.828-3.847,0.828-5.867
+		c-0.093-3.3-0.983-6.293-2.875-9.01c-1.152-1.653-2.562-3.075-4.068-4.266c0.652,1.413,1.025,3.05,1.025,4.789
+		c0,4.604-2.576,7.392-5.185,10.215c-2.47,2.673-4.972,5.381-4.973,9.722l0.001,11.17c1.945-0.947,3.756-2.057,5.426-3.275
+		c0.956-0.697,1.717,0.574,0.863,1.219c-3.371,2.547-7.217,4.418-11.617,5.736c-5.508,1.65-10.503,6.363-10.503,12.516
+		c0,8.744,0,17.488,0,26.232c0,45.549,0.001,91.098-0.018,136.646c2.684,0.107,5.37,0.164,8.056,0.164
+		c13.997,0,27.227-1.449,38.918-4.016c6.641-1.457,12.784-3.273,18.288-5.389l-6.086-136.033c-0.049-1.086,1.429-1.18,1.479-0.084
+		l6.471,144.363l29.464,4.174l12.732-95.457c-2.472-20.357-4.566-34.965-8.992-48.695
+		C385.693,360.725,379.107,348.072,367.716,331.613L367.716,331.613z M297.756,346.842c2.007,0,3.808,1.352,4.408,3.277
+		c1.298,0.127,2.283,0.707,2.283,1.4s-0.985,1.273-2.283,1.4c-0.6,1.924-2.399,3.275-4.408,3.275c-2.529,0-4.62-2.117-4.62-4.676
+		C293.137,348.959,295.228,346.842,297.756,346.842L297.756,346.842z M297.756,348.352c-1.712,0-3.129,1.436-3.129,3.168
+		s1.417,3.166,3.129,3.166c1.71,0,3.128-1.434,3.128-3.166S299.468,348.352,297.756,348.352L297.756,348.352z M302.164,382.207
+		c1.298,0.127,2.283,0.707,2.283,1.4s-0.985,1.273-2.283,1.4c-0.6,1.924-2.4,3.275-4.409,3.275c-2.528,0-4.62-2.117-4.62-4.676
+		c0-2.561,2.091-4.678,4.62-4.678C299.764,378.93,301.564,380.281,302.164,382.207L302.164,382.207z M302.164,414.293
+		c1.298,0.127,2.283,0.709,2.283,1.402c0,0.691-0.985,1.271-2.283,1.398c-0.6,1.926-2.4,3.277-4.409,3.277
+		c-2.528,0-4.62-2.117-4.62-4.676c0-2.561,2.091-4.678,4.62-4.678C299.764,411.018,301.564,412.369,302.164,414.293L302.164,414.293
+		z M302.164,446.381c1.298,0.127,2.283,0.707,2.283,1.4s-0.985,1.273-2.283,1.4c-0.6,1.926-2.4,3.277-4.409,3.277
+		c-2.528,0-4.62-2.117-4.62-4.678c0-2.559,2.091-4.676,4.62-4.676C299.764,443.105,301.564,444.457,302.164,446.381L302.164,446.381
+		z M302.164,478.469c1.298,0.127,2.283,0.707,2.283,1.4s-0.985,1.273-2.283,1.4c-0.6,1.924-2.4,3.277-4.409,3.277
+		c-2.528,0-4.62-2.117-4.62-4.678c0-2.559,2.091-4.676,4.62-4.676C299.764,475.193,301.564,476.545,302.164,478.469L302.164,478.469
+		z M297.755,380.439c-1.711,0-3.128,1.436-3.128,3.168s1.417,3.166,3.128,3.166s3.129-1.434,3.129-3.166
+		S299.467,380.439,297.755,380.439L297.755,380.439z M297.755,412.527c-1.711,0-3.128,1.434-3.128,3.168
+		c0,1.732,1.417,3.166,3.128,3.166s3.129-1.434,3.129-3.166C300.885,413.961,299.467,412.527,297.755,412.527L297.755,412.527z
+		 M297.755,444.615c-1.711,0-3.128,1.434-3.128,3.166s1.417,3.168,3.128,3.168s3.129-1.434,3.129-3.168
+		C300.885,446.049,299.467,444.615,297.755,444.615L297.755,444.615z M297.755,476.703c-1.711,0-3.128,1.434-3.128,3.166
+		s1.417,3.168,3.128,3.168s3.129-1.436,3.129-3.168S299.467,476.703,297.755,476.703L297.755,476.703z M274.717,319.32
+		c0.316,1.088-1.041,1.649-1.394,0.468c-0.521-1.747-0.812-3.399-0.9-5.27l-43.479,16.021l4.312,9.461
+		c0.432,0.947-0.853,1.693-1.337,0.635l-4.124-9.02c-11.391,16.457-17.978,29.109-22.313,42.559
+		c-4.425,13.73-6.521,28.338-8.993,48.695l12.732,95.457l29.465-4.174l6.474-144.322c0.051-1.141,1.522-1.059,1.473,0.059
+		l-6.083,136.018c5.504,2.115,11.647,3.932,18.288,5.389c8.997,1.975,18.904,3.287,29.372,3.787
+		c0.019-45.527,0.018-91.055,0.017-136.582c0-8.744,0-17.488,0-26.232c0-5.27,3.331-9.793,7.715-12.307
+		c-4.519-1.555-8.386-3.025-12.244-5.932c-0.859-0.646-0.05-1.889,0.837-1.234c1.665,1.229,3.482,2.33,5.429,3.277v-11.17
+		c-0.001-4.341-2.502-7.049-4.973-9.722c-2.608-2.823-5.184-5.611-5.184-10.215c0-1.739,0.374-3.375,1.026-4.789
+		c-1.507,1.19-2.913,2.616-4.069,4.266c-1.918,2.736-2.876,5.845-2.875,9.01C273.889,315.472,274.169,317.438,274.717,319.32
+		L274.717,319.32z M387.663,519.275c-0.05,0.375-0.47,0.699-0.839,0.646c-10.273-1.453-20.54-2.951-30.818-4.365
+		c-0.302-0.043-0.631-0.408-0.644-0.715l-0.329-7.354c-5.458,2.068-11.517,3.85-18.045,5.281
+		c-11.795,2.588-25.132,4.049-39.232,4.049c-12.86,0-26.771-1.314-39.232-4.049c-6.528-1.432-12.587-3.213-18.044-5.281l-0.33,7.354
+		c-0.014,0.307-0.342,0.672-0.644,0.715l-30.818,4.365c-0.37,0.053-0.789-0.271-0.839-0.646L195,422.773
+		c2.486-20.484,4.593-35.184,9.067-49.066c4.46-13.838,11.262-26.816,23.117-43.832l0.492-0.471
+		c14.91-5.494,29.82-10.987,44.73-16.481c0.116-3.644,1.338-6.759,3.141-9.348c9.671-13.89,34.744-13.896,44.418,0
+		c1.803,2.588,3.025,5.704,3.141,9.348l44.73,16.481l0.492,0.471c11.854,17.016,18.656,29.994,23.116,43.832
+		c4.475,13.883,6.581,28.582,9.067,49.066C400.51,422.764,395.518,460.104,387.663,519.275L387.663,519.275z M310.443,297.498
+		c-3.635-1.921-8.031-2.891-12.688-2.891c-4.657,0-9.052,0.97-12.688,2.891c-2.601,1.374-3.77,4.616-3.77,7.467
+		c0,1.221,0.222,2.308,0.596,3.304c4.7-3.023,10.316-4.475,15.862-4.475c5.545,0,11.164,1.452,15.862,4.475
+		c0.374-0.996,0.596-2.083,0.596-3.304C314.214,302.113,313.045,298.872,310.443,297.498L310.443,297.498z M304.055,336.758
+		l0.002-11.856c0.001-4.938,2.705-7.864,5.375-10.754c1.32-1.43,2.634-2.851,3.549-4.504c-4.494-2.94-9.899-4.34-15.225-4.34
+		c-5.324,0-10.732,1.399-15.224,4.34c0.914,1.654,2.227,3.074,3.548,4.504c2.67,2.89,5.374,5.816,5.375,10.754l0.002,11.856
+		c2.063,0.893,4.246,1.406,6.298,2.295C299.809,338.164,301.991,337.65,304.055,336.758L304.055,336.758z"/>
+        <!-- use fill-opacity instead of opacity as that leads (inexplicably) to enormous PDF files -->
+	<path id="Shadows_1_" stroke="none" fill="black" fill-opacity="0.10" fill-rule="evenodd" clip-rule="evenodd" d="M336.836,458.27
+		c-1.176,4.846,11.593-4.963,9.92,1.875c-2.154,8.818-13.939,7.678-11.781,11.645c0.855,1.572,17.568,5.195,10.977,12.363
+		c-5.547,6.031-12.848-8.158-19.584-5.648c-7.461,2.781-23.845-0.609-13.682-9.342c4.383-3.764-3.36-6.068-2.781-16.732
+		c0.193-3.551-1.632-7.105-1.632-10.072v-75.199h-1.999v138.674c2.647,2.143,6.465-0.521,7.676-2.717
+		c5.97-10.82-14.525-9.828,3.237-17.926c6.11-2.787,21.852,3.779,19.204,5.943c-2.913,2.381-7.788,0.795-9.312,4.289
+		c-6.198,14.217,34.853-11.002,14.136,7.693c-0.347,0.313,6.197,0.377,6.633,2.848c0.189,1.076-0.607,2.623-1.959,3.42
+		c3.274-0.955,6.612-1.707,9.798-2.951c0.015-0.006,0.03-0.012,0.044-0.018h0.001l0.376,8.396l3.704,0.523l1.968-16.588
+		c6.418-0.418,12.393-1.451,17.607-2.961l-1.851-1.553c-0.938,0.252-1.9,0.488-2.886,0.707c-2.266,0.504-4.65,0.922-7.132,1.244
+		c-20.317-28.975,9.55-59.113,4.718-74.27c-1.631-5.115-16.633,33.631-13.366,6.037c1.536-12.975,3.289-18.865,2.587-31.043
+		c-0.133-2.299-5.509,0.146-5.605-2.156c-0.379-9.109,8.811-26.852,7.33-30.611c-0.944-2.396-27.037,11.77-25.777,16.334
+		c0.928,3.369,3.631,3.824,4.734,7.139c0.898,2.697-3.451,4.918-3.451,7.762c0,2.977,7.248-0.145,6.908,2.811
+		c-1.175,10.205-12.1,21.014-1.355,26.832C349.515,427.875,338.045,453.287,336.836,458.27L336.836,458.27z M301.147,350.209
+		c0.54,0.891,0.86,1.996,0.86,3.195c0,2.924-1.91,5.309-4.251,5.309c-2.342,0-4.252-2.385-4.252-5.309
+		c0-1.199,0.321-2.305,0.861-3.195c0.662,1.637,1.935,2.748,3.391,2.748S300.486,351.846,301.147,350.209L301.147,350.209z
+		 M227.993,496.184c-2.481-0.322-4.867-0.74-7.133-1.244c-0.984-0.219-1.946-0.455-2.885-0.707l-1.85,1.553
+		c5.214,1.51,11.189,2.543,17.606,2.961l1.968,16.588l3.704-0.523l0.376-8.396c0.002,0,0.004,0.002,0.006,0.002
+		c0.015,0.008,0.033,0.027,0.04,0.016c2.73,1.057,6.229,1.477,9.793,2.518c-1.35-0.797-2.145-1.912-1.955-2.986
+		c0.296-1.676,2.881-2.629,5.754-2.123c0.887,0.156,2.086-0.076,0.879-1.166c-13.87-12.531,7.282-8.416,7.607-16.758
+		s-7.411,3.6-12.345-1.764c-5.682-6.178,21.381-13.563,25.802-12.371c15.583,4.199-18.616,11.236,0.756,14.291
+		c18.107,2.852-0.924,5.785-7.52,11.439c3.065,5.189,5.582,1.514,8.653,5.604c2.468,3.289,0.552,3.514-1.217,5.729
+		c0.733,0.686,6.522,2.428,6.385,3.205c-0.175,0.994-4.996,1.732-6.364,2.064c3.949,0.445,8.008,0.771,12.154,0.969
+		c0.022-54.271,0.017-108.543,0.017-162.814c0-7.355-4.072,13.121-4.23,14.525c-0.709,6.311,0.806,10.809,0.714,17.146
+		c-0.083,5.775-1.24,7.623-1.24,13.4c0,4.777,1.317,13.938,1.24,18.713c-0.097,6.078-1.892,7.225-1.806,13.303
+		c0.167,11.854,3.179,17.975-0.398,29.875c-6.318,13.697-2.832,3.309-21.635,8.844c-31.653,9.32,10.077-11.939-6.508-14.547
+		c-2.049-0.322-12.311-16.531-1.037-10.76s-3.905-23.252-2.918-23.785c9.626-5.213,4.177-8.877,0.305-13.477
+		c-1.571-1.865,4.386-10.709,4.386-10.994c0-2.844-5.644-5.926-4.745-8.623c1.104-3.316,6.825-2.045,7.753-5.414
+		c1.242-4.504-24.664-19.166-25.778-16.334c-1.481,3.76,7.709,21.502,7.329,30.611c-0.103,2.471-5.465-0.316-5.607,2.209
+		c-0.684,12.143,1.056,18.035,2.59,30.99c3.267,27.594-11.735-11.152-13.366-6.037C218.443,437.07,248.31,467.209,227.993,496.184
+		L227.993,496.184z M282.632,299.874c3.329,4.733,9.727-0.533,15.124-0.533c5.396,0,11.795,5.267,15.124,0.533
+		c0.909,1.508,1.334,3.371,1.334,5.091c0,1.221-0.222,2.308-0.596,3.304c-4.698-3.023-10.317-4.475-15.862-4.475
+		c-5.546,0-11.162,1.452-15.862,4.475c-0.375-0.996-0.596-2.083-0.596-3.304C281.297,303.245,281.724,301.382,282.632,299.874
+		L282.632,299.874z M381.29,364.572c1.807,0.451,4.174,0.158,6.065,0.158c-0.387-0.939-0.787-1.879-1.203-2.82
+		c0.001,0.002,0.002,0.002,0.004,0.004c-0.082-0.184-0.164-0.369-0.246-0.555c-0.002-0.002-0.004-0.006-0.006-0.008
+		c-4.852-10.852-11.43-21.352-18.225-31.1c-2.692,5.979-7.123,12.385-6.279,18.725c0.456,3.42,6.19,0.111,9.617,0.523
+		C381.978,350.82,369.287,361.57,381.29,364.572L381.29,364.572z M214.222,364.572c-1.807,0.451-4.174,0.158-6.066,0.158
+		c0.388-0.939,0.788-1.879,1.204-2.82c-0.001,0.002-0.002,0.002-0.004,0.004c0.082-0.184,0.164-0.369,0.246-0.555
+		c0.002-0.002,0.004-0.006,0.006-0.008c4.851-10.852,11.43-21.352,18.225-31.1c2.692,5.979,7.124,12.385,6.279,18.725
+		c-0.456,3.42-6.19,0.111-9.617,0.523C213.534,350.82,226.225,361.57,214.222,364.572L214.222,364.572z M294.364,382.262
+		c-0.54,0.891-0.861,1.998-0.861,3.195c0,2.924,1.911,5.309,4.252,5.309c2.342,0,4.252-2.385,4.252-5.309
+		c0-1.197-0.321-2.305-0.861-3.195c-0.661,1.637-1.934,2.748-3.391,2.748C296.299,385.01,295.026,383.898,294.364,382.262
+		L294.364,382.262z M294.364,414.35c-0.54,0.891-0.861,1.996-0.861,3.195c0,2.924,1.911,5.309,4.252,5.309
+		c2.342,0,4.252-2.385,4.252-5.309c0-1.199-0.322-2.305-0.861-3.195c-0.662,1.637-1.934,2.748-3.391,2.748
+		C296.299,417.098,295.026,415.986,294.364,414.35L294.364,414.35z M294.364,446.438c-0.54,0.891-0.861,1.996-0.861,3.195
+		c0,2.924,1.911,5.309,4.252,5.309c2.342,0,4.252-2.385,4.252-5.309c0-1.199-0.322-2.305-0.861-3.195
+		c-0.662,1.637-1.934,2.748-3.391,2.748C296.299,449.186,295.026,448.074,294.364,446.438L294.364,446.438z M294.364,478.525
+		c-0.54,0.889-0.861,1.996-0.861,3.195c0,2.924,1.911,5.309,4.252,5.309c2.342,0,4.252-2.385,4.252-5.309
+		c0-1.199-0.322-2.307-0.861-3.195c-0.661,1.635-1.934,2.748-3.391,2.748C296.299,481.273,295.025,480.16,294.364,478.525
+		L294.364,478.525z"/>
+</g>
+<g id="Back_shadows">
+	<path
+   d="m 387.663,519.275 c -0.05,0.375 -0.47,0.699 -0.839,0.646 -10.273,-1.453 -20.54,-2.951 -30.818,-4.365 -0.302,-0.043 -0.631,-0.408 -0.644,-0.715 l -0.329,-7.354 c -5.458,2.068 -11.517,3.85 -18.045,5.281 -11.795,2.588 -25.132,4.049 -39.232,4.049 -12.86,0 -26.771,-1.314 -39.232,-4.049 -6.528,-1.432 -12.587,-3.213 -18.044,-5.281 l -0.33,7.354 c -0.014,0.307 -0.342,0.672 -0.644,0.715 l -30.818,4.365 c -0.37,0.053 -0.789,-0.271 -0.839,-0.646 L 195,422.773 c 2.486,-20.484 4.593,-35.184 9.067,-49.066 4.46,-13.838 11.262,-26.816 23.117,-43.832 l 0.492,-0.471 c 14.91,-5.494 29.82,-10.987 44.73,-16.481 0.116,-3.644 1.338,-6.759 3.141,-9.348 12.55486,-0.12614 28.05869,0.26112 44.418,0 1.803,2.588 3.025,5.704 3.141,9.348 l 44.73,16.481 0.492,0.471 c 11.854,17.016 18.656,29.994 23.116,43.832 4.475,13.883 6.581,28.582 9.067,49.066 -0.001,-0.009 -4.993,37.331 -12.848,96.502 z M 321.06084,307.46042 c -3.37283,-2.70751 -13.40546,-2.1045 -18.06246,-2.1045 -4.657,0 -14.22156,-0.50196 -19.32742,0.10135 -3.44959,-0.33412 -7.69347,0.16549 -7.69347,0.16549 -2.99683,3.25717 -0.50402,6.67917 -3.55449,8.89524 l -43.479,16.021 4.312,9.461 c 0.432,0.947 -0.853,1.693 -1.337,0.635 l -4.124,-9.02 c -11.391,16.457 -17.978,29.109 -22.313,42.559 -4.425,13.73 -6.521,28.338 -8.993,48.695 l 12.732,95.457 29.465,-4.174 6.474,-144.322 c 0.051,-1.141 1.522,-1.059 1.473,0.059 l -6.083,136.018 c 5.504,2.115 11.647,3.932 18.288,5.389 8.997,1.975 28.8712,3.49079 28.8712,3.49079 0,0 7.3598,0.52321 10.0458,0.52321 13.997,0 27.227,-1.449 38.918,-4.016 6.641,-1.457 12.784,-3.273 18.288,-5.389 l -6.086,-136.033 c -0.049,-1.086 1.429,-1.18 1.479,-0.084 l 6.471,144.363 29.464,4.174 12.732,-95.457 c -2.472,-20.357 -4.566,-34.965 -8.992,-48.695 -4.336,-13.448 -10.922,-26.101 -22.313,-42.56 l -4.128,9.037 c -0.449,0.986 -1.794,0.363 -1.334,-0.646 l 4.314,-9.465 -43.87225,-16.021"
+   id="Border_1_jacket"
+   style="fill:#666666;fill-rule:evenodd" />
+</g>
+<rect id="Harlequin" display="none" clip-path="url(#Sleeves_CP)" fill="url(#Harlequin_sleeves_PT)" stroke="none" x="150" y="300" width="280" height="250" />
+</svg>

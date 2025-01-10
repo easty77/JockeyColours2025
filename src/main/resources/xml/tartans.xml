@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : tartans.xml
+    Created on : 27 June 2012, 09:40
+    Author     : Simon
+    Description:
+        Purpose of the document follows.
+-->
+
+<!--
+ASYMMETRIC - Buchanan, MacAlpine x 2, MacMillan_Ancient, Malcolm
+DOUBLE PIVOT - Buchan & Cumming
+pivot = 0, 1, 2 default is 1
+
+Can only have pivot if more than 4 bands
+Thread count of single pivot is 2 x total - the sum of the two ends
+20151115 - seems that minimum scalefactor is 0.4 for Wikipedia thumbnails 
+-->
+
+<tartans>
+    <tartan id="Abercrombie" sett="G 28 W 2 G 14 BK 14 B 4 BK 4 B 4 BK 4 B 14" />
+    <tartan id="Abercrombie_D" sett="G 28 W 2 G 14 BK 14 B 4 BK 4 B 4 BK 4 B 28" />
+    <tartan id="Anderson" sett="R 6 AZ 12 R 2 BK 4 R 2 AZ 36 BK 6 W 6 BK 6 Y 2 BK 2 Y 2 BK 8 R 2 B 8 R 6 G 12 R 4 G 12 R 8" />
+    <tartan id="Anderson_P" sett="R 6 AZ 12 BK 2 R 4 BK 2 AZ 36 BK 6 W 6 BK 6 Y 2 BK 2 Y 2 BK 8 R 2 B 8 G 12 BK 2 R 4 BK 2 G 12 R 6" />
+    <tartan id="Arbuthnott" sett="B 8 BK 2 B 2 BK 2 B 2 BK 8 G 4 W 2 G 4 B 4 G 4 W 2 G 4 BK 8 B 10 BK 2 B 2" />
+    <tartan id="Armstrong" sett="G 4 BK 2 G 60 BK 24 B 4 BK 2 B 2 BK 2 B 24 R 6" />
+    <tartan id="Austin" sett="BK 4 G 18 B 8 BK 8 B 8" />
+    <tartan id="Austin_WI" sett="BK 4 G 12 PU 6 BK 6 PU 6" />
+    <tartan id="Baillie" sett="R 6 BK 4 G 30 BK 20 B 40 BK 4 Y 4" pivots="0" />  <!-- This is the same as macLeod of Skye with the addition of a black guard to the red -->
+    <tartan id="Baird" sett="PU 6 G 2 PU 2 G 16 BK 16 B 16 BK 4 B 6" />
+    <tartan id="Balmoral" sett="R 2 W 2 BK 2 W 4 GY 8 W 2 GY 2 W 2 BK 4 GY 4 W 22 R 4 W 8" />
+    <tartan id="Barclay_Dress" sett="W 2 Y 12 BK 12 Y 2" />
+    <tartan id="Barclay_Hunting" sett="R 2 G 32 B 32 G 2" />
+    <tartan id="Black_Watch" sett="B 22 BK 2 B 2 BK 2 B 2 BK 16 G 16 BK 2 G 16 BK 16 B 16 BK 2 B 2 G 10 BK 2 G 10 BK 8 DB 9 BK 1 DB 1" />
+    <tartan id="Borthwick" sett="G 34 BK 2 CR 32 BK 4 GY 28 BK 38 GY 28 BK 4 CR 12" />
+    <tartan id="Borthwick_D" sett="CR 8 BK 4 GY 20 BK 28 GY 20 BK 4 CR 20 BK 2 G 24" />
+    <tartan id="Boyd" sett="Y 10 G 44 BK 4 B 4 BK 4 B 4 BK 20 R 76 G 10 R 8 BK 8 W 10" />
+    <tartan id="Breadalbane_Fencibles" sett="B 16 BK 2 B 2 BK 2 B 2 BK 16 Y 2 G 28 Y 2 BK 16 B 16 BK 2 B 2" />
+    <tartan id="Brodie" sett="R 96 W 8 B 8 BK 8 R 24 B 8 R 2 Y 8" />
+    <tartan id="Brodie_Dress" sett="BK 4 R 32 BK 16 Y 2 BK 16 R 4" />
+    <tartan id="Brodie_Hunting" sett="R 4 B 16 G 16 BK 16 Y 2 BK 16 R 4" />
+    <tartan id="Brodie_1850" sett="R 96 W 8 B 8 BK 8 R 24 B 8 R 2 Y 8" />
+    <tartan id="Bruce" sett="W 2 R 16 G 4 R 4 G 12 R 2 G 12 R 4 G 4 R 16 Y 2" />
+    <tartan id="Buchan" sett="BK 4 R 4 G 54 R 4 BK 12 B 4 R 12 G 12 R 4 BK 48 R 4 B 4 BK 4" pivots="2" />
+    <tartan id="Buchanan" sett="BK 2 Y 12 BK 2 B 8 BK 2 G 12 B 8 G 12 BK 2 B 8 BK 2 R 16 W 2 R 16 BK 2 B 8 BK 2 Y 12" pivots="0" />
+    <tartan id="Buchanan_D" sett="AZ 4 G 32 BK 2 AZ 4 BK 2 Y 8 BK 2 Y 8 BK 2 AZ 4 BK 2 R 32 W 4" />
+    <tartan id="Buchanan_VS" sett="BK 2 W 18 CR 8 W 4 CR 8 W 4" />
+    <tartan id="Cameron" sett="Y 2 R 32 G 12 R 4 G 12 R 4" />
+    <tartan id="Cameron_Clan_D" sett="Y 2 R 30 G 12 R 2 G 12 R 2" />
+    <tartan id="Cameron_Hunting" sett="Y 4 G 6 B 32 G 28 R 6 G 20 R 6" />
+    <tartan id="Cameron_of_Erracht" sett="G 16 R 2 G 2 R 6 G 32 BK 32 R 2 B 32 R 6 B 16 Y 4" />
+    <tartan id="Cameron_of_Locheil" sett="R 12 G 6 R 12 B 2 W 2 B 2 R 4 B 16 R 8" />
+    <tartan id="Campbell" sett="B 22 BK 2 B 2 BK 2 B 2 BK 16 G 16 BK 2 G 16 BK 16 B 16 BK 2 B 2" scalefactor="0.4" />
+    <tartan id="Campbell_of_Argyll" sett="B 2 BK 2 B 16 BK 16 G 16 BK 2 W 4 BK 2 G 16 BK 16 B 2 BK 2 B 2 BK 2 B 16 BK 2 B 2 BK 2 B 2 BK 16 G 16 BK 2 Y 4 BK 2 G 16 BK 16 B 16 BK 2 B 2" />
+    <tartan id="Campbell_of_Breadalbane" sett="BK 6 B 18 BK 18 G 18 Y 4 G 18 BK 18" />
+    <tartan id="Campbell_of_Cawdor" sett="AZ 4 BK 2 G 16 BK 16 B 16 BK 2 R 4" />
+    <tartan id="Campbell_of_Loudon" sett="Y 4 BK 2 G 24 BK 24 B 24 BK 2 B 4 BK 2 B 24 BK 24 G 24 BK 2 W 4" />
+    <tartan id="Carnegie" sett="Y 2 G 4 R 2 G 2 R 4 G 12 BK 12 R 2 B 12 R 4 B 2 R 2 B 6" />
+    <tartan id="Chisholm" sett="R 24 PU 4 W 2 PU 4 R 6 G 16 R 6 PU 2" />
+    <tartan id="Chisholm_D" sett="R 12 W 2 R 48 PU 12 G 4 PU 2 G 4 PU 2 G 24 R 2" />
+    <tartan id="Chisholm_VS" sett="R 12 W 2 R 48 B 12 G 4 BK 2 G 4 BK 2 G 24 R 2" />
+    <tartan id="Clan_Chattan" sett="R 244 BK 8 W 4 G 64 W 8 Y 14 R 14 BK 4 R 14 Y 14 W 8 AZ 64 BK 16 R 16 Y 24 W 8" />
+    <tartan id="Clan_Chattan_D" sett="R 120 BK 4 W 2 G 32 W 4 Y 6 R 6 BK 2 R 6 Y 6 W 4 AZ 32 BK 8 R 8 Y 12 W 4" />
+    <tartan id="Clark" sett="AZ 24 BK 8 G 8 BK 8 R 24" />
+    <tartan id="Clergy" sett="W 2 BK 10 W 2 GY 8 W 2 BK 52 W 2 BK 20 GY 10 BK 4 GY 10 BK 20 W 2 GY 8 W 2 BK 10 W 2" />
+    <tartan id="Cochrane" sett="G 32 R 4 G 4 R 2 G 6 R 2 G 4 R 4 G 24 BK 24 R 2 B 32 R 4 B 16 Y 4" />
+    <tartan id="Cochrane_LC" sett="G 44 R 8 G 4 R 4 G 4 R 8 G 24 BK 24 R 4 B 20 R 8 B 8 Y 6" />
+    <tartan id="Cockburn" sett="G 72 BK 2 G 2 BK 2 G 2 BK 2 B 24 BK 2 W 2 BK 2 B 24 BK 2 Y 2 BK 2 G 24 BK 4 R 4" />
+    <tartan id="Colquhoun" sett="B 2 BK 2 B 16 BK 16 W 2 G 16 R 4" />
+    <tartan id="Colqhoun_VS" sett="B 8 BK 4 B 32 W 2 BK 16 G 48 R 8" />
+    <tartan id="Comyn" sett="R 2 G 8 W 2 G 8 R 4 G 4 R 18 BK 2" />
+    <tartan id="Crawford" sett="CR 12 W 4 CR 60 G 24 CR 6 G 24 CR 6" />
+    <tartan id="Cumming" sett="BK 2 R 2 G 16 R 2 BK 12 B 2 R 12 G 12 R 2 BK 16 R 2 B 2 BK 2" pivots="2" />
+    <tartan id="Cumming_SM" sett="BK 4 R 36 G 12 R 6 G 18 W 2 G 18 R 6" />
+    <tartan id="Cumming_LO" sett="AZ 8 BK 4 AZ 8 BK 20 Or 2 G 20 R 8 W 2 R 8" />
+    <tartan id="Cumming_VS" sett="BK 4 R 48 G 8 R 4 G 8 R 8 G 16 W 2 G 16 R 8" />
+    <tartan id="Cunningham" sett="W 6 R 2 B 2 R 56 BK 60 R 2 BK 6" />
+    <tartan id="Cunningham_D" sett="W 6 R 2 BK 2 R 56 BK 60 R 2 BK 6" />
+    <tartan id="Dalzell" sett="G 12 CR 6 G 4 R 64 B 4 W 2 R 8 B 12 R 8 W 2 B 4 R 8 G 64 R 8 B 4 W 2 R 48" />
+    <tartan id="Davidson" sett="R 2 B 12 G 2 B 2 G 16 BK 2 G 16 BK 2 G 2 BK 12 R 2" />
+    <tartan id="Davidson_Double" sett="BK 6 W 4 BK 6 G 16 BK 16 B 16 R 4 B 6" />
+    <tartan id="Davidson_of_Tulloch" sett="W 2 G 12 BK 6 B 12 R 2" />
+    <tartan id="Douglas" sett="BK 4 AZ 4 G 16 B 16 W 2" />
+    <tartan id="Dougles_Green" sett="BK 8 AZ 4 G 16 B 16 W 2" />
+    <tartan id="Douglas_VS" sett="GY 4 BK 2 GY 32 BK 16 GY 2 BK 2 GY 2 BK 32" />
+    <tartan id="Drummond_of_Perth" sett="R 72 W 2 B 6 Y 2 G 32 R 16 B 6 AZ 4 W 2" />
+    <tartan id="Drummond_C" sett="R 6 BK 2 R 2 G 12 R 2 G 2 R 2 BK 4 R 2 W 2 R 12 B 2 R 2 B 2 R 6" />
+    <tartan id="Drummond_VS" sett="G 8 R 2 G 2 R 56 G 16 BK 2 G 2 BK 2 G 36 R 2 G 2 R 8" />
+    <tartan id="Dunbar" sett="R 8 BK 2 R 56 BK 16 G 42 R 12" />
+    <tartan id="Duncan" sett="BK 8 G 42 W 6 G 42 B 42 R 8" />
+    <tartan id="Dundas" sett="BK 4 G 4 R 2 G 48 BK 24 B 32 BK 8" />
+    <tartan id="Eglinton" sett="BK 6 G 6 BK 6 AZ 32 BK 6 R 6 BK 6" />
+    <tartan id="Elliott" sett="R 2 B 6 BR 8 B 32" />
+    <tartan id="Erskine" sett="R 8 G 2 R 56 G 48 R 2 G 12" />
+    <tartan id="Farquharson" sett="R 4 B 8 BK 2 B 2 BK 2 B 2 BK 16 G 16 Y 4 G 16 BK 16 B 16 BK 2 R 4" />
+    <tartan id="Fergusson" sett="B 48 BK 16 G 16 R 4 G 16 BK 2 W 4" />
+    <tartan id="Ferguson_of_Balquhidder" sett="G 4 B 24 R 2 BK 24 G 24 BK 4" />
+    <tartan id="Fletcher" sett="B 12 BK 2 B 12 BK 16 R 2 G 16 BK 4" />
+    <tartan id="Fletcher_C" sett="B 12 BK 2 B 12 BK 16 R 2 G 16 R 4" />
+    <tartan id="Forbes" sett="B 16 BK 2 B 4 BK 2 B 4 BK 12 G 16 BK 2 W 4 BK 2 G 16 BK 12 B 16 BK 2 B 4" scalefactor="0.3" />
+    <tartan id="Forbes_LC" sett="B 2 BK 12 B 12 BK 12 G 12 BK 2 W 2" />
+    <tartan id="Forbes_VS" sett="R 2 G 32 BK 16 G 6 BK 8 Y 2" />
+    <tartan id="Fraser" sett="B 32 R 2 B 2 R 2 G 24 R 32 G 4 R 32 G 24 B 24 R 2 B 2" />
+    <tartan id="Fraser_VS" sett="W 2 R 24 G 12 R 2 B 12 R 2" />
+    <tartan id="Gordon" sett="B 24 BK 4 B 4 BK 4 B 4 BK 24 G 24 Y 4 G 24 BK 24 B 22 BK 4 B 4" scalefactor="0.4" />  <!-- increaded from 0.2 -->
+    <tartan id="Gordon_VS" sett="B 56 BK 2 B 2 BK 2 B 6 BK 24 G 48 Y 2 G 2 Y 4 G 2 Y 2 G 48 BK 24 B 36 BK 2 B 8" />
+    <tartan id="Gow" sett="R 8 G 8 R 2 B 8 R 8" />
+    <tartan id="Graham_of_Menteith" sett="BK 2 B 24 BK 24 G 2 AZ 4 G 32" />
+    <tartan id="Graham_of_Montrose" sett="BK 2 B 8 BK 8 G 8 W 2 G 8 BK 8" />
+    <tartan id="Graham_W" sett="BK 6 PU 28 BK 34 G 8 W 4 G 42" />
+    <tartan id="Grant" sett="R 12 B 2 R 4 B 4 R 64 AZ 2 R 4 B 16 R 4 G 4 R 4 G 48 R 4 B 4 R 12" />
+    <tartan id="Grant_D" sett="R 12 B 4 R 4 B 4 R 48 AZ 4 R 4 B 12 R 4 G 4 R 4 G 40 R 4 B 4 R 12" />
+    <tartan id="Grant_VS" sett="R 8 B 4 R 4 B 4 R 112 B 32 R 8 G 2 R 8 G 72 R 6 G 2 R 8" />
+    <tartan id="Grant_of_Monymusk" sett="R 24 G 6 R 24 B 16 R 10 B 16 R 8 G 28 R 8 G 28 R 8 G 28 R 24" />
+    <tartan id="Gunn" sett="R 4 G 24 BK 24 G 2 B 24 G 4" />
+    <tartan id="Gunn_VS" sett="R 4 G 60 BK 32 G 4 BK 32 G 4" />
+    <tartan id="Hamilton" sett="W 2 R 18 B 12 R 2 B 12" />
+    <tartan id="Hay" sett="W 12 R 4 BK 2 R 4 G 8 R 96 G 24 R 4 G 4 R 4 G 72 Y 4 G 8 R 12" />
+    <tartan id="Hay_and_Leith" sett="BK 6 R 2 Y 2 BK 4 R 32 G 4 R 2 Y 2 R 4 G 30 W 2 BK 30 R 2 PU 30 R 4 Y 2 R 2 PU 4 R 32 BK 4 Y 2 R 2 BK 6" />
+    <tartan id="Henderson" sett="Y 2 BK 12 G 8 BK 2 G 32 B 2 G 8 B 12 W 2" scalefactor="0.4" />
+    <tartan id="Home" sett="B 6 G 4 B 48 BK 16 R 2 BK 4 R 2 BK 56" />
+    <tartan id="Hunter" sett="G 16 BK 2 G 16 BK 16 R 2 B 16 W 2 B 16 R 2 BK 16" />
+    <tartan id="Huntly_Old" sett="PU 32 W 4 CR 14 W 4 BK 28 AZ 12 W 4 PU 30 W 4 G 34 AZ 12 G 12 R 16 BK 12 R 16 BK 4" />
+    <tartan id="Inglis" sett="W 8 G 64 B 24 R 6 B 24 Y 8 " /> <!-- Also known as macIntyre: however macIntyre has a green line in place of the yellow -->
+    <tartan id="Innes" sett="AZ 14 BK 48 R 8 BK 8 R 8 BK 8 R 48 Y 8 R 12 B 24 R 12 BK 8 G 40 BK 8 R 12 W 8" />
+    <tartan id="Innes_D" sett="AZ 6 BK 24 R 4 BK 4 R 4 BK 4 R 24 Y 4 R 6 B 12 R 6 BK 4 G 20 BK 4 R 6 W 4" />
+    <tartan id="Johnston" sett="Y 6 G 4 BK 2 G 60 B 48 BK 4 B 4 BK 4" />
+    <tartan id="Keith_and_Austin" sett="BK 4 G 18 B 8 BK 8 B 8" />
+    <tartan id="Kennedy" sett="R 4 G 48 B 8 BK 6 B 6 BK 6 B 6 BK 6 B 8 G 24 CR 2 G 4 CR 2 G 6 Y 2 G 4 BK 4" />
+    <tartan id="Kerr" sett="BK 8 R 4 BK 2 R 56 BK 28 G 6 BK 2 G 4 BK 2 G 40" />
+    <tartan id="Kerr_Hunting" sett="BK 8 B 4 BK 2 B 56 BK 28 G 6 BK 2 G 4 BK 2 G 40" />
+    <tartan id="Kincaid" sett="BK 22 G 34 R 6" />
+    <tartan id="Lamont" sett="B 6 BK 2 B 2 BK 2 B 2 BK 8 G 8 W 2 G 8 BK 8 B 8 BK 2 B 2" />
+    <tartan id="Leslie_Dress" sett="BK 2 R 64 B 32 R 8 BK 12 Y 2 BK 12 R 8" />
+    <tartan id="Leslie_Hunting" sett="R 4 B 16 BK 16 W 2 G 16 BK 2" />
+    <tartan id="Lindsay" sett="CR 6 B 4 CR 48 B 16 G 4 B 4 G 4 B 4 G 40" />
+    <tartan id="Livingston" sett="R 16 G 4 R 40 G 32 R 8 BK 2 R 4 BK 2 R 8 G 24" />
+    <tartan id="Logan_and_MacLennan" sett="Y 4 BK 2 R 2 G 32 BK 24 B 32 R 4 B 4 R 4 B 6 R 12" />
+    <tartan id="MacAlister" sett="R 16 LG 2 G 4 R 4 AZ 2 R 2 W 2 R 2 AZ 2 R 4 G 6 R 2 W 2 R 12 AZ 2 R 2 G 24 R 2 AZ 2 R 32 AZ 2 R 2 G 24 R 2 AZ 2 R 12 W 2 R 2 B 8 R 2 W 2 R 4 G 6 LG 2 R 4 LG 2 G 6 R 6 W 2 R 2 B 4 R 2 W 2 R 16" />
+    <tartan id="MacAlister_CC" sett="R 8 AZ 2 R 2 G 12 R 24 AZ 2 R 2 G 36 R 2 AZ 2 R 64 AZ 2 R 2 G 36 R 2 AZ 2 R 24 B 16 R 16 G 16 R 8 G 16 R 64" />
+    <tartan id="MacAlpine" sett="G 2 BK 8 Y 2 BK 8 G 2 BK 2 G 12 BK 2 G 12 BK 2 G 2 BK 8 W 2 BK 8" pivots="0" scalefactor="0.4" />
+    <tartan id="MacAlpine_D" sett="G 2 BK 8 Y 2 B 8 G 2 B 2 G 12 BK 2 G 12 BK 2 G 2 BK 8 W 2 BK 8" pivots="0" />
+    <tartan id="MacArthur" sett="Y 6 G 60 BK 24 G 12 BK 64" />
+    <tartan id="MacAulay" sett="BK 4 R 32 G 12 R 6 G 16 W 2" />
+    <tartan id="MacAulay_Hunting" sett="R 4 G 24 BK 8 G 16 BK 32 W 2 BK 32 G 12" />
+    <tartan id="MacBain" sett="R 120 W 4 AZ 10 BK 4 W 4 BK 4 AZ 10 W 4 BK 4 G 24 BK 4 W 4 R 10 CR 10 G 4 CR 10 R 10 W 4 G 20" />
+    <tartan id="MacBean" sett="R 48 W 2 B 4 AZ 2 W 2 AZ 2 B 4 W 2 BK 2 G 12 BK 2 W 2 R 4 CR 4 G 2 CR 4 R 4 W 2 G 6" />
+    <tartan id="MacBeth" sett="B 72 Y 8 BK 12 W 2 BK 2 W 2 BK 2 G 16 R 12 BK 2 R 6 W 2" />
+    <tartan id="MacCallum" sett="BK 2 B 12 BK 12 G 8 AZ 2 BK 4 G 16" />
+    <tartan id="MacCallum_W" sett="BK 2 B 12 BK 12 G 12 R 2 G 12 BK 12" />
+    <tartan id="MacColl" sett="G 8 R 2 G 2 R 24 B 2 R 2 B 6 R 2 B 2 R 4 G 16 R 2 B 2 R 24" />
+    <tartan id="MacDonald" sett="G 16 R 2 G 4 R 6 G 24 BK 24 R 2 B 24 R 6 B 4 R 2 B 16" />
+    <tartan id="MacDonald_of_Clanranald" sett="G 16 R 2 G 4 R 6 G 24 W 2 BK 24 R 2 B 24 R 6 B 4 R 2 B 16" />
+    <tartan id="MacDonald_of_Clanranald_D" sett="G 12 R 4 G 4 R 6 G 22 W 4 BK 22 R 4 B 24 R 6 B 4 R 4 B 12" />
+    <tartan id="MacDonald_of_Sleat" sett="BK 4 R 36 G 4 R 10 G 32" />
+    <tartan id="MacDonald_of_Staffa" sett="Y 2 R 12 B 2 R 6 B 2 R 2 G 4 W 2 G 4 R 6 Y 2 R 6 BK 4 R 2 B 2 R 6 B 2 R 2 G 8 R 6 B 2 R 2 B 2 R 2 B 2 R 2 B 2 R 30" />
+    <tartan id="MacDonald_Lord_of_the_Isles" sett="R 76 G 4 R 10 G 32" />
+    <tartan id="MacDonald_Lord_of_the_Isles_Hunting" sett="G 48 W 2 G 4 W 4 B 4 W 2 B 24 W 2 B 4 W 4 B 4 W 2 B 24" />
+    <tartan id="MacDonell_of_Glengarry" sett="W 2 G 8 R 2 G 4 R 6 G 24 BK 24 R 2 B 24 R 8 B 16" />
+    <tartan id="MacDonell_of_Glengarry_D" sett="B 16 R 2 B 4 R 6 B 24 R 2 BK 24 G 24 R 6 G 4 R 2 G 8 W 2" />
+    <tartan id="MacDonell_of_Keppoch" sett="G 4 R 4 B 2 R 48 AZ 2 B 12 R 6 G 24 R 8 B 2" />
+    <tartan id="MacDonnald_of_ye_Ylis" sett="W 8 G 60 BK 2 G 2 BK 2 G 6 BK 24 B 20 R 6" />
+    <tartan id="MacDougall" sett="AZ 2 R 8 CR 12 R 144 B 8 R 16 G 36 R 36 G 36 CR 24 R 8 CR 24 B 36 R 16 G 8 R 16 G 144 R 8 CR 24 AZ 4" />
+    <tartan id="MacDougall_D" sett="W 2 PU 6 R 4 G 60 R 8 G 4 R 8 B 20 PU 8 R 4 PU 8 G 20 R 20 G 20 R 4 B 4 R 60 PU 6 R 4 W 2 R 4 PU 6 R 60 B 4 R 4 G 20 R 10" />
+    <tartan id="MacDougall_VS" sett="PU 8 G 16 B 12 PU 16 R 12 G 4 R 4 G 4 R 48 G 2 R 6" />
+    <tartan id="MacDuff" sett="R 8 BK 2 R 8 G 12 BK 8 B 6 R 16" scalefactor="0.4" />
+    <tartan id="MacEwan" sett="Y 4 BK 2 G 24 BK 24 B 24 BK 2 B 4 BK 2 B 24 BK 24 G 24 BK 2 R 4" />
+    <tartan id="MacFarlane" sett="R 84 BK 2 G 24 W 4 R 6 BK 2 R 6 W 4 G 4 PU 24 BK 8 R 6 W 8 G 6" />
+    <tartan id="MacFarlane_VS" sett="BK 14 W 12 BK 2 W 12" />
+    <tartan id="MacFie" sett="W 2 R 24 G 4 R 2 G 324 R 24 Y 2" />
+    <tartan id="MacGillivray" sett="R 8 AZ 2 B 2 R 64 AZ 4 R 4 B 24 R 4 G 32 R 8 AZ 2 R 8 B 4" />
+    <tartan id="MacGregor" sett="R 72 G 36 R 8 G 12 BK 2 W 4" />
+    <tartan id="MacIain" sett="Y 4 BK 2 R 24 BK 16 R 8 BK 16 R 8" />
+    <tartan id="MacInnes" sett="Y 4 BK 24 G 4 BK 4 G 4 BK 4 G 32 BK 6 AZ 6 BK 6 B 24 G 12 R 4" />
+    <tartan id="MacIntyre" sett="AZ 2 R 4 G 4 R 8 B 32 R 4 G 2 R 8 B 2 R 4 G 32 R 8 B 4 R 4 AZ 2" />
+    <tartan id="MacIntyre_LC" sett="W 8 G 64 B 24 R 6 B 24 G 8" scalefactor="0.4" />
+    <tartan id="MacIver" sett="W 2 R 24 BK 4 R 4 BK 32 R 4 BK 4 R 24 Y 2" />
+    <tartan id="MacKay" sett="BK 6 G 28 BK 28 G 4 B 28 G 6" />
+    <tartan id="MacKay_VS" sett="R 2 B 32 BK 12 B 4 BK 12 B 4" />
+    <tartan id="MacKeane" sett="Y 4 BK 2 R 24 BK 16 R 8 BK 16 R 8" />
+    <tartan id="MacKenzie" sett="B 24 BK 4 B 4 BK 4 B 4 BK 24 G 24 BK 2 W 4 BK 2 G 24 BK 24 B 24 BK 2 R 4" scalefactor="0.4" />
+    <tartan id="MacKinlay" sett="B 4 BK 4 B 16 BK 12 G 16 BK 2 R 4 BK 2 G 16 BK 12 B 4 BK 4 B 4 BK 4 B 12" />
+    <tartan id="MacKinnon" sett="W 4 R 8 PU 4 G 16 R 32 G 4 B 8 R 4 G 32 R 12 B 4 G 4 R 6 PU 4" />
+    <tartan id="MacKinnon_Hunting" sett="W 4 BR 32 G 32 R 4 G 32 BR 32 G 4" />
+    <tartan id="MacKintosh" sett="R 48 B 12 R 6 G 24 R 8 B 2" />
+    <tartan id="MacKintosh_Hunting" sett="Y 4 G 24 B 12 R 6 G 24 R 8 B 2" />
+    <tartan id="MacKintosh_D" sett="R 44 B 10 R 4 G 22 R 6 B 2" />
+    <tartan id="MacLachlan" sett="R 32 BK 4 R 4 BK 4 R 4 BK 32 B 32 G 6 B 32 BK 32 R 32 BK 4 R 4" />
+    <tartan id="MacLachlan_VS" sett="Y 12 BK 4 Y 48 BK 12 Y 4 BK 42 Y 4 BK 12" />
+    <tartan id="MacLachlan_W" sett="Y 6 W 4 BK 32 G 32 Y 6 W 4 R 48" />
+    <tartan id="MacLaine_of_Lochbuie" sett="R 64 G 16 AZ 8 Y 2" />
+    <tartan id="MacLaine_of_Lochbuie_Hunting" sett="B 64 R 6 B 8 BK 2 Y 6" />
+    <tartan id="MacLaren" sett="B 48 BK 16 G 16 R 4 G 16 BK 2 Y 4" />
+    <tartan id="MacLean" sett="BK 2 R 4 AZ 2 R 24 G 16 BK 2 W 2 BK 2 Y 2 BK 6 AZ 2 B 8" />
+    <tartan id="MacLean_VS" sett="BK 2 G 32 BK 4 G 4 BK 12 W 2 BK 12 G 6" />
+    <tartan id="MacLeod" sett="R 6 BK 4 G 30 BK 20 B 40 BK 4 Y 4" />
+    <tartan id="MacLeod_of_Lewis" sett="R 2 Y 24 BK 16 Y 2 BK 16" />
+    <tartan id="MacMillan" sett="R 2 Y 16 R 4 Y 16 R 6 Y 4 R 24 Y 2 R 6" />
+    <tartan id="MacMillan_Ancient" sett="G 4 BK 2 G 36 BK 2 G 4 BK 2 CR 24 G 8 Y 12 BK 2 Y 12 BK 2" pivots="0" />
+    <tartan id="MacMillan_Hunting" sett="R 2 G 16 R 4 G 16 BK 8 Y 4 BK 8 B 24 Y 2 B 6" />
+    <tartan id="MacNab" sett="G 16 CR 2 G 2 CR 2 G 2 CR 12 R 16 CR 2 R 16 CR 12 G 14 CR 2 G 2" />
+    <tartan id="MacNab_VS" sett="BK 2 R 24 CR 4 G 8 CR 4 R 4 G 12" />
+    <tartan id="MacNab_WI1" sett="CR 48 G 2 AZ 2 G 4 R 48" />
+    <tartan id="MacNab_WI2" sett="AZ 4 PU 22 R 6 G 30" />
+    <tartan id="MacNaughten" sett="BK 2 AZ 2 R 32 AZ 16 BK 24 G 32 R 32 AZ 2 BK 2" />
+    <tartan id="MacNeil" sett="Y 2 BK 6 G 30 BK 28 B 32 R 4 W 2" />
+    <tartan id="MacNiel_of_Barra" sett="Y 6 BK 4 G 24 BK 24 B 28 W 6" />
+    <tartan id="MacNiel_of_Colonsay" sett="BK 4 B 12 BK 12 G 12 W 2 G 12 B 8" />
+    <tartan id="MacNicol" sett="R 12 G 2 R 12 BK 8 R 2 AZ 2 R 2 G 16 R 12 BK 2 R 12 G 2" />
+    <tartan id="MacNicol_D" sett="BK 4 R 20 G 4 R 20 BK 16 AZ 4 BK 12 R 4 G 26 R 20 G 4 R 20 BK 4" />
+    <tartan id="MacNicol_Hunting" sett="B 20 BK 2 G 2 BK 2 G 2 BK 2 B 20 R 6 BK 20 R 6 G 20 BK 2 Y 2 BK 2 W 2 BK 2 G 20" />
+    <tartan id="MacPherson" sett="R 2 BK 2 W 2 R 24 AZ 8 BK 2 AZ 2 BK 2 AZ 8 BK 12 Y 2 G 16 R 24 AZ 4 R 24" />
+    <tartan id="MacPherson_Dress" sett="W 6 R 2 W 60 BK 40 W 6 BK 18 Y 2" />
+    <tartan id="MacPherson_Hunting" sett="B 2 R 2 GY 16 R 2 B 2 R 2 BK 16 R 2 B 2" />
+    <tartan id="MacPherson_Of_Cluny" sett="R 10 PU 4 R 4 G 84 R 10 PU 72 R 140 PU 4 Y 4 R 14 G 4" />
+    <tartan id="MacPhie" sett="W 2 R 24 G 4 R 2 G 32 R 2 G 4 R 24 Y 2" />
+    <tartan id="MacQuarie" sett="R 32 G 2 R 2 G 2 R 8 G 24" />
+    <tartan id="MacQuarrie_1815" sett="G 4 R 6 G 4 R 104 G 4 R 4 B 56 R 4 G 84 R 4 G 4 R 6 G 4" />
+    <tartan id="MacQuarrie_LO" sett="R 4 AZ 2 R 32 B 24 R 8 G 32 R 12" />
+    <tartan id="MacQuarrie_SM" sett="R 2 AZ 2 R 12 B 6 R 2 G 12 R 2 G 12 R 12 B 2 R 2 AZ 2" />
+    <tartan id="MacQueen" sett="Y 2 BK 24 R 12 BK 4 R 12 BK 4" />
+    <tartan id="MacRae" sett="G 8 R 2 G 8 R 8 B 2 R 2 B 2 R 2 B 2 R 8 B 2 R 2 B 2 R 2 B 2 R 8 W 2 R 2 B 8 R 2 B 8 R 2 W 2 R 8 G 2 R 2 G 2 R 8 G 8 R 2 G 8" />
+    <tartan id="MacTavish" sett="AZ 4 R 24 B 4 AZ 12 BK 12 AZ 2" />
+    <tartan id="MacThomas" sett="B 6 CR 4 B 42 BK 22 G 42 CR 4 G 6" />
+    <tartan id="MacThomas_LC" sett="G 10 Lil 6 G 64 BK 32 B 64 Ma 6 B 10" />
+    <tartan id="Maitland" sett="R 4 Y 4 B 4 Y 4 G 18 BK 8 G 6 B 16 G 6" />
+    <tartan id="Malcolm" sett="B 2 R 2 B 12 BK 12 G 12 BK 2 Y 2 BK 2 AZ 2 BK 2 G 12 BK 12 B 12 R 2" pivots="0" />   <!-- what are pivots for? -->
+    <tartan id="Matheson" sett="G 16 R 8 G 2 R 2 G 2 R 48 B 16 G 8 R 2 G 2 R 2 G 8 R 16 G 2 R 2 G 2 R 2 B 16 G 16 R 4 G 8" />
+    <tartan id="Matheson_N" sett="R 4 G 4 R 24 B 20 AZ 6 G 20 R 4 G 4 R 4 G 20 R 24 G 4 R 4" />
+    <tartan id="Maxwell" sett="R 6 G 2 R 56 BK 12 R 8 G 32 R 6" />
+    <tartan id="Melville" sett="BK 10 W 4 G 36 BK 34 PU 32 BK 6" />
+    <tartan id="Menzies" sett="R 10 AZ 4 W 2 G 10 R 10" />
+    <tartan id="Menzies_Dress" sett="R 72 W 8 R 6 W 8 R 12 W 4 R 2 W 24" />
+    <tartan id="Menzies_Hunting" sett="G 96 R 8 G 4 R 8 G 12 R 4 G 6 R 18" />
+    <tartan id="Menzies_VS" sett="W 8 R 2 W 4 R 6 W 48 CR 10 R 6 CR 2 R 2 CR 2 R 40 W 4" />
+    <tartan id="Merchiston_Castle_School" sett="R 10 B 72 BK 24 W 10 BK 10 W 36 R 10 W 16 BK 16 W 16 BK 36" />
+    <tartan id="Mitchell" sett="BK 4 G 24 BK 24 R 2 B 24 W 4" />
+    <tartan id="Moncreiffe" sett="R 1 G 1" />
+    <tartan id="Moncreiffe_D" sett="R 2 G 2 R 2" />
+    <tartan id="Montgomery" sett="BK 8 G 10 BK 8 PU 56 BK 8 R 10 BK 8" />
+    <tartan id="Montrose" sett="AZ 4 BK 4 R 28 AZ 14 BK 16 G 30 R 28 BK 4 AZ 4" />
+    <tartan id="Morrison" sett="BK 6 G 28 BK 28 G 4 B 28 R 6" />
+    <tartan id="Morrison_LC" sett="G 10 R 64 BK 10 R 14 BK 10 R 34 G 30 W 8 G 18" />
+    <tartan id="Mowat" sett="B 36 BK 2 B 4 BK 36 Y 4 G 32 BK 32" />
+    <tartan id="Munro" sett="G 4 CR 4 G 4 R 32 B 2 Y 2 R 6 B 12 R 6 Y 2 B 2 R 6 G 32 R 6 B 2 Y 2 R 48" />
+    <tartan id="Munro_VS" sett="W 6 R 64 BK 36 R 8 BK 36" />
+    <tartan id="Murray" sett="B 12 BK 2 B 2 BK 2 B 2 BK 12 G 12 R 4 G 12 BK 12 B 12 BK 2 B 4" />
+    <tartan id="Murray_of_Atholl" sett="B 24 BK 4 B 4 BK 4 B 4 BK 24 G 24 R 6 G 24 BK 24 B 24 BK 2 R 6" />
+    <tartan id="Murray_of_Tullibardine" sett="B 4 R 2 B 2 R 4 B 8 R 4 B 2 R 2 BK 4 R 2 B 2 R 48 B 24 R 4 G 4 R 16 G 24 R 8 B 4 R 4 BK 2" />
+    <tartan id="Napier" sett="W 2 B 24 BK 8 W 4 BK 4 W 8 BK 4 W 4 BK 4 W 4 BK 8" />
+    <tartan id="Ogilvy" sett="W 4 AZ 10 Y 4 PU 4 R 12 W 4 R 12 W 4 R 12 BK 4 Y 10 AZ 20 R 6 AZ 20" />
+    <tartan id="Ogilvy_Hunting" sett="R 8 G 6 BK 2 G 6 BK 2 G 32 BK 16 Y 4 B 48" />
+    <tartan id="Ogilvy_D" sett="W 2 AZ 8 Y 2 BK 2 R 12 W 2 R 8 W 2 R 12 BK 2 Y 2 AZ 8 R 2 AZ 8" />
+    <tartan id="Ogilvy_VS" sett="R 6 G 4 BK 2 G 48 BK 32 B 4 Y 2 B 56" />
+    <tartan id="Oliphant" sett="G 4 W 2 G 64 B 48 BK 8 B 8" />
+    <tartan id="Priest" sett="AZ 4 BK 16 AZ 4 Lv 8 AZ 4 BK 32 AZ 4 BK 32 Lv 28 AZ 4 BK 4" />
+    <tartan id="Prince_Charles_Cloak" sett="R 96 B 6 Y 2 G 28 R 16 B 6 AZ 8 W 2" />
+    <tartan id="Ramsay" sett="R 6 PU 2 R 60 BK 56 W 4 BK 8" />
+    <tartan id="Rattay" sett="G 142 BK 8 R 8 B 18 R 8 B 8 R 72 B 8 W 8" />
+    <tartan id="Robertson" sett="R 2 G 2 R 18 B 2 R 2 G 18 R 2 B 18 R 2 G 2 R 18 G 2 R 2" scalefactor="0.5" />
+    <tartan id="Robertson_of_Kindeace" sett="W 6 BK 2 B 24 BK 24 G 32 BK 2 R 6 BK 2 G 32 BK 24 B 4 BK 4 B 4 BK 4 B 24" />
+    <tartan id="Robertson_D" sett="R 10 G 4 R 60 B 6 R 6 G 60 R 6 B 60 R 6 B 6 R 60 G 4 R 10" />
+    <tartan id="Rob_Roy" sett="BK 8 R 8" />
+    <tartan id="Royal_Canadian_Air_Force" sett="Mn 4 AZ 6 BK 1 Mn 2 BK 1 AZ 14 BK 3 W 3 BK 2 Mn 2 BK 2 Mn 2 B 4 Mn 2 B 6 Mn 2 B 6 Mn 3" />
+    <tartan id="Rose" sett="G 4 R 56 B 12 R 10 B 4 R 4 B 4 R 22 W 4" />
+    <tartan id="Rose_Hunting" sett="BK 8 W 2 G 20 BK 20 B 20 R 4" />
+    <tartan id="Rose_VS" sett="G 8 R 64 PU 18 CR 12 PU 4 CR 6 PU 4 CR 24 W 6" />
+    <tartan id="Ross" sett="G 36 R 4 G 36 R 36 G 4 R 8 G 4 R 36 B 36 R 4 B 36 R 36 B 2 R 2 B 4 R 2 B 2 R 36 B 2 R 2 B 4 R 2 B 2 R 36 G 36 R 4 G 36" />
+    <tartan id="Ross_Hunting" sett="R 2 G 4 R 2 G 24 BK 4 G 4 BK 4 G 6 LG 2 G 2 LG 2 G 4 LG 8 G 4" />
+    <tartan id="Ruthven" sett="R 4 G 2 R 60 B 36 G 30 W 6" />
+    <tartan id="Scott" sett="G 8 R 6 BK 2 R 56 G 28 R 8 G 8 W 6 G 8 R 8" />
+    <tartan id="Scrymgeour" sett="Y 90 BK 6 R 12 B 18 Y 12 BK 6 R 90" />
+    <tartan id="Seton" sett="R 4 G 2 R 64 BK 8 R 4 B 8 R 8 G 24 W 2 G 12" />
+    <tartan id="Shaw" sett="AZ 10 BK 2 R 60 PU 30 R 16 G 60 R 16 PU 4" />
+    <tartan id="Shepherd" sett="BK 1 W 1" scalefactor="1.0" />
+    <tartan id="Sinclair" sett="R 60 G 24 BK 10 W 4 AZ 12 R 60" />
+    <tartan id="Sinclair_Dress" sett="R 56 G 32 BK 8 W 2 AZ 12 R 56" />
+    <tartan id="Sinclair_Hunting" sett="G 4 R 2 G 60 BK 32 W 2 B 32 R 4" />
+    <tartan id="Skene" sett="B 2 R 6 G 18 R 6 B 2 R 6 B 18" />
+    <tartan id="Skene_D" sett="G 4 R 12 G 36 R 12 G 4 R 12 B 18" />
+    <tartan id="Skene_N" sett="BK 8 R 6 G 48 BK 8 Or 6 BK 8 G 48 BK 8 R 6 BK 8 B 48 BK 8" />
+    <tartan id="Stewart_Dress" sett="W 72 B 8 BK 12 Y 2 BK 2 W 2 BK 2 G 16 R 8 BK 2 R 4 W 2" />
+    <tartan id="Stewart_Hunting" sett="G 4 B 14 BK 2 B 2 BK 2 B 2 BK 6 G 22 R 4 G 22 BK 6 G 4 BK 12 G 4 BK 12 G 4 BK 6 G 22 Y 4 G 22 BK 6 B 2 BK 2 B 2 BK 2 B 14 G 4" />
+    <tartan id="Stewart_Hunting_D" sett="G 4 B 6 BK 2 B 2 BK 2 B 2 BK 8 G 24 R 4 G 24 BK 6 G 4 BK 12 G 4 BK 12 G 4 BK 6 G 24 Y 4 G 24 BK 8 B 2 BK 2 B 2 BK 2 B 6 G 4" />
+    <tartan id="Stewart_Hunting_Early" sett="G 8 B 18 BK 6 B 6 BK 16 G 54 R 8 G 54 BK 16 G 10 BK 26 G 8 BK 26 G 10 BK 16 G 54 Y 8 G 54 BK 16 B 6 BK 6 B 18 G 8" />
+    <tartan id="Stewart_Hunting_Early_Scaled" sett="G 4 B 9 BK 3 B 3 BK 8 G 27 R 4 G 27 BK 8 G 5 BK 13 G 4 BK 13 G 5 BK 8 G 27 Y 4 G 27 BK 8 B 3 BK 3 B 9 G 4" />
+    <tartan id="Stewart_Old" sett="G 24 BK 2 B 4 BK 2 G 24 R 4 BK 24 R 2 BK 24 R 4 B 24 BK 2 G 4 BK 2 G 4 BK 2 B 24" />
+    <tartan id="Stewart_Royal" sett="R 72 B 8 BK 12 Y 2 BK 2 W 2 BK 2 G 16 R 8 BK 2 R 4 W 2" scalefactor="0.4" />
+    <tartan id="Stewart_of_Appin" sett="G 4 R 4 AZ 2 B 4 R 48 G 4 R 4 B 16 R 4 G 4 R 8 G 48 R 4 AZ 2 B 4 R 6" />
+    <tartan id="Stewart_of_Atholl" sett="R 12 BK 2 R 40 BK 16 G 6 BK 2 G 4 BK 2 G 44" />
+    <tartan id="Stuart_of_Bute" sett="W 4 R 48 BK 12 G 2 BK 2 G 4 BK 2 G 12 R 24" />
+    <tartan id="Sutherland" sett="G 12 W 4 G 48 BK 24 B 6 BK 4 B 4 BK 4 B 24 R 2 B 2 R 6" />
+    <tartan id="Urquhart" sett="R 4 G 6 BK 6 G 96 BK 48 B 16 BK 6 B 6 BK 6 B 48 W 4 B 8" />
+    <tartan id="Urquhart_D" sett="BK 4 G 18 BK 12 B 2 BK 2 B 2 BK 2 B 12 R 6" />
+    <tartan id="Urquhart_L" sett="G 2 BK 2 G 16 BK 16 B 16 R 2 B 16 BK 16 G 2 BK 2 G 2 BK 2 G 16" />
+    <tartan id="Wallace" sett="BK 2 R 16 BK 16 Y 2" />
+    <tartan id="Wemyss" sett="R 8 G 2 R 48 BK 8 R 8 BK 24 W 2 BK 24 R 8" />
+
+</tartans>

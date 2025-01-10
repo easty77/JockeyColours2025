@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0"
+	 id="svg2" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="0.47 r22583" sodipodi:docname="Novo documento 1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="338.571px"
+	 height="317.25px" viewBox="0 0 338.571 317.25" enable-background="new 0 0 338.571 317.25" xml:space="preserve">
+<defs>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="red"/>
+   </linearGradient>
+ </defs>
+<g id="layer1" transform="translate(-190.23529,-232.04075)">
+	<g id="g3744">
+		<path id="path2830" fill="url(#colour1)" stroke="url(#colour1)" d="M190.735,444.148c40.952,0,81.905,0,122.857,0
+			c-11.078,11.007-22.993,22.218-38.404,26.791c-18.96,5.626-40.148,4.718-57.74-4.732
+			C207.222,460.713,196.97,454.195,190.735,444.148z"/>
+		<g id="g3636" transform="translate(-1.229,0)">
+			<path id="path3612" fill="url(#colour1)" stroke="url(#colour1)" stroke-width="6" d="M199.286,445.219l57.143-155"/>
+			<path id="path3612-1" fill="url(#colour1)" stroke="url(#colour1)" stroke-width="6" d="M307.5,446.469l-57.143-155"/>
+		</g>
+		<path id="path2830-7" fill="url(#colour1)" stroke="url(#colour1)" d="M405.45,444.148c40.952,0,81.905,0,122.856,0
+			c-11.078,11.007-22.992,22.218-38.403,26.791c-18.96,5.626-40.147,4.718-57.74-4.732
+			C421.937,460.713,411.685,454.195,405.45,444.148L405.45,444.148z"/>
+		<g id="g3636-4" transform="translate(213.48528,0)">
+			<path id="path3612-0" fill="url(#colour1)" stroke="url(#colour1)" stroke-width="6" d="M199.286,445.219l57.143-155"/>
+			<path id="path3612-1-9" fill="url(#colour1)" stroke="url(#colour1)" stroke-width="6" d="M307.5,446.469l-57.144-155"/>
+		</g>
+		<path id="path3683" fill="url(#colour1)" stroke="url(#colour1)" d="M271.128,548.791h176.785c0,0-60.527-10.813-77.5-33.215
+			c-5.51-7.273,0.738-18.099,0.429-27.143l-6.5-189.785h-8.928l-6.5,189.785c-0.31,9.043,5.645,19.896,0.071,27.143
+			C331.783,537.941,271.128,548.791,271.128,548.791L271.128,548.791L271.128,548.791z"/>
+		<path id="path3687-4" fill="url(#colour1)" stroke="url(#colour1)" d="M479.999,300.576H239.042l-1.429-13.928
+			c-0.083-0.815,0.112-1.883,0.804-2.322c0.708-0.449,1.663,0.314,2.5,0.268c29.973-1.001,57.968-20.911,88.304-15.804
+			c7.235,1.218,13.471,3.865,18.75,8.929c0.652,0.657,1.964,1.964,1.964,1.964c2.74,2.74,3.812-1.116,5-4.643
+			c2.324-7.65,4.086-42.5,4.586-42.5s2.263,34.85,4.586,42.5c1.188,3.527,2.261,7.383,5,4.643c0,0,1.313-1.307,1.965-1.964
+			c4.938-5.506,11.668-7.998,18.75-8.929c29.935-3.933,58.808,11.721,88.303,15.804c0.838,0.046,1.793-0.717,2.5-0.268
+			c0.691,0.439,0.888,1.507,0.805,2.322L479.999,300.576z"/>
+	</g>
+</g>
+</svg>

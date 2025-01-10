@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : new_patterns.xml
+    Created on : 12 September 2012, 22:01
+    Author     : Simon
+    Description:
+        Purpose of the document follows.
+-->
+<!-- mero dimensions are relative for ENEJacketSVGAction etc and absolute for ENESVGAction - see rising sun example -->
+<patterns>
+    <language id="en">
+<jacket>
+    <pattern id="harlequin" standard="JacketStars" mero="Harlequin" />
+<!-- Stars -->
+    <pattern id="stars" standard="JacketStars" mero="English_Stars" />  <!-- Stars is Australian style, 5 like on dice -->
+    <pattern id="star" standard="ENEJacketSVGAction" svg="Star" />
+    <pattern id="starNoSVG" standard="JacketShape" mero="Star" />
+    <pattern id="star badge" standard="ENEJacketSVGAction.Badge" svg="star" />                            
+
+    <pattern id="stars panel" standard="JacketStars.Panel" mero="" />  <!-- Americain - Melbourne Cup -->
+    <pattern id="star in disc" standard="JacketStars.InDisc" mero="" />  
+    <pattern id="star on each shoulder" standard="JacketStars.EachShoulder" mero="" />  
+
+<!-- Spots -->
+    <pattern id="large spots" standard="JacketSpots.Large" mero="large_spots">
+        <synonym id="three diagonal spots" />
+        <synonym id="diagonal spots" />
+        <synonym id="ball sash" />
+        <synonym id="three large diagonal spots" />
+        </pattern>
+    <pattern id="polka dots" standard="JacketSpots.PolkaDots" mero="" />
+
+    <pattern id="spots" standard="JacketSpots" mero="English_Spots"> <!-- Spots is Australian style, 5 like on dice -->
+        <synonym id="dotsXX" />
+        </pattern>
+   <pattern id="dots" standard="JacketSpots" mero="US_Dots" /> <!-- Smaller, same spacing Triple Crown 1930/5 -->
+    <pattern id="disc" standard="JacketDisc" mero="Disc">
+        <synonym id="large spot" />
+        <synonym id="spot" />
+        <synonym id="solid disc" />
+        <synonym id="ball" />
+        </pattern>
+<!-- Chevrons and Vees -->
+    <pattern id="chevron" standard="JacketChevrons.Single" mero="Vee">
+        <synonym id="vee" />
+        <synonym id="triangular panel" />
+        <synonym id="v sash" />
+        <synonym id="v bib" />
+        <synonym id="v" />
+        <synonym id="'V'" />
+        <synonym id="&quot;v&quot;" />
+        <synonym id="'v'" />
+        <synonym id="solid vee" />
+        <implementation id="2" standard="JacketChevrons.Single" mero="Vee_2colour" />
+        </pattern>
+    <pattern id="chevron with piping" standard="JacketChevrons.SinglePiping" mero="" />
+
+    <pattern id="chevron hoop" standard="JacketChevronHoops.Single" mero="chevron_hoop">
+        <synonym id="zig zag band" />
+        <synonym id="chevron band" />
+        <synonym id="chevrons hoop" />
+        </pattern>
+
+    <pattern id="chevron hoops" standard="JacketChevronHoops" mero="">
+        <synonym id="chevron bands" />
+        </pattern>
+
+    <pattern id="vees" standard="JacketChevrons.Vees" mero="two vees">          <!-- AUS Vee_2colour -->
+        <synonym id="vs" />
+        <synonym id="two vees" />
+    </pattern>
+
+    <pattern id="chevrons" standard="JacketChevrons" mero="three_chevrons">
+        <synonym id="vs" />
+    </pattern>
+    <pattern id="two chevrons" standard="DefaultPatternAction" mero="Chevrons" />
+
+    <pattern id="checked v" category="2" standard="JacketChevrons.SingleChecked" mero="" />    <!-- AUS -->
+    <pattern id="solid triangular panel" standard="JacketTriangle.Panel" mero="" />
+     <pattern id="double vee" standard="DefaultPatternAction" mero="two coloured vee" />     <!-- AUS -->
+
+<!-- Hoops -->
+    <pattern id="hoops" category="2" standard="JacketHoops" mero="hooped_2015">      <!-- 2016 version using âtterns doesn't dislay correctly in PDF -->
+        <synonym id="hooped" />
+        <synonym id="rings" />
+        <synonym id="bands" />
+        <synonym id="banded" />
+        <synonym id="cross stripe" />
+        <implementation id="2" standard="JacketHoops" mero="three colour hoops" />
+        <implementation id="3" standard="JacketHoops" mero="four colour hoops" />
+        </pattern>
+
+    <pattern id="hoop" standard="JacketHoops.Single" mero="band">
+        <synonym id="one hoop" />
+        <synonym id="broad hoop" />
+        <synonym id="centre-band" />
+        <synonym id="beltX" />               <!-- recent, but older is a sash -->
+        <synonym id="broad beltX" />
+        <synonym id="band" />
+        <synonym id="girdle" />
+        <implementation id="2" standard="JacketHoops.Single" mero="band_2colour" />
+        <implementation id="3" standard="JacketHoops.Single" mero="" />
+        </pattern>
+   <pattern id="narrow belt" standard="JacketHoops.NarrowBelt" mero="Narrow_Hoop">
+        <synonym id="narrow hoop" />
+   </pattern>    
+ 
+    <pattern id="graduated hoops" standard="JacketHoops.Graduated" mero="" />    <!-- UK 1968 -->
+    <pattern id="check hoop" category="2" standard="JacketHoops.CheckedSingle" mero="">
+         <synonym id="checked hoop" />
+         <synonym id="checked band" />
+         <implementation id="2" standard="JacketHoops.CheckedSingle" mero="" />
+   </pattern>
+    <pattern id="two hoops" standard="JacketHoops.Two" mero="two_hoops" />
+
+    <pattern id="ww hoop" standard="DefaultPatternAction" mero="ww_hoop" />
+    <pattern id="hoop with piping" standard="JacketHoops.Single" mero="hoop_piping" >
+      <implementation id="2" standard="JacketHoops.Single" mero="hoop_piping" />
+    </pattern>
+
+<!-- Stripes and Braces -->
+    <pattern id="stripes" category="2" standard="JacketStripes" mero="Stripes">
+        <synonym id="vertical stripes" />
+        <synonym id="striped" />
+        <implementation id="2" standard="JacketStripes" mero="Stripes_3Colours" />
+        <implementation id="3" standard="JacketStripes" mero="Stripes_4Colours" />
+        </pattern>
+
+    <pattern id="stripe" standard="JacketStripes.Single" mero="Single_Stripe">
+        <synonym id="one vertical stripe" />
+        <synonym id="vertical stripe" />
+        <synonym id="one broad stripe" />
+        <synonym id="broad stripe" />
+        <synonym id="panel" />
+        </pattern>
+
+    <pattern id="one and one stripes" standard="JacketStripes.OneAndOne" mero="One_and_one_stripe" /> 
+ 
+    <pattern id="wide stripes" standard="JacketStripes.Wide" mero="Wide_stripes" /> 
+    <pattern id="narrow stripes" standard="JacketStripes.Narrow" mero="Stripes" /> 
+
+    <pattern id="diamonds stripe" standard="JacketStripes.DiamondsSingle" mero="" />
+
+    <pattern id="diagonal stripes" category="2" standard="JacketStripes.Diagonal" mero="diagonal stripes">  <!-- AUS -->
+        <synonym id="oblique stripes" />
+    </pattern>        
+    <pattern id="two broad stripes" standard="JacketStripes.TwoBroad" mero="Wide_stripes" />  <!-- UK -->
+
+    <pattern id="braces" standard="JacketBraces" mero="Braces">
+        <synonym id="shoulder straps" />
+        <synonym id="straps" />
+        </pattern>
+
+    <pattern id="checked braces" category="2" standard="JacketBraces.Checked" mero="" />    <!-- AUS -->
+    <pattern id="diamond braces" category="2" standard="JacketBraces.Checked" mero="Diamond_Braces" />    <!-- US -->
+
+
+<!-- Halves  and Quarters -->
+    <pattern id="halves" category="2" standard="JacketHalves" mero="halved">
+        <synonym id="halved" />
+        <synonym id="vertical halves" />
+        <synonym id="vertical halved" />
+        <synonym id="halved vertically" />
+         </pattern>
+
+    <pattern id="horizontal halves" category="2" standard="JacketHalves.Horizontally" mero="horizontal halves">
+        <synonym id="halved horizontally" />
+        </pattern>
+
+    <pattern id="diagonal halves" category="2" standard="JacketHalves.Diagonal" mero="diagonal_halves">    <!-- to do: France -->
+        <synonym id="diagonally halved" />
+    </pattern>
+    <pattern id="halved diagonally" category="2" standard="JacketHalves.Diagonally" mero="" />    <!-- ??? order of colours is swapped from above ?? -->
+    <pattern id="diagonal halves with sash" standard="JacketHalves.Diagonally" mero="diagonal_halves_with_sash" /> 
+   <pattern id="zigzag" category="2" standard="JacketHalves.Diagonally" mero="zigzag" />    <!-- jagged horizontal halves -->
+
+    <pattern id="quartered" category="2" standard="JacketQuarters" mero="quartered">
+        <synonym id="quarters" />
+        <synonym id="paned" />
+        </pattern>
+    <pattern id="quartered with piping" standard="DefaultPatternAction" mero="quartered_piping" />   
+
+    <pattern id="horizontal thirds" category="3" standard="JacketThirds" mero="horizontal thirds">
+        <implementation id="2" standard="JacketThirds" mero="horizontal thirds" />
+    </pattern>
+    <pattern id="diagonal thirds" category="3" standard="JacketThirds.Diagonal" mero="diagonal_thirds">
+        <synonym id="triangular thirds" />
+        <implementation id="2" standard="JacketThirds.Diagonal" mero="diagonal_thirds" />
+    </pattern>
+    <pattern id="vertical thirds" standard="DefaultPatternAction" mero="" />    <!-- AUS -->
+
+<!-- Sashes and Cross Belts -->
+     <pattern id="cross belts" standard="JacketSash.NewCrossBelts" mero="Crossed_Sashes">
+        <synonym id="st andrew's cross" />
+        <synonym id="st andrew cross" />
+        <synonym id="crossed sashes" />
+        <synonym id="crossed sash" />
+        <synonym id="cross sashes" />
+        <synonym id="cross sash" />
+        <synonym id="cross belt" />
+        <synonym id="cross sashes" />
+        <implementation id="2" standard="JacketSash.NewCrossBelts" mero="Crossed_Sashes_2Colours" />
+        </pattern>
+
+     <pattern id="hollow crossed sashes" standard="JacketSash.NewCrossBelts" mero="Hollow_Crossed_Sashes" />
+     <pattern id="diamond sash" standard="JacketSash.Diamond" mero="" />
+    <pattern id="striped sash" standard="JacketSash.Striped" mero="" />
+    <pattern id="over cross belts" standard="JacketSash.OverCrossBelts" mero="" />
+    <pattern id="sash with stripe" standard="JacketSash.WithStripe" mero="sash_with_stripe" />
+
+    <pattern id="checked sash" category="2" standard="JacketSash.NewChecked" mero="checked_sash1"> // Check_Sash_1
+        <synonym id="check sash" />
+        <synonym id="chequered belt" />
+        <implementation id="2" standard="JacketSash.NewChecked" mero="checked_sash2" />  // Check_Sash_2
+        <implementation id="3" standard="JacketSash.Checked" mero="Check_Sash_3" />
+        </pattern>
+
+    <pattern id="sash with piping" standard="JacketSash.Piping" mero="Sash_with_piping">
+      <implementation id="2" standard="JacketSash.Piping" mero="Sash_with_piping" />
+    </pattern>
+    <pattern id="sash" standard="JacketSash.NewSash" mero="Sash">
+        <synonym id="belt" />               // in 1912, but recent is a hoop
+        <implementation id="2" standard="JacketSash" mero="Sash_2colour" />
+        <implementation id="3" standard="JacketSash" mero="Sash_3colour" />
+    </pattern>
+    <pattern id="thin sash" standard="JacketSash.NewSash" mero="Sash_Half" />
+    <pattern id="reverse_sash" standard="JacketSash.NewSash" mero="reverse_sash">   <!-- from right shoulder, only implemented for mero 3 colour -->
+        <synonym id="reversed sash" />               // in 1912, but recent is a hoop
+       <implementation id="3" standard="JacketSash" mero="reverse_sash_3col" />
+    </pattern>
+   <pattern id="thin_reverse_sash" standard="JacketSash.NewSash" mero="thin_reverse_sash" />    <!-- French second colours -->
+    <pattern id="broad belt" standard="JacketSash.Broad" mero="" />  // in 1912, but recent is a hoop
+    <pattern id="diamonds sash" standard="JacketSash.Diamonds" mero="" /> 
+    
+
+<!-- Diamonds -->
+    <pattern id="diamonds" category="2" standard="JacketDiamonds" mero="Diamonds_2015">  <!-- 2016 version cannot be extracted into definitions -->
+        <synonym id="diamond check" />
+        <synonym id="checked diamonds" />
+        </pattern>
+    <pattern id="small diamonds" category="2" standard="JacketDiamonds" mero="Small_Diamonds" />    <!-- Secreto -->
+
+    <pattern id="triple diamond" standard="JacketDiamonds.Triple" mero="triple diamond">    <!-- Diamond_Band is 4 diamonds rather than 3 -->
+        <synonym id="three diamonds" />             
+        <synonym id="triple diamonds" />
+        <synonym id="diamond hoop" />
+        </pattern>
+
+    <pattern id="diamond band" standard="JacketHoops.SingleDiamond" mero="Diamond_Band">
+        <synonym id="band of diamonds" />
+        </pattern>
+
+    <pattern id="diamond frame" standard="JacketSquare.DiamondFrame" mero="Diamond_Frame">
+        <synonym id="hollow diamond" />
+        </pattern>
+    <pattern id="diamond" standard="JacketDiamonds.Single" mero="Diamond" />
+    <pattern id="harlequin" standard="JacketDiamonds.Harlequin" mero="" />  <!-- small diamonds -->
+    <pattern id="crazy quilt" standard="JacketDiamonds.CrazyQuilt" mero="" />  
+
+<!-- Checked -->
+    <pattern id="checked" category="2" standard="JacketCheck" mero="checked_2015"><!-- 2016 version cannot be extracted into definitions -->
+        <synonym id="squares" />
+        <synonym id="chequered" />
+        <synonym id="chequers" />
+        <synonym id="checks" />
+        <synonym id="check" />
+        </pattern>
+
+    <pattern id="hollow box" standard="JacketSquare.HollowBox" mero="HollowBox"> // standard="ENEJacketSVGAction" svg="NSW/hollow box" dimensions="10 15 65 65" mero="8 10 90 90">    // 
+        <synonym id="block frame" />
+        <synonym id="frame" />
+        <synonym id="box" />
+        </pattern>
+
+    <pattern id="seams" standard="JacketSeams" mero="Seams" />
+    <pattern id="piping" standard="JacketSeams.Piping" mero="" />    
+
+    <!-- Miscellaneous -->
+    <pattern id="braid" standard="JacketExtras.JacketBraid" mero="Braid">    // are Facings different - see Pall Mall Gazette
+        <synonym id="facings" />
+        <synonym id="braid facing" />
+    </pattern>
+    <pattern id="patches" standard="JacketExtras.JacketPatches" mero="" />
+    <pattern id="two patches" standard="JacketExtras.JacketPatches" mero="" />
+    <pattern id="shoulders" standard="JacketExtras.JacketShoulders" mero="Shoulders2" />
+    <pattern id="waistcoat" standard="JacketExtras.JacketWaistcoat"  mero="" />
+    <pattern id="checked collar" category="2" standard="JacketCollar.Checked" mero="checked_collar">
+        <synonym id="check collar" />
+        <implementation id="2" standard="SleevesArmlets.Checked" mero="checked_collar" />
+    </pattern>
+    <pattern id="collar" standard="JacketCollar" mero="collar" />
+    <pattern id="back_collar" standard="JacketCollar" mero="back_collar" />
+    <pattern id="cape" standard="DefaultPatternAction" mero="" />
+    <pattern id="yoke" standard="JacketExtras.JacketYoke" mero="Yoke" /> 
+    <pattern id="checked yoke" standard="JacketExtras.JacketYoke" mero="Checked_Yoke" /> 
+    <pattern id="spiked yoke" standard="JacketExtras.JacketYoke" mero="Spiked_Yoke" />
+    <pattern id="square" standard="JacketSquare" mero="Square" />
+
+    <pattern id="checked epaulets" category="2" standard="JacketEpaulets.Checked" mero="" />    <!-- AUS -->
+    <pattern id="epaulets" standard="JacketEpaulets" mero="Epaulettes" />
+
+    <pattern id="diabolo" category="2" standard="JacketDiabolo" mero="Diablo">
+        <synonym id="diagonal quarters" />
+        <synonym id="quartered diagonally" />
+        </pattern>
+
+    <pattern id="buttons" standard="JacketExtras.JacketButtons" mero="Buttons" />
+
+    <pattern id="logo" standard="JacketExtras.JacketLogo" mero="" />
+    <pattern id="textXX" standard="JacketExtras.JacketText" mero="" />
+    <pattern id="text" standard="ENEJacketSVGAction" mero="text" svg="text" />
+    <pattern id="text_badge" standard="ENEJacketSVGAction.Badge" mero="text" svg="text" />
+
+<!-- Shapes -->
+    <pattern id="cross" standard="JacketCross" mero="cross">
+        <synonym id="st george cross" />
+        <synonym id="george cross" />
+        <synonym id="crusader cross" />
+        <synonym id="swiss cross" />
+        <synonym id="solid cross" />
+    </pattern>
+
+    <pattern id="roundel" standard="JacketDisc.Roundel" mero="roundel" />        <!-- AUS -->
+    <pattern id="maltese cross" standard="JacketShape" mero="Maltese_Cross" />
+    <pattern id="cross of lorraine" standard="JacketShape" mero="Cross_of_Lorraine" />
+
+    <pattern id="circle" standard="JacketDisc.Circle" mero="Circle" />
+    <pattern id="question mark" standard="JacketExtras.JacketQuestionMark" mero="" />
+
+    <pattern id="inverted triangle" standard="JacketTriangle.Inverted" mero="inverted_triangle" />
+    <pattern id="triangle" standard="JacketTriangle" mero="triangle" />
+ 
+    <pattern id="horse" standard="ENEJacketSVGAction" svg="UK/horse"  mero="5 0 0 0" />
+    <pattern id="shield with stars" standard="ENEJacketSVGAction" svg="UK/shield with stars"  mero="0 -30 0 0" />
+    <pattern id="five diamonds" standard="ENEJacketSVGAction.Five" svg="UK/diamond" />
+    <pattern id="four diamonds" standard="ENEJacketSVGAction.Four" svg="UK/diamond" />
+    <pattern id="hearts" standard="JacketShape.Five" mero="Hearts" />
+    <pattern id="heart" standard="ENEJacketSVGAction" svg="NSW/heart" />
+    <pattern id="shamrocksX" standard="JacketShape.Five" mero="Shamrocks" />
+    <pattern id="shamrockX" standard="JacketShape" mero="Shamrock" />     <!-- AUS -->
+    <pattern id="shamrock" standard="ENEJacketSVGAction" svg="NSW/shamrock" />       
+    <pattern id="shamrocks" standard="ENEJacketSVGAction.Four" svg="NSW/shamrock" />       
+    <pattern id="four leaf clover" standard="ENEJacketSVGAction" svg="NSW/four leaf clover" mero="0 0 0 0" />    <!-- AUS -->
+    <pattern id="horseshoe" standard="ENEJacketSVGAction" svg="NSW/horseshoe" meroX="0 0 200 200">       
+        <synonym id="rolled horseshoe" />
+    </pattern>
+    <pattern id="horseshoes" standard="ENEJacketSVGAction.Five" svg="NSW/horseshoe" />       
+    <pattern id="horseshoesX" standard="JacketShape.Five" mero="Horseshoes" />      <!-- AUS -->
+    <pattern id="horseshoeX" standard="JacketShape" mero="Horseshoe" />      <!-- AUS -->
+     <pattern id="clubs" standard="ENEJacketSVGAction.Five" svg="NSW/club" />    <!-- AUS -->
+    <pattern id="club" standard="ENEJacketSVGAction" svg="NSW/club" />    <!-- AUS -->
+<!-- Text -->
+    <pattern id="text in circle" standard="JacketDisc.TextInCircle" mero="" />       
+    <pattern id="text in diamond" standard="JacketDiamonds.TextInSingle" mero="" />       
+    <pattern id="text in border diamond" standard="JacketDiamonds.TextInSingleBorder" mero="" />       
+
+<!-- Graphics -->
+    <pattern id="welsh dragon" standard="ENEJacketSVGAction" svg="NSW/wales dragon" />     <!-- AUS -->
+    <pattern id="dragon" standard="ENEJacketSVGAction" svg="NSW/wales dragon" />     <!-- AUS Same as Welsh for now -->
+    <pattern id="roseX" standard="JacketExtras.JacketImage" mero="" />    <!-- AUS -->
+    <pattern id="skull and crossbones1" standard="JacketShape" mero="" />
+    <pattern id="waratahs" standard="JacketShape" mero="" />
+
+    <pattern id="fleur de lys" standard="ENEJacketSVGAction" svg="Australia/fleur de lis" />      <!-- AUS -->
+    <pattern id="fern leaf" standard="ENEJacketSVGAction" svg="Australia/fern leaf" />     <!-- AUS -->
+    <pattern id="diamonds logo" standard="ENEJacketSVGAction" svg="Australia/diamonds logo" />     <!-- AUS -->
+    <pattern id="godolphin logo" standard="ENEJacketSVGAction.Badge" svg="Australia/godolphin logo" />     <!-- AUS -->
+    <pattern id="john deere" standard="ENEJacketSVGAction" svg="Australia/john deere" />     <!-- AUS -->
+    <pattern id="malaysian airlines" standard="ENEJacketSVGAction" svg="Australia/malaysian airlines" />     <!-- AUS -->
+    <pattern id="stag's head" standard="ENEJacketSVGAction" svg="Australia/stags head">
+        <synonym id="stags head" />
+    </pattern>
+    <pattern id="vine leaf" standard="ENEJacketSVGAction" svg="Australia/vine leaf" />     <!-- AUS -->
+    <pattern id="dap logo" standard="ENEJacketSVGAction.Badge" svg="USA/DAP logo" mero="3 0 0 0" />        <!-- reclaibrated for new Mero: add 3 pixels to x to shift slightly right, 0 for 3rd and 4th param, so uses standard dimension of 100 x 100 -->                 
+    <pattern id="lintec logo" standard="ENEJacketSVGAction" svg="Germany/stall_lintec" mero="7 4 -10 -10" /> <!--  -->              
+
+<!-- Not implemented -->
+    <pattern id="extended triangle" standard="DefaultPatternAction" mero="" />     <!-- AUS -->
+    <pattern id="cup" standard="DefaultPatternAction" mero="" />
+    <pattern id="bellsX" standard="JacketShape.Five" mero="" />
+    <pattern id="bellX" standard="JacketShape" mero="" />
+    <pattern id="circles" standard="DefaultPatternAction" mero="" />      <!-- AUS --> <!-- rings rather than spots? -->
+    <pattern id="bordered triangle" standard="DefaultPatternAction" mero="" />     <!-- AUS -->
+    <pattern id="crossed oars" standard="DefaultPatternAction" mero="" />     <!-- AUS -->
+    <pattern id="diagonal stars" standard="DefaultPatternAction" mero="" />     <!-- AUS -->
+    <pattern id="bowtie" standard="DefaultPatternAction" mero="bowtie" />     <!-- AUS -->
+    <pattern id="tree" standard="DefaultPatternAction" mero="" />    <!-- AUS -->
+    <pattern id="spikes" standard="DefaultPatternAction" mero="" />    <!-- AUS -->
+    <pattern id="eaglex" standard="JacketExtras.JacketImage" mero="" />     <!-- AUS -->
+    <pattern id="'r'" standard="DefaultPatternAction" mero="capital_R" />     <!-- Breeders Cup -->
+
+
+    <pattern id="centered chevrons" standard="DefaultPatternAction" mero="" />
+    <pattern id="inverted chevrons" standard="DefaultPatternAction" mero="inverted_chevrons" />     <!-- SA -->
+    <pattern id="inverted chevron" standard="DefaultPatternAction" mero="inverted_chevron" />     <!-- UK -->
+    <pattern id="diamonds_top_half" standard="DefaultPatternAction" mero="Diamonds_top_half" />     <!-- USA -->
+    <pattern id="two_thin_hoops" standard="DefaultPatternAction" mero="two_thin_hoops" />     <!-- USA -->
+     <!-- NSW -->
+    <pattern id="cross of st james" standard="ENEJacketSVGAction" svg="NSW/cross of st james" />       
+    <pattern id="eight ball" standard="ENEJacketSVGAction" svg="NSW/eight ball" />                      
+    <pattern id="albury racing club logo" standard="ENEJacketSVGAction" svg="NSW/albury racing club logo" />
+    <pattern id="artists palette" standard="ENEJacketSVGAction" svg="NSW/artists palette" />                  
+    <pattern id="as brand" standard="ENEJacketSVGAction" svg="NSW/as brand" />                         
+    <pattern id="atc logo" standard="ENEJacketSVGAction" svg="NSW/atc logo" />                         
+    <pattern id="ausbred within australia" standard="ENEJacketSVGAction" svg="NSW/ausbred within australia" />         
+    <pattern id="bar inside circle" standard="ENEJacketSVGAction" svg="NSW/bar inside circle" />                
+    <pattern id="beetle" standard="ENEJacketSVGAction" svg="NSW/beetle" />                           
+    <pattern id="bulls horn" standard="ENEJacketSVGAction" svg="NSW/bulls horn" />                       
+    <pattern id="celtic cross" standard="ENEJacketSVGAction" svg="NSW/celtic cross" />                     
+    <pattern id="chaloner family crest" standard="ENEJacketSVGAction" svg="NSW/chaloner family crest" />            
+    <pattern id="champion thoroughbreds logo" standard="ENEJacketSVGAction" svg="NSW/champion thoroughbreds logo" />      
+    <pattern id="chinese horse character" standard="ENEJacketSVGAction" svg="NSW/chinese horse character" />          
+    <pattern id="claddagh" standard="ENEJacketSVGAction" svg="NSW/claddagh" />                         
+    <pattern id="club" standard="ENEJacketSVGAction" svg="NSW/club" />                             
+    <pattern id="crescent" standard="ENEJacketSVGAction" svg="NSW/crescent" />                         
+    <pattern id="crescents" standard="ENEJacketSVGAction.Five" svg="NSW/crescent" />                         
+    <pattern id="crown" standard="ENEJacketSVGAction" svg="NSW/crown" />        <!-- alternative in Australia folder -->                    
+    <pattern id="cuillin hills thistle" standard="ENEJacketSVGAction" svg="NSW/cuillin hills thistle" />            
+    <pattern id="darby racing logo" standard="ENEJacketSVGAction" svg="NSW/darby racing logo">
+        <synonym id="darby racing p/l logo" />
+        <synonym id="darby racing pl logo" />
+    </pattern>                     
+    <pattern id="davies crest" standard="ENEJacketSVGAction" svg="NSW/davies crest" />                     
+    <pattern id="diagonal grid lines" standard="ENEJacketSVGAction" svg="NSW/diagonal grid lines" />              
+    <pattern id="diamond gem" standard="ENEJacketSVGAction" svg="NSW/diamond gem" />                      
+    <pattern id="dice" standard="ENEJacketSVGAction" svg="NSW/dice" />                             
+    <pattern id="dollar sign" standard="ENEJacketSVGAction" svg="NSW/dollar sign">
+        <synonym id="dollar" />
+    </pattern>                      
+    <pattern id="dot inside circle" standard="ENEJacketSVGAction" svg="NSW/dot inside circle" />                    
+    <pattern id="dragonfly" standard="ENEJacketSVGAction" svg="NSW/dragonfly" />                        
+    <pattern id="dynamic syndications logo" standard="ENEJacketSVGAction" svg="NSW/dynamic syndications logo" />        
+    <pattern id="eagle" standard="ENEJacketSVGAction" svg="NSW/eagle" />                            
+    <pattern id="elite thoroughbreds logo" standard="ENEJacketSVGAction" svg="NSW/elite thoroughbreds logo" />         
+    <pattern id="face" standard="ENEJacketSVGAction" svg="NSW/face" />                             
+    <pattern id="flame inside solid disc" standard="ENEJacketSVGAction" svg="NSW/flame inside solid disc" />          
+    <pattern id="flat topped diamond" standard="ENEJacketSVGAction" svg="NSW/flat topped diamond" />
+    <pattern id="flat topped diamond with horse symbol" standard="ENEJacketSVGAction" svg="NSW/flat topped diamond with horse symbol" />
+    <pattern id="flying pegasus" standard="ENEJacketSVGAction" svg="NSW/flying pegasus">
+        <synonym id="pegasus" />
+    </pattern>                   
+    <pattern id="four leaf clover" standard="ENEJacketSVGAction" svg="NSW/four leaf clover" />                 
+    <pattern id="go racing logo" standard="ENEJacketSVGAction" svg="NSW/go racing logo" dimensionsX="0 40 90 33" meroX="2 50 115 45" />                        
+    <pattern id="gold horseshoe and punters club logo" standard="ENEJacketSVGAction" svg="NSW/gold horseshoe and punters club logo" />
+    <pattern id="h inside triangle" standard="ENEJacketSVGAction" svg="NSW/h inside triangle" />                    
+    <pattern id="halo" standard="ENEJacketSVGAction" svg="NSW/halo" />                             
+    <pattern id="hill family crest" standard="ENEJacketSVGAction" svg="NSW/hill family crest" />                
+    <pattern id="hills" standard="ENEJacketSVGAction" svg="NSW/hills" />                            
+    <pattern id="horse head" standard="ENEJacketSVGAction" svg="NSW/horse head" />                       
+    <pattern id="horseshoe inside horseshoe" standard="ENEJacketSVGAction" svg="NSW/horseshoe inside horseshoe" />       
+    <pattern id="infinity" standard="ENEJacketSVGAction" svg="NSW/infinity" />                         
+    <pattern id="interlocked circles" standard="ENEJacketSVGAction" svg="NSW/interlocked circles" />     // ??         
+    <pattern id="iskander logo" standard="ENEJacketSVGAction" svg="NSW/iskander logo" />
+    <pattern id="italian ace of diamonds" standard="ENEJacketSVGAction" svg="NSW/italian ace of diamonds" />          
+    <pattern id="kangaroo" standard="ENEJacketSVGAction" svg="NSW/kangaroo" />                         
+    <pattern id="kidney health aust logo" standard="ENEJacketSVGAction" svg="NSW/kidney health aust logo" />               
+    <pattern id="kite" standard="ENEJacketSVGAction" svg="NSW/kite" />                             
+    <pattern id="koru symbol" standard="ENEJacketSVGAction" svg="NSW/koru symbol" />                             
+    <pattern id="kp logo" standard="ENEJacketSVGAction" svg="NSW/kp logo" />                               
+    <pattern id="kwh" standard="ENEJacketSVGAction" svg="NSW/kwh" />                              
+    <pattern id="lightning bolt" standard="ENEJacketSVGAction" svg="NSW/lightning bolt">                   
+        <synonym id="lightning" />
+    </pattern>
+    <pattern id="plain_h" standard="ENEJacketSVGAction" svg="alphabet/plain_h" />                              
+   <pattern id="lips" standard="ENEJacketSVGAction" svg="NSW/lips" />                             
+    <pattern id="magpie" standard="ENEJacketSVGAction" svg="NSW/magpie" />                           
+    <pattern id="maple leaf" standard="ENEJacketSVGAction" svg="NSW/maple leaf" />                       
+    <pattern id="maple leaves" standard="ENEJacketSVGAction.Five" svg="NSW/maple leaf" />                       
+    <pattern id="martini glass" standard="ENEJacketSVGAction" svg="NSW/martini glass" />                    
+    <pattern id="moon" standard="ENEJacketSVGAction" svg="NSW/moon" />
+    <pattern id="multicoloured spots" standard="ENEJacketSVGAction" svg="NSW/multicoloured spots" />              
+    <pattern id="mustang thoroughbred syndicate logo" standard="ENEJacketSVGAction" svg="NSW/mustang thoroughbred syndicate logo" dimensionsX="0 35 90 40" meroX="5 35 105 45" />            
+    <pattern id="n" standard="ENEJacketSVGAction" svg="NSW/n" />                                
+    <pattern id="nmv logo" standard="ENEJacketSVGAction" svg="NSW/nmv logo" />                         
+    <pattern id="nustar syndications logo" standard="ENEJacketSVGAction" svg="NSW/nustar syndications logo" />         
+    <pattern id="oak tree" standard="ENEJacketSVGAction" svg="NSW/oak tree" />                         
+    <pattern id="patinack farm logo" standard="ENEJacketSVGAction" svg="NSW/patinack farm logo" />
+    <pattern id="phi symbol" standard="ENEJacketSVGAction" svg="NSW/phi symbol" />                       
+    <pattern id="pisces symbol" standard="ENEJacketSVGAction" svg="NSW/pisces symbol" />                       
+    <pattern id="playing cards" standard="ENEJacketSVGAction" svg="UK/playing cards" mero="4 0 0 0" /> <!-- also NSW/playing cards, with suits in different order -->                    
+    <pattern id="pocket" standard="ENEJacketSVGAction.Badge" svg="NSW/pocket" dimensionsX="10 10 30 40" meroX="10 10 30 40" />                           
+    <pattern id="r inside oval" standard="ENEJacketSVGAction" svg="NSW/r inside oval" />                    
+    <pattern id="racenet logo" standard="ENEJacketSVGAction" svg="NSW/racenet logo" dimensionsX="0 30 90 40" meroX="6 30 100 50" />             
+    <pattern id="rainbow" standard="ENEJacketSVGAction" svg="NSW/rainbow" />                          
+    <pattern id="rampant lion" standard="ENEJacketSVGAction" svg="NSW/rampant lion" />                     
+    <pattern id="reversed f and b conjoined" standard="ENEJacketSVGAction" svg="NSW/reversed f and b conjoined" />        
+    <pattern id="rr symbol" standard="ENEJacketSVGAction" svg="NSW/rr symbol" />                               
+    <pattern id="scales of justice" standard="ENEJacketSVGAction" svg="NSW/scales of justice" />                
+    <pattern id="sea horse" standard="ENEJacketSVGAction" svg="NSW/sea horse" />                        
+    <pattern id="sicily emblem" standard="ENEJacketSVGAction" svg="NSW/sicily emblem" />                    
+    <pattern id="skull and crossbones" standard="ENEJacketSVGAction" svg="NSW/skull_crossbones" />                 
+    <pattern id="southern cross" standard="ENEJacketSVGAction" svg="NSW/southern cross" />                   
+    <pattern id="spade" standard="ENEJacketSVGAction" svg="NSW/spade" />                            
+    <pattern id="sports syndication logo" standard="ENEJacketSVGAction" svg="NSW/sports syndication logo" />          
+    <pattern id="starburst" standard="ENEJacketSVGAction" svg="NSW/starburst" />                        
+    <pattern id="stars and crescent" standard="ENEJacketSVGAction" svg="NSW/stars and crescent" />               
+    <pattern id="stiletto" standard="ENEJacketSVGAction" svg="NSW/stiletto" />                         
+    <pattern id="sun on scroll" standard="ENEJacketSVGAction" svg="NSW/sun on scroll" />                    
+    <pattern id="sun" standard="ENEJacketSVGAction" svg="NSW/sun" />                              
+    <pattern id="supreme syndications logo" standard="ENEJacketSVGAction" svg="NSW/supreme syndications logo" />        
+    <pattern id="target" standard="ENEJacketSVGAction" svg="NSW/target" />                           
+    <pattern id="thistle" standard="ENEJacketSVGAction" svg="NSW/thistle" />                          
+    <pattern id="ticked bar over m brand" standard="ENEJacketSVGAction" svg="NSW/ticked bar over m brand" />          
+    <pattern id="ticked bar" standard="ENEJacketSVGAction" svg="NSW/ticked bar" />                       
+    <pattern id="tiger" standard="ENEJacketSVGAction" svg="NSW/tiger" />                            
+    <pattern id="topline thoroughbreds logo" standard="ENEJacketSVGAction" svg="NSW/topline thoroughbreds logo" />       
+    <pattern id="tri coloured triangle" standard="ENEJacketSVGAction" svg="NSW/tri coloured triangle" />            
+    <pattern id="triple crown syndications logo" standard="ENEJacketSVGAction" svg="NSW/triple crown syndications logo" />   
+    <pattern id="triskele" standard="ENEJacketSVGAction" svg="NSW/triskele" />                         
+    <pattern id="triskelion" standard="ENEJacketSVGAction" svg="NSW/triskelion" />                       
+    <pattern id="w" standard="ENEJacketSVGAction" svg="NSW/w" />                                
+    <pattern id="waikato stud logo" standard="ENEJacketSVGAction" svg="NSW/waikato stud logo" />                     
+    <pattern id="wales dragon" standard="ENEJacketSVGAction" svg="NSW/wales dragon" />                     
+    <pattern id="waratah" standard="ENEJacketSVGAction" svg="NSW/waratah thoroughbreds" />            
+    <pattern id="waratah thoroughbreds" standard="ENEJacketSVGAction" svg="NSW/waratah thoroughbreds" />            
+    <pattern id="watson family crest" standard="ENEJacketSVGAction" svg="NSW/watson family crest" />              
+    <pattern id="wolf blass" standard="ENEJacketSVGAction" svg="NSW/wolf blass" />                       
+    <pattern id="yin and yang symbol" standard="ENEJacketSVGAction" svg="NSW/yin and yang symbol" />              
+    <pattern id="zebra" standard="ENEJacketSVGAction" svg="NSW/zebra" />                            
+<pattern id="galvin family crest" standard="ENEJacketSVGAction" svg="NSW/galvin family crest" />
+<pattern id="lockyer family crest" standard="ENEJacketSVGAction" svg="NSW/lockyer family crest" />
+<pattern id="showponies logo" standard="ENEJacketSVGAction" svg="NSW/showponies logo" />
+<pattern id="sk over ticked bar" standard="ENEJacketSVGAction" svg="NSW/sk over ticked bar" />
+<pattern id="stylized diamond" standard="ENEJacketSVGAction" svg="NSW/stylized diamond" />
+<pattern id="surfboard" standard="ENEJacketSVGAction" svg="NSW/surfboard" />
+<pattern id="t inside curved arrow" standard="ENEJacketSVGAction" svg="NSW/t inside curved arrow" />
+<pattern id="t" standard="ENEJacketSVGAction" svg="NSW/t" />
+<pattern id="thin vee to solid disc" standard="ENEJacketSVGAction" svg="NSW/thin vee to solid disc" />
+<pattern id="triangles" standard="ENEJacketSVGAction" svg="NSW/triangles" />
+<pattern id="unicorn" standard="ENEJacketSVGAction" svg="NSW/unicorn" />
+<pattern id="zakynthos" standard="ENEJacketSVGAction" svg="NSW/zakynthos" />
+
+<pattern id="golden slipper trophy" standard="ENEJacketSVGAction" svg="NSW/golden slipper trophy" />
+<pattern id="handprint" standard="ENEJacketSVGAction" svg="NSW/handprint" />
+<pattern id="handprints" standard="ENEJacketSVGAction.Five" svg="NSW/handprint" />
+<pattern id="heart in horseshoe" standard="ENEJacketSVGAction" svg="NSW/heart in horseshoe" />
+<pattern id="horseNSW" standard="ENEJacketSVGAction" svg="NSW/horse" />
+<pattern id="horseshoe inside octagon" standard="ENEJacketSVGAction" svg="NSW/horseshoe inside octagon" />
+<pattern id="interlocking rings" standard="ENEJacketSVGAction" svg="NSW/interlocking rings" />
+<pattern id="lemon" standard="ENEJacketSVGAction" svg="NSW/lemon" />
+<pattern id="lion in circle" standard="ENEJacketSVGAction" svg="NSW/lion in circle" />
+<pattern id="m" standard="ENEJacketSVGAction" svg="NSW/m" />
+<pattern id="reversed r and r" standard="ENEJacketSVGAction" svg="NSW/reversed r and r" />
+<pattern id="shooting star" standard="ENEJacketSVGAction" svg="NSW/shooting star" />
+<pattern id="shooting stars" standard="ENEJacketSVGAction.Five" svg="NSW/shooting star" />
+<pattern id="windsor park stud logo" standard="ENEJacketSVGAction" svg="NSW/windsor park stud logo" />
+<pattern id="anchor" standard="ENEJacketSVGAction" svg="NSW/anchor" />
+<pattern id="angel" standard="ENEJacketSVGAction" svg="NSW/angel" />
+<pattern id="arrow" standard="ENEJacketSVGAction" svg="NSW/arrow" />
+<pattern id="arrows" standard="ENEJacketSVGAction.Five" svg="NSW/arrow" />
+<pattern id="dog inside circle" standard="ENEJacketSVGAction" svg="NSW/dog inside circle" />
+<pattern id="exclamation mark" standard="ENEJacketSVGAction" svg="NSW/exclamation mark" />
+<pattern id="green and orange flame" standard="ENEJacketSVGAction" svg="NSW/green and orange flame" />
+<pattern id="fleur de lys on sash" standard="ENEJacketSVGAction.TripleSash" svg="Australia/fleur de lis" />
+<pattern id="grapes" standard="ENEJacketSVGAction" svg="NSW/grapes" />
+<pattern id="harp" standard="ENEJacketSVGAction" svg="NSW/harp" />
+<pattern id="harps" standard="ENEJacketSVGAction.Five" svg="NSW/harp" />
+<pattern id="starbursts" standard="ENEJacketSVGAction.Five" svg="NSW/starburst" />
+<pattern id="three starbursts" standard="ENEJacketSVGAction.TripleSash" svg="NSW/starburst" />
+<pattern id="twin stars" standard="ENEJacketSVGAction.Twin" svg="star" />
+<pattern id="two diamonds" standard="ENEJacketSVGAction.Twin" svg="diamond" />
+<pattern id="bell" standard="ENEJacketSVGAction" svg="NSW/bell" />
+<pattern id="bells" standard="ENEJacketSVGAction.Five" svg="NSW/bell" />
+<pattern id="crossed oars" standard="ENEJacketSVGAction" svg="NSW/crossed oars" />
+<pattern id="tree" standard="ENEJacketSVGAction" svg="NSW/tree" />
+<pattern id="rose" standard="ENEJacketSVGAction" svg="NSW/rose" />
+<pattern id="circles" standard="ENEJacketSVGAction.Five" svg="circle" />
+<pattern id="emblem star" standard="ENEJacketSVGAction" svg="USA/winstar farms logo"  meroX="220 300 150 200" />  <!-- recalibrated  translate(220.0, 300.0) scale(0.25, 0.25)-->
+<pattern id="king ranch logo" standard="ENEJacketSVGAction" svg="USA/king ranch logo"  meroX="13 0 80 100" />
+<pattern id="michael_dubb_rose_in_circle" standard="ENEJacketSVGAction" svg="USA/michael_dubb_rose_in_circle" derive="no" />
+<pattern id="e_five" standard="ENEJacketSVGAction" svg="USA/e_five" mero="3 0 0 0" /> <!-- add 3 pixels to x to shift slightly right, 0 for 3rd and 4th param, so uses standard dimension of 100 x 100 -->
+<pattern id="trident" standard="ENEJacketSVGAction" svg="USA/trident" mero="0 25 0 -10" />                <!-- also a NSW version -->          
+
+<pattern id="winx m" standard="ENEJacketSVGAction" svg="Australia/winx m" mero="5 0 -10 0" />
+<pattern id="triple crown" standard="ENEJacketSVGAction" svg="Australia/triple crown logo" />
+<pattern id="gatecrasher" standard="ENEJacketSVGAction" svg="Australia/gatecrasher" />
+<pattern id="dubosc horse head" standard="ENEJacketSVGAction" svg="Australia/dubosc horse head" />
+<pattern id="knight" standard="ENEJacketSVGAction" svg="Australia/spicer thoroughbreds" />
+<pattern id="spicer thoroughbreds" standard="ENEJacketSVGAction" svg="Australia/spicer thoroughbreds" />
+<pattern id="rising sun" standard="ENEJacketSVGAction" svg="rising sun" meroENEJacketSVGAction="0 -30 0 0" meroENESVGAction="305 355 40 40" />                       
+
+<pattern id="B text" standard="ENEJacketSVGAction" svg="USA/B text"  meroX="260 400 120 50" /> <!-- recalibrated -->
+<pattern id="chrome text" standard="ENEJacketSVGAction" svg="USA/chrome text"  meroX="230 357 210 50" /> <!-- recalibrated -->
+<pattern id="jim rome emblem" standard="ENEJacketSVGAction" svg="USA/jim rome emblem"  meroX="228 306 170 132" /> <!-- recalibrated -->
+<pattern id="ms" standard="ENEJacketSVGAction" svg="USA/ms" />                       
+<pattern id="w in circle" standard="ENEJacketSVGAction" svg="USA/w in circle" />                       
+<pattern id="r in diamond" standard="ENEJacketSVGAction" svg="USA/r in diamond" />                       
+<pattern id="double eagle ranch" standard="ENEJacketSVGAction.Badge" svg="USA/double eagle ranch" />                       
+<pattern id="hf in disc" standard="ENEJacketSVGAction" svg="USA/hf in disc" />                       
+<pattern id="c in disc" standard="ENEJacketSVGAction" svg="USA/c in disc" />                       
+<pattern id="mp in disc" standard="ENEJacketSVGAction" svg="USA/mp in disc" />                       
+<pattern id="w in disc" standard="ENEJacketSVGAction" svg="USA/w in disc" />                       
+<pattern id="winning post" standard="ENEJacketSVGAction" svg="UK/winning post" />                       
+    <pattern id="bow tie" standard="ENEJacketSVGAction.Neck" svg="USA/bow tie" />                           
+<pattern id="dap moose logo" standard="ENEJacketSVGAction" svg="USA/dap moose logo"  meroX="230 336 120 90" />    
+<pattern id="'Z'" standard="ENEJacketSVGAction.Badge" svg="USA/capital_Z" mero="5 5 -10 -10" />  <!-- add 5 to x and y offset and reduce dimensions by 10 from standard jacket dimensions of 100x100 -->
+<pattern id="dartboard" standard="ENEJacketSVGAction" svg="UK/dartboard" mero="-95 -40 200 200" />        <!-- see ENEJacketSVGAction.Badge for explanation of size configuration -->                 
+<pattern id="fly_emirates" standard="ENEJacketSVGAction" svg="UK/fly-emirates" mero="2 -10 0 0" />       <!-- How to calibrate?? -->                
+<pattern id="gelfenstein farm logo" standard="ENEJacketSVGAction" svg="USA/gelfenstein_farm" mero = "8 10 -10 -10" />
+<pattern id="baoma corp logo" standard="ENEJacketSVGAction" svg="USA/baoma" />
+<pattern id="stall mulligan logo" standard="ENEJacketSVGAction" svg="Germany/stall_mulligan" mero="3 0 0 0" />
+<pattern id="circle_ihr" standard="ENEJacketSVGAction" svg="USA/circle_ihr" mero="4 0 -3 -3" />
+<pattern id="ball_be" standard="ENEJacketSVGAction" svg="USA/ball_be" mero="0 0 0 0" />
+<pattern id="steigenberger_emblem" standard="ENEJacketSVGAction" svg="Germany/stall_steigenberger" mero="0 0 -50 -20" />
+<pattern id="double_b_logo" standard="ENEJacketSVGAction" svg="USA/DoubleB" mero="4 4 -4 -4" />
+              
+</jacket>
+<sleeves>
+    <pattern id="harlequin" standard="JacketStars" mero="Harlequin" />
+    <pattern id="stars" standard="SleevesStars" mero="Star_Sleeves" />
+    <pattern id="star" standard="SleevesStars.Single" derive="no" mero="">
+        <synonym id="one star" />
+        </pattern>
+
+    <pattern id="polka dots" standard="SleevesSpots.PolkaDots" mero="" />
+
+    <pattern id="spots" standard="SleevesSpots" mero="Spot_Sleeves">
+        <synonym id="dots" />
+        <synonym id="spotted" />
+        </pattern>
+    <pattern id="dotsXX" standard="SleevesSpots" mero="US_Dots_Sleeves" /> <!-- three small spots - bigger spots look better, even if perhaps less accurate! -->
+ 
+    <pattern id="chevron armlets" standard="SleevesChevrons.Single" mero="chevron_armbands">
+        <synonym id="vee armbands" />       <!-- vee is upside down chevron! -->
+        <synonym id="zig zag armbands" />   <!-- Not sure! -->
+        </pattern>
+    <pattern id="two chevrons" standard="SleevesChevrons.Two" mero="two_chevron_armbands">
+        <synonym id="two chevron armlets" /> 
+        <synonym id="two chevron armbands" /> 
+      </pattern>
+
+    <pattern id="diamond armbands" standard="SleevesArmlets.Diamond" mero="Diamond_Bands">     <!-- AUS -->
+        <synonym id="diamond band" />
+    </pattern>
+    
+
+    <pattern id="check armlets" category="2" standard="SleevesArmlets.Checked" mero="">
+        <synonym id="checked armbands" />
+        <implementation id="2" standard="SleevesArmlets.Checked" mero="" />
+        </pattern>
+
+     <pattern id="armlets" standard="SleevesArmlets" mero="Arm_Bands">
+        <synonym id="armbands" />
+        <synonym id="hoop" derive="no" />
+        <synonym id="band" />
+        <synonym id="bar" />
+        <implementation id="2" standard="SleevesArmlets" mero="Arm_Bands_2colour" />
+        <implementation id="3" standard="SleevesArmlets" mero="" />
+        </pattern>
+     <pattern id="armlets with piping" standard="SleevesArmlets" mero="Armlets_Piping">
+      <implementation id="2" standard="SleevesArmlets" mero="Armlets_Piping" />
+    </pattern>
+    <pattern id="armlets with stripe" standard="SleevesArmlets" mero="Armlets_Stripe">
+    </pattern>
+
+    <pattern id="graduated hoops" standard="SleevesHoops.Graduated" mero="" />    <!-- UK 1968 -->
+
+    <pattern id="two hoops" standard="SleevesHoops.Two" mero="Two_Hoops">
+       <synonym id="bars" />
+        <synonym id="double armbands" />
+        <synonym id="two armlets" />
+        </pattern>
+
+    <pattern id="three hoops" standard="SleevesHoops.Three" mero="" />
+
+     <pattern id="ww hoop" standard="DefaultPatternAction" mero="ww_hoop" />
+    <pattern id="thin_hoop_pairs" standard="DefaultPatternAction" mero="Thin_hoop_pairs" />     <!-- USA -->
+
+     <pattern id="chevrons" standard="SleevesChevrons" mero="Chevron_Sleeves">
+       <synonym id="chevron hoops" />   <!-- chevron hoop is not chevrons 20131029 or maybe it is?  Lord Daresbury -->
+       <synonym id="chevron hooped" />
+        </pattern>
+
+    <pattern id="inverted chevrons" standard="SleevesChevrons.Inverted" mero="" />     <!-- UK -->
+ 
+    <pattern id="chevron" derive="no" standard="SleevesChevrons.Single" mero="">
+       <synonym id="one chevron" />
+       <synonym id="chevron hoop" />  
+       </pattern>
+    <pattern id="hoops" category="2" standard="SleevesHoops" mero="Hooped_Sleeves_2015"> <!-- 2016 version using patterns doesn't dislay correctly in PDF -->
+       <synonym id="hooped" />
+       <synonym id="bands" />
+        <synonym id="banded" />
+       <implementation id="2" standard="SleevesHoops" mero="Hooped_Sleeves_3_colour" />
+       <implementation id="3" standard="SleevesHoops" mero="Hooped_Sleeves_4_colour" />
+        </pattern>
+
+    <pattern id="stripes" category="2" standard="SleevesStripes" mero="Striped_Sleeves_2015">  <!-- 2016 version using patterns doesn't dislay correctly in PDF -->
+       <synonym id="striped" />
+       <synonym id="narrow stripes" />
+       <synonym id="wide stripes" />
+        </pattern>
+
+    <pattern id="stripe" standard="SleevesStripes.Single" derive="no" mero="Single_Stripe_Sleeves">
+       <synonym id="vertical stripe" />
+        <synonym id="one vertical stripe" />
+        </pattern>
+
+    <pattern id="diagonal stripes" category="2" standard="SleevesStripes.Diagonal" mero="Diagonal_Sleeves">  <!-- AUS + UK -->
+        <synonym id="diagonal striped" />
+    </pattern>
+    <pattern id="seams" standard="SleevesSeams" mero="Sleeves_Seams" />
+    <pattern id="piping" standard="SleevesSeams.Piping" mero="" />    
+
+    <pattern id="reversed halved" category="2" standard="SleevesHalves.Reversed" mero="reverse_halved" />
+
+    <pattern id="halved" category="2" standard="SleevesHalves" mero="Halved">
+        <synonym id="halves" />
+        <synonym id="halved horizontally" />
+        <synonym id="horizontal halves" />
+        </pattern>
+        
+   <pattern id="vertical halves" category="2" standard="SleevesHalves.Diagonal" mero="vertical halves" />
+   <pattern id="diagonally halved" category="2" standard="SleevesHalves.Diagonal" mero="" />
+
+    <pattern id="diabolo" category="2" standard="SleevesDiabolo" mero="Diablo_sleeves">
+        <synonym id="diabolos" />
+        <synonym id="diagonally quartered" />
+        <synonym id="diagonal quartered" />
+        <synonym id="diagonal" />
+        </pattern>
+
+    <pattern id="alternate" category="2" standard="SleevesAlternate" mero="SE_right_arm">
+        <synonym id="one and one" />
+    </pattern>
+    <pattern id="reversed" category="2" standard="SleevesAlternate.Reversed" mero="SE_left_arm" />  <!-- these are different -->
+
+    <pattern id="harlequin" standard="SleevesDiamonds.Harlequin" mero="">
+        <synonym id="harlequin diamond" />
+        </pattern>
+    <pattern id="crazy quilt" standard="SleevesDiamonds.CrazyQuilt" mero="" />  
+
+    <pattern id="diamonds" category="2" standard="SleevesDiamonds" mero="Diamond_Sleeves">   <!-- Mero are  really diamond checked -->
+        <synonym id="triple diamonds" />
+        <synonym id="diamond" derive="no" />
+        </pattern>
+
+    <pattern id="diamond check" category="2" derive="no" standard="SleevesCheck.Diamond" mero="Diamond_Sleeves">
+        <synonym id="checked diamond" derive="no" />
+        <synonym id="diamond checked" derive="no" />
+        </pattern>
+
+    <pattern id="checked cuffs" category="2" primary="no" derive="no" standard="SleevesCuffs.Checked" mero="checked_cuffs">
+        <synonym id="check cuffs" derive="no" />
+        <implementation id="2" standard="SleevesCuffs.Checked" mero="checked_cuffs" />
+        </pattern>
+
+    <pattern id="cuffs" standard="SleevesCuffs" mero="Cuffs">   // remove non-primary flag, so that quartered cap can be derived from cuffs colour
+        <synonym id="gauntlets" />                                          // should be like gloves? Don't see that in PMG
+        <implementation id="2" standard="SleevesCuffs" mero="Cuffs_2Colours" />
+    </pattern>
+
+
+
+    <pattern id="checked" category="2" standard="SleevesCheck" mero="Sleeves_Check">
+        <synonym id="squares" />
+        <synonym id="chequered" />
+        <synonym id="chequers" />
+        <synonym id="checks" />
+        <synonym id="check" />
+        </pattern>
+
+    <pattern id="spiked yoke" standard="DefaultPatternAction" mero="Spiked_Yoke" />     // jacket pattern includes design on sleeves
+
+    <pattern id="quartered" category="2" standard="DefaultPatternAction" mero="" derive="no" />
+
+    <pattern id="horizontal thirds" category="3" standard="SleevesThirds" mero="" derive="no" />
+
+    <pattern id="circle" standard="SleevesExtras.SleevesCircle" mero="Circle_Sleeves" derive="no"> <!-- Mero = Count Fleet Triple Crown Winner 1943, Tepin: Queen Anne 2016 -->
+    </pattern>
+    <pattern id="spot" standard="SleevesExtras.SleevesCircle" mero="Single_Spot_Sleeves" derive="no"> <!-- Bucchero - King's Stand 2018 -->
+        <synonym id="ball" />
+    </pattern>
+    <pattern id="hearts" standard="SleevesShape.Three" mero="" derive="no" />     <!-- AUS -->
+    <pattern id="heart" standard="ENESleevesSVGAction" svg="NSW/heart" derive="no" />     <!-- AUS -->
+
+    <pattern id="horseshoe" standard="ENESleevesSVGAction" svg="NSW/horseshoe" derive="no" />       
+    <pattern id="horseshoes" standard="ENESleevesSVGAction.Three" svg="NSW/horseshoe" derive="no" />     <!-- AUS -->
+    <pattern id="shamrock" standard="ENESleevesSVGAction" svg="NSW/shamrock" derive="no" meroX="0 0 200 200" />     <!-- AUS -->
+    <pattern id="shamrocks" standard="ENESleevesSVGAction.Three" svg="NSW/shamrock" derive="no" />     <!-- AUS -->
+    <pattern id="skull and crossbones" standard="ENESleevesSVGAction" svg="NSW/skull_crossbones" derive="no" />     <!-- AUS -->
+    <pattern id="face" standard="ENESleevesSVGAction" svg="NSW/face" derive="no" />                             
+    <pattern id="kwh" standard="ENESleevesSVGAction" svg="NSW/kwh" derive="no" />                              
+    <pattern id="lightning bolt" standard="ENESleevesSVGAction" svg="NSW/lightning bolt" derive="no" />                   
+    <pattern id="iskander logo" standard="ENESleevesSVGAction" svg="NSW/iskander logo" derive="no" />
+   <pattern id="champion thoroughbreds logo" standard="ENESleevesSVGAction" svg="NSW/champion thoroughbreds logo" derive="no" />      
+   <pattern id="maple leaf" standard="ENESleevesSVGAction" svg="NSW/maple leaf" derive="no" />                       
+    <pattern id="pockets" standard="ENESleevesSVGAction" svg="NSW/pocket" derive="no" />                           
+    <pattern id="shooting stars" standard="ENESleevesSVGAction.Three" svg="NSW/shooting star" derive="no" />
+<pattern id="circles" standard="ENESleevesSVGAction.Three" svg="circle" derive="no" />
+<pattern id="scales of justice" standard="ENESleevesSVGAction" svg="NSW/scales of justice" derive="no" />
+    <pattern id="yin and yang symbol" standard="ENESleevesSVGAction" svg="NSW/yin and yang symbol" />              
+<pattern id="steigenberger_emblem" standard="ENESleevesSVGAction" svg="Germany/stall_steigenberger" mero="0 0 -5 -5" />
+
+</sleeves>
+<cap>
+   <pattern id="checked" category="2" standard="CapCheck.CircularCheck" mero="Checked_Cap">
+        <synonym id="squares" />
+        <synonym id="chequered" />
+        <synonym id="chequers" />
+        <synonym id="checks" />
+        <synonym id="check" />
+        </pattern>
+
+    <pattern id="quartered" category="2" standard="CapQuarters" mero="Quartered_Cap">
+        <synonym id="quarters" />
+        <implementation id="2" standard="CapQuarters" mero="Quartered_Cap_3" />
+        <implementation id="3" standard="CapQuarters" mero="Quartered_Cap_4" />
+        </pattern>
+    <pattern id="segmented" category="2" standard="CapQuarters.SixPanel" mero="Segment_Cap">
+        <synonym id="6 panelled" />
+        </pattern>
+    <pattern id="halved" category="2" standard="CapHalves" mero="Halved_Cap" />
+    <pattern id="halved horizontally" category="2" standard="CapHalves" mero="horizontal_halves">
+        <synonym id="horizontal halves" />
+    </pattern>
+    <pattern id="stars" standard="CapStars" mero="Cap_Stars" />
+
+    <pattern id="star" derive="no" standard="CapStars.Single" mero="Star">
+        <synonym id="one star" />
+        </pattern>
+
+    <pattern id="harlequin" standard="CapDiamonds.Harlequin" mero="" />
+    <pattern id="crazy quilt" standard="CapDiamonds.CrazyQuilt" mero="" />  
+    <pattern id="diamonds" standard="CapDiamonds" mero="Diamonds">  <!-- Diamonds_Cap or Diamond_Hoop -->
+       <synonym id="diamond hoop" />
+    </pattern>
+
+    <pattern id="diamond check" category="2" standard="CapCheck.Diamond" mero="SE_diamond_cap">
+        <synonym id="check diamond" />
+        <synonym id="checked diamond" />
+        <synonym id="diamond checked" />
+        </pattern>
+
+    <pattern id="diamond" derive="no" standard="CapDiamonds.Single" mero="one_diamond">
+        <synonym id="one diamond" derive="no" />
+        </pattern>
+
+    <pattern id="stripe" derive="no" standard="CapStripes.Single" mero="stripe">
+        <synonym id="one stripe" />
+        </pattern>
+
+    <pattern id="stripes" category="2" standard="CapStripes" mero="Striped_Cap_2015">  <!-- 2016 version using pâtterns doesn't dislay correctly in PDF -->
+        <synonym id="striped" />
+        <implementation id="2" standard="CapStripes" mero="Striped_Cap_3Colours" />
+        </pattern>
+
+     <pattern id="checked stripe" category="2" standard="CapStripes.CheckedSingle" mero="" />    <!-- AUS -->
+
+    <pattern id="hoop" derive="no" standard="CapHoops.Single" mero="single_hoop">
+        <synonym id="one hoop" derive="no" />
+        <synonym id="band" derive="no" />
+        </pattern>
+    <pattern id="hoop with piping" derive="no" standard="CapHoops.SinglePiping" mero="" />
+
+    <pattern id="hoops" category="2" standard="CapHoops" mero="Hooped_Cap">
+        <synonym id="hooped" />
+        <implementation id="2" standard="CapHoops" mero="Hooped_Cap_3colours" />
+        </pattern>
+    <pattern id="roundel" standard="CapHoops" mero="roundel" />
+
+    <pattern id="ww hoop" standard="DefaultPatternAction" mero="ww_hoop" />
+    
+    <pattern id="polka dots" standard="CapSpots.PolkaDots" mero="" />
+
+    <pattern id="spots" standard="CapSpots" mero="Spotted_Cap">
+        <synonym id="dots" />
+        <synonym id="spotted" />
+        </pattern>
+
+    <pattern id="spot" standard="CapExtras.CapDisc" mero="disc">
+         <synonym id="disc" derive="no" />
+         <synonym id="centre" derive="no" />
+         <synonym id="crown" derive="no" />
+       </pattern>
+
+    <pattern id="pom pom" primary="no" standard="CapExtras.CapPomPom" mero="Pom_Pom">
+         <synonym id="bobble" primary="no" />
+        </pattern>
+
+    <pattern id="peak" primary="no" standard="CapExtras.CapPeak" mero="Peak">  <!-- Cap_with_Peak -->
+         <synonym id="visor" primary="no" />
+         <synonym id="peak of cap" primary="no" />
+        </pattern>
+
+    <pattern id="patch" standard="CapExtras.CapPatch" mero="" />
+    <pattern id="cross" derive="no" standard="CapExtras.CapCross" mero="cross" />
+    <pattern id="tassle" standard="CapExtras.CapTassle" primary="no" mero="Tassle" />
+    <pattern id="button" primary="no" standard="CapExtras.CapButton" mero="button" />
+    <pattern id="fringe" primary="no" standard="CapExtras.CapFringe" mero="" /> 
+
+    <pattern id="piping" derive="no" standard="CapSeams" mero="Piping" />     <!-- USA - California Chrome 2016 -->
+    <pattern id="seams" derive="no" standard="CapSeams" mero="seams" />     <!-- AUS -->
+    <pattern id="crossed vs" standard="CapExtras.CapCrossedVees" mero="" />     <!-- AUS -->
+    <pattern id="vee" derive="no" standard="CapExtras.CapVee" mero="" />     <!-- AUS -->
+
+<!-- Shapes and Graphics -->
+    <pattern id="fleur de lys" derive="no" standard="CapShape" mero="" />      <!-- AUS -->
+    <pattern id="roseX" derive="no" standard="CapExtras.CapImage" mero="" />     <!-- AUS --> <!-- mistaken for rose cap, the colour -->
+
+     <pattern id="clubs" derive="no" standard="CapShape.SixShapes" mero="" />     <!-- AUS -->
+    <pattern id="club" derive="no" standard="CapShape" mero="" />     <!-- AUS -->
+   <pattern id="shamrocks" derive="no" standard="CapShape.SixShapes" mero="" />     <!-- AUS -->
+   <pattern id="shamrock" derive="no" standard="ENECapSVGAction" svg="NSW/shamrock" />     <!-- AUS -->
+   <pattern id="four leaf clover" derive="no" standard="ENECapSVGAction" svg="NSW/four leaf clover" />    <!-- AUS -->
+    <pattern id="heart" standard="ENECapSVGAction" svg="NSW/heart" />     <!-- AUS -->
+    <pattern id="horseshoesx" standard="CapShape.SixShapes" mero="Horseshoes" />      <!-- AUS -->
+    <pattern id="horseshoe" standard="ENECapSVGAction" derive="no" svg="NSW/horseshoe" />      <!-- AUS -->
+    <pattern id="horseshoes" standard="ENECapSVGAction.FiveAround" svg="NSW/horseshoe" />      <!-- AUS -->
+    <pattern id="circles" standard="ENECapSVGAction.FiveAround" svg="circle" />      <!-- AUS -->
+
+    <pattern id="'r'" standard="DefaultPatternAction" mero="capital_R" />     <!-- Breeders Cup -->
+    <pattern id="'Z'" standard="ENECapSVGAction.Front" svg="USA/capital_Z" mero="2 0 -7 -7" />  
+
+
+    <pattern id="tricoloured" standard="DefaultPatternAction" mero="" derive="no" />     <!-- AUS -->
+    <pattern id="rosette" standard="DefaultPatternAction" primary="no" mero="" derive="no" />   <!-- UK -->
+
+    <pattern id="bar inside circle" standard="ENECapSVGAction" svg="NSW/bar inside circle" derive="no" />                
+    <pattern id="lightning bolt" standard="ENECapSVGAction" svg="NSW/lightning bolt" derive="no" />      <!-- AUS -->
+    <pattern id="sea horse" standard="ENECapSVGAction" svg="NSW/sea horse" derive="no" /> 
+    <pattern id="cross of st james" standard="ENECapSVGAction" svg="NSW/cross of st james" derive="no" />       
+    <pattern id="celtic cross" standard="ENECapSVGAction" svg="NSW/celtic cross" derive="no" />                     
+    <pattern id="dollar sign" standard="ENECapSVGAction" svg="NSW/dollar sign" derive="no" />                      
+    <pattern id="face" standard="ENECapSVGAction" svg="NSW/face" derive="no" />                             
+    <pattern id="fern leaf" standard="ENECapSVGAction" svg="Australia/fern leaf" derive="no" />     <!-- AUS -->
+    <pattern id="patinack farm logo" standard="ENECapSVGAction" svg="NSW/patinack farm logo" derive="no" />                       
+    <pattern id="stiletto" standard="ENECapSVGAction" svg="NSW/stiletto" derive="no" />                         
+    <pattern id="waratah" standard="ENECapSVGAction" svg="NSW/waratah thoroughbreds" derive="no" />            
+    <pattern id="w" standard="ENECapSVGAction" svg="NSW/w" derive="no" />                                
+    <pattern id="lips" standard="ENECapSVGAction" svg="NSW/lips" derive="no" />                             
+    <pattern id="sicily emblem" standard="ENECapSVGAction" svg="NSW/sicily emblem" derive="no" />                    
+    <pattern id="diagonal grid lines" standard="ENECapSVGAction" svg="NSW/diagonal grid lines" derive="no" />              
+    <pattern id="playing cards" standard="ENECapSVGAction" svg="NSW/playing cards" derive="no" />                    
+    <pattern id="kidney health aust logo" standard="ENECapSVGAction" svg="NSW/kidney health aust logo" derive="no" />               
+    <pattern id="lemon" standard="ENECapSVGAction" svg="NSW/lemon" derive="no" />
+    <pattern id="star in front" standard="ENECapSVGAction.Front" svg="star" derive="no" />
+    <pattern id="rosette" standard="ENECapSVGAction" svg="UK/rosette" derive="no" dimensionsX="10 18 15 20" meroX="5 20 20 30" />
+    <pattern id="rose" standard="ENECapSVGAction" svg="NSW/rose" derive="no" /> <!-- mistaken for rose cap, the colour -->
+    <pattern id="emblem star" standard="ENECapSVGAction" svg="USA/winstar farms logo" derive="no" meroX="255 210 42 50" />     <!-- recalibrated   translate(258, 205.0) scale(0.07, 0.07) -->
+    <pattern id="e_five" standard="ENECapSVGAction.Front" svg="USA/e_five" derive="no" mero="2 0 -5 -5" /> <!-- standard front has dimension 25x25 so specifying -5 -5 means it is now 20x20 -->
+    <pattern id="triple crown" standard="ENECapSVGAction.Front" svg="Australia/triple crown logo" />
+    <pattern id="gelfenstein farm logo" standard="ENECapSVGAction.Front" svg="USA/gelfenstein_farm" mero = "3 2 -5 -5" />
+    <pattern id="baoma corp logo" standard="ENECapSVGAction.Front" svg="USA/baoma" />
+<pattern id="steigenberger_emblem" standard="ENECapSVGAction" svg="Germany/stall_steigenberger" mero="5 25 -12 -12" />
+</cap>
+    </language>
+   <language id="fr">
+       <jacket>
+<pattern id="un bande" equivalent="stripe" />
+<pattern id="bande" equivalent="stripe" />
+<pattern id="bretelles" equivalent="braces" />
+<pattern id="deux ceintures" equivalent="two hoops" />
+<pattern id="ceinture chevronnee" equivalent="chevron hoop" />
+<pattern id="ceinture" equivalent="hoop" />
+<pattern id="un cerclee" equivalent="hoop" />
+<pattern id="cerclee" equivalent="hoops" />
+<pattern id="un chevron" equivalent="chevron" />
+<pattern id="chevron" equivalent="chevron" />
+<pattern id="un chevronnee" equivalent="chevron" />
+<pattern id="a chevronnee" equivalent="chevrons" />
+<pattern id="chevronnee" equivalent="chevrons" />
+<pattern id="coutures" equivalent="seams" />
+<pattern id="croix de saint andre" equivalent="cross belts" />
+<pattern id="croix saint andre" equivalent="cross belts" />
+<pattern id="croix de saint a" equivalent="cross belts" />
+<pattern id="croix saint a" equivalent="cross belts" />
+<pattern id="croix de lorraine" equivalent="cross of lorraine" />
+<pattern id="croix lorraine" equivalent="cross of lorraine" />
+<pattern id="croix de malte" equivalent="maltese cross" />
+<pattern id="croix malte" equivalent="maltese cross" />
+<pattern id="croix" equivalent="cross" />
+<pattern id="a damier" equivalent="checked" />
+<pattern id="damier" equivalent="checked" />
+<pattern id="un disque" equivalent="disc" />
+<pattern id="disque" equivalent="disc" />
+<pattern id="un losanges" equivalent="diamond" />       <!-- abbreviations like los are resolved to losanges (plural), singular is then indicated by 1 -->
+<pattern id="un losange" equivalent="diamond" />
+<pattern id="losange" equivalent="diamond" />
+<pattern id="losanges" equivalent="diamonds" />
+<pattern id="un echarpe" equivalent="sash" />
+<pattern id="echarpe" equivalent="sash" />
+<pattern id="ecartelee" equivalent="quartered" />
+<pattern id="epaulettes" equivalent="epaulets" />
+<pattern id="un etoiles" equivalent="star" />
+<pattern id="un etoile" equivalent="star" />
+<pattern id="etoile" equivalent="star" />
+<pattern id="etoiles" equivalent="stars" />
+<pattern id="a pois" equivalent="spots" />
+<pattern id="pois" equivalent="spots" />
+<pattern id="rayee" equivalent="stripes" />
+<pattern id="rayures" equivalent="stripes" />
+<pattern id="un disque" equivalent="disc" />
+<pattern id="disque" equivalent="disc" />
+<pattern id="un diabolo" equivalent="diabolo" />
+<pattern id="diabolo" equivalent="diabolo" />
+<pattern id="un triangle" equivalent="inverted triangle" />
+<pattern id="triangle" equivalent="inverted triangle" />
+<pattern id="trois pois" equivalent="large spots" />
+<pattern id="trois losanges" equivalent="triple diamond" />
+<pattern id="un cadre" equivalent="hollow box" />
+<pattern id="cadre" equivalent="hollow box" />
+<pattern id="demi" equivalent="halved" />
+<pattern id="diagonale" equivalent="diagonal halves" />
+<pattern id="demi_diagonal" equivalent="diagonal halves" />
+<pattern id="col" equivalent="collar" />
+<pattern id="brandebourgs" equivalent="braid" />
+<pattern id="chevron hoop" equivalent="chevron hoop" />
+<pattern id="fer a cheval" equivalent="horseshoe" />
+<pattern id="plastron" equivalent="yoke" />
+<pattern id="tete cheval" equivalent="horse head" />
+<pattern id="un trefle" equivalent="shamrock" />
+<pattern id="trefle" equivalent="shamrock" />
+<pattern id="dentee" category="2" standard="JacketHalves.Horizontally" mero="dentee" />
+<pattern id="croissant et etoiles" equivalent="stars and crescent" />               
+       </jacket>
+       <sleeves>
+<pattern id="un cerclee" equivalent="armlets" />
+<pattern id="cerclee" equivalent="hoops" />
+<pattern id="chevronnee" equivalent="chevrons" />
+<pattern id="chevron" equivalent="chevrons" />
+<pattern id="coutures" equivalent="seams" />
+<pattern id="damier" equivalent="checked" />
+<pattern id="demi" equivalent="halved" />
+<pattern id="losanges" equivalent="diamonds" />
+<pattern id="a etoiles" equivalent="stars" />
+<pattern id="etoiles" equivalent="stars" />
+<pattern id="etoile" equivalent="stars" />
+<pattern id="a pois" equivalent="spots" />
+<pattern id="pois" equivalent="spots" />
+<pattern id="rayee" equivalent="stripes" />
+<pattern id="diabolo" equivalent="diabolo" />
+<pattern id="brassards chevronnee" equivalent="chevron" />
+<pattern id="deux brassards" equivalent="two hoops" />
+<pattern id="brassards" equivalent="armlets" />
+<pattern id="poignets" equivalent="cuffs" />
+<pattern id="alternate" equivalent="alternate" />
+       </sleeves>
+       <cap>
+<pattern id="un cerclee" equivalent="hoop" />
+<pattern id="cerclee" equivalent="hoops" />
+<pattern id="a damier" equivalent="checked" />
+<pattern id="damier" equivalent="checked" />
+<pattern id="ecartelee" equivalent="quartered" />
+<pattern id="un losanges" equivalent="diamond" />
+<pattern id="un losange" equivalent="diamond" />
+<pattern id="losanges" equivalent="diamonds" />
+<pattern id="losange" equivalent="diamond" />
+<pattern id="un etoiles" equivalent="star" />
+<pattern id="un etoile" equivalent="star" />
+<pattern id="etoiles" equivalent="stars" />
+<pattern id="etoile" equivalent="star" />
+<pattern id="a pois" equivalent="spots" />
+<pattern id="pois" equivalent="spots" />
+<pattern id="rayee" equivalent="stripes" />
+<pattern id="coutures" equivalent="seams" />
+<pattern id="demi" equivalent="halved" />
+<pattern id="peak" equivalent="peak" />
+<pattern id="visier" equivalent="visor" />
+<pattern id="visiere" equivalent="visor" />
+<pattern id="un gland" equivalent="tassle" />
+<pattern id="gland" equivalent="tassle" />
+<pattern id="pampille" equivalent="tassle" />
+<pattern id="pom pom" equivalent="pom pom" />
+<pattern id="bouton" equivalent="button" />
+       </cap>
+   </language>
+</patterns>

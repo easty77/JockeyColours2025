@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : jockeycolours_config.xml
+    Created on : 30 August 2011, 22:33
+    Author     : Simon
+    Description:
+        Purpose of the document follows.
+-->
+
+<configuration>
+    <files>
+       <file id="abbreviations" value ="xml/abbreviations.xml" />
+        <file id="colours" value ="xml/colours.xml" />
+        <file id="compares" value ="xml/compares.xml" />
+        <file id="expands" value ="xml/expands.xml" />
+        <file id="fabrics" value ="xml/fabrics.xml" />
+        <file id="organisations" value ="xml/organisations.xml" />
+        <file id="patterns" value ="xml/patterns.xml" />
+        <file id="tartans" value ="xml/tartans.xml" />
+  <!--     <file id="itext_defns" value ="xml/itext_defns.xml" /> -->
+        <file id="career_defns" value ="xml/career_defns.xml" />
+    </files>
+    <variables>
+    	<variable id="SERVER_NAME" value="http://192.168.0.200/" />
+        <variable id="TMP_OUTPUT_DIRECTORY" value="/opt/tomcat/logs" />
+        <variable id="SVG_OUTPUT_DIRECTORY" value="/var/www/html" />
+        <variable id="SVG_IMAGE_DIRECTORY" value="/var/www/html" />
+        <variable id="SVG_IMAGE_PATH" value="/images/colours/svg/" />
+        <variable id="SVG_RACECARDS_PATH" value="racecards/" />
+        <variable id="SVG_ORGANISATIONS_PATH" value="organisations/" />
+        <variable id="SVG_RACES_PATH" value="races/" />
+        <variable id="COLOURS_IMAGE_PATH" value="/images/colours" />
+        <variable id="TARTAN_IMAGE_PATH" value="/images/colours/tartan" />
+        <variable id="SVG_MERO_DIRECTORY" value="svg/mero/" />
+        <variable id="SVG_SHAPE_DIRECTORY" value="svg/" />
+        <variable id="QUERY_DIRECTORY" value="/home/simon/Documents/horses/query/" />
+        <variable id="JSON_OUTPUT_DIRECTORY" value="/var/www/html/json/" />
+    </variables>
+</configuration>

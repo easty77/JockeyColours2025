@@ -1,0 +1,1824 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!-- MUST DELETE  FROM CAREER_NAMES and CAREER_HORSES -->
+
+<careers>
+<career id="Apache Stronghold" name="Apache Stronghold">
+<rows>
+<row title="2012/13">
+<cell></cell>
+<cell><race>432841</race></cell>
+<cell colspan="4"></cell>
+<cell><race>451248</race></cell>
+<cell><race title="Champion I.N.H. Flat Race">454134</race></cell>
+</row>
+<row title="2013/14">
+<cell><race>485023</race></cell>
+<cell><race>491387</race></cell>
+<cell colspan="4"></cell>
+<cell><race title="Fame And Glory Novice Hurdle">510722</race></cell>
+<cell><race title="Champion Novice Hurdle">515378</race></cell>
+</row>
+<row title="2014/15">
+<cell><race>554099</race></cell>
+<cell><race title="Drinmore Novice Chase">559331</race></cell>
+<cell><race>563008</race></cell>
+<cell></cell>
+<cell><race title="Flogas Novice Chase">569462</race></cell>
+</row>
+</rows>
+<columns>
+<column>October</column>
+<column>November</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column>April</column>
+<column>Punchestown</column>
+</columns>
+</career>
+<career id="At Fishers Cross" name="At Fishers Cross">
+<rows>
+<row title="2011/12">
+<cell><race title="(Pro/Am) INH Flat Race">379322</race></cell>
+<cell colspan="3"></cell>
+<cell><race title="Standard Open NH Flat Race">389277</race></cell>
+<cell><race title="Maiden Hurdle">392625</race></cell>
+<cell></cell>
+<cell><race title="Hibernian Club Hurdle">397473</race></cell>
+</row>
+<row title="2012/13">
+<cell><race title="Novice Hurdle">433791</race></cell>
+<cell><race title="Handicap Hurdle">436596</race></cell>
+<cell><race title="Handicap Hurdle">438457</race></cell>
+<cell><race title="Neptune Investment Novice Hurdle">443381</race></cell>
+<cell></cell>
+<cell><race title="Albert Bartlett Novice Hurdle">444584</race></cell>
+<cell><race title="Sefton Novice Hurdle">451680</race></cell>
+</row>
+<row title="2013/14">
+<cell><race title="Long Distance Hurdle">492354</race></cell>
+<cell><race title="Long Walk Hurdle">493549</race></cell>
+<cell></cell>
+<cell><race title="Cleeve Hurdle">499871</race></cell>
+<cell></cell>
+<cell><race title="World Hurdle">503233</race></cell>
+<cell><race title="Silver Cross Stayers' Hurdle">510644</race></cell>
+<cell><race title="World Series Hurdle">514720</race></cell>
+</row>
+<row title="2014/15">
+<cell><race title="West Yorkshire Hurdle">554119</race></cell>
+<cell><race title="Christmas Hurdle">563013</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Rendlesham Hurdle">570378</race></cell>
+<cell><race title="World Hurdle">565628</race></cell>
+</row>
+<row title="2015/16">
+<cell colspan="3"></cell>
+<cell><race title="Galmoy Hurdle">633728</race></cell>
+<cell><race title="Rendlesham Hurdle">638359</race></cell>
+<cell><race title="World Hurdle">633595</race></cell>
+<cell><race title="Charity Handicap Hurdle">646004</race></cell>
+<cell><race title="Handicap Hurdle">649426</race></cell>
+</row>
+</rows>
+<columns>
+<column>November</column>
+<column colspan="2">December</column>
+<column>January</column>
+<column>February</column>
+<column>Cheltenham</column>
+<column>Aintree</column>
+<column>Punchestown</column>
+</columns>
+</career>
+<career id="Gibralfaro" name="Gibralfaro">
+<table>
+<rows>
+<row title="2014">
+<cell colspan="6"></cell>
+<cell><race source="RP" title="Prix Triple Galop">610135</race></cell>
+</row>
+<row title="2015">
+<cell><race source="RP" title="Prix du Parc Laversine">619990</race></cell>
+<cell><race source="RP" title="Prix All Along">621753</race></cell>
+<cell><race source="RP" title="Prix de Levallois">624658</race></cell>
+<cell><race source="RP" title="Prix du Mont Alta">626285</race></cell>
+<cell><race source="RP" title="Prix d'Elancourt">627190</race></cell>
+<cell><race source="RP" title="Prix Louise De Leusse">633308</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Prix Credit Mutuel-Raphael Balester">641269</race></cell>
+<cell><race source="RP" title="Prix Firyal Pursuit">641268</race></cell>
+</row>
+</rows>
+<columns>
+<column>February</column>
+<column>March</column>
+<column>April</column>
+<column colspan="2">May</column>
+<column>June</column>
+<column>July</column>
+<column>August</column>
+<column>September</column>
+</columns>
+</table>
+<table>
+<rows>
+<row title="2015/16">
+<cell colspan="3"></cell>    
+<cell><race title="Juvenile Hurdle">630665</race></cell>
+<cell><race title="Juvenile Hurdle">634197</race></cell>
+<cell><race title="Adonis Juvenile Hurdle">639338</race></cell>
+<cell><race title="Triumph Hurdle">636716</race></cell>
+</row>
+<row title="2016/17">
+<cell><race title="Weatherbys Hamilton Hurdle">686743</race></cell>    
+<cell><race title="Masterson Holdings Hurdle">689587</race></cell>
+<cell><race title="bet365 Handicap Hurdle">696200</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Handicap Hurdle">708189</race></cell>
+<cell><race title="Martin Pipe Handicap Hurdle">704152</race></cell>
+<cell><race title="Handicap Hurdle">719242</race></cell>
+</row>
+</rows>
+<columns>
+<column colspan="2">October</column>
+<column>November</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column>April</column>
+</columns>
+</table>
+</career>
+<career id="Connetable" name="Connetable">
+<table>
+<rows>
+<row title="2015">
+<cell><race source="RP" title="Prix Alliance Pastorale">635493</race></cell>
+<cell><race source="RP" title="Prix du Buissonnet">624722</race></cell>
+<cell><race source="RP" title="Prix de Pouilly">626843</race></cell>
+</row>
+</rows>
+<columns>
+<column>March</column>
+<column>April</column>
+<column>May</column>
+</columns>
+</table>
+<table>
+<rows>
+<row title="2015/16">
+<cell colspan="3"></cell>
+<cell><race title="Juvenile Hurdle">634197</race></cell>
+<cell><race title="Contenders Hurdle">636309</race></cell>
+<cell></cell>
+<cell><race title="Triumph Hurdle">636716</race></cell>
+<cell><race title="Scottish Champion Hurdle">645219</race></cell>
+</row>
+<row title="2016/17">
+<cell><race title="Handicap Hurdle">694971</race></cell>
+<cell><race title="Beginners Chase">699118</race></cell>
+<cell><race title="Novices' Limited Handicap Chase">701667</race></cell>
+<cell></cell>
+<cell><race title="Heroes Handicap Hurdle">707368</race></cell>
+<cell><race title="Handicap Hurdle">709835</race></cell>
+<cell></cell>
+<cell><race title="Handicap Hurdle">719242</race></cell>
+</row>
+</rows>
+<columns>
+<column>November</column>
+<column colspan="2">December</column>
+<column>January</column>
+<column colspan="2">February</column>
+<column>March</column>
+<column>April</column>
+</columns>
+</table>
+</career>
+<career id="Hargam" name="Hargam">
+<table>
+<rows>
+<row title="2014">
+<cell><race source="RP" title="Prix Juigne">600844</race></cell>
+<cell><race source="RP" title="Prix de Grenelle">602744</race></cell>
+<cell><race source="RP" title="Prix Matchem">604649</race></cell>
+</row>
+</rows>
+<columns>
+<column>April</column>
+<column>May</column>
+<column>June</column>
+</columns>
+</table>
+<table>
+<rows>
+<row title="2014/15">
+<cell colspan="2"></cell>
+<cell><race title="Triumph Hurdle Trial">556773</race></cell>
+<cell><race title="Triumph Hurdle Trial">561512</race></cell>
+<cell></cell>
+<cell><race title="Scottish Triumph Hurdle Trial">568260</race></cell>
+<cell><race title="Triumph Hurdle">571756</race></cell>
+<cell><race title="Anniversary 4-Y-O Juvenile Hurdle">578649</race></cell>
+</row>
+<row title="2015/16">
+<cell></cell>
+<cell><race title="Masterson Holdings Hurdle">620357</race></cell>
+<cell colspan="0"></cell>
+<cell><race title="International Hurdle">626753</race></cell>
+<cell><race title="Christmas Hurdle">627946</race></cell>
+<cell colspan="0"></cell>
+<cell></cell>
+<cell><race title="Champion Hurdle">634489</race></cell>
+</row>
+<row title="2016/17">
+<cell><race title="Istabraq Hurdle">685403</race></cell>    
+<cell><race title="Betfair Exchange Hurdle">688169</race></cell>
+<cell><race title="Greatwood Handicap Hurdle">693536</race></cell>
+<cell><race title="Wessex Youth Trust H'cap Hurdle">698950</race></cell>
+<cell></cell>
+<cell><race title="Betfair Hurdle">704158</race></cell>
+<cell><race title="Coral Cup">706764</race></cell>
+<cell></cell>
+<cell><race title="Beginners Chase">724477</race></cell>
+<cell><race title="Novice Chase">727795</race></cell>
+</row>
+</rows>
+<columns>
+<column colspan="2">October</column>
+<column>November</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column>April</column>
+<column colspan="2">May</column>
+</columns>
+</table>
+</career>
+<career id="Sempre Medici" name="Sempre Medici">
+<table>
+<rows>
+<row title="2012">
+<cell colspan="6"></cell>
+<cell><race source="RP" title="Prix De Belleville">566188</race></cell>
+<cell><race source="RP" title="Criterium de Saint-Cloud">567773</race></cell>
+</row>
+<row title="2013">
+<cell><race source="RP" title="Prix Caracalla">576836</race></cell>
+<cell><race source="RP" title="Prix De Grenelle">579603</race></cell>
+<cell><race source="RP" title="Prix du Champ de Mars">581792</race></cell>
+<cell><race source="RP" title="Prix Pleben">582606</race></cell>
+<cell><race source="RP" title="Prix Pelleas">584338</race></cell>
+<cell><race source="RP" title="Prix Robert de Cholet">585555</race></cell>
+</row>
+</rows>
+<columns>
+<column>April</column>
+<column>May</column>
+<column colspan="2">June</column>
+<column>July</column>
+<column>August</column>
+<column>October</column>
+<column>November</column>
+</columns>        
+</table>
+<table>
+<rows>
+<row title="2014/15">
+<cell><race title="Maiden Hurdle">556856</race></cell>
+<cell><race title="Novice Hurdle">563370</race></cell>
+<cell></cell>
+<cell><race title="Deloitte Novice Hurdle">569461</race></cell>
+<cell><race title="County Handicap Hurdle">571969</race></cell>
+<cell><race title="Dunboyne Castle Novice Hurdle">578309</race></cell>
+<cell><race title="Champion Novice Hurdle">580442</race></cell>
+<cell><race title="'Ragusa' Handicap">595173</race></cell>
+</row>
+<row title="2015/16">
+<cell></cell>
+<cell><race title="International Hurdle">626753</race></cell>
+<cell><race title="Limestone Lad Hurdle">633268</race></cell>
+<cell><race title="Red Mills Trial Hurdle">637439</race></cell>
+<cell><race title="Champion Hurdle">634489</race></cell>
+<cell></cell>
+<cell><race title="Punchestown Champion Hurdle">647291</race></cell>
+<cell><race title="Ascot Stakes">659165</race></cell>
+<cell><race title="Grimes Hurdle">665541</race></cell>
+</row>
+<row title="2016/17">
+<cell><race title="Morgiana Hurdle">695020</race></cell>
+<cell><race title="Handicap Hurdle">697737</race></cell>
+</row>
+</rows>
+<columns>
+<column>November</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>Cheltenham</column>
+<column>April</column>
+<column>Punchestown</column>
+<column>June</column>
+<column>July</column>
+</columns>
+</table>
+</career>
+<career id="Holywell" name="Holywell">
+<rows>
+<row title="2011/12">
+<cell colspan="4"></cell>
+<cell><race title="Novice Hurdle">383802</race></cell>
+<cell><race title="Maiden Hurdle">390503</race></cell>
+<cell colspan="3"></cell>
+<cell><race title="Handicap Hurdle">399298</race></cell>
+</row>
+<row title="2012/13">
+<cell><race title="Handicap Hurdle">431787</race></cell>
+<cell><race title="'Fixed Brush' Handicap Hurdle">434135</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Pertemps Handicap Hurdle">441796</race></cell>
+<cell></cell>
+<cell><race title="Pertemps Final">447064</race></cell>
+<cell><race title="Liverpool Hurdle">451849</race></cell>
+<cell><race title="World Series Hurdle">452820</race></cell>
+</row>
+<row title="2013/14">
+<cell></cell>
+<cell><race title="Beginners Chase">488199</race></cell>
+<cell><race title="Beginners Chase">492536</race></cell>
+<cell><race title="Harry Dufosee Novice Chase">495985</race></cell>
+<cell><race title="Beginners Chase">499115</race></cell>
+<cell><race title="Novice Chase">503374</race></cell>
+<cell><race title="Festival Trophy Handicap Chase">504476</race></cell>
+<cell><race title="Mildmay Novice Chase">510394</race></cell>
+</row>
+<row title="2014/15">
+<cell></cell>
+<cell><race title="Colin Parker Intermediate Chase">554135</race></cell>
+<cell><race title="Betfred Chase">560442</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Ivan Straker Memorial Chase">570052</race></cell>
+<cell><race title="Gold Cup">565621</race></cell>
+<cell><race title="Aintree Bowl">578650</race></cell>
+</row>
+<row title="2015/16">
+<cell><race title="Charlie Hall Chase">621574</race></cell>
+<cell><race title="Betfair Chase">623115</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Sky Bet Handicap Chase">633428</race></cell>
+<cell></cell>
+<cell><race title="Festival Trophy Handicap Chase">634488</race></cell>
+<cell><race title="Grand National">636570</race></cell>
+</row>
+<row title="2016/17">
+<cell colspan="0"></cell>
+<cell><race title="Handicap Hurdle">692190</race></cell>    
+<cell><race title="Hennessy Gold Cup Chase">691165</race></cell>
+<cell><race title="Silver Cup Handicap Chase">698949</race></cell>
+<cell colspan="0"></cell>
+<cell><race title="Sky Bet Handicap Chase">704145</race></cell>
+<cell></cell>
+<cell><race title="Ultima Handicap Chase">705543</race></cell>
+<cell><race title="Handicap Hurdle">718744</race></cell>
+</row>
+</rows>
+<columns>
+<column>October</column>
+<column>November</column>
+<column colspan="2">December</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column colspan="2">April</column>
+<column>May</column>
+</columns>
+</career>
+<career id="Who Dares Wins" name="Who Dares Wins">
+<table>
+<rows>
+<row title="2014">
+<cell colspan="6"></cell>
+<cell><race title="Maiden Stakes">546300</race></cell>
+<cell><race title="Maiden Auction Stakes">549703</race></cell>
+</row>
+<row title="2015">
+<cell><race title="Handicap">580785</race></cell>
+<cell><race title="Handicap">585363</race></cell>
+<cell><race title="Handicap">587357</race></cell>
+<cell><race title="Handicap">591470</race></cell>
+<cell><race title="Handicap">598353</race></cell>
+<cell><race title="Handicap">601013</race></cell>
+<cell></cell>
+<cell><race title="Handicap">617484</race></cell>
+</row>
+</rows>
+<columns>
+<column>April</column>
+<column colspan="2">May</column>
+<column>June</column>
+<column colspan="2">July</column>
+<column>September</column>
+<column>October</column>
+</columns>
+</table>
+<table>
+<rows>
+<row title="2015/16">
+<cell><race title="Juvenile Hurdle">623533</race></cell>
+<cell><race title="Summit Juvenile Hurdle">628765</race></cell>
+<cell><race title="Triumph Hurdle Trial">635266</race></cell>
+<cell></cell>
+<cell><race title="Triumph Hurdle">636716</race></cell>
+</row>
+</rows>
+<columns>
+<column>November</column>
+<column>December</column>
+<column>January</column>
+<column merowidth="2">February</column>
+<column>March</column>
+</columns>    
+</table>
+<table>
+<rows>
+<row title="2016">
+<cell><race title="Handicap">670626</race></cell>
+<cell><race title="Colwick Cup">673635</race></cell>    
+<cell><race title="Dubai Duty Free Handicap">681675</race></cell>
+<cell><race title="Silver Trophy Handicap Hurdle">686744</race></cell>
+</row>    
+</rows>    
+<columns>
+<column>July</column>
+<column>August</column>
+<column>September</column>
+<column>October</column>
+</columns>
+</table>
+<table>
+<rows>    
+<row title="2016/17">
+<cell><race title="Intermediate Handicap Hurdle">691256</race></cell>
+<cell><race title="Intermediate Hurdle">696201</race></cell>
+<cell><race title="Wessex Youth Trust H'cap Hurdle">698950</race></cell>
+<cell></cell>
+<cell><race title="Handicap Hurdle">708189</race></cell>
+<cell><race title="Coral Cup">706764</race></cell>
+<cell></cell>
+<cell><race title="Chester Cup Handicap">720662</race></cell>
+</row>
+</rows>
+<columns>
+<column colspan="2">November</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column>April</column>
+<column>May</column>
+</columns>    
+</table>
+<table>
+<rows>
+<row title="2017">
+<cell><race title="Ascot Stakes">735212</race></cell>    
+<cell colspan="2"></cell>
+<cell><race title="Chester Stakes">753257</race></cell>
+</row>
+</rows>
+<columns>
+<column>June</column>
+<column>July</column>
+<column>August</column>
+<column>September</column>
+<column>October</column>
+</columns>    
+</table>
+</career>
+<career id="The Game Changer" name="The Game Changer">
+<rows>
+<row title="2012/13">
+<cell colspan="15"></cell>
+<cell><race title="Flat Race">449450</race></cell>
+<cell></cell>
+<cell><race title="Goffs Land Rover Bumper">452829</race></cell>
+</row>
+<row title="2013/14">
+<cell colspan="10"></cell>
+<cell><race title="Maiden Hurdle">488345</race></cell>
+<cell><race title="Novice Hurdle">491273</race></cell>
+<cell><race title="Novice Hurdle">493340</race></cell>
+<cell><race title="Future Champions Novice Hurdle">495584</race></cell>
+<cell><race title="Handicap Hurdle">499899</race></cell>
+<cell><race title="Kingsfurze Novice Hurdle">506277</race></cell>
+<cell><race title="Top Novice Hurdle">510393</race></cell>
+<cell><race title="Handicap Hurdle">514727</race></cell>
+<cell><race title="Handicap Hurdle">516927</race></cell>
+</row>
+<row title="2014/15">
+<cell colspan="3"></cell>
+<cell><race title="Galway Hurdle">534015</race></cell>
+<cell><race title="Handicap Hurdle">539550</race></cell>
+<cell><race title="J.P.McManus Rated Hurdle">541292</race></cell>
+<cell><race title="Handicap Hurdle">544622</race></cell>
+<cell></cell>
+<cell><race title="Istabraq Hurdle">548763</race></cell>
+<cell colspan="6"></cell>
+<cell><race title="County Handicap Hurdle">571969</race></cell>
+<cell><race title="Handicap Hurdle">579089</race></cell>
+<cell><race title="Handicap Hurdle">580152</race></cell>
+<cell><race title="Beginners Chase">585747</race></cell>
+</row>
+<row title="2015/16">
+<cell><race title="Novice Chase">590716</race></cell>
+<cell><race title="Horizon Chase">596766</race></cell>
+<cell><race title="Novice Chase">600481</race></cell>
+<cell><race title="Galway Hurdle">601978</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Ballybrit Novice Chase">611176</race></cell>
+<cell><race title="Kilbegnet Novice Chase">615283</race></cell>
+<cell><race title="Like A Butterfly Novice Chase">616618</race></cell>
+<cell><race title="Buck House Novice Chase">618201</race></cell>
+<cell colspan="5"></cell>
+<cell><race title="Arkle Challenge Trophy Chase">634487</race></cell>
+<cell><race title="Maghull Novice Chase">646006</race></cell>
+<cell><race title="Ryanair Novice Chase">647288</race></cell>
+<cell><race title="An Riocht Chase">652804</race></cell>
+</row>
+<row title="2016/17">
+<cell colspan="6"></cell>    
+<cell><race title="Southampton Goodwill Chase">681970</race></cell>
+<cell></cell>
+<cell><race title="PWC Champion Chase">685671</race></cell>
+<cell><race title="Rated Hurdle">687243</race></cell>
+<cell><race title="Poplar Square Chase">692342</race></cell>
+<cell><race title="Fortria Chase">693751</race></cell>
+<cell><race title="Hilly Way Chase">698921</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Grand Annual Chase">704153</race></cell>
+<cell><race title="Normans Grove Chase">717539</race></cell>
+<cell><race title="Irish Grand National Chase">720399</race></cell>
+<cell><race title="Punchestown Champion Chase">722096</race></cell>
+</row>
+<row title="2017/18">
+<cell colspan="4"></cell>
+<cell><race title="Galway Hurdle">745663</race></cell>    
+<cell><race title="Conditions Hurdle">747305</race></cell>
+<cell><race title="Hollymount Nursing Home Chase">752393</race></cell>
+</row>
+</rows>
+<columns>
+<column>June</column>
+<column colspan="3">July</column>
+<column colspan="2">August</column>
+<column colspan="2">September</column>
+<column colspan="2">October</column>
+<column colspan="2">November</column>
+<column colspan="2">December</column>
+<column>January</column>
+<column>March</column>
+<column>Aintree</column>
+<column>Punchestown</column>
+<column>May</column>
+</columns>
+</career>
+<career id="Silver Concorde" name="Silver Concorde">
+<rows>
+<row title="2011/12">
+<cell colspan="3"></cell>
+<cell><race title="(Pro/Am) Flat Race">386808</race></cell>
+<cell colspan="4"></cell>
+<cell><race title="Flat Race">416122</race></cell>
+</row>
+<row title="2013/14">
+<cell colspan="2"></cell>
+<cell><race title="Flat Race">495717</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Champion Bumper">505520</race></cell>
+<cell><race title="Champion I.N.H. Flat Race">514707</race></cell>
+</row>
+<row title="2014/15">
+<cell><race title="Maiden">549188</race></cell>
+<cell></cell>
+<cell><race title="Maiden Hurdle">562926</race></cell>
+<cell></cell>
+<cell><race title="Deloitte Novice Hurdle">569461</race></cell>
+<cell colspan="3"></cell>
+<cell><race title="Celtic Steps At Killarney Racecourse">599045</race></cell>
+</row>
+<row title="2015/16">
+<cell><race title="Irish Cesarewitch">617938</race></cell>
+<cell><race title="November Handicap">620445</race></cell>
+<cell><race title="Maiden Hurdle">630625</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Supreme Novice Hurdle">634486</race></cell>
+<cell></cell>
+<cell><race title="Ascot Stakes">659165</race></cell>
+<cell><race title="Maiden Hurdle">669014</race></cell>
+<cell><race title="Petingo Handicap">680646</race></cell>
+</row>
+<row title="2016/17">
+<cell colspan="7"></cell>
+<cell><race title="Maiden Hurdle">745679</race></cell>    
+<cell><race title="Conditions Race (Amateur Riders)">750652</race></cell>
+<cell><race title="Maiden Hurdle">752400</race></cell>
+</row>
+</rows>
+<columns>
+<column colspan="2">October</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column>April</column>
+<column>June</column>
+<column>July</column>
+<column>September</column>
+</columns>
+</career>
+<career id="Diamond King" name="Diamond King">
+<rows>
+<row title="2012/13">
+<cell colspan="4"></cell>
+<cell><race title="Newcomers Open NH Flat Race">446071</race></cell>
+<cell></cell>
+<cell><race title="Standard NH Flat Race">453644</race></cell>
+</row>
+<row title="2013/14">
+<cell></cell>
+<cell><race title="'NH' Novice Hurdle">491716</race></cell>
+<cell><race title="'NH' Novice Hurdle">494121</race></cell>
+<cell><race title="'NH' Novice Hurdle">497378</race></cell>
+</row>
+<row title="2014/15">
+<cell colspan="3"></cell>
+<cell><race title="Handicap Hurdle">567242</race></cell>
+<cell><race title="Handicap Hurdle">570352</race></cell>
+</row>
+<row title="2015/16">
+<cell><race title="Handicap Hurdle">621754</race></cell>
+<cell><race title="Handicap Hurdle">626614</race></cell>
+<cell></cell>
+<cell><race title="Rated Hurdle">632377</race></cell>
+<cell></cell>
+<cell><race title="Coral Cup">635617</race></cell>
+<cell><race title="Champion Stayers Hurdle">647287</race></cell>
+</row>
+<row title="2016/17">
+<cell><race title="Beginners Chase">687239</race></cell>    
+<cell><race title="Drinmore Novice Chase">697738</race></cell>
+<cell><race title="Novice Chase">700959</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Mildmay of Flete">706769</race></cell>
+<cell><race title="Novice Handicap Chase">722854</race></cell>
+</row>
+</rows>
+<columns>
+<column>October</column>
+<column>November</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column>April</column>
+</columns>
+</career>
+<career id="Fagan" name="Fagan">
+<rows>
+<row title="2013/14">
+<cell colspan="7"></cell>
+<cell><race title="Standard Open Flat Race">528012</race></cell>
+</row>
+<row title="2015/16">
+<cell><race title="Standard Open Flat Race">614447</race></cell>
+<cell><race title="Standard Open Flat Race">620453</race></cell>
+<cell><race title="'NH' Novice Hurdle">627812</race></cell>
+<cell></cell>
+<cell><race title="Albert Bartlett Scottish Trial">636334</race></cell>
+<cell><race title="Spa Novice Hurdle">636718</race></cell>
+<cell><race title="Novice Hurdle">647806</race></cell>
+</row>
+<row title="2016/17">
+<cell colspan="3"></cell>
+<cell><race title="Beginners Chase">701393</race></cell>
+<cell colspan="3"></cell>
+<cell><race title="Novice Chase">738963</race></cell>
+</row>
+</rows>
+<columns>
+<column>September</column>
+<column>October</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column>April</column>
+<column>July</column>
+</columns>
+</career>
+<career id="Champers On Ice" name="Champers On Ice">
+<rows>
+<row title="2014/15">
+<cell colspan="7"></cell>
+<cell><race title="Flat Race">582072</race></cell>
+</row>
+<row title="2015/16">
+<cell><race title="Hyde Novice Hurdle">623780</race></cell>
+<cell><race title="London Novice Hurdle">626211</race></cell>
+<cell></cell>
+<cell><race title="Neptune Investment Novice Hurdle">631268</race></cell>
+<cell><race title="Classic Novice Hurdle">635270</race></cell>
+<cell></cell>
+<cell><race title="Spa Novice Hurdle">636718</race></cell>
+</row>
+<row title="2016/17">
+<cell colspan="2"></cell>
+<cell><race title="Novice Chase">697905</race></cell>
+<cell colspan="0"></cell>
+<cell><race title="Hampton Novice Chase">703783</race></cell>
+<cell><race title="Novices' Handicap Chase">706243</race></cell>
+<cell colspan="0"></cell>
+<cell><race title="National Hunt Chase">705546</race></cell>
+</row>
+</rows>
+<columns>
+<column colspan="2">November</column>
+<column>December</column>
+<column>Christmas</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column>April</column>
+</columns>
+</career>
+<career id="Shantou Village" name="Shantou Village">
+<rows>
+<row title="2014/15">
+<cell colspan="6"></cell>
+<cell><race title="Standard Open NH Flat Race">576699</race></cell>
+</row>
+<row title="2015/16">
+<cell></cell>
+<cell><race title="'NH' Novice Hurdle">618646</race></cell>
+<cell><race title="Hyde Novice Hurdle">623780</race></cell>
+<cell></cell>
+<cell><race title="Classic Novice Hurdle">635270</race></cell>
+<cell></cell>
+<cell><race title="Spa Novice Hurdle">636718</race></cell>
+</row>
+<row title="2016/17">
+<cell><race title="Novice Chase">676696</race></cell>
+<cell><race title="Novice Chase">689590</race></cell>
+<cell><race title="Rising Stars Novice Chase">692183</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Novice Chase">719246</race></cell>
+<cell></cell>
+<cell><race title="Novices' Handicap Chase">719233</race></cell>
+</row>    
+</rows>
+<columns>
+<column>Summer</column>
+<column>October</column>
+<column>November</column>
+<column merowidth="2">December</column>
+<column>January</column>
+<column merowidth="2">February</column>
+<column>March</column>
+<column>April</column>
+</columns>
+</career>
+<career id="Maarek" name="Maarek">
+<rows>
+<row title="2010">
+<cell colspan="14"></cell>
+<cell><race title="Maiden">317106</race></cell>
+<cell></cell>
+<cell><race title="Maiden">320337</race></cell>
+</row>
+<row title="2011">
+<cell><race title="Big Bad Bob Maiden">336646</race></cell>
+<cell><race title="Handicap">338743</race></cell>
+<cell><race title="Handicap">340319</race></cell>
+<cell><race title="Handicap">346094</race></cell>
+<cell></cell>
+<cell><race title="Handicap">349987</race></cell>
+<cell><race title="Taxi 90 33 33 33 Race">351312</race></cell>
+<cell><race title="Handicap">352775</race></cell>
+<cell><race title="Paddy Power Sprint">353022</race></cell>
+<cell><race title="Rockingham Handicap">357194</race></cell>
+<cell><race title="Handicap">360176</race></cell>
+<cell><race title="Handicap">362139</race></cell>
+<cell><race title="Ayr Silver Cup">368465</race></cell>
+<cell><race title="Joe McGrath Handicap">369652</race></cell>
+</row>
+<row title="2012">
+<cell><race title="Handicap">393708</race></cell>
+<cell><race title="Handicap">397137</race></cell>
+<cell></cell>
+<cell><race title="Handicap">399310</race></cell>
+<cell></cell>
+<cell><race title="Wokingham Stakes">403646</race></cell>
+<cell><race title="Chipchase Stakes">410024</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Chrisbeekracing.com Stakes" full_title="chrisbeekracing.com Stakes">412980</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Renaissance Stakes">424918</race></cell>
+<cell><race title="Ayr Gold Cup">421488</race></cell>
+<cell><race title="Waterford Testimonial Stakes">429605</race></cell>
+<cell><race title="British Champions Sprint Stakes">430783</race></cell>
+<cell><race source="RP" title="Prix de Seine-et-Oise">567431</race></cell>
+</row>
+<row title="2013">
+<cell colspan="2"></cell>
+<cell><race title="Woodlands Stakes">453614</race></cell>
+<cell><race title="Duke Of York Stakes">452058</race></cell>
+<cell></cell>
+<cell><race title="Midsummer Sprint Stakes">462941</race></cell>
+<cell><race title="Diamond Jubilee Stakes">460711</race></cell>
+<cell colspan="5"></cell>
+<cell><race title="Newbridge Grassroots Festival Renaissance Stakes">479854</race></cell>
+<cell><race title="Dubai International Airport World Trophy">481117</race></cell>
+<cell><race source="RP" title="Prix de l'Abbaye">588540</race></cell>
+<cell><race title="British Champions Sprint Stakes">485826</race></cell>
+</row>
+<row title="2014">
+<cell></cell>
+<cell><race title="Cork Stakes">510713</race></cell>
+<cell><race title="Woodlands Stakes">514417</race></cell>
+<cell><race title="Duke Of York Stakes">514582</race></cell>
+<cell><race title="Greenlands Stakes">519521</race></cell>
+<cell colspan="5"></cell>
+<cell><race title="Phoenix Sprint Stakes">536647</race></cell>
+<cell><race title="Renaissance Stakes">539632</race></cell>
+<cell><race title="Haydock Sprint Cup">531047</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Prix de l'Abbaye">610356</race></cell>
+<cell><race title="British Champions Sprint Stakes">551337</race></cell>
+<cell><race source="RP" title="Prix De Seine-Et-Oise">613785</race></cell>
+</row>
+<row title="2015">
+<cell colspan="2"></cell>
+<cell><race title="Woodlands Stakes">581832</race></cell>
+<cell><race source="RP" title="Prix de Saint-Georges">626898</race></cell>
+<cell><race title="Greenlands Stakes">587372</race></cell>
+<cell colspan="5"></cell>
+<cell><race title="Phoenix Sprint Stakes">604709</race></cell>
+<cell><race title="Beverley Bullet">609071</race></cell>
+<cell><race title="Flying Five Stakes">612247</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Prix de l'Abbaye">636391</race></cell>
+<cell><race title="British Champions Sprint Stakes">616694</race></cell>
+<cell><race source="RP" title="Prix Contessina">639710</race></cell>
+</row>
+<row title="2016">
+<cell><race title="Cammidge Trophy">644948</race></cell> 
+<cell><race title="Abernant Stakes">646818</race></cell>
+<cell><race title="Woodlands Stakes">648841</race></cell>
+<cell></cell>   
+<cell><race title="Greenlands Stakes">653823</race></cell>
+<cell><race source="RP" title="Prix du Gros-Chene">653176</race></cell>
+<cell><race title="Belgrave Stakes">662148</race></cell>
+<cell colspan="3"></cell>
+<cell><race title="Beverley Bullet Sprint Stakes">677209</race></cell>
+<cell></cell>
+<cell><race title="Flying Five Stakes">680696</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Prix de l'Abbaye">660232</race></cell>
+<cell></cell>
+<cell><race title="Morpheus Handicap">691480</race></cell>
+</row>
+<row title="2017">
+<cell><race title="Handicap">716404</race></cell>    
+<cell></cell>
+<cell><race title="Woodlands Stakes">721726</race></cell>
+<cell><race title="Handicap">727961</race></cell>
+<cell><race title="Handicap">729606</race></cell>
+<cell colspan="4"></cell>
+<cell><race title="Rockingham Handicap">738446</race></cell>
+<cell><race title="Scurry Handicap">741849</race></cell>
+<cell><race title="Great St Wilfrid Handicap">749996</race></cell>
+<cell><race title="Tipperary Handicap">752408</race></cell>
+</row>
+</rows>
+<columns>
+<column>March</column>
+<column colspan="2">April</column>
+<column colspan="2">May</column>
+<column colspan="4">June</column>
+<column>July</column>
+<column colspan="2">August</column>
+<column colspan="2">September</column>
+<column colspan="2">October</column>
+<column>November</column>
+</columns>
+</career>
+<career id="Lieutenant Colonel" name="Lieutenant Colonel">
+<rows>
+<row title="2013/14">
+<cell><race title="Dick Grainger Memorial">490421</race></cell>
+<cell></cell>
+<cell><race title="Maiden Hurdle">493206</race></cell>
+<cell><race title="Maiden Hurdle">496721</race></cell>
+<cell><race title="E.B.F. Novice Hurdle">500938</race></cell>
+<cell><race title="Baring Bingham Novice Hurdle">501290</race></cell>
+<cell><race title="Fame And Glory Novice Hurdle">510722</race></cell>
+<cell><race title="Champion Novice Hurdle">515378</race></cell>
+</row>
+<row title="2014/15">
+<cell><race title="Beginners Chase">554231</race></cell>
+<cell><race title="Hatton's Grace Hurdle">559333</race></cell>
+<cell><race title="Christmas Hurdle">563013</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="World Hurdle">565628</race></cell>
+<cell></cell>
+<cell><race title="World Series Hurdle">582076</race></cell>
+</row>
+<row title="2015/16">
+<cell colspan="4"></cell>
+<cell><race title="Boyne Hurdle">637444</race></cell>
+<cell><race title="World Hurdle">633595</race></cell>    
+<cell></cell>
+<cell><race title="Champion Stayers Hurdle">647287</race></cell>
+</row>
+<row title="2016/17">
+<cell><race title="Beginners Chase">685674</race></cell>
+<cell><race title="Buck House Novice Chase">687252</race></cell>    
+<cell><race title="Drinmore Novice Chase">697738</race></cell>
+<cell colspan="3"></cell>
+<cell><race title="Irish Strawberry Hurdle">720398</race></cell>
+<cell><race title="Champion Stayers Hurdle">722110</race></cell>
+</row>
+</rows>
+<columns>
+<column colspan="2">November</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>Cheltenham</column>
+<column>April</column>
+<column>Punchestown</column>
+</columns>
+</career>
+<career id="Different Gravey" name="Different Gravey">
+<rows>
+<row title="2014/15">
+<cell><race title="Maiden Hurdle">559004</race></cell>
+<cell></cell>
+<cell><race title="Neptune Investment Novice Hurdle">564059</race></cell>
+<cell><race title="Sidney Banks Mem. Novice Hurdle">571106</race></cell>
+<cell></cell>
+<cell><race title="West Sound Novice Hurdle">579975</race></cell>
+</row>
+<row title="2015/16">
+<cell colspan="3"></cell>
+<cell><race title="Handicap Hurdle">638355</race></cell>
+<cell></cell>
+<cell><race title="Liverpool Hurdle">646007</race></cell>
+</row>
+<row title="2016/17">
+<cell><race title="Beginners Chase">694607</race></cell>
+<cell><race title="Novice Chase">696863</race></cell>
+<cell></cell>
+<cell><race title="National Spirit Hurdle">711077</race></cell>
+<cell></cell>
+<cell><race title="Liverpool Hurdle">718748</race></cell>
+</row>
+<row title="2017/18">
+<cell><race title="John Ayres Memorial H'cap Chase">762963</race></cell>    
+<cell><race title="Handicap Chase">771130</race></cell>
+<cell><race title="Pertemps Network Handicap Hurdle">777777</race></cell>
+</row>
+</rows>
+<columns>
+<column>November</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column merowidth="2">March</column>
+<column>April</column>
+</columns>
+</career>
+<career id="Endless Drama" name="Endless Drama">
+<rows>
+<row title="2014">
+<cell colspan="6"></cell>
+<cell><race title="Maiden">551529</race></cell>
+</row>
+<row height="2" title="2015">
+<cell><race title="2000 Guineas Trial Stakes">579139</race></cell>
+<cell><race title="Tetrarch Stakes">583138</race><race title="Irish 2000 Guineas">587373</race></cell>
+</row>
+<row title="2016">
+<cell></cell>
+<cell><race title="Lockinge Stakes">645222</race></cell>    
+<cell><race title="Queen Anne Stakes">649199</race></cell>
+<cell><race title="Conditions Race">667785</race></cell>
+<cell><race title="Royal Whip Stakes">672973</race></cell>
+</row>
+<row title="2018">
+<cell><race source="RP" title="Apollo Stakes">694820</race></cell>    
+</row>
+</rows>
+<columns>
+<column>April</column>
+<column merowidth="4">May</column>
+<column>June</column>
+<column>July</column>
+<column>August</column>
+<column merowidth="2">September</column>
+<column>October</column>
+</columns>
+</career>
+<career id="Port Douglas" name="Port Douglas">
+<rows>
+<row title="2015">
+<cell></cell>
+<cell><race title="Maiden">591126</race></cell>
+<cell><race title="Conditions Race">597490</race></cell>
+<cell><race title="Canford Cliffs Stakes">604600</race></cell>
+<cell><race title="Beresford Stakes">615192</race></cell>
+<cell><race title="Racing Post Trophy">618380</race></cell>
+</row>
+<row height="2" title="2016">
+<cell><race title="Chester Vase">650670</race></cell>
+<cell><race title="Derby">561947</race><race title="Irish Derby">662146</race></cell>
+</row>
+<row title="2018">
+<cell><race title="Queen's Prize Handicap">796907</race></cell>    
+</row>
+</rows>
+<columns>
+<column>May</column>
+<column merowidth="4">June</column>
+<column>July</column>
+<column>August</column>
+<column>September</column>
+<column>October</column>
+</columns>
+</career>
+<career id="Felix Yonger" name="Felix Yonger">
+<rows>
+<row title="2010/11">
+<cell></cell>
+<cell><race title="Irish Foal Levy">327126</race></cell>
+<cell></cell>
+<cell><race title="Standard Open NH Flat Race">330093</race></cell>
+<cell></cell>
+<cell><race title="Weatherbys Champion Bumper">334868</race></cell>
+</row>
+<row title="2011/12">
+<cell><race title="Maiden Hurdle">379320</race></cell>
+<cell><race title="Maiden Hurdle">382413</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Johnstown Novice Hurdle">390161</race></cell>
+<cell><race title="Baring Bingham Novice Hurdle">390258</race></cell>
+<cell><race title="Champion Novice Hurdle">398265</race></cell>
+</row>
+<row title="2012/13">
+<cell colspan="6"></cell>
+<cell><race title="Beginners Chase">456829</race></cell>
+</row>
+<row title="2013/14">
+<cell><race title="Craddockstown Novice Chase">490416</race></cell>
+<cell><race title="Novice Chase">493210</race></cell>
+<cell><race title="Greenmount Park Novice Chase">495578</race></cell>
+<cell><race title="Arkle Novice Chase">499884</race></cell>
+<cell></cell>
+<cell><race title="Golden Miller Novice Chase">503268</race></cell>
+<cell><race title="Ryanair Novice Chase">514722</race></cell>
+</row>
+<row title="2014/15">
+<cell><race title="Poplar Square Chase">554229</race></cell>
+<cell><race title="Hilly Way Chase">560534</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Ballsbridge Hurdle">572643</race></cell>
+<cell><race title="Webster Cup Chase">577038</race></cell>
+<cell><race title="Champion Chase">580151</race></cell>
+</row>
+<row title="2015/16">
+<cell><race title="Clonmel Oil Chase">623376</race></cell>
+<cell><race title="Hilly Way Chase">629501</race></cell>
+<cell></cell>
+<cell><race title="Tied Cottage Chase">635389</race></cell>
+<cell></cell>
+<cell><race title="Queen Mother Champion Chase">633588</race></cell>
+</row>
+<row title="2017/18">
+<cell colspan="6"></cell>
+<cell><race title="Hunter Chase">799010</race></cell>    
+</row>
+</rows>
+<columns>
+<column>November</column>
+<column colspan="2">December</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column>Punchestown</column>
+</columns>
+</career>
+<career id="Josses Hill" name="Josses Hill">
+<rows>
+<row title="2012/13">
+<cell colspan="7"></cell>
+<cell><race title="NH Flat Race">456831</race></cell>
+</row>
+<row title="2013/14">
+<cell><race title="Standard Open NH Flat Race">491283</race></cell>
+<cell colspan="0"></cell>
+<cell><race title="Maiden Hurdle">494793</race></cell>
+<cell colspan="0"></cell>
+<cell><race title="Tolworth Hurdle">497929</race></cell>
+<cell></cell>
+<cell><race title="Supreme Novice Hurdle">501294</race></cell>
+<cell><race title="Top Novice Hurdle">510393</race></cell>
+</row>
+<row title="2014/15">
+<cell></cell>
+<cell colspan="0"></cell>
+<cell><race title="Noel Novices' Chase">562413</race></cell>
+<cell colspan="0"></cell>
+<cell><race title="Novice Chase">564982</race></cell>
+<cell><race title="Graduation Chase">569096</race></cell>
+<cell><race title="Arkle Challenge Trophy Chase">571759</race></cell>
+<cell><race title="Manifesto Novice Chase">578648</race></cell>
+</row>
+<row title="2015/16">
+<cell></cell>
+<cell><race title="Tingle Creek Chase">627633</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Graduation Chase">637091</race></cell>
+<cell><race title="Ryanair Chase">633594</race></cell>
+</row>
+<row title="2016/17">
+<cell><race title="Graduation Chase">692366</race></cell>    
+<cell><race title="Peterborough Chase">697496</race></cell>
+<cell><race title="King George VI Chase">692649</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Ryanair Chase">704882</race></cell>
+<cell><race title="Melling Chase">718470</race></cell>
+<cell><race title="Oaksey Chase">719229</race></cell>
+</row>
+<row title="2017/18">
+<cell><race title="1965 Chase">771814</race></cell>    
+<cell><race title="Peterborough Chase">776268</race></cell>
+<cell></cell>
+<cell><race title="32Red Casino Chase">780588</race></cell>
+<cell><race title="Betdaq Handicap Chase">786283</race></cell>
+<cell></cell>
+<cell><race title="Handicap Hurdle">799030</race></cell>
+</row>
+</rows>
+<columns>
+<column>November</column>
+<column>December</column>
+<column>Christmas</column>
+<column>January</column>
+<column>February</column>
+<column>Cheltenham</column>
+<column>Aintree</column>
+<column>April-May</column>
+</columns>
+</career>
+<career id="Silverwave" name="Silverwave">
+<rows>
+<row title="2014">
+<cell colspan="8"></cell>
+<cell><race source="RP" title="Prix de Janze">612326</race></cell>
+<cell><race source="RP" title="Prix De La Pierre Percee">613892</race></cell>
+</row>
+<row title="2015">
+<cell><race source="RP" title="Prix De Brissac">623252</race></cell>
+<cell><race source="RP" title="Prix La Force">623288</race></cell>
+<cell><race source="RP" title="French Derby">628604</race></cell>
+<cell colspan="2"></cell>
+<cell><race source="RP" title="Grand Prix de Paris">631576</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Prix Niel">635168</race></cell>
+<cell><race source="RP" title="Prix de l'Arc de Triomphe">630266</race></cell>
+</row>
+<row title="2016">
+<cell>Moved from Alain Couetil to Pascal Bary</cell>
+<cell><race source="RP" title="Prix d'Harcourt">648518</race></cell>
+<cell><race source="RP" title="Prix Ganay">650240</race></cell>
+<cell><race source="RP" title="Prix d'Ispahan">652143</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Grand Prix de Saint-Cloud">654992</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Prix Foy">659005</race></cell>
+<cell><race source="RP" title="Prix de l'Arc de Triomphe">658201</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Hong Kong Vase">664529</race></cell>
+</row>
+<row title="2017">
+<cell colspan="2"></cell>
+<cell><race source="RP" title="Prix Ganay">674913</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Grand Prix de Chantilly">677780</race></cell>
+<cell><race source="RP" title="Grand Prix de Saint-Cloud">680263</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Prix Foy">684251</race></cell>
+<cell><race source="RP" title="Prix de l'Arc de Triomphe">682788</race></cell>
+</row>
+</rows>
+<columns>
+<column>March</column>
+<column>April</column>
+<column colspan="2">May</column>
+<column>June</column>
+<column>July</column>
+<column merowidth="2">August</column>
+<column>September</column>
+<column>October</column>
+<column>November</column>
+<column>December</column>
+</columns>
+</career>
+<career id="Across The Stars" name="Across The Stars">
+<rows>
+<row title="2015">
+<cell colspan="6"></cell>
+<cell><race title="Maiden Stakes">617023</race></cell>
+<cell><race title="Maiden Stakes">623788</race></cell>
+</row>
+<row height="2" title="2016">
+<cell><race title="Maiden Stakes">645372</race></cell>
+<cell><race title="Derby Trial Stakes">651150</race></cell>
+<cell><race title="Derby">561947</race><race title="King Edward VII Stakes">651806</race></cell>
+<cell></cell>
+<cell><race title="Great Voltigeur Stakes">664658</race></cell>
+</row>
+<row height="2" title="2017">
+<cell></cell>
+<cell><race title="Aston Park Stakes">725547</race></cell>    
+<cell><race title="Hardwicke Stakes">723335</race></cell>
+<cell></cell>
+<cell><race title="August Stakes">751641</race></cell>
+<cell><race title="Stand Cup">756605</race><race title="Newbury Arc Trial">752038</race></cell>
+<cell><race title="St Simon Stakes">765936</race></cell>
+</row>
+<row title="2018">
+<cell><race title="Conditions Stakes">794182</race></cell>    
+<cell><race title="Handicap">802858</race></cell>
+<cell><race title="Handicap">808117</race></cell>
+<cell><race title="Handicap">810056</race></cell>
+<cell><race title="Old Newton Cup Handicap">818970</race></cell>
+</row>
+</rows>
+<columns>
+<column>April</column>
+<column>May</column>
+<column merowidth="4">June</column>
+<column merowidth="2">July</column>
+<column>August</column>
+<column merowidth="4">September</column>
+<column>October</column>
+<column>November</column>
+</columns>
+</career>
+<career id="Mekhtaal" name="Mekhtaal">
+<rows>
+<row title="2016">
+<cell><race source="RP" title="Prix de Frauenfeld">646158</race></cell>
+<cell><race source="RP" title="Prix Comrade">648606</race></cell>
+<cell><race source="RP" title="Prix Hocquart">651546</race></cell>
+<cell><race source="RP" title="Prix du Jockey Club">653134</race></cell>
+<cell><race source="RP" title="Grand Prix de Paris" full_title="Juddmonte Grand Prix de Paris">655519</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Prix du Prince d'Orange">659386</race></cell>
+</row>
+<row title="2017">
+<cell></cell>
+<cell><race source="RP" title="Prix d'Harcourt">673004</race></cell>
+<cell><race source="RP" title="Prix d'Ispahan">677210</race></cell>
+<cell><race title="Prince Of Wales's Stakes">723342</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Arlington Million">682661</race></cell>
+<cell><race source="RP" title="Joe Hirsch Turf Classic">685691</race></cell>
+</row>
+<row>
+<cell><race source="RP" title="Northern Dancer Turf Stakes">711971</race></cell>
+</row>
+</rows>
+<columns>
+<column>March</column>
+<column>April</column>
+<column>May</column>
+<column>June</column>
+<column>July</column>
+<column>August</column>
+<column>September</column>
+</columns>
+</career>
+<career id="Home Of The Brave" name="Home Of The Brave" comment="Sent to race in Australia">
+<rows>
+<row title="2014">
+<cell colspan="2"></cell>
+<cell><race title="Maiden Stakes">527160</race></cell>
+<cell><race title="Maiden Stakes">533199</race></cell>
+<cell></cell>
+<cell><race title="Sirenia Stakes">542650</race></cell>
+</row>
+<row title="2015">
+<cell><race title="European Free Handicap">579437</race></cell>
+<cell><race title="2000 Guineas">574076</race></cell>
+<cell><race title="Commonwealth Cup">582086</race></cell>
+<cell><race title="Minstrel Stakes">595627</race></cell>
+<cell></cell>
+<cell><race title="Park Stakes">612062</race></cell>
+</row>
+<row title="2016">
+<cell><race title="King Richard III Stakes">648540</race></cell>
+<cell><race title="John of Gaunt Stakes">655565</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Hungerford Stakes">673951</race></cell>
+<cell colspan="2"></cell>
+<cell><race source="RP" title="Breeders Cup Turf Sprint">662267</race></cell>
+</row>
+<row title="2017">
+<cell><race title="King Richard III Stakes">722904</race></cell>    
+<cell colspan="2"></cell>
+<cell><race title="Criterion Stakes">738177</race></cell>
+<cell><race title="Lennox Stakes">738682</race></cell>
+<cell><race title="Park Stakes">745424</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Breeders Cup Mile">688201</race></cell>
+</row>
+</rows>
+<columns>
+<column>April</column>
+<column>May</column>
+<column>June</column>
+<column>July</column>
+<column>August</column>
+<column>September</column>
+<column merowidth="2">October</column>
+<column>November</column>
+</columns>
+</career>
+<career id="Midterm" name="Midterm" comment="Sent to race in Australia">
+<rows>
+<row title="2015">
+<cell colspan="5"></cell>
+<cell><race title="Maiden Stakes">620110</race></cell>
+</row>
+<row title="2016">
+<cell><race title="Classic Trial">648264</race></cell>
+<cell><race title="Dante Stakes">645225</race></cell>
+<cell colspan="3"></cell>
+<cell><race source="RP" title="Prix Niel">659004</race></cell>
+<cell><race title="Champion Stakes">672830</race></cell>
+</row>
+<row title="2017">
+<cell><race title="John Porter Stakes">721398</race></cell>    
+<cell><race title="Aston Park Stakes">725547</race></cell>
+<cell></cell>
+<cell><race title="Fred Archer Stakes">738175</race></cell>
+<cell><race title="Conditions Stakes">751896</race></cell>
+<cell><race title="September Stakes">754962</race></cell>
+<cell><race title="Cumberland Lodge Stakes">758698</race></cell>
+</row>
+</rows>
+<columns>
+<column>April</column>
+<column>May</column>
+<column merowidth="2">June</column>
+<column>July</column>
+<column>August</column>
+<column>September</column>
+<column>October</column>
+</columns>
+</career>
+<career id="Sir John Lavery" name="Sir John Lavery" comment="Sent to race in Australia">
+<rows>
+<row title="2016">
+<cell colspan="5"></cell>
+<cell><race title="Maiden">687122</race></cell>
+<cell><race title="Maiden">688746</race></cell>
+</row>
+<row title="2017">
+<cell><race title="Derby Trial Stakes">726057</race></cell>    
+<cell><race title="King Edward VII Stakes">723346</race></cell>
+<cell></cell>
+<cell><race title="Platinum Stakes">747285</race></cell>
+<cell><race title="Boomerang Stakes">755257</race></cell>
+<cell><race title="Joel Stakes">750755</race></cell>
+<cell><race title="Queen Elizabeth II Stakes">748811</race></cell>
+</row>
+</rows>
+<columns>
+<column>May</column>
+<column>June</column>
+<column merowidth="2">July</column>
+<column>August</column>
+<column>September</column>
+<column colspan="2">October</column>
+</columns>
+</career>
+<career id="Toast Of New York" name="Toast Of New York">
+<rows>
+<row height="2" title="2013">
+<cell colspan="3"></cell>
+<cell><race>473417</race><race>476740</race></cell>
+<cell><race>479685</race></cell>
+<cell></cell>
+<cell><race>487997</race></cell>
+</row>
+<row title="2014">
+<cell><race source="RP">598171</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Belmont Derby">606599</race></cell>
+<cell><race source="RP">609240</race></cell>
+<cell colspan="2"></cell>
+<cell><race source="RP">613007</race></cell>
+</row>
+<row title="2017">
+<cell colspan="6"></cell>
+<cell><race title="Conditions Stakes">773867</race></cell>
+<cell><race source="RP" title="Pegasus World Cup">693384</race></cell>
+</row>
+</rows>
+<columns>
+<column>March</column>
+<column>April-June</column>
+<column>July</column>
+<column merowidth="4">August</column>
+<column>September</column>
+<column merowidth="2">October</column>
+<column>November</column>
+<column>December</column>
+</columns>
+</career>
+<career id="Ivanovich Gorbatov" name="Ivanovich Gorbatov">
+<table>
+<rows>
+<row title="2014">
+<cell colspan="3"></cell>
+<cell><race title="E.B.F. Maiden">548760</race></cell>
+</row>
+<row title="2015">
+<cell><race title="Maiden">585707</race></cell>
+<cell></cell>
+<cell><race title="Handicap">603670</race></cell>
+</row>
+</rows>
+<columns>
+<column>May</column>
+<column>June-July</column>
+<column>August</column>
+<column>September</column>
+<column>October</column>
+</columns>
+</table>
+<table>
+<rows>
+<row title="2015/16">
+<cell colspan="3"></cell>
+<cell><race title="3-Y-O Maiden Hurdle">630624</race></cell>
+<cell></cell>
+<cell><race title="Spring Juvenile Hurdle">636383</race></cell>
+<cell><race title="Triumph Hurdle">636716</race></cell>
+<cell><race title="Anniversary Juvenile Hurdle">645658</race></cell>
+<cell><race title="Champion Four Year Old Hurdle">647290</race></cell>
+</row>
+<row title="2016/17">
+<cell><race title="Conditions Hurdle">692343</race></cell>
+<cell><race title="Morgiana Hurdle">695020</race></cell>
+<cell><race title="Hatton's Grace Hurdle">697736</race></cell>
+<cell><race title="Ryanair Hurdle">701250</race></cell>
+<cell><race title="Irish Champion Hurdle">706351</race></cell>
+<cell></cell>
+<cell><race title="County Hurdle">704148</race></cell>
+</row>
+<row title="2017/18">
+<cell><race title="Greatwood Handicap Hurdle">770451</race></cell>    
+<cell></cell>
+<cell><race title="Handicap Hurdle">773515</race></cell>
+<cell><race title="Conditions Hurdle">777827</race></cell>
+<cell></cell>
+<cell><race title="Coral Hurdle">784566</race></cell>
+<cell><race title="County Handicap Hurdle">784826</race></cell>
+<cell><race title="Children's Charity Handicap Hurdle">796218</race></cell>
+<cell><race title="Handicap Hurdle">798463</race></cell>
+<cell><race title="Grimes Hurdle">818104</race></cell>
+<cell><race title="Amateur Conditions Race">821664</race></cell>
+<cell><race title="Galway Hurdle Handicap">825368</race></cell>
+<cell><race title="Handicap Hurdle">831677</race></cell>
+<cell><race title="Handicap Hurdle">836057</race></cell>
+</row>
+<row title="2018/19">
+<cell><race title="Handicap Hurdle">848954</race></cell>
+<cell></cell>
+<cell><race title="Handicap Hurdle">855634</race></cell>
+</row>
+</rows>
+<columns>
+<column colspan="2">November</column>
+<column>December</column>
+<column>Christmas</column>
+<column>January</column>
+<column>February</column>
+<column>Cheltenham</column>
+<column>Aintree</column>
+<column>Punchestown</column>
+<column colspan="5">Summer</column>
+</columns>
+</table>
+</career>
+<career id="Ch'tibello" name="Ch'tibello">
+<rows>
+<row title="2014">
+<cell colspan="7"></cell>
+<cell><race source="RP" title="Prix Bertrand de Charnace">609510</race></cell>
+</row>
+<row title="2015">
+<cell colspan="7"></cell>
+<cell><race source="RP" title="Prix Saccageur">637038</race></cell>
+</row>
+<row title="2015/16">
+<cell><race title="Novice Hurdle">618802</race></cell>
+<cell><race title="Novice Hurdle">621578</race></cell>
+<cell><race title="Intermediate Hurdle">625961</race></cell>
+<cell colspan="4"></cell>
+<cell><race title="Scottish Champion Hurdle">645219</race></cell>
+<cell><race title="Pertemps Network Handicap Hurdle">651181</race></cell>
+</row>
+<row title="2016/17">
+<cell></cell>
+<cell><race title="William Hill Handicap Hurdle">690842</race></cell>
+<cell><race title="Betfair Price Rush Hurdle">694255</race></cell>
+<cell><race title="Christmas Hurdle">697851</race></cell>
+<cell></cell>
+<cell><race title="Kingwell Hurdle">709791</race></cell>
+</row>
+<row title="2017/18">
+<cell colspan="3"></cell>
+<cell><race title="International Hurdle">775081</race></cell>    
+<cell><race title="Champion Hurdle Trial Hurdle">781803</race></cell>
+<cell><race title="Kingwell Hurdle">786977</race></cell>
+<cell><race title="Champion Hurdle">782299</race></cell>
+<cell><race title="Scottish Champion Hurdle">797597</race></cell>
+</row>
+<row title="2018/19">
+<cell></cell>
+<cell><race title="Welsh Champion Hurdle">845312</race></cell>
+<cell><race title="Handicap Hurdle">850794</race></cell>
+</row>
+</rows>
+<columns>
+<column colspan="2">October</column>
+<column>November</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>March</column>
+<column>April</column>
+<column>May</column>
+</columns>
+</career>
+<!-- retired 20190622 -->
+<career id="Superb Story" name="Superb Story">
+<table>
+<rows>        
+<row title="2014">
+<cell><race source="RP" title="Prix Mississipian">604906</race></cell>
+<cell><race source="RP" title="Prix Ghislain Delassus">616121</race></cell>
+<cell><race source="RP" title="Prix Jours de Cheval">616122</race></cell>
+<cell><race source="RP" title="Prix au Volant">616123</race></cell>
+<cell><race source="RP" title="Prix Du Long Rocher">611401</race></cell>
+<cell><race source="RP" title="Prix de Huez">611375</race></cell>
+<cell><race source="RP" title="Prix de Saint-Pair du Mont">612155</race></cell>
+<cell><race source="RP" title="Prix des Garennes">614043</race></cell>
+</row>
+</rows>
+<columns>
+<column>June</column>
+<column colspan="2">July</column>
+<column>August</column>
+<column colspan="2">September</column>
+<column>October</column>
+<column>November</column>
+</columns>
+</table>
+<table>
+<rows>
+<row title="2014/15">
+<cell colspan="2"></cell>
+<cell><race title="Juvenile Hurdle">564053</race></cell>
+<cell><race title="Scottish Triumph Hurdle Trial">568260</race></cell>
+<cell><race title="Juvenile Hurdle">570881</race></cell>
+<cell></cell>
+<cell><race title="Novice Hurdle">578644</race></cell>
+</row>
+<row title="2015/16">
+<cell><race title="Handicap Hurdle">618239</race></cell>
+<cell><race title="Greatwood Hurdle">623011</race></cell>
+<cell colspan="3"></cell>
+<cell><race title="County Handicap Hurdle">636717</race></cell>
+<cell></cell>
+<cell><race title="Galway Hurdle">669011</race></cell>
+</row>
+<row title="2016/17">
+<cell colspan="2"></cell>
+<cell><race title="Hogmaneigh Handicap Hurdle">701650</race></cell>
+</row>
+</rows>
+<columns>
+<column>October</column>
+<column>November</column>
+<column>January</column>
+<column colspan="2">February</column>
+<column>March</column>
+<column>April</column>
+<column>July</column>
+</columns>
+</table>
+</career>
+<career id="Yucatan" name="Yucatan">
+<rows>
+<row title="2016">
+<cell colspan="4"></cell>
+<cell><race title="Maiden">672494</race></cell>
+<cell><race title="Maiden">677485</race></cell>
+<cell><race title="Beresford Stakes">679548</race></cell>
+<cell><race title="Racing Post Trophy">680893</race></cell>
+</row>
+<row title="2017">
+<cell><race title="Ballysax Stakes">718888</race></cell>
+<cell><race title="Derby Trial Stakes">724657</race></cell>
+</row>
+<row title="2018">
+<cell><race title="Alleged Stakes">798555</race></cell>    
+<cell><race title="Mooresbridge Stakes">803267</race></cell>
+<cell><race title="Coronation Cup">798946</race></cell>
+<cell><race title="Wolferton Stakes">810848</race></cell>
+<cell><race title="International Stakes">817748</race></cell>
+<cell><race title="Ballyroan Stakes">821378</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Herbert Power Stakes">714015</race></cell>
+</row>
+</rows>
+<columns>
+<column>April</column>
+<column>May</column>
+<column>June</column>
+<column>July</column>
+<column colspan="2">August</column>
+<column>September</column>
+<column>October</column>
+</columns>
+</career>
+<career id="Muntahaa" name="Muntahaa">
+<rows>
+<row title="2016">
+<cell colspan="0"></cell>
+<cell><race title="Wood Ditton Stakes">646539</race></cell>
+<cell colspan="0"></cell>
+<cell><race title="Maiden Stakes">650842</race></cell>
+<cell><race title="Maiden Stakes">656372</race></cell>
+<cell><race title="King Edward VII Stakes">651806</race></cell>
+<cell></cell>
+<cell><race title="Chester Stakes">675613</race></cell>
+<cell><race title="St Leger">669462</race></cell>
+</row>
+<row title="2017">
+<cell><race title="Conditions Stakes">717469</race></cell>   
+<cell><race title="John Porter Stakes">721398</race></cell>
+<cell><race title="Yorkshire Cup">719227</race></cell>
+<cell></cell>
+<cell><race title="Hardwicke Stakes">723335</race></cell>
+<cell><race title="Princess Of Wales Stakes">736935</race></cell>
+<cell>Gelded</cell>
+</row>
+<row title="2018">
+<cell colspan="2"></cell>    
+<cell><race title="Ormonde Stakes">804039</race></cell>    
+<cell></cell>
+<cell><race title="Wolferton Stakes">810848</race></cell>
+<cell><race title="Princess Of Wales's Stakes">816113</race></cell>
+<cell><race title="Ebor Handicap">821501</race></cell>
+</row>
+</rows>
+<columns>
+<column colspan="2">April</column>
+<column>May</column>
+<column colspan="2">June</column>
+<column>July</column>
+<column>August</column>
+<column>September</column>
+</columns>
+</career>
+<career id="Spirit of Valor" name="Spirit of Valor">
+<rows>
+<row height="2" title="2016">
+<cell colspan="7"></cell>
+<cell><race title="Maiden">686934</race><race title="Maiden">688324</race></cell>
+<cell><race title="Killavullan Stakes">689726</race></cell>
+</row>
+<row height="2" title="2017">
+<cell><race source="RP" title="UAE Derby">671410</race></cell>
+<cell></cell>
+<cell><race title="2000 Guineas">720656</race><race title="Irish 2000 Guineas">729609</race></cell>
+<cell><race title="Jersey Stakes">723339</race></cell>
+<cell><race title="Minstrel Stakes">741843</race></cell>
+<cell><race title="Lennox Stakes">738682</race></cell>
+<cell><race title="Park Stakes">745424</race></cell>
+</row>
+<row height="2" title="2018">
+<cell></cell>
+<cell><race title="Abernant Stakes">799478</race></cell>    
+<cell><race title="Greenlands Stakes">808345</race></cell>
+<cell><race title="Diamond Jubilee Stakes">803064</race></cell>
+<cell><race title="July Cup">805371</race></cell>
+<cell><race title="Lennox Stakes">821502</race></cell>
+<cell></cell>
+<cell><race source="RP" title="Schillaci Stakes">714019</race><race source="RP" title="Manikato Stakes">714811</race></cell>
+</row>
+</rows>
+<columns>
+<column>March</column>
+<column>April</column>
+<column merowidth="4">May</column>
+<column>June</column>
+<column>July</column>
+<column>August</column>
+<column>September</column>
+<column merowidth="4">October</column>
+<column></column>
+</columns>
+</career>
+<career id="Yanworth" name="Yanworth">
+<rows>
+<row title="2013/14">
+<cell colspan="7"></cell>
+<cell><race title="Standard Open NH Flat Race">516959</race></cell>
+</row>
+<row title="2014/15">
+<cell></cell>
+<cell><race title="Standard Open NH Flat Race">558757</race></cell>
+<cell><race title="'NH' Flat Race">562415</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Champion Bumper">572851</race></cell>
+</row>
+<row title="2015/16">
+<cell><race title="Novice Hurdle">621932</race></cell>
+<cell><race title="'National Hunt' Novice Hurdle">624618</race></cell>
+<cell><race title="Supreme Trial Novice Hurdle">629472</race></cell>
+<cell><race title="Classic Novice Hurdle">635270</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Baring Bingham Novice Hurdle">635615</race></cell>
+</row>
+<row title="2016/17">
+<cell></cell>	
+<cell><race title="Coral Hurdle">694953</race></cell>
+<cell><race title="Christmas Hurdle">697851</race></cell>
+<cell></cell>
+<cell><race title="Kingwell Hurdle">709791</race></cell>
+<cell><race title="Champion Hurdle">705544</race></cell>
+<cell><race title="Liverpool Hurdle">718748</race></cell>
+</row>
+<row title="2017/18">
+<cell><race title="Beginners Chase">764886</race></cell>    
+<cell><race title="Novice Chase">769690</race></cell>
+<cell><race title="Novice Chase">772975</race></cell>
+<cell><race title="Dipper Novice Chase">778705</race></cell>
+<cell></cell>
+<cell><race title="Stayers' Hurdle">781058</race></cell>
+</row>
+<row title="2018/19">
+<cell colspan="4"></cell>
+<cell><race title="Rendlesham Hurdle">868729</race></cell>
+<cell><race title="Stayers' Hurdle">864650</race></cell>
+<cell><race title="Handicap Hurdle">902253</race></cell>
+</row>
+<row title="2019/20">
+<cell><race title="Handicap Hurdle">902253</race></cell>
+<cell><race title="Risk Of Thunder Chase">912912</race></cell>
+<cell><race title="Cross Country Handicap Chase">917010</race></cell>
+<cell colspan="2"></cell>
+<cell><race title="Glenfarclas Chase">924499</race></cell>
+<cell><race title="Grimes Hurdle">944433</race></cell>
+</row>
+</rows>
+<columns>
+<column>October</column>
+<column>November</column>
+<column>December</column>
+<column>January</column>
+<column>February</column>
+<column>Cheltenham</column>
+<column>April</column>
+<column>May</column>
+</columns>
+</career>
+</careers>

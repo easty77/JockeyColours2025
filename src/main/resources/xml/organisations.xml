@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : organisations.xml.xml
+    Created on : 30 August 2011, 19:17
+    Author     : Simon
+    Description:
+        Purpose of the document follows.
+-->
+
+<organisations>
+    <organisation id="Jockey Club" language="en">
+        <colours>
+            <colour id="beige" />
+            <colour id="black" />
+            <colour id="brown" />
+            <colour id="dark blue" />
+            <colour id="dark green" />
+            <colour id="emerald green" />
+            <colour id="grey" />
+            <colour id="light blue" />
+            <colour id="light green" />
+            <colour id="maroon" />
+            <colour id="mauve" />
+            <colour id="orange" />
+            <colour id="pink" />
+            <colour id="purple" />
+            <colour id="red" />
+            <colour id="royal blue" />
+            <colour id="white" />
+            <colour id="yellow" />
+         </colours>
+        <patterns>
+            <jacket>
+                <pattern id="seams" />
+                <pattern id="epaulets" />
+                <pattern id="stripe" />
+                <pattern id="braces" />
+                <pattern id="stripes" />
+                <pattern id="hoop" />
+                <pattern id="hoops" />
+                <pattern id="halved" />
+                <pattern id="quartered" />
+                <pattern id="sash" />
+                <pattern id="cross belts" />
+                <pattern id="chevron" />
+                <pattern id="chevrons" />
+                <pattern id="check" />
+                <pattern id="diamonds" />
+                <pattern id="spots" />
+                <pattern id="stars" />
+                <pattern id="cross of lorraine" />
+                <pattern id="diamond" />
+                <pattern id="star" />
+                <pattern id="disc" />
+                <pattern id="inverted triangle" />
+                <pattern id="diabolo" />
+                <pattern id="large spots" />
+                <pattern id="triple diamond" />
+                <pattern id="hollow box" />
+            </jacket>
+            <sleeves>
+                <pattern id="armlet" />
+                <pattern id="hooped" />
+                <pattern id="striped" />
+                <pattern id="chevrons" />
+                <pattern id="seams" />
+                <pattern id="stars" />
+                <pattern id="spots" />
+                <pattern id="halves" />
+                <pattern id="diabolo" />
+                <pattern id="diamonds" />
+                <pattern id="check" />
+                <pattern id="alternate" />
+             </sleeves>
+            <cap>
+                <pattern id="hooped" />
+                <pattern id="striped" />
+                <pattern id="check" />
+                <pattern id="spots" />
+                <pattern id="quartered" />
+                <pattern id="star" /> 
+                <pattern id="diamond" />
+                <pattern id="stars" />
+                <pattern id="diamonds" />
+                <pattern id="one hoop" />
+                <pattern id="tassle" />
+                <pattern id="peak" />
+                <pattern id="button" />
+            </cap>
+        </patterns>
+    </organisation>
+    <organisation id="Ireland" language="en">
+        <colours>
+            <colour id="beige" />
+            <colour id="black" />
+            <colour id="brown" />
+            <colour id="dark blue" />
+            <colour id="dark green" />
+            <colour id="emerald green" />
+            <colour id="grey" />
+            <colour id="light blue" />
+            <colour id="light green" />
+            <colour id="maroon" />
+            <colour id="mauve" />
+            <colour id="orange" />
+            <colour id="pink" />
+            <colour id="purple" />
+            <colour id="red" />
+            <colour id="royal blue" />
+            <colour id="white" />
+            <colour id="yellow" />
+         </colours>
+        <patterns>
+            <jacket>
+                <pattern id="seams" />
+                <pattern id="epaulets" />
+                <pattern id="stripe" />
+                <pattern id="braces" />
+                <pattern id="stripes" />
+                <pattern id="hoop" />
+                <pattern id="hoops" />
+                <pattern id="halved" />
+                <pattern id="quartered" />
+                <pattern id="sash" />
+                <pattern id="cross belts" />
+                <pattern id="chevron" />
+                <pattern id="chevrons" />
+                <pattern id="check" />
+                <pattern id="diamonds" />
+                <pattern id="spots" />
+                <pattern id="stars" />
+                <pattern id="cross of lorraine" />
+                <pattern id="diamond" />
+                <pattern id="star" />
+                <pattern id="disc" />
+                <pattern id="inverted triangle" />
+                <pattern id="diabolo" />
+                <pattern id="large spots" />
+                <pattern id="triple diamond" />
+                <pattern id="hollow box" />
+            </jacket>
+            <sleeves>
+                <pattern id="armlet" />
+                <pattern id="hooped" />
+                <pattern id="striped" />
+                <pattern id="chevrons" />
+                <pattern id="seams" />
+                <pattern id="stars" />
+                <pattern id="spots" />
+                <pattern id="halved" />
+                <pattern id="diabolo" />
+                <pattern id="diamonds" />
+                <pattern id="check" />
+             </sleeves>
+            <cap>
+                <pattern id="hooped" />
+                <pattern id="striped" />
+                <pattern id="check" />
+                <pattern id="spots" />
+                <pattern id="quartered" />
+                <pattern id="star" />
+                <pattern id="diamond" />
+                <pattern id="stars" />
+                <pattern id="diamonds" />
+            </cap>
+        </patterns>
+    </organisation>
+
+</organisations>
+
+

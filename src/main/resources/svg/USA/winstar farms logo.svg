@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="612px"
+	 height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+ <defs>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="red"/>
+   </linearGradient>
+   <linearGradient id="colour2">
+     <stop offset="100%" stop-color="orange"/>
+   </linearGradient>
+</defs>
+<g>
+	<polygon fill="url(#colour1)" points="187.667,587.666 217.667,587.666 307,292.333 395.001,585.667 425.668,585.667 307,207 	"/>
+	<rect x="288.333" y="442.334" fill="url(#colour1)" width="36" height="28"/>
+	<polygon fill="url(#colour2)" points="375.667,355.667 382.334,372.333 455.667,373 397,423 405,441 499.667,355.667 	"/>
+	<polygon fill="url(#colour2)" points="241.667,355.667 235,372.333 161.667,373 220.333,423 212.333,441 117.667,355.667 	"/>
+	<polygon fill="url(#colour2)" points="236.333,577.667 306.333,513.667 375.667,578.334 366.334,550.334 307.667,489 245,549 	"/>
+</g>
+</svg>

@@ -1,0 +1,19 @@
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg3776" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1510 122" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<metadata id="metadata3782">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+				<dc:title/>
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+	<g id="layer1" transform="translate(5.8125,3.375)">
+		<text id="text3785" style="baseline-shift:baseline;block-progression:tb;letter-spacing:0px;word-spacing:0px;color:#000000;direction:ltr;text-indent:0;text-align:center;writing-mode:lr-tb;text-anchor:middle;text-decoration:none;enable-background:accumulate;text-transform:none;" font-family="Calibri" fill-rule="nonzero" xml:space="preserve" font-size="64px" font-stretch="normal" line-height="125%" font-variant="normal" y="58.860641" x="749.72644" font-weight="bold" font-style="normal" fill="#000000"><tspan id="tspan3787" x="749.72644" y="58.860641">$title</tspan></text>
+		<text id="text3789" style="baseline-shift:baseline;block-progression:tb;letter-spacing:0px;word-spacing:0px;color:#000000;direction:ltr;text-indent:0;text-align:center;writing-mode:lr-tb;text-anchor:middle;text-decoration:none;enable-background:accumulate;text-transform:none;" font-family="Calibri" fill-rule="nonzero" xml:space="preserve" font-size="24px" font-stretch="normal" line-height="125%" font-variant="normal" y="93.272659" x="292.4621" font-weight="bold" font-style="normal" fill="#000000"><tspan id="tspan3791" x="292.4621" y="93.272659">$date_course</tspan></text>
+		<text id="text3801" style="baseline-shift:baseline;block-progression:tb;letter-spacing:0px;word-spacing:0px;color:#000000;direction:ltr;text-indent:0;text-align:center;writing-mode:lr-tb;text-anchor:middle;text-decoration:none;enable-background:accumulate;text-transform:none;" font-family="Calibri" fill-rule="nonzero" xml:space="preserve" font-size="24px" font-stretch="normal" line-height="125%" font-variant="normal" y="94.665993" x="749.24463" font-weight="bold" font-style="normal" fill="#000000"><tspan id="tspan3803" x="749.24463" y="94.665993">$distance</tspan></text>
+		<text id="text3805" style="baseline-shift:baseline;block-progression:tb;letter-spacing:0px;word-spacing:0px;color:#000000;direction:ltr;text-indent:0;text-align:center;writing-mode:lr-tb;text-anchor:middle;text-decoration:none;enable-background:accumulate;text-transform:none;" font-family="Calibri" fill-rule="nonzero" xml:space="preserve" font-size="24px" font-stretch="normal" line-height="125%" font-variant="normal" y="93.271461" x="1301.3685" font-weight="bold" font-style="normal" fill="#ff0000"><tspan id="tspan3807" x="1301.3685" y="93.271461">$going</tspan></text>
+		<rect id="border" ry="8.77" height="110" width="1500" stroke="#009118" stroke-dasharray="none" stroke-miterlimit="2" y="2.43" x="0" stroke-width="11.6" fill="none"/>
+	</g>
+</svg>

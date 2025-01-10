@@ -1,0 +1,55 @@
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 135" height="135" width="138" version="1.1">
+<defs>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="yellow"/>
+   </linearGradient>
+   <linearGradient id="colour2">
+     <stop offset="100%" stop-color="red"/>
+   </linearGradient>
+ </defs>
+<g>
+  <rect
+     y="1.85396"
+     x="1.85396"
+     height="130"
+     width="120"
+     id="rect4577"
+     fill="url(#colour1)" stroke="none" />
+  <text
+     id="text4567"
+     y="114.38802"
+     x="28.564455"
+     fill="url(#colour2)" stroke="none"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;"
+     xml:space="preserve"><tspan
+       y="114.38802"
+       x="22"
+       id="tspan4565">intec</tspan></text>
+  <text
+     id="text4571"
+     y="384.11929"
+     x="153.21298"
+     fill="url(#colour2)" stroke="none"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;"
+     xml:space="preserve"><tspan
+       y="420.61249"
+       x="153.21298"
+       id="tspan4569"></tspan></text>
+  <path
+     id="path4575"
+     d="m 13.238792,123.5834 -1.02171,-68.454517 c -2.01918,-39.31982 57.85342,-64.2196429 77.64991,-2.04343"
+     stroke="url(#colour2)" fill="none" stroke-width="4"
+     />
+  
+  <!--   <path d="m11.4,121.5 H 110" style="fill:none;stroke:url(#colour2);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"></path> -->
+  <!-- if it's exactly horizontal then fill with utl doesn't work as no bounding box https://bugs.chromium.org/p/chromium/issues/detail?id=175779 -->
+  <line x1="11.4" y1="121.5" x2="110" y2="121.50001" stroke="url(#colour2)" stroke-width="4.2" fill="none" />
+  <rect
+     y="1.85396"
+     x="1.85396"
+     height="130"
+     width="120"
+     id="rect4577"
+     stroke="url(#colour2)" fill="none" stroke-width="4" />
+</g>	     
+</svg>

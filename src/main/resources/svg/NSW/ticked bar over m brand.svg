@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="800px" height="600px" viewBox="0 0 800 600" enable-background="new 0 0 800 600" xml:space="preserve">
+<defs>
+   <linearGradient id="colour1">
+     <stop offset="100%" stop-color="#DB0000"/>
+   </linearGradient> 
+ </defs>
+<g>
+	<path fill="url(#colour1)" d="M284.367,349.873c-53.936,0-97.816-43.881-97.816-97.817s43.88-97.816,97.816-97.816
+		s97.816,43.88,97.816,97.816S338.303,349.873,284.367,349.873L284.367,349.873z M284.367,168.24
+		c-46.216,0-83.816,37.6-83.816,83.816s37.6,83.817,83.816,83.817s83.816-37.601,83.816-83.817S330.583,168.24,284.367,168.24
+		L284.367,168.24z"/>
+	<polygon fill="url(#colour1)" points="283.952,314.971 246.266,209.029 212.156,306.285 205.845,288.79 246.221,173.666 284.084,280.104 
+		322.324,177.083 363.697,288.542 357.564,306.531 322.324,211.595 283.952,314.971 	"/>
+</g>
+<g>
+	<polygon fill="url(#colour1)" points="383.347,370.057 191.51,370.057 191.51,357.057 383.347,357.057 383.347,370.057 	"/>
+	<polygon fill="url(#colour1)" points="383.347,147.056 191.51,147.056 191.51,134.056 383.347,134.056 383.347,147.056 	"/>
+</g>
+</svg>

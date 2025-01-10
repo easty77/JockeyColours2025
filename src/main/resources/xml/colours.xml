@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : colours.xml.xml
+    Created on : 30 August 2011, 22:33
+    Author     : Simon
+    Description:
+        Purpose of the document follows.
+-->
+<!--
+Categorisation for NZ: 
+Black
+Brown (grouped with Chocolate, Seal Brown and Terra Cotta)
+Dark Blue (grouped with Navy Blue, Peacock Blue, Royal Blue & Oxford Blue)
+Light Blue (grouped with Sky Blue, Cambridge Blue & Turquoise)
+Dark Green (grouped with Olive Green, Emerald Green, Apple Green, Moss Green, Myrtle Green, Sage Green & Jade)
+Light Green (grouped with Eau de Nil, Sea Green and Lime Green)
+Red (grouped with Scarlet, Cardinal, Crimson, Maroon, Claret, Cerise, Magenta & Cherry)
+Pink (grouped with Salmon, Rose, Vieux Rose, Pale Rose and Deep Rose)
+Yellow (grouped with Amber, Primrose, Buttercup, Gold, Old Gold, Canary, Straw, Orange & Tangerine)
+Purple (grouped with Violet and Heliotrope)
+Mauve or Lavender
+Grey (grouped with French Grey & Steel Grey)
+Drab or Khaki
+Tartans
+White or Cream
+
+-->
+<colours>
+    <language id="en">
+    <hue id="green">
+        <colour id="green" rgb="#138F34" />
+        <colour id="dark green" rgb="#006B54" comment="Pantone 342, previously #006400" />
+        <colour id="light green" rgb="#98FB98" />
+        <colour id="emerald green" rgb="#219B70" previous="#50C878" />
+        <colour id="old emerald green" rgb="#50C878" comment="Very difficult to get this right.  Changed from this value to #219B70, and works for some but not for others e.g. J P McManus" />
+        <colour id="emerald" rgb="#219B70" previous="#00B760" />
+        <colour id="light emerald green" rgb="#42DE8E" />
+        <colour id="lime green" rgb="#C1D82F" />
+        <colour id="lime" rgb="#32CD32" />
+        <colour id="jade green" rgb="#00A86B" />
+        <colour id="jade" rgb="#00A86B" />
+        <colour id="olive green" rgb="#808000" />
+        <colour id="olive" rgb="#808000" />
+        <colour id="forest green" rgb="#296E5D" previous="#228B22" comment="Mizzou - Sagaro 2016" />
+        <colour id="hunter green" rgb="#355E3B" />
+        <colour id="khaki" rgb="#706C3D" previously="#C3B091" />
+        <colour id="apple green" rgb="#8DB600" />
+        <colour id="apple" rgb="#8DB600" />
+        <colour id="teal" rgb="#008080" />
+        <colour id="teal green" rgb="#008080" />
+        <colour id="light teal" rgb="#66EDF8" comment="Wake Forest" />
+        <colour id="grass green" rgb="#01A611" />
+        <colour id="kelly green" rgb="#4CBB17" />
+        <colour id="bottle green" rgb="#0F6616" />
+        <colour id="olive drab" rgb="#6B8E23" />
+        <colour id="drab" rgb="#6B8E23" />
+        <colour id="rifle green" rgb="#414833" />
+        <colour id="pale green" rgb="#98FB98" />
+<colour id="spring green" rgb="#457F42" />
+<colour id="aqua green" rgb="#289496" />
+<colour id="aquamarine green" rgb="#45654E" />
+<colour id="bright green" rgb="#50BC4F" />
+<colour id="dayglo green" rgb="#48A300" />
+<colour id="luminous green" rgb="#00A54F" />
+<colour id="mint green" rgb="#6DC174" />
+<colour id="neon green" rgb="#22FE3C" />
+<colour id="fluorescent green" rgb="#7FFF00" />
+<colour id="fluoro green" rgb="#7FFF00" />
+<colour id="turquoise green" rgb="#117F72" />
+<colour id="dark olive green" rgb="#2D3526" />
+<colour id="chartreuse green" rgb="#9ACD94" />
+<colour id="leaf green" rgb="#71BF5C" />
+<colour id="light green" rgb="#86C56C" comment="previously #86BC4B" />
+<colour id="marina green" rgb="#64E200" />
+<colour id="mariner green" rgb="#91911F" comment="marine green?" />
+<colour id="marine" rgb="#9CB188" />
+<colour id="sea green" rgb="#459759" />
+<colour id="pale sea green" rgb="#2E8B57" />
+<colour id="eau de nil" rgb="#B0D088" />
+<colour id="myrtle green" rgb="#50604D" />
+<colour id="pea green" rgb="#27813F" />
+<colour id="almond green" rgb="#CAC9A0" />
+<colour id="irish green" rgb="#197729" />
+<colour id="lincoln green" rgb="#195905" />
+<colour id="moss green" rgb="#253101" />
+<colour id="peacock green" rgb="#15645F" />
+<colour id="sage green" rgb="#8CBD9F" />
+<colour id="holly green" rgb="#3D5D4E" />
+
+<colour id="darkest green" rgb="#006B54" comment="1761" />
+<colour id="pea-green" rgb="#27813F" comment="1771" />
+<colour id="italian green" rgb="#009246" />
+<colour id="bronze green" rgb="#737953" />
+<colour id="maple leaf green" rgb="#71BF5C" comment="same as leaf green?" />
+<colour id="gosling green" rgb="#8A9A5B" />
+
+    </hue>
+    <hue id="blue">
+        <colour id="blue" rgb="#0000C8" />
+        <colour id="dark blue" rgb="#14213D" comment="blacker than 00008B.  Pantone 2767, previously#4169E1" />
+        <colour id="royal blue" rgb="#0051BA" comment="Pantone 293, previously #21263A - Mero prefers #0000DC, but this is good for Godolphin" />
+        <colour id="light blue" rgb="#9BC4E2" comment="Pantone 283, previously #ADD8E6" />  
+        <colour id="aquamarine" rgb="#7FFFD4" />
+        <colour id="aqua" rgb="#00FFFF" previously="#000048" />
+        <colour id="pale blue" rgb="#AFEEEE" />
+        <colour id="navy blue" rgb="#000080" />
+        <colour id="french navy" rgb="#093161" />
+        <colour id="navy" rgb="#000080" />
+        <colour id="turquoise blue" rgb="#009AC8" />
+<colour id="aqua turquoise" rgb="#419D8E" />
+        <colour id="turquoise" rgb="#30D5C8" />
+        <colour id="sky blue" rgb="#87CEEB" />
+        <colour id="cambridge blue" rgb="#A3C1AD" />
+        <colour id="cambridge" rgb="#A3C1AD" />
+        <colour id="cornflower" rgb="#6495ED" />
+        <colour id="cornflower blue" rgb="#6495ED" />
+        <colour id="eton blue" rgb="#96C8A2" />
+        <colour id="eton" rgb="#96C8A2" />
+        <colour id="powder blue" rgb="#B0E0E6" />
+        <colour id="oxford blue" rgb="#002147" />
+        <colour id="oxford" rgb="#002147" />
+        <colour id="french blue" rgb="#0072BB" />
+        <colour id="france blue" rgb="#0072BB" comment="same as french" />
+        <colour id="cyan" rgb="#00FFFF" />
+        <colour id="saxe blue" rgb="#306070" />
+        <colour id="madonna blue" rgb="#A0D3FE" comment="Hit It A Bomb, previously #0074A3" />
+        <colour id="peacock blue" rgb="#00A4B4" />
+        <colour id="electric blue" rgb="#7DF9FF" />
+        <colour id="electric blue light" rgb="#7DF9FF" comment="standard electric blue, comes from electric blue(light) in PMG" />
+        <colour id="mazarine blue" rgb="#0096CC" comment="previously #323F7A" />
+        <colour id="blue mazarine" rgb="#0096CC" />
+        <colour id="st patrick's blue" rgb="#23297A" />
+<colour id="smalt blue" rgb="#568ADD" />
+<colour id="aqua blue" rgb="#21A7EE" />
+<colour id="aquamarine blue" rgb="#7FFFD4" />
+<colour id="baby blue" rgb="#A7C9E2" />
+<colour id="bright blue" rgb="#009AD2" />
+<colour id="dayglo blue" rgb="#0949A1" />
+<colour id="indigo" rgb="#041C38" />
+<colour id="indigo blue" rgb="#041C38" />
+<colour id="jacaranda blue" rgb="#464394" />
+<colour id="kingfisher" rgb="#018CA9" />
+<colour id="midnight blue" rgb="#002E7C" />
+<colour id="violet blue" rgb="#918BF7" />
+<colour id="ultramarine" rgb="#243E8D" />
+<colour id="ultramarine blue" rgb="#0065A9" />
+<colour id="tanzanite blue" rgb="#0051BA" comment="royal blue?" />
+<colour id="godolphin blue" rgb="#0051BA" comment="royal blue?" />
+<colour id="empire blue" rgb="#2D4768" />
+<colour id="azure blue" rgb="#427EB0" />
+<colour id="azure" rgb="#427EB0" />
+<colour id="ice blue" rgb="#AEC2B9" />
+<colour id="sapphire blue" rgb="#242380" />
+<colour id="sapphire" rgb="#242380" />
+<colour id="bluebell blue" rgb="#A2CAE3" />
+<colour id="harrow blue" rgb="#0C2A4D" />
+<colour id="harrow" rgb="#0C2A4D" />
+<colour id="china blue" rgb="#365194" />
+<colour id="duck egg blue" rgb="#86C4EB" />
+<colour id="garter blue" rgb="#018CA9" comment="same as kingfisher blue" />
+<colour id="lobelia blue" rgb="#6700FF" />
+<colour id="nattier blue" rgb="#22338B" />
+<colour id="nile blue" rgb="#B9CBCD" />
+<colour id="prussian blue" rgb="#2E3876" />
+<colour id="slate blue" rgb="#94B0B1" />
+<colour id="wedgwood blue" rgb="#6A83A2" />
+<colour id="yale blue" rgb="#0F4D92" />
+<colour id="bullingdon blue" rgb="#87CEEB" comment="sky blue - an Oxford dining club" />
+<colour id="teal blue" rgb="#367588" />
+<colour id="pervenche blue" rgb="#CCCCFF" />
+<colour id="napoleon blue" rgb="#3553A9" />
+<colour id="kingfisher blue" rgb="#80C5E6" />
+<colour id="butcher blue" rgb="#0000C8" comment ="Unknown" />
+<colour id="forget-me-not" rgb="#70A3CC" />
+<colour id="delphinium blue" rgb="#83ADEB" comment="previously #4fa7bf" />
+<colour id="cobalt blue" rgb="#0047AB" />
+<colour id="hyacinth blue" rgb="#1D276F" />
+<colour id="wedgewood blue" rgb="#5372C5" />
+
+    </hue>
+    <hue id="violet">
+        <colour id="magenta" rgb="#FF0090" />
+        <colour id="mauve" rgb="#BF93CC" comment="Pantone 2567, previously #E0B0FF" />
+        <colour id="purple" rgb="#49176D" />
+        <colour id="maroon" rgb="#A32638" comment="Pantone 201, previously #800000" />
+        <colour id="lavender" rgb="#B57EDC" />
+        <colour id="burgundy" rgb="#800020" comment="or #97232E" />
+        <colour id="wine" rgb="#722F37" />
+        <colour id="lilac" rgb="#C8A2C8" />
+        <colour id="violet" rgb="#8F00FF" />
+        <colour id="plum" rgb="#8E4585" comment="or #6A2963" />
+        <colour id="claret" rgb="#6E2233" />
+        <colour id="heliotrope" rgb="#DF73FF" />
+<colour id="dark lilac" rgb="#5D3360" />
+<colour id="light purple" rgb="#90A6FC" />
+<colour id="dark purple" rgb="#3A155A" />
+<colour id="metallic purple" rgb="#6766B4" />
+<colour id="spectrum violet" rgb="#2E2E78" />
+<colour id="light violet" rgb="#7D5ED3" />
+<colour id="amethyst" rgb="#C06BE2" />
+<colour id="mauve cerise" rgb="#BF93CC" comment="guessing!" />
+<colour id="parma violet" rgb="#695FA4" />
+<colour id="parma" rgb="#695FA4" />
+<colour id="prune" rgb="#6D5788" />
+<colour id="solferino" rgb="#8B524B" />
+<colour id="pompadour" rgb="#6A1F44" comment="1771" />
+        <colour id="dark magenta" rgb="#8B008B" />
+<colour id="cineraria blue" rgb="#7502E8" />
+<colour id="roman purple" rgb="#7851A9" comment="this is royal purple" />
+<colour id="neapolitan violet" rgb="#6A214E" />
+<colour id="fuchsia" rgb="#FF00FF" />
+
+</hue>
+    <hue id="red">
+        <colour id="red" rgb="#DC0000" />
+        <colour id="cherry" rgb="#DE3163" />
+        <colour id="cerise" rgb="#D8027F" />
+        <colour id="scarlet" rgb="#FF2400" />
+        <colour id="crimson" rgb="#DC143C" />
+        <colour id="ruby" rgb="#E0115F" />
+        <colour id="cardinal red" rgb="#C41E3A" />
+        <colour id="cardinal" rgb="#C41E3A" />
+        <colour id="devil's red" rgb="#C30000" />
+<colour id="signal red" rgb="#C41E20" />
+<colour id="dayglo red" rgb="#FD3563" />
+<colour id="turkey red" rgb="#AC3014" />
+<colour id="carmine" rgb="#C91143" />
+<colour id="rose madder lake" rgb="#A90C21" />
+<colour id="ruby red" rgb="#9A0000" />
+<colour id="ruby" rgb="#9A0000" />
+<colour id="dark red" rgb="#A70338" />
+<colour id="geranium" rgb="#C8202D" />
+<colour id="geranium red" rgb="#C8202D" />
+<colour id="flame red" rgb="#FF0000" />
+<colour id="brick red" rgb="#CA332C" />
+<colour id="crimson lake" rgb="#C52031" />
+<colour id="hunting pink" rgb="#FF2400" comment="scarlet as worn by hunters" />
+<colour id="bloom" rgb="#DC143C" comment="crimson tint of the cheek" />
+
+<colour id="deep red" rgb="#9A0000" comment="1761" />
+<colour id="capucine" rgb="#E31D07" />
+<colour id="indian red" rgb="#CC5555" />
+        <colour id="strawberry" rgb="#DC0000" comment="ordinary red" />
+        <colour id="light cherry" rgb="#DE3163" comment="ordinary cherry"  />
+        <colour id="bordeaux red" rgb="#5F021F" />
+<colour id="light red" rgb="#FF3333" />
+<colour id="amaranth" rgb="#E52B50" />
+<colour id="garnet" rgb="#85274E" />
+
+    </hue>
+    <hue id="orange">
+        <colour id="orange" rgb="#E96D1F" />
+        <colour id="flame" rgb="#E25822" />
+        <colour id="amber" rgb="#FFBF00" />
+        <colour id="apricot" rgb="#FFCBA4" />
+        <colour id="tangerine" rgb="#F28500" />
+        <colour id="rust" rgb="#B7410E" />
+        <colour id="terracotta" rgb="#E2725B" />
+        <colour id="terra cotta" rgb="#E2725B" />
+        <colour id="light terracotta" rgb="#E4B37F" />
+        <colour id="burnt orange" rgb="#CC5500" />
+        <colour id="vermillion" rgb="#E34234" />
+        <colour id="mandarin" rgb="#FFA356" />
+<colour id="marigold" rgb="#FEB511" />
+<colour id="neon orange" rgb="#FD9704" />
+<colour id="bright orange" rgb="#F37921" />
+<colour id="dayglo orange" rgb="#FE3F2D" />
+<colour id="spectrum orange" rgb="#F47B20" />
+<colour id="luminous orange" rgb="#C54427" />
+<colour id="shocking orange" rgb="#E64B0B" />
+<colour id="fluorescent orange" rgb="#E64B0B" />
+<colour id="burnt sienna" rgb="#8E4220" />
+<colour id="tango" rgb="#F28500" comment="tabgo tangerine - the colour of 2012"/>
+
+        <colour id="light orange" rgb="#EB682B" comment="1777" />
+    </hue>
+    <hue id="yellow">
+        <colour id="yellow" rgb="#FFE831" />
+        <colour id="lemon" rgb="#FFF700" />
+        <colour id="canary yellow" rgb="#FFEF00" />
+        <colour id="canary" rgb="#FFEF00" />
+        <colour id="straw" rgb="#E0CA80" />
+        <colour id="chartreuse" rgb="#DFFF00" />
+        <colour id="primrose" rgb="#E4DE8E" />
+        <colour id="saffron" rgb="#F4C430" />
+        <colour id="saffron yellow" rgb="#F4C430" />
+<colour id="buttercup yellow" rgb="#F8F45D" />
+<colour id="bright yellow" rgb="#FEF200" />
+<colour id="dayglo yellow" rgb="#C6D506" />
+<colour id="mustard" rgb="#D1A111" />
+<colour id="mustard yellow" rgb="#D1A111" />
+<colour id="neon yellow" rgb="#FFFF01" />
+<colour id="light yellow" rgb="#FFF9BD" />
+<colour id="deep yellow" rgb="#FBC117" />
+<colour id="citron" rgb="#EAC900" />
+<colour id="maize" rgb="#F6DF83" />
+<colour id="fluorescent yellow" rgb="#F3EA37" />
+<colour id="leopard skin yellow" rgb="#FFE831" comment="no idea!" />
+        <colour id="dark yellow" rgb="#FFCC00" />
+<colour id="chrome" rgb="#9B9DAA" previously="#FFA700" />
+<colour id="sulphur" rgb="#F3B018" />
+<colour id="daffodil" rgb="#FFFF31" />
+    
+    </hue>
+    <hue id="pink">
+        <colour id="rose pink" rgb="#FECCE7" comment = "same as rose - previously #FF007F also too shocking" />
+        <colour id="pink" rgb="#F9BFC1" comment="#FF66FF is too shocking" />
+        <colour id="rose" rgb="#FECCE7" />
+        <colour id="old rose" rgb="#B76E79" />
+        <colour id="dark rose" rgb="#FF0080" />
+        <colour id="vieux rose" rgb="#C08081" />
+        <colour id="rose du bari" rgb="#FF007F" comment="can't find good definition - sometimes spelled barry, barri like rose du pompadour??" />
+        <colour id="pale pink" rgb="#FADADD" />
+        <colour id="salmon" rgb="#FF8C69" />
+        <colour id="salmon pink" rgb="#C08081" />
+        <colour id="hot pink" rgb="#FC0FC0" />
+        <colour id="neon pink" rgb="#FC0FC0" />
+        <colour id="fluorescent pink" rgb="#FC0FC0" />
+        <colour id="shocking pink" rgb="#FC0FC0" />
+        <colour id="cyclamen" rgb="#DB8AC3" />
+        <colour id="flamingo" rgb="#ECB5CA" comment="Affirmed 1978 Kentucky Derby previously #E1634F" />
+        <colour id="coral pink" rgb="#F88379" />
+        <colour id="coral" rgb="#F88379" />
+        <colour id="fuchsia pink" rgb="#FF00FF" />
+        <colour id="fuchsia" rgb="#FF00FF" />
+        <colour id="fuschia" rgb="#FF00FF" />
+<colour id="dayglo pink" rgb="#FF20A8" />
+<colour id="light pink" rgb="#EEC2DB" />
+<colour id="bright pink" rgb="#FE0072" />
+<colour id="strawberry pink" rgb="#F77C91" />
+<colour id="peach" rgb="#FA8B70" />
+<colour id="petunia" rgb="#D34A90" />
+<colour id="dark pink" rgb="#DD196D" />
+<colour id="dusty pink" rgb="#FAB4B4" />
+<colour id="azalea pink" rgb="#F14F88" />
+<colour id="baby pink" rgb="#F4C2C2" />
+<colour id="leander pink" rgb="#FF66FF" comment="ordnary pink, should be colour of the rowing club" />
+<colour id="puce" rgb="#CC8899" />
+<colour id="mulberry" rgb="#C54B8C" />
+
+
+    </hue>
+    <hue id="grey">
+        <colour id="grey" rgb="#919693" comment="Pantone 430 previously #808080" />
+        <colour id="dark grey" rgb="#A9A9A9" />
+        <colour id="light grey" rgb="#D3D3D3" />
+        <colour id="french grey" rgb="#98A090" />
+        <colour id="silver grey" rgb="#C0C0C0" group="metal" />
+        <colour id="silver" rgb="#C0C0C0" group="metal" />
+        <colour id="lead" rgb="#494949" group="metal" />
+        <colour id="dove grey" rgb="#DCCFC7" />
+        <colour id="pearl grey" rgb="#ACB6B8" />
+        <colour id="pale grey" rgb="#CBCBC9" />
+        <colour id="slate grey" rgb="#8BA1AC" />
+        <colour id="slate" rgb="#8BA1AC" />
+        <colour id="steel" rgb="#585159" />
+        <colour id="steel grey" rgb="#585159" />
+        <colour id="iron grey" rgb="#404D4C" />
+        <colour id="quaker" rgb="#86827D" comment="quaker grey" />
+        <colour id="wedgewood grey" rgb="#ADC0BE" />
+        <colour id="confederate grey" rgb="#867875" />
+        
+
+    </hue>
+    <hue id="brown">
+        <colour id="brown" rgb="#603311" comment="Pantone 469 previously #964B00" />
+        <colour id="beige" rgb="#CCBF8E" comment="standard beige is OxF5F5DC, but too pale.  This is ecru.  Pantone 4525 previously #C2B280" />
+        <colour id="ecru" rgb="#CCBF8E" />
+        <colour id="dark brown" rgb="#654321" />
+        <colour id="chocolate brown" rgb="#7B3F00" />
+        <colour id="chocolate" rgb="#7B3F00" />
+        <colour id="golden brown" rgb="#996515" />
+        <colour id="buff" rgb="#F0DC82" />
+        <colour id="tan" rgb="#C69C6D" />
+        <colour id="fawn" rgb="#E5AA70" />
+        <colour id="light tan" rgb="#AF6C3E" />
+        <colour id="light brown" rgb="#AD8150" />
+        <colour id="gold" rgb="#FFD700" group="metal" />
+        <colour id="pale gold" rgb="#E6BE8A" group="metal" />
+        <colour id="bright gold" rgb="#D9D919" group="metal" />
+        <colour id="dark gold" rgb="#AA6C39" group="metal" />
+        <colour id="old gold" rgb="#CFB53B" group="metal" />
+        <colour id="old golden" rgb="#CFB53B" group="metal" />
+        <colour id="bronze" rgb="#CD7F32" group="metal" />
+        <colour id="copper brown" rgb="#B87333" group="metal" />
+        <colour id="copper" rgb="#B87333" group="metal" />
+<colour id="russet" rgb="#A64B3E" />
+<colour id="russet brown" rgb="#A64B3E" />
+<colour id="biscuit" rgb="#F5E6C5" />
+<colour id="cinnamon" rgb="#8F441A" />
+        <colour id="beaver brown" rgb="#964B00" comment="no such thing, just a normal brown" />
+        <colour id="nigger brown" rgb="#654321" comment="dark brown, no longer acceptable!" />
+        <colour id="nigger" rgb="#654321" />
+        <colour id="reseda" rgb="#CAC19A" />
+<colour id="coffee" rgb="#C86428" />
+
+<colour id="very light buff" rgb="#DBA56C" comment="1771" />
+        <colour id="bismarck" rgb="#964B00" comment="For dying - phenylene" />
+<colour id="golden buff" rgb="#EDCC83" />
+    </hue>
+    <hue id="black">
+        <colour id="black" rgb="#000000" comment="Pantone 433 #30383a too pale" />
+    </hue>
+    <hue id="white">
+        <colour id="white" rgb="#FFFFFF"  />
+        <colour id="cream" rgb="#FFFDD0" />
+        <colour id="champagne" rgb="#F7E7CE" />
+        <colour id="ivory" rgb="#FFFFF0" />
+        <colour id="ermine" rgb="#EEEBEB" />
+    </hue>
+    </language>
+   <language id="fr">
+    <!-- hyphenated colour names don't work well with syntax format -->
+<hue id="vert">
+    <colour id="vert clair" equivalent="light green" />
+    <colour id="vert" equivalent="green" />
+    <colour id="gros vert" equivalent="dark green" />
+    <colour id="vert de mer" equivalent="sea green" />
+</hue>
+<hue id="bleu">
+    <colour id="bleu ciel" equivalent="sky blue" />
+    <colour id="bleu clair" equivalent="light blue" />
+    <colour id="bleu" equivalent="blue" />
+    <colour id="gros bleu" equivalent="navy blue" />
+    <colour id="bleu fonce" equivalent="dark blue" />
+    <colour id="gris-bleu" equivalent="slate blue" />
+    <colour id="bleu-roi" equivalent="royal blue" />
+    <colour id="turquoise" equivalent="turquoise" />
+    <colour id="pervenche" equivalent="pervenche blue" />
+</hue>
+<hue id="marron">
+    <colour id="marron-clair" equivalent="light brown" />
+    <colour id="marron" equivalent="brown" />
+    <colour id="chocolat" equivalent="chocolate" />
+    <colour id="beige" equivalent="beige" />
+    <colour id="kaki" equivalent="khaki" />
+</hue>
+<hue id="jaune">
+    <colour id="jaune d'or" equivalent="yellow" />
+    <colour id="jaune" equivalent="yellow" />
+    <colour id="citron" equivalent="lemon" />
+    <colour id="mais" equivalent="maize" />
+    <colour id="paille" equivalent="straw" />
+</hue>
+<hue id="rouge">
+    <colour id="rouge" equivalent="red" />
+    <colour id="grenat" equivalent="dark red" />
+    <colour id="cerise" equivalent="cherry" />
+</hue>
+<hue id="or">
+    <colour id="vieil or" equivalent="old gold" />
+    <colour id="or" equivalent="gold" />
+</hue>
+<hue id="gris">
+    <colour id="gris" equivalent="grey" />
+    <colour id="gris acier" equivalent="steel grey" />
+    <colour id="gris perle" equivalent="pearl grey" />
+</hue>
+<hue id="rose">
+    <colour id="rose" equivalent="pink" />
+</hue>
+<hue id="orange">
+    <colour id="orange" equivalent="orange" />
+    <colour id="abricot" equivalent="apricot" />
+</hue>
+<hue id="violet">
+    <colour id="mauve" equivalent="mauve" />
+    <colour id="violet" equivalent="violet" />
+    <colour id="fuchsia" equivalent="fuchsia" />
+    <colour id="lilas" equivalent="lilac" />
+</hue>
+<hue id="all">
+    <colour id="blanc" equivalent="white" />
+    <colour id="noir" equivalent="black" />
+    <colour id="argent" equivalent="silver" />
+</hue>
+
+   </language>
+</colours>
+ 

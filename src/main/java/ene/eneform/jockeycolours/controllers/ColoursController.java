@@ -7,11 +7,8 @@ package ene.eneform.jockeycolours.controllers;
 
 
 import ene.eneform.colours.bos.ENEColoursDBEnvironment;
-
 import ene.eneform.colours.service.WikipediaService;
 import ene.eneform.mero.config.ENEColoursEnvironment;
-import ene.eneform.utils.ENEStatement;
-import ene.eneform.utils.SmartformConnectionPool;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -29,6 +26,7 @@ import java.io.FileNotFoundException;
 @RequestMapping("/colours")
 @RequiredArgsConstructor
 public class ColoursController {
+
     private final WikipediaService wikipediaService;
     @GetMapping("/resetEnvironment")
     public String resetEnvironment(ModelMap model) {
@@ -43,7 +41,6 @@ public class ColoursController {
                                        @RequestParam String comment,
                                        @RequestParam String compress,
                                        ModelMap model) {
-        ENEStatement statement = SmartformConnectionPool.getInstance().getENEStatement();
         boolean bCompress = !compress.equals("No");
         try {
             wikipediaService.generateWikipediaOwner(ownerName, jockeyColours, comment, "en", bCompress, true);
