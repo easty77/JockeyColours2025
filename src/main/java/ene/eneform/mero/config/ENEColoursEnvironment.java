@@ -1,46 +1,37 @@
 package ene.eneform.mero.config;
 
 import ene.eneform.mero.action.ENEPatternAction;
-import ene.eneform.mero.colours.ENEColoursElement;
 import ene.eneform.mero.colours.ENEPattern;
-import ene.eneform.mero.colours.ENERacingColours;
 import ene.eneform.mero.fabric.ENEFabricItem;
 import ene.eneform.mero.parse.ENEColoursParserCompareAction;
-import ene.eneform.mero.parse.ENEColoursParserExpand;
 import ene.eneform.mero.tartan.ENETartan;
 import ene.eneform.mero.utils.ENEColourItem;
 import ene.eneform.mero.utils.MeroUtils;
-import java.awt.Color;
-import java.awt.Rectangle;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Area;
-import java.awt.geom.Rectangle2D;
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Set;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
 import lombok.Getter;
 import org.apache.batik.anim.dom.SVGOMTextElement;
-import org.apache.batik.bridge.BridgeContext;
-import org.apache.batik.bridge.DocumentLoader;
-import org.apache.batik.bridge.GVTBuilder;
-import org.apache.batik.bridge.UserAgent;
-import org.apache.batik.bridge.UserAgentAdapter;
+import org.apache.batik.bridge.*;
 import org.apache.batik.gvt.GraphicsNode;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.w3c.dom.svg.SVGDocument;
 import org.w3c.dom.svg.SVGGElement;
 import org.w3c.dom.svg.SVGRect;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Area;
+import java.awt.geom.Rectangle2D;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
 @Component
 @Getter
 public class ENEColoursEnvironment implements Serializable {
@@ -85,10 +76,10 @@ private void initialise() {
     configFabrics = new ConfigFabrics(parser);
     configTartans = new ConfigTartans(parser);
     abbreviationsHandler = new AbbreviationsHandler(new ConfigAbbreviations(parser), configColours, configFabrics);
-    configCompares = new ConfigCompares(parser);
     configExpands = new ConfigExpands(parser, configColours, configPatterns, configFabrics);
     configOrganisations = new ConfigOrganisations(parser);
     configSvg = new ConfigSvg();
+    configCompares = new ConfigCompares(this, parser);
 
 }
     public SVGDocument getSVGDocument(String strShape)

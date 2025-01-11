@@ -8,6 +8,11 @@ package ene.eneform.mero.parse;
 import ene.eneform.mero.colours.ENEColoursElement;
 import ene.eneform.mero.colours.ENEColoursElementPattern;
 import ene.eneform.mero.config.ENEColoursEnvironment;
+import org.springframework.stereotype.Component;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -15,32 +20,23 @@ import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ene.eneform.mero.parse.ENEColoursParserMatch;
-import ene.eneform.mero.service.ParserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-
 /**
  *
  * @author Simon
  */
 @Component
 public class ENEColoursParserCompareAction implements Serializable {
-    @Autowired
 private ENEColoursEnvironment environment;
-    @Autowired
-private ParserService parserService;
+
     private String m_strLanguage;
     private String m_strName;
     private String m_strMatch;
     private String m_strProcessXML;
     private Pattern m_pattern;
 
-    public ENEColoursParserCompareAction(String strName, String strMatch, String strProcessXML, String strLanguage)
+    public ENEColoursParserCompareAction(ENEColoursEnvironment environment, String strName, String strMatch, String strProcessXML, String strLanguage)
     {
+        this.environment = environment;
         m_strName = strName;
         m_strMatch = strMatch;
         m_strProcessXML = strProcessXML;
@@ -69,7 +65,7 @@ private ParserService parserService;
 	try
         {
             InputStream in = new ByteArrayInputStream(m_strProcessXML.getBytes("UTF-8"));
-            parserService.parse(new BufferedInputStream(in), new CompareProcessHandler(matcher, element));
+            environment.parse(new BufferedInputStream(in), new CompareProcessHandler(matcher, element));
 	}
         catch ( Exception e )
         {

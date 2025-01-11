@@ -4,20 +4,16 @@
  */
 package ene.eneform.mero.config;
 
-import ene.eneform.mero.config.ConfigColours;
-import ene.eneform.mero.config.ConfigFabrics;
-import ene.eneform.mero.config.ConfigPatterns;
-import ene.eneform.mero.config.ConfigXML;
 import ene.eneform.mero.parse.ENEColoursParserCompareAction;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import javax.xml.parsers.SAXParser;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -30,14 +26,11 @@ public class ConfigCompares extends ConfigXML {
     // by language
     private HashMap<String, ENECompares> m_hmLanguages= new HashMap<String, ENECompares>();
  
-    public ConfigCompares(SAXParser parser)
+    public ConfigCompares(ENEColoursEnvironment environment, SAXParser parser)
     {
         super(parser, FILE_NAME);
-    }
-    public boolean load(ene.eneform.mero.config.ConfigColours cc, ConfigPatterns cp, ene.eneform.mero.config.ConfigFabrics cf)
-    {
-        setHandler(new ENEComparesHandler(cc, cp, cf));
-        return loadXML();
+        setHandler(new ENEComparesHandler(environment));
+        loadXML();
     }
    public ArrayList<ENEColoursParserCompareAction> getCompareList(String strType, String strLanguage)
     {
@@ -65,15 +58,11 @@ private class ENEComparesHandler extends DefaultHandler implements Serializable
     private boolean m_bIsMatch = false;
     private ArrayList<ENEColoursParserCompareAction> m_alCurrentCompares = null;
 
-    private transient ene.eneform.mero.config.ConfigColours m_cc;
-    private transient ConfigPatterns m_cp;
-    private transient ene.eneform.mero.config.ConfigFabrics m_cf;
+    private ENEColoursEnvironment environment;
 
-    public ENEComparesHandler(ConfigColours cc, ConfigPatterns cp, ConfigFabrics cf)
+    public ENEComparesHandler(ENEColoursEnvironment environment)
     {
-        m_cc= cc;
-        m_cp = cp;
-        m_cf = cf;
+       this.environment = environment;
     }
 
     @Override public void startDocument ()
@@ -154,7 +143,7 @@ private class ENEComparesHandler extends DefaultHandler implements Serializable
         }
         else if("compare".equals(qName))
         {
-            ENEColoursParserCompareAction action = new ENEColoursParserCompareAction(m_strCurrentName, m_strCurrentMatch, m_strCurrentProcess, m_strCurrentLanguage);
+            ENEColoursParserCompareAction action = new ENEColoursParserCompareAction(environment, m_strCurrentName, m_strCurrentMatch, m_strCurrentProcess, m_strCurrentLanguage);
             m_alCurrentCompares.add(action);
             m_strCurrentName = "";
             m_strCurrentMatch = "";
@@ -186,9 +175,9 @@ private class ENEComparesHandler extends DefaultHandler implements Serializable
         {
             String strChars = new String(chars, start, length);
             strChars = strChars.replace("$COLOUR_LIST", getFullColourListRegEx(m_strCurrentLanguage));
-            strChars = strChars.replace("$JACKET_PATTERN_LIST", m_cp.getPatternListRegEx("ENEJacket", m_strCurrentLanguage));
-            strChars = strChars.replace("$SLEEVE_PATTERN_LIST", m_cp.getPatternListRegEx("ENESleeves", m_strCurrentLanguage));
-            strChars = strChars.replace("$CAP_PATTERN_LIST", m_cp.getPatternListRegEx("ENECap", m_strCurrentLanguage));
+            strChars = strChars.replace("$JACKET_PATTERN_LIST", environment.getPatternListRegEx("ENEJacket", m_strCurrentLanguage));
+            strChars = strChars.replace("$SLEEVE_PATTERN_LIST", environment.getPatternListRegEx("ENESleeves", m_strCurrentLanguage));
+            strChars = strChars.replace("$CAP_PATTERN_LIST", environment.getPatternListRegEx("ENECap", m_strCurrentLanguage));
             m_strCurrentMatch += strChars;
         }
     }
@@ -196,7 +185,8 @@ private class ENEComparesHandler extends DefaultHandler implements Serializable
     {
     	// including fabrics
         // 20130222 put fabrics first (as longer)
-        return m_cf.getFabricListRegEx(strLanguage) + "|" + m_cc.getColourListRegEx(strLanguage);
+        return environment.getConfigFabrics().getFabricListRegEx(strLanguage) + "|"
+                + environment.getConfigColours().getColourListRegEx(strLanguage);
     }
 }
 }

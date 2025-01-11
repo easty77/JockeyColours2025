@@ -1,17 +1,12 @@
 package ene.eneform.controllers;
 
-import ene.eneform.career.CareerEnvironment;
-import ene.eneform.utils.ENEStatement;
-import ene.eneform.utils.SmartformConnectionPool;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/career")
 public class CareerController {
-private CareerEnvironment careerEnvironment;
+/*private CareerEnvironment careerEnvironment;
     @GetMapping("/resetEnvironment")
     public String resetEnvironment(ModelMap model) {
         careerEnvironment.reset();
@@ -19,5 +14,5 @@ private CareerEnvironment careerEnvironment;
         careerEnvironment.insertCareerHorses(statement);
         model.put("message", "resetEnvironment");
         return "message";
-    }
+    } */
 }
