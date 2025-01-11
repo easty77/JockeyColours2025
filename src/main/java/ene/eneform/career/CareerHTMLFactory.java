@@ -33,7 +33,6 @@ import java.util.*;
  */
 
 // TO BE REMOVED - replaced by CareerJSONFactory
-    @Service
 public class CareerHTMLFactory {
 
     public static final String HTML_OUTPUT_PATH="C:\\Users\\simon\\Documents\\NetBeansProjects\\JockeyColours\\web\\";

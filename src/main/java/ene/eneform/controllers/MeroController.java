@@ -1,4 +1,4 @@
-package ene.eneform.jockeycolours.controllers;
+package ene.eneform.controllers;
 
 import ene.eneform.mero.service.MeroService;
 import lombok.RequiredArgsConstructor;

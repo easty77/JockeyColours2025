@@ -1,6 +1,6 @@
-package ene.eneform.jockeycolours.controllers;
+package ene.eneform.controllers;
 
-import ene.eneform.jockeycolours.entities.AdditionalRaceMonthItem;
+import ene.eneform.smartform2025.entities.DailyRace;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
@@ -28,9 +28,9 @@ private final EntityManager entityManager;
     }
         @GetMapping("/additionalRaceMonth")
         public String additionalRaceMonth(@RequestParam int monthOffset, ModelMap model) {
-             TypedQuery<AdditionalRaceMonthItem> q = entityManager.createNamedQuery("selectAdditionalRaceMonth", AdditionalRaceMonthItem.class);
+             TypedQuery<DailyRace.AdditionalRaceMonthItem> q = entityManager.createNamedQuery("selectAdditionalRaceMonth", DailyRace.AdditionalRaceMonthItem.class);
             q.setParameter("monthOffset", monthOffset);
-            List<AdditionalRaceMonthItem> items = q.getResultList();
+            List<DailyRace.AdditionalRaceMonthItem> items = q.getResultList();
             model.put("races", items);
             return "admin/additionalRaceMonth";
         }

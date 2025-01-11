@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Races</title>
+</head>
+<body>
+<h2>Races:</h2>
+<table>
+<tr><th>ID</th>
+<th>Course</th>
+    <th>Date</th>
+    <th>Title</th>
+    <th>Type</th>
+    <th>Track Type</th>
+
+</tr>
+
+
+<tr th:each="race:${races}">
+<td th:text="${race.raceId}"></td>
+<td th:text="${race.course}"></td>
+    <td th:text="${race.meetingDate}"></td>
+    <td th:text="${race.raceTitle}"></td>
+    <td th:text="${race.raceType}"></td>
+    <td th:text="${race.trackType}"></td>
+</tr>
+
+
+</table>
+</body>
+</html>

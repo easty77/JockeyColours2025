@@ -1,12 +1,12 @@
-package ene.eneform.jockeycolours.repositories;
+package ene.eneform.smartform2025.repositories;
 
-import ene.eneform.jockeycolours.entities.AdditionalRaceMonthItem;
+import ene.eneform.smartform2025.entities.DailyRace;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface SmartformRepository extends CrudRepository<AdditionalRaceMonthItem, String> {
+public interface AdditionalRaceMonthItemRepository extends CrudRepository<DailyRace.AdditionalRaceMonthItem, String> {
 
         @Query(value = """
                 select Date, Course, Name,Race_Type,Wikipedia, fr_wikipedia,Winner,DOW,GS,Year,Country,Track, Furlongs, Grade,Age, Sex, Month,Class, Hcap,SE 
@@ -75,6 +75,6 @@ public interface SmartformRepository extends CrudRepository<AdditionalRaceMonthI
                 )
                 """,
                 nativeQuery = true)
-        List<AdditionalRaceMonthItem> findCurrentMonthRaces(int monthOffset);
+        List<DailyRace.AdditionalRaceMonthItem> findCurrentMonthRaces(int monthOffset);
 
 }

@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package ene.eneform.jockeycolours.controllers;
+package ene.eneform.controllers;
 
 
 import ene.eneform.colours.bos.ENEColoursDBEnvironment;
@@ -43,15 +43,15 @@ public class ColoursController {
                                        ModelMap model) {
         boolean bCompress = !compress.equals("No");
         try {
-            wikipediaService.generateWikipediaOwner(ownerName, jockeyColours, comment, "en", bCompress, true);
+            String message = wikipediaService.generateWikipediaOwner(ownerName, jockeyColours, comment, "en", bCompress, true);
+            model.put("message", message);
+            return "message";
         }
         catch(Exception e) {
             model.put("error", "generateWikipediaOwner");
+            e.printStackTrace();
             return "error";
         }
-        model.put("message", "generateWikipediaOwner");
-        return "message";
-
     }
 
     /*
