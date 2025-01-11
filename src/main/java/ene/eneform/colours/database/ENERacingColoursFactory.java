@@ -2,7 +2,6 @@ package ene.eneform.colours.database;
 
 import ene.eneform.mero.colours.ENERacingColours;
 import ene.eneform.mero.config.ENEColoursEnvironment;
-import ene.eneform.mero.parse.ENEColoursParser;
 import ene.eneform.smartform.bos.SmartformColoursRunner;
 import ene.eneform.smartform.bos.UnregisteredColourSyntax;
 import ene.eneform.smartform.factory.SmartformRunnerFactory;
@@ -38,22 +37,7 @@ public class ENERacingColoursFactory
     public static ENERacingColours createRacingColours(ENEStatement statement, UnregisteredColourSyntax ucs, String strLanguage, String strJockeyColours, String strVersion)
     {
         ENERacingColours colours = null;
-        if (ucs != null)
-        {
-            colours = ENEColoursEnvironment.getInstance().createRacingColours(strLanguage, ENEColoursEnvironment.getInstance().createJacket(strLanguage, ucs.getJacket()), 
-                    ENEColoursEnvironment.getInstance().createSleeves(strLanguage,ucs.getSleeves()), 
-                    ENEColoursEnvironment.getInstance().createCap(strLanguage,ucs.getCap()));
-            colours.setDescription(strJockeyColours);
-            if (statement != null)
-                insertJockeyColoursParse(statement, strVersion, colours, "", "", "");
-        }
-        else
-        {
-            ENEColoursParser parser = new ENEColoursParser(strLanguage, strJockeyColours, "");
-            colours = parser.parse();
-            if (statement != null)
-                insertJockeyColoursParse(statement, strVersion, colours, parser.getRemainder(), parser.getExpanded(), parser.getSyntax());
-        }
+        // now use MeroService
          
         return colours;
        

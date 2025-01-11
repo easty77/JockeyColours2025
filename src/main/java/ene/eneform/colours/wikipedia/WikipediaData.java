@@ -8,6 +8,7 @@ import ene.eneform.colours.service.WikipediaService;
 import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.utils.ENEStatement;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -21,6 +22,11 @@ import java.util.Date;
 @Service
 @RequiredArgsConstructor
 public class WikipediaData {
+    @Value("${ene.eneform.mero.SVG_OUTPUT_DIRECTORY}")
+    private static String SVG_OUTPUT_DIRECTORY;
+    @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
+    private static String SVG_IMAGE_PATH;
+
     private final WikipediaService wikipediaService;
     private String sm_strTranscript = "";
     public void runWP(ENEStatement statement) throws FileNotFoundException, UnsupportedEncodingException, IOException
@@ -35,7 +41,7 @@ public class WikipediaData {
        
        if (!"".equals(sm_strTranscript))
        {
-            String strFullDirectory = ENEColoursEnvironment.getInstance().getVariable("SVG_OUTPUT_DIRECTORY") + ENEColoursEnvironment.getInstance().getVariable("SVG_IMAGE_PATH") + "wikipedia";
+            String strFullDirectory = SVG_OUTPUT_DIRECTORY + SVG_IMAGE_PATH + "wikipedia";
             String strFileName = strFullDirectory + "/transcript.txt";
             FileOutputStream fos = new FileOutputStream(strFileName, true);
             OutputStreamWriter writer = new OutputStreamWriter(fos, "UTF-8");

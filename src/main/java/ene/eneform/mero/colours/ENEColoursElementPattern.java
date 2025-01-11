@@ -5,9 +5,13 @@ import java.util.ArrayList;
 import ene.eneform.mero.utils.ENEColourItem;
 import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.utils.ENEFillItem;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.io.Serializable;
 
 public class ENEColoursElementPattern implements Serializable{
+    private ENEColoursEnvironment environment;
 	protected ArrayList<ENEFillItem> m_alColours = new ArrayList<ENEFillItem>();
 
     protected String m_strLanguage;
@@ -17,19 +21,22 @@ public class ENEColoursElementPattern implements Serializable{
 
     protected String m_strAdditionalText = null;
 
-    public ENEColoursElementPattern(String strLanguage, String strPattern)
+    public ENEColoursElementPattern(ENEColoursEnvironment environment, String strLanguage, String strPattern)
     {
+        this.environment = environment;
         m_strLanguage = strLanguage;
         m_strPattern = strPattern;
     }
-   public ENEColoursElementPattern(String strLanguage, String strPattern, String strColour)
+   public ENEColoursElementPattern(ENEColoursEnvironment environment, String strLanguage, String strPattern, String strColour)
     {
+        this.environment = environment;
         m_strLanguage = strLanguage;
         m_strPattern = strPattern;
         setColour(strColour);
     }
-   public ENEColoursElementPattern(String strLanguage, String strPattern, ArrayList<String> astrColourList)
+   public ENEColoursElementPattern(ENEColoursEnvironment environment, String strLanguage, String strPattern, ArrayList<String> astrColourList)
     {
+        this.environment = environment;
         m_strLanguage = strLanguage;
         m_strPattern = strPattern;
         for(int i = 0; i < astrColourList.size(); i++)
@@ -37,8 +44,9 @@ public class ENEColoursElementPattern implements Serializable{
             setColour(astrColourList.get(i));
         }
     }
-    public ENEColoursElementPattern(ENEColoursElementPattern pattern)
+    public ENEColoursElementPattern(ENEColoursEnvironment environment, ENEColoursElementPattern pattern)
     {
+        this.environment = environment;
         m_strLanguage = pattern.getLanguage();
         m_strPattern = pattern.getPattern();
         for(int i = 1; i <= pattern.getColourCount(); i++)
@@ -94,13 +102,13 @@ public class ENEColoursElementPattern implements Serializable{
 
     public final void setColour(String strColour)
     {
-        if (ENEColoursEnvironment.getInstance().isFabric(strColour, m_strLanguage))
+        if (environment.isFabric(strColour, m_strLanguage))
         {
-            m_alColours.add(ENEColoursEnvironment.getInstance().getFabricItem(strColour, m_strLanguage));
+            m_alColours.add(environment.getFabricItem(strColour, m_strLanguage));
         }
         else
         {
-            ENEColourItem item = ENEColours.getColourItem(strColour, m_strLanguage);
+            ENEColourItem item = environment.getColourItem(strColour, m_strLanguage);
             if (item != null)
                 m_alColours.add(item);
             else
@@ -167,8 +175,8 @@ public class ENEColoursElementPattern implements Serializable{
         for(int i = 0; i < m_alColours.size(); i++)
         {
             String strColour = m_alColours.get(i).getText();
-            if(ENEColoursEnvironment.getInstance().isFabric(strColour, m_strLanguage))
-                    return ENEColoursEnvironment.getInstance().getFabricItem(strColour, m_strLanguage).getResourceName();
+            if(environment.isFabric(strColour, m_strLanguage))
+                    return environment.getFabricItem(strColour, m_strLanguage).getResourceName();
         }
 
         return null;

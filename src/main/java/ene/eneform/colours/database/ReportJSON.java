@@ -9,12 +9,17 @@ import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.utils.ENEStatement;
 import ene.eneform.utils.JSONUtils;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  *
  * @author simon
  */
 public class ReportJSON {
+    @Value("${ene.eneform.mero.QUERY_DIRECTORY}")
+    private static String QUERY_DIRECTORY;
+    @Value("${ene.eneform.mero.JSON_OUTPUT_DIRECTORY}")
+    private static String JSON_OUTPUT_DIRECTORY;
 /*    
 public static void selectJSONRaceNameFileYear(ENEStatement statement, String strFileName, String strDirectory, String strRaceName, int nYear)
 {
@@ -55,9 +60,9 @@ public static void reportJSONRaceNameFile(ENEStatement statement, String strFile
     params.put("where", "");
     String strInputFile = strFileName + ".sql";
     String strOutputFile = strDirectory + "/" + strRaceName.replace(" ", "_") + ".json";
-    String strQuery = JSONUtils.processQueryFile(ENEColoursEnvironment.getInstance().getVariable("QUERY_DIRECTORY") + strInputFile, true, params, null);
+    String strQuery = JSONUtils.processQueryFile(QUERY_DIRECTORY + strInputFile, true, params, null);
     JSONUtils.reportJSON2File(statement, strQuery,
-                ENEColoursEnvironment.getInstance().getVariable("JSON_OUTPUT_DIRECTORY") + strOutputFile, 
+                JSON_OUTPUT_DIRECTORY + strOutputFile,
                 -1, JSONUtils.DATATABLE);   // retrieve all records, omit attribute if value is null
 }
 

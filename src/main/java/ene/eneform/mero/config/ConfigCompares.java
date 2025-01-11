@@ -13,6 +13,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.xml.parsers.SAXParser;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -22,12 +24,15 @@ import org.xml.sax.helpers.DefaultHandler;
  * @author Simon
  */
 public class ConfigCompares extends ConfigXML {
+    @Value("${ene.eneform.mero.compares}")
+    private static String FILE_NAME;
+
     // by language
     private HashMap<String, ENECompares> m_hmLanguages= new HashMap<String, ENECompares>();
  
-    public ConfigCompares(SAXParser parser, String strFileName)
+    public ConfigCompares(SAXParser parser)
     {
-        super(parser, strFileName);
+        super(parser, FILE_NAME);
     }
     public boolean load(ene.eneform.mero.config.ConfigColours cc, ConfigPatterns cp, ene.eneform.mero.config.ConfigFabrics cf)
     {

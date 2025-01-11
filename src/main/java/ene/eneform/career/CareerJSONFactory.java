@@ -19,6 +19,7 @@ import ene.eneform.utils.JSONUtils;
 import ene.eneform.utils.Pair;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,6 +33,11 @@ import java.util.*;
  * @author simon
  */
 public class CareerJSONFactory {
+    @Value("${ene.eneform.mero.JSON_OUTPUT_DIRECTORY}")
+    private static String JSON_OUTPUT_DIRECTORY;
+    @Value("${ene.eneform.mero.QUERY_DIRECTORY}")
+    private static String QUERY_DIRECTORY;
+
     private static final HashMap<String,String[]> sm_hmNHTopics;
     private static final HashMap<String,String[]> sm_hmFlatTopics;
 
@@ -64,7 +70,7 @@ public class CareerJSONFactory {
         String strFileName = String.valueOf(nRace) + ".json";
         if (!"SF".equals(strSource))
             strFileName = strSource + strFileName;
-        strFileName = ENEColoursEnvironment.getInstance().getVariable("JSON_OUTPUT_DIRECTORY") + "races/" + strFileName;
+        strFileName = JSON_OUTPUT_DIRECTORY + "races/" + strFileName;
         
         if (bWrite)
         {
@@ -460,7 +466,7 @@ public static JSONArray generateRaceCategoryArray(ENEStatement statement, String
 }
 private static boolean updateJSONFile(String strFileName, JSONArray array)
 {
-    String strContent = FileUtils.readFile(ENEColoursEnvironment.getInstance().getVariable("JSON_OUTPUT_DIRECTORY") + strFileName, StandardCharsets.ISO_8859_1);
+    String strContent = FileUtils.readFile(JSON_OUTPUT_DIRECTORY + strFileName, StandardCharsets.ISO_8859_1);
     JSONArray aRaces = new JSONArray();
     SimpleDateFormat format = new SimpleDateFormat("MMMM d yyyy"); 
         aRaces = new JSONArray(strContent);
@@ -484,7 +490,7 @@ private static boolean updateJSONFile(String strFileName, JSONArray array)
         aRaces.putAll(array);
         String strNewContent = formatCareerArray(aRaces);
         System.out.println(strFileName);
-        return FileUtils.writeFile(ENEColoursEnvironment.getInstance().getVariable("JSON_OUTPUT_DIRECTORY") + strFileName, strNewContent, StandardCharsets.ISO_8859_1, true);
+        return FileUtils.writeFile(JSON_OUTPUT_DIRECTORY + strFileName, strNewContent, StandardCharsets.ISO_8859_1, true);
     }
     catch(ParseException e)
     {
@@ -496,7 +502,7 @@ private static boolean updateJSONFile(String strFileName, JSONArray array)
 private static boolean writeJSONFile(String strFileName, JSONArray array)
 {
     String strContent = formatCareerArray(array);
-    return FileUtils.writeFile(ENEColoursEnvironment.getInstance().getVariable("JSON_OUTPUT_DIRECTORY") + strFileName, strContent, StandardCharsets.ISO_8859_1, true);
+    return FileUtils.writeFile(JSON_OUTPUT_DIRECTORY + strFileName, strContent, StandardCharsets.ISO_8859_1, true);
 }
 public static String formatCareerArray(JSONArray array)
 {
@@ -608,7 +614,7 @@ public static void generateARDRaceFiles(ENEStatement statement, int nYear, Strin
    params.put("YEAR", nYear);
    params.put("TYPE", strRaceType);  // NH or Flat
    JSONObject jsonObj = JSONUtils.reportJSONFile(statement, 
-                    ENEColoursEnvironment.getInstance().getVariable("QUERY_DIRECTORY") + "select_colour_races.sql", 
+                    QUERY_DIRECTORY + "select_colour_races.sql", 
                     params, 500, JSONUtils.JSON, null); 
    JSONArray array = (JSONArray) jsonObj.get("data");
    for(int i = 0; i < array.length(); i++)
@@ -630,7 +636,7 @@ public static String outputMissingARDWikipediaOwners(ENEStatement statement, Str
    params.put("YEAR", nYear);
    params.put("TYPE", strRaceType);  // NH or Flat
    JSONObject jsonObj = JSONUtils.reportJSONFile(statement, 
-                    ENEColoursEnvironment.getInstance().getVariable("QUERY_DIRECTORY") + strQuery, 
+                    QUERY_DIRECTORY + strQuery, 
                     params, 500, JSONUtils.JSON, null); 
    JSONArray array = (JSONArray) jsonObj.get("data");
    String strContent = "";
@@ -648,7 +654,7 @@ public static void generateARDWikipediaOwners(ENEStatement statement, String str
    params.put("YEAR", nYear);
    params.put("TYPE", strRaceType);  // NH or Flat
    JSONObject jsonObj = JSONUtils.reportJSONFile(statement, 
-                    ENEColoursEnvironment.getInstance().getVariable("QUERY_DIRECTORY") + strQuery, 
+                    QUERY_DIRECTORY + strQuery, 
                     params, 500, JSONUtils.JSON, null); 
    JSONArray array = (JSONArray) jsonObj.get("data");
    System.out.println(array.toString());

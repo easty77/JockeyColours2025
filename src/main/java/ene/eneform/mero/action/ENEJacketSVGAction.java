@@ -6,6 +6,7 @@ package ene.eneform.mero.action;
 
 
 import ene.eneform.mero.action.ENESVGAction;
+import ene.eneform.mero.config.ENEColoursEnvironment;
 
 import java.awt.*;
 import java.io.Serializable;
@@ -26,9 +27,9 @@ public class ENEJacketSVGAction extends ene.eneform.mero.action.ENESVGAction imp
 //                {new Point(MERO_JACKET_XOFFSET+25, MERO_JACKET_YOFFSET+45)}
             };
 
-       public ENEJacketSVGAction(String strSVGName)
+       public ENEJacketSVGAction(ENEColoursEnvironment environment, String strSVGName)
        {
-           super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+           super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
        }
        public static class Badge extends ene.eneform.mero.action.ENESVGAction
        {
@@ -38,9 +39,9 @@ public class ENEJacketSVGAction extends ene.eneform.mero.action.ENESVGAction imp
                 {new Point(305, 355)}   // adjusted 20160421
             };
  
-            public Badge(String strSVGName)
+            public Badge(ENEColoursEnvironment environment, String strSVGName)
             {
-                super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+                super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
             }
       }
       public static class Neck extends ene.eneform.mero.action.ENESVGAction
@@ -51,9 +52,9 @@ public class ENEJacketSVGAction extends ene.eneform.mero.action.ENESVGAction imp
                 {new Point(MERO_JACKET_XOFFSET+48, MERO_JACKET_YOFFSET+15)}
             };
  
-            public Neck(String strSVGName)
+            public Neck(ENEColoursEnvironment environment, String strSVGName)
             {
-                super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+                super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
             }
       }
        public static class Five extends ene.eneform.mero.action.ENESVGAction
@@ -66,9 +67,9 @@ public class ENEJacketSVGAction extends ene.eneform.mero.action.ENESVGAction imp
             };
 
 
-            public Five(String strSVGName)
+            public Five(ENEColoursEnvironment environment, String strSVGName)
             {
-               super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+               super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
             }
       }
         public static class Four extends ene.eneform.mero.action.ENESVGAction
@@ -80,9 +81,9 @@ public class ENEJacketSVGAction extends ene.eneform.mero.action.ENESVGAction imp
             {new Point(244, 350), new Point(304, 350), new Point(244, 460), new Point(304, 460)}
             };
 
-            public Four(String strSVGName)
+            public Four(ENEColoursEnvironment environment, String strSVGName)
             {
-               super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+               super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
             }
       }
         public static class TripleSash extends ene.eneform.mero.action.ENESVGAction
@@ -95,9 +96,9 @@ public class ENEJacketSVGAction extends ene.eneform.mero.action.ENESVGAction imp
             {new Point(MERO_JACKET_XOFFSET+95, MERO_JACKET_YOFFSET+10), new Point(MERO_JACKET_XOFFSET+60, MERO_JACKET_YOFFSET+50), new Point(MERO_JACKET_XOFFSET+20, MERO_JACKET_YOFFSET+115)}
             };
 
-            public TripleSash(String strSVGName)
+            public TripleSash(ENEColoursEnvironment environment, String strSVGName)
             {
-               super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+               super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
             }
       }
        public static class Twin extends ENESVGAction
@@ -110,9 +111,9 @@ public class ENEJacketSVGAction extends ene.eneform.mero.action.ENESVGAction imp
             {new Point(MERO_JACKET_XOFFSET+50, MERO_JACKET_YOFFSET+40), new Point(MERO_JACKET_XOFFSET+50, MERO_JACKET_YOFFSET+120)}
             };
 
-            public Twin(String strSVGName)
+            public Twin(ENEColoursEnvironment environment, String strSVGName)
             {
-               super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+               super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
             }
       }
 }

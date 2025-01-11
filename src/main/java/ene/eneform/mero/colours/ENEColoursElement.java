@@ -2,12 +2,9 @@ package ene.eneform.mero.colours;
 
 //import ene.racingcolours.ENEColoursElementFullPattern;
 import ene.eneform.mero.action.ENEPatternAction;
-import ene.eneform.mero.colours.ENEColours;
-import ene.eneform.mero.colours.ENEColoursElementPattern;
-import ene.eneform.mero.config.ENEColoursEnvironment;
+import ene.eneform.mero.config.*;
 import ene.eneform.mero.utils.ENEFillItem;
-import ene.eneform.mero.config.ENEOrganisation;
-import ene.eneform.mero.config.ENEOrganisationList;
+
 import java.awt.Color;
 import java.awt.Shape;
 
@@ -18,6 +15,7 @@ import java.util.Iterator;
 
 public class ENEColoursElement implements Serializable
 {
+    private final ENEColoursEnvironment environment;
     // only used in AWTColoursElement and derivatives
     protected Shape m_shape = null;
 
@@ -36,13 +34,14 @@ public class ENEColoursElement implements Serializable
     protected String m_strType;
 
     protected Color m_pageColour = Color.WHITE;       // the colour of the page behind - required for needs Outline
-    
-   public ENEColoursElement(String strLanguage, String strType)
+
+    public ENEColoursElement(ENEColoursEnvironment environment, String strLanguage, String strType)
     {
-        this(strLanguage, strType, null);
+        this(environment, strLanguage, strType, null);
     }
-   public ENEColoursElement(String strLanguage, String strType, String strDefinition)
+   public ENEColoursElement(ENEColoursEnvironment environment, String strLanguage, String strType, String strDefinition)
     {
+        this.environment = environment;
         m_strLanguage = strLanguage;
         m_strType = strType;
         m_strDefinition = strDefinition;
@@ -59,7 +58,7 @@ public class ENEColoursElement implements Serializable
             {
                 String strPattern = astrDefinitions[i];
                 String astrPatternElements[] = strPattern.split("-");   // separates pattern from comma separated list of colours
-                ENEColoursElementPattern pattern = new ENEColoursElementPattern(m_strLanguage, astrPatternElements[0]);
+                ENEColoursElementPattern pattern = new ENEColoursElementPattern(environment, m_strLanguage, astrPatternElements[0]);
                 if (astrPatternElements.length > 1)
                 {
                     String strColours = astrPatternElements[1];
@@ -85,24 +84,24 @@ public class ENEColoursElement implements Serializable
    {
        return m_strType;
    }
-   protected ENEPatternAction getPatternAction(String strPattern){return ENEColoursEnvironment.getInstance().getPatternAction(m_strType, strPattern, m_strLanguage);}
+   protected ENEPatternAction getPatternAction(String strPattern){return environment.getConfigPatterns().getPatternAction(m_strType, strPattern, m_strLanguage);}
     public boolean isValidPattern(String strPattern){return isPattern(strPattern);}
-    public boolean isPattern(String strPattern){return ENEColoursEnvironment.getInstance().getPatternNameList(m_strType, m_strLanguage).contains(strPattern);}
+    public boolean isPattern(String strPattern){return environment.getConfigPatterns().getPatternNameList(m_strType, m_strLanguage).contains(strPattern);}
 
     public void setPageColour(Color pageColour)
     {
         m_pageColour = pageColour;
     }
-    public static ArrayList<String> getOrganisationPatterns(String strType, String strOrganisation)
+    public ArrayList<String> getOrganisationPatterns(String strType, String strOrganisation)
     {
-        ENEOrganisation organisation = ENEColoursEnvironment.getInstance().getOrganisation(strOrganisation);
+        ENEOrganisation organisation = environment.getConfigOrganisations().getOrganisation(strOrganisation);
         ENEOrganisationList list = organisation.getList(strType);
         return list.getList();
     }
 
     public  ArrayList<String> getOrganisationPatterns(String strOrganisation)
     {
-        ENEOrganisation organisation = ENEColoursEnvironment.getInstance().getOrganisation(strOrganisation);
+        ENEOrganisation organisation = environment.getConfigOrganisations().getOrganisation(strOrganisation);
         ENEOrganisationList list = organisation.getList(m_strType);
         return list.getList();
     }
@@ -134,7 +133,7 @@ public class ENEColoursElement implements Serializable
     	if (m_patternList.size() > 0)
         {
     		ENEColoursElementPattern pattern = m_patternList.get(0);
-                if (ENEColoursEnvironment.getInstance().isPrimaryPattern(m_strType, pattern.getPattern(), m_strLanguage))
+                if (environment.getConfigPatterns().isPrimaryPattern(m_strType, pattern.getPattern(), m_strLanguage))
                         return pattern;
         }
         
@@ -160,7 +159,7 @@ public class ENEColoursElement implements Serializable
             ENEColoursElementPattern pattern = iter.next();
     		String strPattern = pattern.getBasePattern();   // remove colours number
                  
-                strPattern = ENEColoursEnvironment.getInstance().convertSynonym(m_strType, strPattern, m_strLanguage);
+                strPattern = environment.getConfigPatterns().convertSynonym(m_strType, strPattern, m_strLanguage);
 
                 int nColours = pattern.getColourCount();
                 strPattern += nColours;
@@ -265,10 +264,10 @@ public class ENEColoursElement implements Serializable
     public Color getPageColour(){return m_pageColour;}
 private ENEFillItem getColourImpl(String strColour)
     {
-    	if (ENEColoursEnvironment.getInstance().isFabric(strColour, m_strLanguage))
-    		return ENEColoursEnvironment.getInstance().getFabricItem(strColour, m_strLanguage);
+    	if (environment.getConfigFabrics().isFabric(strColour, m_strLanguage))
+    		return environment.getConfigFabrics().getFabricItem(strColour, m_strLanguage);
         else
-    		return ENEColours.getColourItem(strColour, m_strLanguage);
+    		return environment.getColourItem(strColour, m_strLanguage);
     }
     public void setColour(String strColour)
     {
@@ -310,8 +309,8 @@ private ENEFillItem getColourImpl(String strColour)
 
     public String getFabric()
     {
-	    if ((m_colour != null) && ENEColoursEnvironment.getInstance().isFabric(m_colour.getText(), m_strLanguage))
-	        return ENEColoursEnvironment.getInstance().getFabricItem(m_colour.getText(), m_strLanguage).getResourceName();
+	    if ((m_colour != null) && environment.getConfigFabrics().isFabric(m_colour.getText(), m_strLanguage))
+	        return environment.getConfigFabrics().getFabricItem(m_colour.getText(), m_strLanguage).getResourceName();
 		
 	    for(int i = 0; i < m_patternList.size(); i++)
 		{

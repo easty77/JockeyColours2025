@@ -1,76 +1,77 @@
-package ene.eneform.mero.parse;
+package ene.eneform.mero.colours;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import ene.eneform.mero.colours.ENEColoursElement;
-import ene.eneform.mero.colours.ENERacingColours;
-import ene.eneform.mero.colours.ENEColoursElementPattern;
-import ene.eneform.mero.config.ENEAbbreviations;
+import ene.eneform.mero.config.*;
 import ene.eneform.mero.parse.ENEColoursParserCompareAction;
 import ene.eneform.mero.parse.ENEColoursParserExpand;
 import ene.eneform.mero.parse.ENEColoursParserMatch;
 import ene.eneform.mero.utils.ENEColourItem;
-import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.utils.ENEFillItem;
 import ene.eneform.mero.tartan.ENETartanItem;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
-public class ENEColoursParser {
+@Slf4j
+@Getter
+public class FullRacingColours {
+    private final ENEColoursEnvironment environment;
 
-	private String m_strLanguage;
-	private String m_strOriginal;
-	private String m_strDescription;
-	private ENERacingColours m_colours = null;
-	private String m_strRemainder = "";
-	private String m_strSyntax = "";
-        private int m_nMaxExpandIterations = 50;    // default in case not defined in enecoloursconfig.xml
- 
+    private String language;
+    private String expanded;
+    private String original;
+    private String description;
+    private String owner;
+    private ENERacingColours colours;
+    private String remainder = "";
+    private String syntax = "";
 
-    public ENEColoursParser(String strLanguage, String strDescription, String strOwner)
+    public FullRacingColours(ENEColoursEnvironment environment,
+    String language, String description, String owner)
 	{
-            m_strLanguage = strLanguage;
-    	m_strOriginal = strDescription;
-	m_strDescription = ENEAbbreviations.replaceAbbreviations(ENEAbbreviations.preparse(convertToLower(m_strOriginal), m_strLanguage), m_strLanguage);
-        m_colours = ENEColoursEnvironment.getInstance().createRacingColours(m_strLanguage, m_strOriginal, strOwner);
-        m_strDescription += ".";    // end with full stop, because easier to detect than end of string
-        ENEColoursEnvironment.getInstance().debug("NEW: " + m_strDescription);
+        this.environment = environment;
+    	this.original = description;
+        this.owner = owner;
+        this.language = language;
+        colours = new ENERacingColours(language, original, owner,
+                new ENEColoursElement(environment, language, ENEColoursElement.JACKET),
+                new ENEColoursElement(environment, language, ENEColoursElement.SLEEVES),
+                new ENEColoursElement(environment, language, ENEColoursElement.CAP)
+                );
+	this.description = environment.getAbbreviationsHandler().replaceAbbreviations(original, language);
+        this.description += ".";    // end with full stop, because easier to detect than end of string
+        log.info("NEW: " + this.description);
 
-        m_strDescription = expandDescription(m_strDescription);
-        int nMaxExpandIterations = ENEColoursEnvironment.getInstance().getMaxNrExpandIterations();
-        if (nMaxExpandIterations > 0)
-            m_nMaxExpandIterations = nMaxExpandIterations;
-        
-        ENEColoursEnvironment.getInstance().debug("EXPANDED: " + m_strDescription);
+        this.expanded = expandDescription();
+
+        log.info("EXPANDED: " + this.expanded);
+
+        parse();
  	}
 
-    public String getExpanded()
+    private String expandDescription()
     {
-        return m_strDescription;
-    }
-
-    public String expandDescription(String strDescription)
-    {
-        Iterator<ENEColoursParserExpand> iter = ENEColoursEnvironment.getInstance().getExpandList(m_strLanguage).iterator();
+        String expanded="";
+        Iterator<ENEColoursParserExpand> iter = environment.getConfigExpands().getExpandList(language).iterator();
         while (iter.hasNext())
         {
             ENEColoursParserExpand expand = iter.next();
             try
             {
-                String strExpanded;
                 int nCounter = 0;
-                while(!strDescription.equals(strExpanded = expand.expandString(strDescription)))
+                while(!description.equals(expanded = expand.expandString(description)))
                 {
                     nCounter++;
                     if (nCounter > 100) // prevent endless iteration
                     {
-                        System.out.println("expandDescription Max iteration level reached: "  + strDescription);
+                        System.out.println("expandDescription Max iteration level reached: "  + description);
                         return "";
                     }
-                    if (!strExpanded.equals(strDescription))
+                    if (!expanded.equals(description))
                     {
-                        ENEColoursEnvironment.getInstance().trace("Expanded: " + expand.getExpandType() + "-" + strExpanded);
+                        log.info("Expanded: " + expand.getExpandType() + "-" + expanded);
                         addSyntax(expand.getExpandType());
-                        strDescription = strExpanded;
                     }
                 }
             }
@@ -80,91 +81,80 @@ public class ENEColoursParser {
             }
         }
 
-        return strDescription;
+        return expanded;
     }
 
-   public ENERacingColours parse()
+   private void parse()
     {
-    	parse1(m_strDescription);
+    	parse1(description);
         
         resolveImplications();
 
         resolveHues();
 
-        ENEColoursEnvironment.getInstance().debug("Syntax: " + m_strSyntax);
+        log.info("Syntax: " + syntax);
 
-        if (!"".equals(m_strRemainder))
-            ENEColoursEnvironment.getInstance().debug("Remainder: " + m_strRemainder);
-
-        //ENEColoursEnvironment.getInstance().trace("parse: " + m_colours.toString());
-        return m_colours;
+        if (!"".equals(remainder))
+            log.info("Remainder: " + remainder);
     }
-    public String getRemainder()
+    private void addSyntax(String add)
     {
-    	return m_strRemainder;
+        addSyntax(add, false);
     }
-    public String getSyntax()
-    {
-    	return m_strSyntax;
-    }
-    private void addSyntax(String strSyntax)
-    {
-        addSyntax(strSyntax, false);
-    }
-    private void addSyntax(String strSyntax, boolean bTrace)
+    private void addSyntax(String add, boolean bTrace)
     {
         if (bTrace)
-            ENEColoursEnvironment.getInstance().trace(strSyntax);
+            log.info(add);
 
-       if (!"".equals(m_strSyntax))
-                m_strSyntax += "-";
-        m_strSyntax += strSyntax;
+       if (!"".equals(syntax))
+                syntax += "-";
+        syntax += add;
     }
      private void parse1(String strDescription)
      {
          String strOriginal = strDescription;
 
          //ENEColoursParserMatch jacketMatch = parseJacket(strDescription);
-         ENEColoursParserMatch jacketMatch = parseElement("ENEJacket", m_colours.getJacket(), strDescription);
+         ENEColoursParserMatch jacketMatch = parseElement("ENEJacket", colours.getJacket(), strDescription);
 
         if (jacketMatch != null)
         {
-            ENEColoursEnvironment.getInstance().trace("Jacket match: " + jacketMatch.toString());
+            log.info("Jacket match: " + jacketMatch.toString());
             strDescription = jacketMatch.extractFromString(strDescription);
             addSyntax(jacketMatch.getMatchType());
         }
         //ENEColoursParserMatch sleevesMatch = parseSleeves(strDescription);
-         ENEColoursParserMatch sleevesMatch = parseElement("ENESleeves", m_colours.getSleeves(), strDescription);
+         ENEColoursParserMatch sleevesMatch = parseElement("ENESleeves", colours.getSleeves(), strDescription);
 
         if (sleevesMatch != null)
         {
-        	ENEColoursEnvironment.getInstance().trace("Sleeves match: " + sleevesMatch.toString());
+        	log.info("Sleeves match: " + sleevesMatch.toString());
             strDescription = sleevesMatch.extractFromString(strDescription);
             addSyntax(sleevesMatch.getMatchType());
         }
         //ENEColoursParserMatch capMatch = parseCap(strDescription);
-        ENEColoursParserMatch capMatch = parseElement("ENECap", m_colours.getCap(), strDescription);
+        ENEColoursParserMatch capMatch = parseElement("ENECap", colours.getCap(), strDescription);
 
         if (capMatch != null)
         {
-        	ENEColoursEnvironment.getInstance().trace("Cap match: " + capMatch.toString());
+        	log.info("Cap match: " + capMatch.toString());
             strDescription = capMatch.extractFromString(strDescription);
             addSyntax(capMatch.getMatchType());
         }
 
         if ((!"".equals(strDescription)) && !strOriginal.equals(strDescription))    // still chance of more
         {
-        	ENEColoursEnvironment.getInstance().debug("Non-empty final description: " + strDescription);
+        	log.info("Non-empty final description: " + strDescription);
             parse1(strDescription);
         }
         else
-        	m_strRemainder = strDescription;
+        	this.remainder = strDescription;
       }
 
      private void resolveHues()
     {
          // the hue is sometimes used instead of repeating full name e.g. initially royal blue and then just blue imlying royal blue
-         ArrayList<ENEFillItem> lstColours = m_colours.getColourList();
+         ArrayList<ENEFillItem> lstColours = colours.getColourList();
 
          Iterator<ENEFillItem> iter1 = lstColours.iterator();
          while(iter1.hasNext())
@@ -172,7 +162,7 @@ public class ENEColoursParser {
              ENEFillItem fill1 = iter1.next();
              if (fill1 == null)
              {
-         	ENEColoursEnvironment.getInstance().debug("NULL COLOUR IN 1st LIST");
+         	log.info("NULL COLOUR IN 1st LIST");
              }
              else if("ENETartanItem".equals(fill1.getClass().getSimpleName()))
              {
@@ -184,12 +174,12 @@ public class ENEColoursParser {
                      ENEFillItem fill2 = iter2.next();
                      if (fill2 == null)
                      {
-                    	ENEColoursEnvironment.getInstance().debug("NULL COLOUR IN 2nd LIST");
+                    	log.info("NULL COLOUR IN 2nd LIST");
                      }
                      else if("ENETartanItem".equals(fill2.getClass().getSimpleName()) && !"".equals(fill2.getText()))
                      {
                          ENETartanItem tartan2 = (ENETartanItem) fill2;
-                         m_colours.updateColour(tartan1, tartan2);
+                         colours.updateColour(tartan1, tartan2);
                      }
                 }
              }
@@ -207,8 +197,8 @@ public class ENEColoursParser {
                                  ENEColourItem colour2 = (ENEColourItem) fill2;
                                  if (colour2.getHue().equals(colour1.getHue()) && (!colour2.getText().equals(colour1.getText())) && (colour2.getText().indexOf(colour1.getText()) > -1))
                                  {
-                                     m_colours.updateColour(colour1, colour2);
-                                     ENEColoursEnvironment.getInstance().trace(colour1.getText() + " converted to " + colour2.getText());
+                                     colours.updateColour(colour1, colour2);
+                                     log.info(colour1.getText() + " converted to " + colour2.getText());
                                  }
                             }
                         }
@@ -218,11 +208,11 @@ public class ENEColoursParser {
      }
      private void resolveImplications()
      {
-    	 ENEColoursElement jacket = m_colours.getJacket();
+    	 ENEColoursElement jacket = colours.getJacket();
     	 ENEColoursElementPattern primaryJacket = jacket.getPrimaryPattern();
-    	 ENEColoursElement sleeves = m_colours.getSleeves();
+    	 ENEColoursElement sleeves = colours.getSleeves();
          ENEColoursElementPattern primarySleeves = sleeves.getPrimaryPattern();
-         ENEColoursElement cap = m_colours.getCap();
+         ENEColoursElement cap = colours.getCap();
          ENEColoursElementPattern primaryCap = cap.getPrimaryPattern();
          boolean bSleevesExplicit = ((primarySleeves != null) || (sleeves.getColourItem() != null));
          
@@ -283,9 +273,10 @@ public class ENEColoursParser {
     	 // jacket -> sleeves
          // 20140314 - can derive Cap from Jacket if 1) Sleeve colour has been specified ...
         boolean bPrimaryJacketCapDerive = (sleeves.getColourItem() != null);
+         ConfigPatterns configPatterns = environment.getConfigPatterns();
         if ((!bSleevesExplicit) && (primaryJacket != null)  && primaryJacket.canPropagate()
-                && (ENEColoursEnvironment.getInstance().getPattern("ENESleeves", primaryJacket.getPattern(), m_strLanguage) != null)
-                 && (ENEColoursEnvironment.getInstance().getPattern("ENESleeves", primaryJacket.getPattern(), m_strLanguage).canDerive()))
+                && (configPatterns.getPattern("ENESleeves", primaryJacket.getPattern(), language) != null)
+                 && (configPatterns.getPattern("ENESleeves", primaryJacket.getPattern(), language).canDerive()))
         {
             addSyntax("Jacket primary pattern -> sleeves primary pattern", true);
             if ("halves".equals(primaryJacket.getPattern()))
@@ -294,7 +285,7 @@ public class ENEColoursParser {
                    sleeves.setColour(jacket.getColourItem());
                if (sleeves.getPrimaryPattern() == null)
                {
-                   sleeves.setPrimaryPattern(new ENEColoursElementPattern(m_strLanguage, "alternate", primaryJacket.getColour(1).getText()));
+                   sleeves.setPrimaryPattern(new ENEColoursElementPattern(environment, language, "alternate", primaryJacket.getColour(1).getText()));
                     bPrimaryJacketCapDerive = true;                     // 2) Sleeve pattern is also derived from jacket
                }
             }
@@ -320,15 +311,15 @@ public class ENEColoursParser {
                      ENEColoursElementPattern pattern = iter.next();
                      if ("halved".equals(pattern.getPattern()) || "halves".equals(pattern.getPattern()))
                      {
-                         ENEColoursElementPattern pattern1 = new ENEColoursElementPattern(m_strLanguage, "alternate");
+                         ENEColoursElementPattern pattern1 = new ENEColoursElementPattern(environment, language, "alternate");
                          sleeves.setColour(jacket.getColourItem());
                          pattern1.setColour(pattern.getColour(1));
                          sleeves.setPattern(pattern1);
                      }
-                     else if(pattern.canPropagate() && ENEColoursEnvironment.getInstance().isDerivePattern("ENESleeves", pattern.getPattern(), m_strLanguage))
+                     else if(pattern.canPropagate() && configPatterns.isDerivePattern("ENESleeves", pattern.getPattern(), language))
                      {
                         addSyntax("Jacket pattern -> sleeves", true);
-                             ENEColoursElementPattern pattern1 = new ENEColoursElementPattern(pattern);
+                             ENEColoursElementPattern pattern1 = new ENEColoursElementPattern(environment, pattern);
                              sleeves.setPattern(pattern1);
                      }
                  }
@@ -349,8 +340,8 @@ public class ENEColoursParser {
     	 }
     	 // jacket -> cap
        if (bPrimaryJacketCapDerive && (cap.getColourItem() == null) && (primaryCap == null) && (primaryJacket != null) &&
-                (ENEColoursEnvironment.getInstance().getPattern("ENECap", primaryJacket.getPattern(), m_strLanguage) != null)
-                 && (ENEColoursEnvironment.getInstance().getPattern("ENECap", primaryJacket.getPattern(), m_strLanguage).canDerive()))
+                (configPatterns.getPattern("ENECap", primaryJacket.getPattern(), language) != null)
+                 && (configPatterns.getPattern("ENECap", primaryJacket.getPattern(), language).canDerive()))
         {
             addSyntax("Jacket primary pattern -> cap primary pattern", true);
             cap.setColour(jacket.getColourItem());
@@ -379,10 +370,10 @@ public class ENEColoursParser {
                  while(iter.hasNext())
                  {
                      ENEColoursElementPattern pattern = iter.next();
-                     if (pattern.canPropagate() &&  ENEColoursEnvironment.getInstance().isDerivePattern("ENECap", pattern.getPattern(), m_strLanguage))
+                     if (pattern.canPropagate() &&  configPatterns.isDerivePattern("ENECap", pattern.getPattern(), language))
                      {
                         addSyntax("Jacket pattern -> cap", true);
-                        ENEColoursElementPattern pattern1 = new ENEColoursElementPattern(pattern);
+                        ENEColoursElementPattern pattern1 = new ENEColoursElementPattern(environment, pattern);
                         cap.setPattern(pattern1);
                      }
                  }
@@ -429,7 +420,7 @@ public class ENEColoursParser {
 
     private ENEColoursParserMatch parseElement(String strType, ENEColoursElement element, String strDescription)
     {
-    	ArrayList<ENEColoursParserCompareAction> list = ENEColoursEnvironment.getInstance().getCompareList(strType, m_strLanguage);
+    	ArrayList<ENEColoursParserCompareAction> list = environment.getConfigCompares().getCompareList(strType, language);
     	Iterator<ENEColoursParserCompareAction> iter = list.listIterator();
     	while(iter.hasNext())
     	{
@@ -446,25 +437,32 @@ public class ENEColoursParser {
        private void duplicateColourPatternCheck()
        {
               // colour of cap is implied, but if colour1 = colour2 then this is clearly wrong because there is definitely a pattern
-              if (m_colours.getCap().duplicateColours())
+              if (colours.getCap().duplicateColours())
               {
-                  String strCapColour1 = m_colours.getCap().getTextColour();
+                  String strCapColour1 = colours.getCap().getTextColour();
                   // problem, has probably come from jacket, but should have been overridden by sleeves
-                  if ((m_colours.getSleeves().getColourItem() != null) && (!m_colours.getSleeves().getColourItem().equals(m_colours.getCap().getColourItem())))
-                      m_colours.getCap().setColour(m_colours.getSleeves().getTextColour());
-                  else if ((m_colours.getJacket().getColourItem() != null) && (!m_colours.getJacket().getColourItem().equals(m_colours.getCap().getColourItem())))
-                      m_colours.getCap().setColour(m_colours.getJacket().getTextColour());
+                  if ((colours.getSleeves().getColourItem() != null) && (!colours.getSleeves().getColourItem().equals(colours.getCap().getColourItem())))
+                      colours.getCap().setColour(colours.getSleeves().getTextColour());
+                  else if ((colours.getJacket().getColourItem() != null) && (!colours.getJacket().getColourItem().equals(colours.getCap().getColourItem())))
+                      colours.getCap().setColour(colours.getJacket().getTextColour());
 
-                  ENEColoursEnvironment.getInstance().debug("duplicateColourPatternCheck: " + strCapColour1 + "-" + m_colours.getSleeves().getTextColour());
+                  log.info("duplicateColourPatternCheck: " + strCapColour1 + "-" + colours.getSleeves().getTextColour());
              } 
        }
        @Override public String toString()
        {
     	   String strContent="";
-    	   if (!"".equals(m_strRemainder))
-    		   strContent += ("REM:" + m_strRemainder + "|");
-    	   strContent += (m_strOriginal + "->" + m_colours.toString());
+    	   if (!"".equals(remainder))
+    		   strContent += ("REM:" + remainder + "|");
+    	   strContent += (original + "->" + colours.toString());
     	   
     	   return strContent;
        }
- }
+       
+       // From ENEColoursEnvironment
+       public ArrayList<ENEColoursParserExpand> getExpandList(String language)
+       {
+           return environment.getConfigExpands().getExpandList(language);
+       }
+
+}

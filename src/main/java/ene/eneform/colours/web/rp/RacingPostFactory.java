@@ -12,6 +12,7 @@ import ene.eneform.utils.JSONUtils;
 import ene.eneform.utils.Pair;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -26,6 +27,8 @@ import java.util.*;
  * @author Simon
  */
 public class RacingPostFactory {
+    @Value("${ene.eneform.mero.QUERY_DIRECTORY}")
+    private static String QUERY_DIRECTORY;
 /*
     public static HashMap<String, RacingPostCourse> getRPCourses(ENEStatement statement) {
         HashMap<String, RacingPostCourse> hmCourses = new HashMap<String, RacingPostCourse>();
@@ -263,7 +266,7 @@ public static void generateRacingPostRaces(ENEStatement statement, int nYear, St
    params.put("YEAR", nYear);
    params.put("TYPE", strRaceType);  // NH or Flat
    JSONObject jsonObj = JSONUtils.reportJSONFile(statement, 
-                    ENEColoursEnvironment.getInstance().getVariable("QUERY_DIRECTORY") +  "select_racing_post_races.sql", 
+                    QUERY_DIRECTORY +  "select_racing_post_races.sql",
                     params, 500, JSONUtils.JSON, null); 
    JSONArray array = (JSONArray) jsonObj.get("data");
    System.out.println(array.toString());

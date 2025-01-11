@@ -10,11 +10,12 @@ import ene.eneform.colours.bos.ENERegisteredOwner;
 import ene.eneform.colours.service.WikipediaService;
 import ene.eneform.mero.colours.ENERacingColours;
 import ene.eneform.mero.config.ENEColoursEnvironment;
-import ene.eneform.mero.parse.ENEColoursParser;
+import ene.eneform.mero.service.MeroService;
 import ene.eneform.smartform.bos.UnregisteredColourSyntax;
 import ene.eneform.smartform.factory.SmartformRunnerFactory;
 import ene.eneform.utils.ENEStatement;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
@@ -31,8 +32,14 @@ import java.util.Iterator;
 @Service
 @RequiredArgsConstructor
 public class RegisteredOwnerFactory {
+    @Value("${ene.eneform.mero.SVG_OUTPUT_DIRECTORY}")
+    private static String SVG_OUTPUT_DIRECTORY;
+    @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
+    private static String SVG_IMAGE_PATH;
+
     private final WikipediaService wikipediaService;
     private final ColoursSearch coloursSearch;
+    private final MeroService meroService;
 
     private String getRCPVersion (String strVersion, String strOrganisation, String strOrgType, int nYear)
     {
@@ -105,9 +112,7 @@ public class RegisteredOwnerFactory {
                         UnregisteredColourSyntax ucs = SmartformRunnerFactory.createUnregisteredColourSyntax(rs);
                         if (ucs != null)
                         {
-                            ENERacingColours colours = ENEColoursEnvironment.getInstance().createRacingColours("en", ENEColoursEnvironment.getInstance().createJacket("en", ucs.getJacket()), 
-                            ENEColoursEnvironment.getInstance().createSleeves("en",ucs.getSleeves()), 
-                            ENEColoursEnvironment.getInstance().createCap("en",ucs.getCap()));
+                            ENERacingColours colours = meroService.createRacingColours("en", "", ucs.getJacket(), ucs.getSleeves(), ucs.getCap());
                             String strFileName = getOrganisationYearFileName(strOwnerId, strOrganisation, nYear);
                             wikipediaService.createImageFile(strFileName, colours, "en", true, true);
                         }
@@ -148,18 +153,8 @@ public class RegisteredOwnerFactory {
     {
         ENERacingColours colours = null;
         UnregisteredColourSyntax ucs = createRCPUnregisteredColourSyntax(statement, strJockeyColours, strOrganisation, strRCPVersion);
-        if (ucs != null)
-        {
-            colours = ENEColoursEnvironment.getInstance().createRacingColours(strLanguage, ENEColoursEnvironment.getInstance().createJacket(strLanguage, ucs.getJacket()), 
-                    ENEColoursEnvironment.getInstance().createSleeves(strLanguage,ucs.getSleeves()), 
-                    ENEColoursEnvironment.getInstance().createCap(strLanguage,ucs.getCap()));
-            colours.setDescription(strJockeyColours);
-        }
-        else
-        {
-            colours = new ENEColoursParser(strLanguage, strJockeyColours, "").parse();
-        }
-         
+        colours = meroService.createRacingColours("en", strJockeyColours, ucs.getJacket(), ucs.getSleeves(), ucs.getCap());
+
         return colours;
     }
 public UnregisteredColourSyntax createRCPUnregisteredColourSyntax(ENEStatement statement, String strJockeyColours, String strOrganisation, String strRCPVersion)
@@ -239,20 +234,17 @@ public void generateRegisteredOwnersSVG(ENEStatement statement, String strVersio
             if ((strJacketSyntax != null) && !"".equals(strJacketSyntax))
             {
                 System.out.println("Syntax: " + strJockeyColours + " - " + strJacketSyntax);
-                colours = ENEColoursEnvironment.getInstance().createRacingColours(strLanguage, 
-                        ENEColoursEnvironment.getInstance().createJacket(strLanguage,strJacketSyntax), 
-                        ENEColoursEnvironment.getInstance().createSleeves(strLanguage,ownercolours.getSleevesSyntax()), 
-                        ENEColoursEnvironment.getInstance().createCap(strLanguage,ownercolours.getCapSyntax()));
-                colours.setDescription(strJockeyColours);
+                colours = meroService.createRacingColours("en", strJockeyColours, strJacketSyntax,
+                        ownercolours.getSleevesSyntax(), ownercolours.getCapSyntax());
             }
             else
             {
                 System.out.println("Parse: " + strJockeyColours);
                 //strJockeyColours = strJockeyColours.toLowerCase();
                 //strJockeyColours = strJockeyColours.substring(0, 1).toUpperCase() + strJockeyColours.substring(1);
-                        
-                 ENEColoursParser parser = new ENEColoursParser(strLanguage, strJockeyColours, "");   // don't want owner's name in SVG ownercolours.getOwnerName());
-                 colours = parser.parse();
+
+                colours = meroService.createFullRacingColours(strLanguage, strJockeyColours, "").getColours();
+
             }
         return colours;
     }
@@ -356,7 +348,7 @@ public void generateRegisteredOwnersSVG(ENEStatement statement, String strVersio
     }
 
     public String getOrganisationYearFileName(String strFileName, String strOrganisation, int nYear) {
-        String strFullDirectory = ENEColoursEnvironment.getInstance().getVariable("SVG_OUTPUT_DIRECTORY") + ENEColoursEnvironment.getInstance().getVariable("SVG_IMAGE_PATH") + "organisations/" + strOrganisation + "/" + nYear + "/mero";
+        String strFullDirectory = SVG_OUTPUT_DIRECTORY + SVG_IMAGE_PATH + "organisations/" + strOrganisation + "/" + nYear + "/mero";
         String strFullFileName = strFullDirectory + "/" + strFileName + ".svg";
         return strFullFileName;
     }

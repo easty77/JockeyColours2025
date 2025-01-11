@@ -10,8 +10,8 @@ import ene.eneform.colours.database.*;
 import ene.eneform.colours.web.rp.RacingPostCourse;
 import ene.eneform.mero.colours.ENERacingColours;
 import ene.eneform.mero.config.ENEColoursEnvironment;
-import ene.eneform.mero.factory.ENEMeroFactory;
 import ene.eneform.mero.factory.SVGFactoryUtils;
+import ene.eneform.mero.service.MeroService;
 import ene.eneform.smartform.bos.*;
 import ene.eneform.smartform.factory.SmartformHorseFactory;
 import ene.eneform.utils.*;
@@ -19,6 +19,7 @@ import org.apache.batik.anim.dom.SVGDOMImplementation;
 import org.apache.batik.svggen.SVGGeneratorContext;
 import org.apache.batik.svggen.SVGGraphics2D;
 import org.apache.commons.lang3.text.WordUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -41,7 +42,13 @@ import java.util.*;
  * @author Simon
  */
 public class CareerSVGFactory {
+    private MeroService meroService;
     
+    @Value("${ene.eneform.mero.SVG_OUTPUT_DIRECTORY}")
+    private static String SVG_OUTPUT_DIRECTORY;
+    @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
+    private static String SVG_IMAGE_PATH;
+
     private static boolean sm_b3RowHeader = false;  // revamped 2 row header is superior!
     private static boolean sm_bQuestionMark = false;     // display missing runners with question marks
     private static boolean sm_bDisplayViewbox = false;
@@ -189,8 +196,9 @@ public class CareerSVGFactory {
         {"Epsom Downs", "Epsom"}
     };
        
-    public CareerSVGFactory(ENEStatement statement, CareerDefinition career, boolean bText)
+    public CareerSVGFactory(MeroService meroService, ENEStatement statement, CareerDefinition career, boolean bText)
     {
+        this.meroService = meroService;
         m_statement = statement;
         m_career = career;
         m_strId = career.getId();
@@ -220,37 +228,7 @@ public class CareerSVGFactory {
         m_bColumnTitles = m_career.hasColumnTitles();
     }
     
-    public static void generateCareers(ENEStatement statement, String[] astrHorses, boolean bText)
-    {
-        for(int i = 0; i < astrHorses.length; i++)
-        {
-            try
-            {
-                (new CareerSVGFactory(statement, CareerEnvironment.getInstance().getCareer(astrHorses[i]), bText)).generateCareer(true); 
-            }
-            catch(IOException e)
-            {
-                // carry on to next
-                System.out.println("generateCareers IOException: " + astrHorses[i]);
-            }
-        }
-    }
-    
-public static void generateCareersHTML(ENEStatement statement, String[] astrHorses)
-    {
-        for(int i = 0; i < astrHorses.length; i++)
-        {
-            try
-            {
-                (new CareerSVGFactory(statement, CareerEnvironment.getInstance().getCareer(astrHorses[i]), true)).generateCareerHTML(); 
-            }
-            catch(IOException e)
-            {
-                // carry on to next
-                System.out.println("generateCareersHTML IOException: " + astrHorses[i]);
-            }
-        }
-    }
+
             
 public void generateCareer(boolean bCompress) throws IOException
 {
@@ -265,7 +243,7 @@ public void generateCareerSVG(boolean bCompress) throws IOException
     String strDirectory="horses";
     if (m_career.isMeeting())
         strDirectory = "meetings";
-    String strFullDirectory = ENEColoursEnvironment.getInstance().getVariable("SVG_OUTPUT_DIRECTORY") + ENEColoursEnvironment.getInstance().getVariable("SVG_IMAGE_PATH") + strDirectory;
+    String strFullDirectory = SVG_OUTPUT_DIRECTORY + SVG_IMAGE_PATH + strDirectory;
     if (!m_bText)
         strFullDirectory += "/notext";
 
@@ -1114,7 +1092,7 @@ public void generateCareerHTML() throws IOException
     if (m_career.isMeeting())
         strDirectory = "meetings";
     
-    String strFullDirectory = ENEColoursEnvironment.getInstance().getVariable("SVG_OUTPUT_DIRECTORY") + "/" + strDirectory;
+    String strFullDirectory = SVG_OUTPUT_DIRECTORY + "/" + strDirectory;
     // to do: use template_bs
     String strTemplateHTML = strFullDirectory + "/template_bs.html";
     String strOutHTML = strFullDirectory + "/" + m_career.getFileName().replaceAll(" ", "_") + ".html";
@@ -1377,7 +1355,7 @@ public int generateSVGMero(String strColours, String strName, String strCellTitl
             ENERacingColours colours = null;
             if (!"Unknown".equals(strColours))
                 colours = ENERacingColoursFactory.createColours(m_statement, "en", strColours);  
-            ENEMeroFactory.addJockeySilks(m_svgGenerator, m_ctx, colours, strId, m_strLanguage, 1, String.valueOf(++m_nReferenceCount), m_hmDefinitions, "white");  // Careers need white background
+            meroService.addJockeySilks(m_svgGenerator, m_ctx, colours, strId, m_strLanguage, 1, String.valueOf(++m_nReferenceCount), m_hmDefinitions, "white");  // Careers need white background
             m_alDescriptions.add(strId);
         }
         String strDisplayId = nRows + "_" + dColumns + "_1";
@@ -1406,7 +1384,7 @@ public int generateSVGMero1(AdditionalRaceInstance race, String strCellTitle) th
         {
             ENERacingColours colours = ENERacingColoursFactory.createRunnerColours(ENEColoursEnvironment.DEFAULT_LANGUAGE, runner);
 
-            ENEMeroFactory.addJockeySilks(m_svgGenerator, m_ctx, colours, strColoursId, m_strLanguage, 1, String.valueOf(++m_nReferenceCount), m_hmDefinitions, "white");       // Careers need white background
+            meroService.addJockeySilks(m_svgGenerator, m_ctx, colours, strColoursId, m_strLanguage, 1, String.valueOf(++m_nReferenceCount), m_hmDefinitions, "white");       // Careers need white background
 
             m_alDescriptions.add(strColoursId);
         }
@@ -1444,7 +1422,7 @@ public int generateSVGMero23(AdditionalRaceInstance race, String strCellTitle) t
                 {
                     ENERacingColours colours = ENERacingColoursFactory.createRunnerColours(ENEColoursEnvironment.DEFAULT_LANGUAGE, runner);
 
-                    ENEMeroFactory.addJockeySilks(m_svgGenerator, m_ctx, colours, strColoursId, m_strLanguage, 1, String.valueOf(++m_nReferenceCount), m_hmDefinitions, "white");   // Careers need white background
+                    meroService.addJockeySilks(m_svgGenerator, m_ctx, colours, strColoursId, m_strLanguage, 1, String.valueOf(++m_nReferenceCount), m_hmDefinitions, "white");   // Careers need white background
 
                     m_alDescriptions.add(strColoursId);
                 }
@@ -1490,7 +1468,7 @@ public int generateSVGMero123(AdditionalRaceInstance race, String strCellTitle, 
                 ENERacingColours colours = null;
                 if (!"Unknown".equals(strColoursId))
                     colours = ENERacingColoursFactory.createRunnerColours(ENEColoursEnvironment.DEFAULT_LANGUAGE, runner);
-                Element mero = ENEMeroFactory.buildJockeySilks(m_ctx, colours, strColoursId, m_strLanguage, 1, String.valueOf(++m_nReferenceCount), m_hmDefinitions, "white");  // Careers need white background
+                Element mero = meroService.buildJockeySilks(m_ctx, colours, strColoursId, m_strLanguage, 1, String.valueOf(++m_nReferenceCount), m_hmDefinitions, "white");  // Careers need white background
                 m_meroDefs.appendChild(mero);
 
                 m_alDescriptions.add(strColoursId);
@@ -1707,7 +1685,7 @@ public void drawColoursCell(String strJockeyColours, String strName, int nXOffse
     // need to express scale depending on dimensions of cell
     ENERacingColours colours = ENERacingColoursFactory.createColours(m_statement, "en", strJockeyColours);
 
-    ENEMeroFactory.addJockeySilks(m_svgGenerator, m_ctx, colours, "COLOURS", m_strLanguage, 3.8, String.valueOf(++m_nReferenceCount), m_hmDefinitions, "white");        // Careers need white background
+    meroService.addJockeySilks(m_svgGenerator, m_ctx, colours, "COLOURS", m_strLanguage, 3.8, String.valueOf(++m_nReferenceCount), m_hmDefinitions, "white");        // Careers need white background
 
     displayMeroReference("colours1", "COLOURS", nXOffset - 1510, nYOffset - 870, null, false);
 

@@ -4,6 +4,7 @@ import ene.eneform.mero.fabric.ENEFabricItem;
 import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.tartan.ENETartan;
 import ene.eneform.mero.tartan.ENETartanUtils;
+import lombok.RequiredArgsConstructor;
 
 import java.awt.Color;
 import java.util.StringTokenizer;
@@ -12,42 +13,44 @@ import java.util.StringTokenizer;
  *
  * @author Simon
  */
+
 public class ENETartanItem extends ENEFabricItem {
+    private final ENEColoursEnvironment environment;
 
 	private boolean m_bDarkened = true;
 	private int m_nPivots;
 	private String m_strSett;
         private int m_nThreadCount = 0;
 
-        public ENETartanItem()
+        public ENETartanItem(ENEColoursEnvironment environment, ENETartan tartan)
         {
-            // data will be provided via setData
-        }
-
-        public ENETartanItem(ene.eneform.mero.tartan.ENETartan tartan)
-        {
+            this.environment = environment;
             m_strSett = tartan.getSett();
             m_nPivots = tartan.getNrPivots();
             m_strResourceName = tartan.getId();
             m_nThreadCount = ENETartanUtils.calculateThreadCount(m_strSett, m_nPivots);
         }
 
-        public ENETartanItem(String strName, String strSett)
+        public ENETartanItem(ENEColoursEnvironment environment, String strName, String strSett)
         {
-            this(strName, strSett, ENEColoursEnvironment.getInstance().getTartanShrinkFactor(), 1, true);
+            this(environment, strName, strSett, null,1, true);
         }
 
-        public ENETartanItem(String strName, String strSett, int nPivots)
+        public ENETartanItem(ENEColoursEnvironment environment, String strName, String strSett, int nPivots)
         {
-            this(strName, strSett, ENEColoursEnvironment.getInstance().getTartanShrinkFactor(), nPivots, true);
+            this(environment, strName, strSett, null, nPivots, true);
         }
 
-        public ENETartanItem(String strName, String strSett, double dShrinkFactor, int nPivots, boolean bDarkened)
+        public ENETartanItem(ENEColoursEnvironment environment, String strName, String strSett, Double dShrinkFactor, int nPivots, boolean bDarkened)
         {
+            this.environment = environment;
             m_strName = strName;
             m_strResourceName = strName;
             m_strSett = strSett;
             m_nPivots = nPivots;
+            if (dShrinkFactor == null) {
+                dShrinkFactor = environment.getTartanShrinkFactor();
+            }
             m_dShrinkFactor = dShrinkFactor;
             m_bDarkened = bDarkened;
             m_nThreadCount = ENETartanUtils.calculateThreadCount(m_strSett, m_nPivots);
@@ -55,7 +58,7 @@ public class ENETartanItem extends ENEFabricItem {
 
         public void setData(String strTartan)
         {
-            ENETartan tartan = ENEColoursEnvironment.getInstance().getTartan(strTartan);
+            ENETartan tartan = environment.getTartan(strTartan);
             if (tartan != null)
             {
                 m_strResourceName = tartan.getId();

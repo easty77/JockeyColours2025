@@ -1,6 +1,6 @@
 package ene.eneform.colours.domain;
 
-public interface OwnerColours {
+public interface OwnerColours extends RacingColours {
     public String getJacket();
     public String getSleeves();
     public String getCap();

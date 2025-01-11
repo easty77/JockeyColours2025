@@ -13,6 +13,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.xml.parsers.SAXParser;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -22,17 +24,17 @@ import org.xml.sax.helpers.DefaultHandler;
  * @author Simon
  */
 public class ConfigExpands extends ConfigXML {
+    @Value("${ene.eneform.mero.expands}")
+    private static String FILE_NAME;
+
     // by language
     private HashMap<String, ENEExpands> m_hmLanguages = new HashMap<String, ENEExpands>();
  
-   public ConfigExpands(SAXParser parser, String strFileName)
+   public ConfigExpands(SAXParser parser, ConfigColours cc, ConfigPatterns cp, ConfigFabrics cf)
     {
-        super(parser, strFileName);
-     }
-    public boolean load(ene.eneform.mero.config.ConfigColours cc, ConfigPatterns cp, ConfigFabrics cf)
-    {
+        super(parser, FILE_NAME);
         setHandler(new ENEExpandsHandler(cc, cp, cf));
-        return loadXML();
+        loadXML();
     }
     public ArrayList<ENEColoursParserExpand> getExpandList(String strLanguage)
     {

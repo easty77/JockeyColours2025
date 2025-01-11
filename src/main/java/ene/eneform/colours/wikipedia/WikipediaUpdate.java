@@ -23,6 +23,7 @@ import ene.eneform.utils.ExecuteURL;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.wikipedia.*;
 
@@ -46,6 +47,11 @@ import java.util.regex.Pattern;
 @Service
 @RequiredArgsConstructor
 public class WikipediaUpdate {
+    @Value("${ene.eneform.mero.SVG_OUTPUT_DIRECTORY}")
+    private static String SVG_OUTPUT_DIRECTORY;
+    @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
+    private static String SVG_IMAGE_PATH;
+
     private final WikipediaService wikipediaService;
 private Pattern sm_refRP = Pattern.compile("\\{\\{Racing Post[a-z0-9\\|\\-\\s]+\\}\\}");
 private Pattern sm_refRPDate = Pattern.compile("\\/[\\d]+\\-[\\d]+\\-[\\d]+\\/");
@@ -724,7 +730,7 @@ private Pattern sm_refRPDate = Pattern.compile("\\/[\\d]+\\-[\\d]+\\-[\\d]+\\/")
             {
                 strContent += astrOwners[i] + "\n";
                 String strFileName = "owner_" + astrOwners[i] + ".svg";
-                String strDirectory = ENEColoursEnvironment.getInstance().getVariable("SVG_OUTPUT_DIRECTORY") + ENEColoursEnvironment.getInstance().getVariable("SVG_IMAGE_PATH") + "wikipedia/owners/";
+                String strDirectory = SVG_OUTPUT_DIRECTORY + SVG_IMAGE_PATH + "wikipedia/owners/";
                 File file = new File(strDirectory + strFileName);
                 Calendar cal = Calendar.getInstance();
                 String strContent1 = getUploadTextCommons(strFileName, sm_strUser, sm_dateFormat.format(cal.getTime()));

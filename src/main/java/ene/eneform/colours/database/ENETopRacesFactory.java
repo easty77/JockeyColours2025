@@ -9,11 +9,11 @@ import ene.eneform.colours.bos.ENETopRace;
 import ene.eneform.colours.bos.ENETopRaceWinner;
 import ene.eneform.colours.service.WikipediaService;
 import ene.eneform.mero.colours.ENERacingColours;
-import ene.eneform.mero.config.ENEColoursEnvironment;
-import ene.eneform.mero.parse.ENEColoursParser;
+import ene.eneform.mero.service.MeroService;
 import ene.eneform.utils.DbUtils;
 import ene.eneform.utils.ENEStatement;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
@@ -30,7 +30,13 @@ import java.util.ArrayList;
 @Service
 @RequiredArgsConstructor
 public class ENETopRacesFactory {
+    @Value("${ene.eneform.mero.SVG_OUTPUT_DIRECTORY}")
+    private static String SVG_OUTPUT_DIRECTORY;
+    @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
+    private static String SVG_IMAGE_PATH;
+
 private final WikipediaService wikipediaService;
+    private final MeroService meroService;
 public ENETopRace getTopRace(ENEStatement statement, int nRace)
 {
     ENETopRace race = null;
@@ -152,7 +158,7 @@ public ArrayList<ENETopRaceWinner> getTopRaceWinners(ENEStatement statement, Str
             ENETopRaceWinner winner = alWinners.get(i);
             int nYear = winner.getYear();
             String strColours = winner.getColours();
-            ENERacingColours colours = new ENEColoursParser("en", strColours, "").parse();
+            ENERacingColours colours = meroService.createFullRacingColours("en", strColours, "").getColours();
             try
             {
                 String strFileName = getTopRaceFileName(String.valueOf(nYear), nRace);
@@ -183,7 +189,7 @@ public ArrayList<ENETopRaceWinner> getTopRaceWinners(ENEStatement statement, Str
     }
 
     public String getTopRaceFileName(String strFileName, int nRace) {
-        String strFullDirectory = ENEColoursEnvironment.getInstance().getVariable("SVG_OUTPUT_DIRECTORY") + ENEColoursEnvironment.getInstance().getVariable("SVG_IMAGE_PATH") + "races/" + nRace + "/mero";
+        String strFullDirectory = SVG_OUTPUT_DIRECTORY + SVG_IMAGE_PATH + "races/" + nRace + "/mero";
         String strFullFileName = strFullDirectory + "/" + strFileName + ".svg";
         return strFullFileName;
     }

@@ -25,11 +25,16 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+
+import lombok.RequiredArgsConstructor;
 import org.apache.batik.anim.dom.SVGDOMImplementation;
 import org.apache.batik.anim.dom.SVGOMPatternElement;
 import org.apache.batik.anim.dom.SVGOMTextElement;
 import org.apache.batik.svggen.SVGGeneratorContext;
 import org.apache.batik.svggen.SVGGraphics2D;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -43,6 +48,8 @@ import org.w3c.dom.svg.SVGGElement;
  * @author Simon
  */
 public class ENEMeroFactory {
+    private ENEColoursEnvironment environment;
+    
 public static final int MERO_VIEWBOX_X = 194; // 
 public static final int MERO_VIEWBOX_Y = 200;   // from 205 before 1.1 scale applied
 public static final int MERO_VIEWBOX_WIDTH = 207;   // 
@@ -66,8 +73,9 @@ private Point m_capOrigin = MERO_CAP_ORIGIN;
 
 private char SPLIT_CHAR = '-';
 
-public ENEMeroFactory(ENERacingColours racingcolours, String strLanguage)
+public ENEMeroFactory(ENEColoursEnvironment environment, ENERacingColours racingcolours, String strLanguage)
 {
+    this.environment = environment;
     // for standalone Mero images
     m_racingcolours = racingcolours;
     m_strLanguage = strLanguage;
@@ -76,9 +84,10 @@ public ENEMeroFactory(ENERacingColours racingcolours, String strLanguage)
     // Create an instance of org.w3c.dom.Document.
     m_document = domImpl.createDocument(SVGFactoryUtils.SVG_NAMESPACE, "svg", null);
 }
-public ENEMeroFactory(ENERacingColours racingcolours, String strLanguage, Document document, String strUniqueId, HashMap<String,Element> hmDefintions)
+public ENEMeroFactory(ENEColoursEnvironment environment, ENERacingColours racingcolours, String strLanguage, Document document, String strUniqueId, HashMap<String,Element> hmDefintions)
 {
     // called when ading multiple Mero images to a document
+    this.environment = environment;
     m_racingcolours = racingcolours;
     m_strLanguage = strLanguage;
     m_document = document;
@@ -166,7 +175,7 @@ public Document generateSVGDocument(String strMeroId, double dScale, String strB
     for(int i = 0; i < astrSVG.length; i++)
     {
         String strTopLevelElement = astrSVG[i];
-        Document svgDoc = ENEColoursEnvironment.getInstance().getSVGDocument(strTopLevelElement.toLowerCase());
+        Document svgDoc = environment.getSVGDocument(strTopLevelElement.toLowerCase());
         
         Element elementParent = m_elementRoot;
         m_alReferences.add(strTopLevelElement);
@@ -192,7 +201,7 @@ public Document generateSVGDocument(String strMeroId, double dScale, String strB
                 {
                     ENEColoursElementPattern pattern = iter.next();
                     ArrayList<ENEFillItem> patternColours = pattern.getColourList();
-                    String strMapping = ENEColoursEnvironment.getInstance().getPatternMapping("ENE"  + astrSVG[i], pattern.getPattern(), m_strLanguage);
+                    String strMapping = environment.getPatternMapping("ENE"  + astrSVG[i], pattern.getPattern(), m_strLanguage);
                     if (strMapping.equals("text"))
                     {
                         createTextPattern(newNode, astrSVG[i], strMapping, pattern.getAdditionalText(), colour0, patternColours);
@@ -264,12 +273,12 @@ private void createTextPattern(Element parentNode, String strElement, String str
      g.appendChild(textNode);
 
      // calculate size
-     Rectangle rect = ENEColoursEnvironment.getInstance().getTextBBox(svgTextDoc, (SVGOMTextElement)textNode);
+     Rectangle rect = environment.getTextBBox(svgTextDoc, (SVGOMTextElement)textNode);
 
-     ENEPatternAction action = ENEColoursEnvironment.getInstance().getPatternAction("ENE" + strElement, strMapping, "en");
+     ENEPatternAction action = environment.getPatternAction("ENE" + strElement, strMapping, "en");
      if ((action == null) || (action.getClass().getName().indexOf("SVGAction") < 0)) // need full name as use enclosed classes
      {
-         action = new ENEJacketSVGAction("text");
+         action = new ENEJacketSVGAction(environment, "text");
      }
      // place in specified location
      textNode = getSVGActionElement(svgTextDoc, g, ((ENESVGAction)action).getMeroRectangles(), rect);
@@ -355,19 +364,19 @@ private Element createSVGItem(Document document, Document svgDoc, String strElem
     {
         //System.out.println("Looking for: " + strId);
         // might be a unstranslated tartan
-        if (ENEColoursEnvironment.getInstance().isFabric(strId, "en"))
+        if (environment.isFabric(strId, "en"))
         {
-            strId = ENEColoursEnvironment.getInstance().getFabricItem(strId, "en").getResourceName();
+            strId = environment.getFabricItem(strId, "en").getResourceName();
         }
         // or a translated one
-        ENETartan tartan = ENEColoursEnvironment.getInstance().getTartan(strId);
+        ENETartan tartan = environment.getTartan(strId);
         if ((tartan != null) && (m_document.getElementById(strId) == null))
         {
             ENETartanUtils.generateSVGTartanElement(document, m_elementDefs, tartan);
         }
         else
         {
-            ENEPatternAction action = ENEColoursEnvironment.getInstance().getPatternAction("ENE" + strElement, strId, "en");
+            ENEPatternAction action = environment.getPatternAction("ENE" + strElement, strId, "en");
             if ((action != null) && (action.getClass().getName().indexOf("SVGAction") > 0)) // need full name as use enclosed classes
             {
                 oldNode = getSVGActionElement((ENESVGAction)action);
@@ -430,10 +439,10 @@ private Element customiseSVGItem(Document document, Document svgDoc, String strE
                 //addNewDefinitionElement(elementPattern, elementPattern.getAttributeNS(null, "id"));
                
                 // might be a tartan
-                if (ENEColoursEnvironment.getInstance().isFabric(strPattern, "en"))
-                    strPattern = ENEColoursEnvironment.getInstance().getFabricItem(strPattern, "en").getResourceName();
+                if (environment.isFabric(strPattern, "en"))
+                    strPattern = environment.getFabricItem(strPattern, "en").getResourceName();
 
-                ENETartan tartan = ENEColoursEnvironment.getInstance().getTartan(strPattern);
+                ENETartan tartan = environment.getTartan(strPattern);
                 if (tartan != null)
                 {
                     ENETartanUtils.generateSVGTartanElement(document, m_elementDefs, tartan);
@@ -455,7 +464,7 @@ private Element customiseSVGItem(Document document, Document svgDoc, String strE
 private Element getSVGActionElement(ENESVGAction action)
 {
    String strSVGName = action.getSVGName();
-   SVGDocument svgdoc = ENEColoursEnvironment.getInstance().getSVGDocument(strSVGName);
+   SVGDocument svgdoc = environment.getSVGDocument(strSVGName);
     //System.out.println("Pattern svg: " + strId + "-" + strSVGName);
     if (svgdoc != null)
     {
@@ -466,7 +475,7 @@ private Element getSVGActionElement(ENESVGAction action)
             Element node = (Element) gList.item(0);
             System.out.println("SVG loaded: " + strSVGName);
     
-            Rectangle rect = ENEColoursEnvironment.getInstance().getGBBox(svgdoc, (SVGGElement) node);
+            Rectangle rect = environment.getGBBox(svgdoc, (SVGGElement) node);
             svg = (Element)svg.cloneNode(true);
            return getSVGActionElement(svgdoc, (Element)svg.getElementsByTagNameNS(SVGFactoryUtils.SVG_NAMESPACE, "g").item(0), action.getMeroRectangles(), rect);
         }
@@ -596,9 +605,9 @@ private String convertColourReference(String strReference, ENEFillItem colour0, 
             {
                 String strColour0 = colour0.getText();
                 if ((colour0 instanceof ENETartanItem || colour0 instanceof ENEFabricItem)
-                    && (ENEColoursEnvironment.getInstance().isFabric(strColour0, "en")))
+                    && (environment.isFabric(strColour0, "en")))
                 {    
-                    strColour0 = ENEColoursEnvironment.getInstance().getFabricItem(strColour0, "en").getResourceName();
+                    strColour0 = environment.getFabricItem(strColour0, "en").getResourceName();
                     return "url(#" + strColour0  + ")";
                 }
                 else
@@ -612,9 +621,9 @@ private String convertColourReference(String strReference, ENEFillItem colour0, 
                 ENEFillItem colourN = patternColours.get(nColour - 1);
                 String strColourN = colourN.getText();
                 if ((colourN instanceof ENETartanItem)
-                    && (ENEColoursEnvironment.getInstance().isFabric(strColourN, "en")))
+                    && (environment.isFabric(strColourN, "en")))
                 {    
-                    strColourN = ENEColoursEnvironment.getInstance().getFabricItem(strColourN, "en").getResourceName();
+                    strColourN = environment.getFabricItem(strColourN, "en").getResourceName();
                     return "url(#" + strColourN  + ")";
                 }
                 else
@@ -700,8 +709,8 @@ private String extractAttributePattern(Element element, String strAttribute)
             // eliminate any colours
             if ((strPattern.indexOf("colour") != 0))
             {
-                if ((m_strUniqueId != null) && (!ENEColoursEnvironment.getInstance().isFabric(strPattern, m_strLanguage))
-                     && (!ENEColoursEnvironment.getInstance().isTartan(strPattern)))
+                if ((m_strUniqueId != null) && (!environment.isFabric(strPattern, m_strLanguage))
+                     && (!environment.isTartan(strPattern)))
                     element.setAttributeNS(null, strAttribute, "url(#" + strPattern + "_" + m_strUniqueId + ")");         // need to make unique
                 return strPattern;
             }
@@ -736,18 +745,5 @@ private String extractAttributeReference(Element element, String strAttribute)
     }
     return null;
 }
-    public static String addJockeySilks(SVGGraphics2D svgGenerator, SVGGeneratorContext ctx, ENERacingColours colours, String strColours, String strLanguage, double dScale, String strSuffix, HashMap<String,Element> hmDefintions, String strBackgroundColour) 
-    {
-        // called when ading multiple Mero images to a document
-        Element element = buildJockeySilks(ctx, colours, strColours, strLanguage, dScale, strSuffix, hmDefintions, strBackgroundColour);
-        svgGenerator.getDOMTreeManager().addOtherDef(element);
-        return element.getAttributeNS(null, "id");
-    }
-    public static Element buildJockeySilks(SVGGeneratorContext ctx, ENERacingColours colours, String strColours, String strLanguage, double dScale, String strSuffix, HashMap<String,Element> hmDefinitions, String strBackgroundColour) {
-        // called when ading multiple Mero images to a document
-        Document document = ctx.getDOMFactory();
-        ENEMeroFactory factory = new ENEMeroFactory(colours, strLanguage, document, strSuffix, hmDefinitions); //use strSuffix to differentiate between multiple instances of the same SVG pattern
-        document = factory.generateSVGDocument(strColours, dScale, strBackgroundColour);     // use strColours as id
-        return document.getDocumentElement();
-    }
+
  }

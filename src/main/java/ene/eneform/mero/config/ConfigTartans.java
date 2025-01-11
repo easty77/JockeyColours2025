@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 import javax.xml.parsers.SAXParser;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -21,18 +23,18 @@ import org.xml.sax.helpers.DefaultHandler;
  * @author Simon
  */
 public class ConfigTartans extends ConfigXML {
+    @Value("${ene.eneform.mero.tartans}")
+    private static String FILE_NAME;
+
     // no language
         private HashMap<String,ENETartan> m_hmTartans = new HashMap<String,ENETartan>();
     private ArrayList<ENETartan> m_alTartans = new ArrayList<ENETartan>();
 
-    public ConfigTartans(SAXParser parser, String strFileName)
+    public ConfigTartans(SAXParser parser)
     {
-        super(parser, strFileName);
-    }
-    public boolean load()
-    {
+        super(parser, FILE_NAME);
         setHandler(new ENETartansHandler());
-        return loadXML();
+       loadXML();
     }
   public Set<String> getTartans()
     {

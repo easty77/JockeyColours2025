@@ -5,6 +5,7 @@
 package ene.eneform.mero.action;
 
 import ene.eneform.mero.action.ENESVGAction;
+import ene.eneform.mero.config.ENEColoursEnvironment;
 
 import java.awt.*;
 import java.io.Serializable;
@@ -24,9 +25,9 @@ public class ENECapSVGAction extends ene.eneform.mero.action.ENESVGAction implem
                 {new Point(MERO_CAP_XOFFSET+10, MERO_CAP_YOFFSET+10)}
             };
        
-       public ENECapSVGAction(String strSVGName)
+       public ENECapSVGAction(ENEColoursEnvironment environment, String strSVGName)
        {
-                super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+                super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
        }
        public static class FiveAround extends ene.eneform.mero.action.ENESVGAction
        {
@@ -43,9 +44,9 @@ public class ENECapSVGAction extends ene.eneform.mero.action.ENESVGAction implem
             };
             private static int[] sm_rotate_degrees = {0, -70, -140, -220, -290};
            
-            public FiveAround(String strSVGName)
+            public FiveAround(ENEColoursEnvironment environment, String strSVGName)
             {
-                super(strSVGName, sm_rectangle_points, sm_size_rectangle, sm_rotate_degrees);
+                super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle, sm_rotate_degrees);
             }
       }
       public static class Front extends ENESVGAction
@@ -62,9 +63,9 @@ public class ENECapSVGAction extends ene.eneform.mero.action.ENESVGAction implem
             }
             };
             
-            public Front(String strSVGName)
+            public Front(ENEColoursEnvironment environment, String strSVGName)
             {
-                super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+                super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
             }
       }
 }

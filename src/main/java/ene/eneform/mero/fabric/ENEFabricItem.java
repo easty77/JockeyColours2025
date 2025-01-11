@@ -14,7 +14,10 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.MemoryImageSource;
 
+import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.utils.ENEFillItem;
+import lombok.RequiredArgsConstructor;
+
 import java.awt.Rectangle;
 import java.awt.Shape;
 
@@ -22,6 +25,7 @@ import java.awt.Shape;
  *
  * @author Simon
  */
+@RequiredArgsConstructor
 public abstract class ENEFabricItem extends ENEFillItem {
 
     protected String m_strName = "";
@@ -31,10 +35,6 @@ public abstract class ENEFabricItem extends ENEFillItem {
     protected double m_dShrinkFactor = 1.0; // show as is
     protected Color m_pixels[];
     protected boolean m_bInitialised = false;
-
-    public ENEFabricItem()
-    {
-    }
 
  	public String getName()
 	{

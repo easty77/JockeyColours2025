@@ -9,6 +9,7 @@ import java.util.HashMap;
 import javax.xml.parsers.SAXParser;
 
 import ene.eneform.mero.config.ConfigXML;
+import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -18,18 +19,18 @@ import org.xml.sax.helpers.DefaultHandler;
  * @author Simon
  */
 public class ConfigAbbreviations extends ConfigXML {
-    
-     // abbreviations.xml
+
+    @Value("${ene.eneform.mero.abbreviations}")
+    private static String FILE_NAME;
+
+    // abbreviations.xml
      private HashMap<String, ENEAbbreviations> m_hmLanguages = new HashMap<String, ENEAbbreviations>();
      
-    public ConfigAbbreviations(SAXParser parser, String strFileName)
+    public ConfigAbbreviations(SAXParser parser)
     {
-        super(parser, strFileName);
-    }
-    public boolean load()
-    {
+        super(parser, FILE_NAME);
         setHandler(new ENEAbbreviationsHandler());
-        return loadXML();
+        loadXML();
     }
     public String replaceAbbreviation(String strOriginal, String strLanguage)
     {

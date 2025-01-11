@@ -57,4 +57,7 @@ this.version = 0;
         this.version++;
         return this;
     }
+    public String getUnresolved() {
+        return "";
+    }
 }

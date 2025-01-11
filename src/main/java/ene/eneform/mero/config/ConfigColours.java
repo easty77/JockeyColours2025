@@ -15,6 +15,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 import javax.xml.parsers.SAXParser;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -24,18 +26,18 @@ import org.xml.sax.helpers.DefaultHandler;
  * @author Simon
  */
 public class ConfigColours extends ConfigXML {
-    
+
+    @Value("${ene.eneform.mero.colours}")
+    private static String FILE_NAME;
+
     // by language
     private HashMap<String, ENEColoursConfig> m_hmLanguages = new HashMap<String, ENEColoursConfig>();
      
-    public ConfigColours(SAXParser parser, String strFileName)
+    public ConfigColours(SAXParser parser)
     {
-        super(parser, strFileName);
-    }
-    public boolean load()
-    {
+        super(parser, FILE_NAME);
         setHandler(new ENEColoursHandler());
-        return loadXML();
+        loadXML();
     }
      public boolean hasColour(String strColour, String strLanguage)
      {

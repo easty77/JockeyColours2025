@@ -5,6 +5,7 @@
 package ene.eneform.mero.action;
 
 import ene.eneform.mero.action.ENESVGAction;
+import ene.eneform.mero.config.ENEColoursEnvironment;
 
 import java.awt.*;
 import java.io.Serializable;
@@ -22,9 +23,9 @@ public class ENESleevesSVGAction extends ene.eneform.mero.action.ENESVGAction im
                 {new Point(205, 360), new Point(350, 360)}
             };
 
-       public ENESleevesSVGAction(String strSVGName)
+       public ENESleevesSVGAction(ENEColoursEnvironment environment, String strSVGName)
        {
-           super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+           super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
        }
         public static class Three extends ENESVGAction {
     
@@ -35,9 +36,9 @@ public class ENESleevesSVGAction extends ene.eneform.mero.action.ENESVGAction im
                 new Point(355, 360), new Point(360, 410), new Point(355, 460)}  // left sleeve
             };
 
-       public Three(String strSVGName)
+       public Three(ENEColoursEnvironment environment, String strSVGName)
        {
-           super(strSVGName, sm_rectangle_points, sm_size_rectangle);
+           super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
        }
 }
 }

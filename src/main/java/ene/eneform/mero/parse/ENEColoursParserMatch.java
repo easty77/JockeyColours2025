@@ -1,8 +1,10 @@
 package ene.eneform.mero.parse;
 
 import ene.eneform.mero.config.ENEColoursEnvironment;
-import java.io.Serializable;
+import lombok.extern.slf4j.Slf4j;
 
+import java.io.Serializable;
+@Slf4j
 public class ENEColoursParserMatch implements Serializable
 {
     private int m_nStart;
@@ -29,7 +31,7 @@ public class ENEColoursParserMatch implements Serializable
         {
             String strStart = strDescription.substring(0, m_nStart);
             String strEnd = strDescription.substring(m_nEnd);
-            ENEColoursEnvironment.getInstance().debug("Non-zero string start returns:" + strStart + strEnd);
+            log.info("Non-zero string start returns:" + strStart + strEnd);
             strUpdated = strStart + strEnd;
         }
 

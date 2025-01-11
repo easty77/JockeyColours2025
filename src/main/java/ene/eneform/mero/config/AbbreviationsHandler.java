@@ -1,12 +1,15 @@
 package ene.eneform.mero.config;
 
-import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.utils.MeroUtils;
+import org.springframework.stereotype.Service;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ENEAbbreviations {
+public class AbbreviationsHandler {
 
 	protected static final String[] sm_astrIgnoreText = 
         {
@@ -25,12 +28,22 @@ public class ENEAbbreviations {
         protected static Pattern sm_hyphen = Pattern.compile("\\-");
         protected static Pattern sm_space = Pattern.compile("[\\s]+");
         protected static Pattern sm_comma = Pattern.compile(",");
-        
-     public static String preparse(String strDescription, String strLanguage)
+
+    private final ConfigAbbreviations configAbbreviations;
+    private final ConfigColours configColours;
+    private final ConfigFabrics configFabrics;
+
+    public AbbreviationsHandler(ConfigAbbreviations configAbbreviations, ConfigColours configColours,
+                                    ConfigFabrics configFabrics) {
+        this.configAbbreviations = configAbbreviations;
+        this.configColours = configColours;
+        this.configFabrics = configFabrics;
+        }
+     public String preparse(String strDescription, String strLanguage)
     {
          // need to preserve text in mixed case but need to convert colours to lower case for easy matching
          //Pattern pattern = Pattern.compile("logo|brand|" + ENEColoursEnvironment.getInstance().getFullColourListRegEx());
-         Pattern pattern = Pattern.compile(ENEColoursEnvironment.getInstance().getFullColourListRegEx(strLanguage)); // SE don't put logo on front, sorted by length
+         Pattern pattern = Pattern.compile(getFullColourListRegEx(strLanguage)); // SE don't put logo on front, sorted by length
          strDescription = strDescription.replace(";", ","); // 1968 and previous use ; to separate main colour(s) from rest of description
          Matcher matcher = pattern.matcher(strDescription);
         while (matcher.find())
@@ -44,8 +57,9 @@ public class ENEAbbreviations {
             return strDescription;
     }
 
-	public static String replaceAbbreviations(String strDescription, String strLanguage)
+	public String replaceAbbreviations(String strDescription, String strLanguage)
         {
+            strDescription = preparse(strDescription, strLanguage);
             String strUpdated="";
             // to do: should be array, not hashmap
             if ("en".equalsIgnoreCase(strLanguage))
@@ -90,7 +104,7 @@ public class ENEAbbreviations {
                                 strOriginal = strOriginal.substring(3);  // may need to replace abbreviated colour
                             }
                         }
-                        String strUpdatedItem = ENEColoursEnvironment.getInstance().replaceAbbreviation(strOriginal, strLanguage);
+                        String strUpdatedItem = replaceAbbreviation(strOriginal, strLanguage);
                         if ("fr".equalsIgnoreCase(strLanguage) && strUpdatedItem.equals(strOriginal) 
                                     && (strOriginal.indexOf("-") > 0))
                         {
@@ -110,9 +124,9 @@ public class ENEAbbreviations {
                             {
                                 String strFirst = strUpdatedItem.substring(0, (int)alSplit.get(l));
                                 String strLast = strUpdatedItem.substring((int)alSplit.get(l) + 1);
-                                strUpdatedItem = ENEColoursEnvironment.getInstance().replaceAbbreviation(strFirst, strLanguage)
+                                strUpdatedItem = replaceAbbreviation(strFirst, strLanguage)
                                         + "-" + 
-                                        ENEColoursEnvironment.getInstance().replaceAbbreviation(strLast, strLanguage);
+                                        replaceAbbreviation(strLast, strLanguage);
                                 
                                 if (!strCopy.equals(strUpdatedItem))
                                         break;
@@ -138,5 +152,31 @@ public class ENEAbbreviations {
 
             return strUpdated;
         }
+    private String replaceAbbreviation(String strOriginal, String strLanguage)
+    {
+        if (configAbbreviations != null)
+            return configAbbreviations.replaceAbbreviation(strOriginal, strLanguage);
+
+        return null;
+    }
+    private String getColourListRegEx(String strLanguage)
+    {
+        // problem with order of execution of static elements
+        return configColours.getColourListRegEx(strLanguage);
+        //return "blue|red|black";
+    }
+
+
+    private String getFabricListRegEx(String strLanguage)
+    {
+        return configFabrics.getFabricListRegEx(strLanguage);
+    }
+
+    private String getFullColourListRegEx(String strLanguage)
+    {
+        // including fabrics
+        // 20130222 put fabrics first (as longer)
+        return getFabricListRegEx(strLanguage) + "|" + getColourListRegEx(strLanguage);
+    }
 
 }

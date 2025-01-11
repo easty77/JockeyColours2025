@@ -7,6 +7,7 @@ package ene.eneform.mero.action;
 //import ene.racingcolours.shapes.svg.ENEShapeSVG;
 
 import ene.eneform.mero.action.ENEPatternAction;
+import ene.eneform.mero.colours.ENEColoursElement;
 import ene.eneform.mero.colours.ENEColoursElementPattern;
 import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.utils.ENEFillItem;
@@ -26,6 +27,7 @@ import java.io.Serializable;
  */
     public class ENESVGAction extends ENEPatternAction implements Serializable
     {
+        private ENEColoursEnvironment environment;
         protected String m_strSVGName;
         protected Rectangle[] m_rectangles = new Rectangle[2];
         
@@ -40,12 +42,14 @@ import java.io.Serializable;
         public static int STANDARD_TEMPLATE_TYPE = 0;
         public static int MERO_TEMPLATE_TYPE = 1;
         
-        public ENESVGAction(String strSVGName)
+        public ENESVGAction(ENEColoursEnvironment environment, String strSVGName)
         {
+            this.environment = environment;
             m_strSVGName = strSVGName;
         }
-        public ENESVGAction(String strSVGName, Point[][] points, Dimension[] dimensions, int[] rotateAngles)
+        public ENESVGAction(ENEColoursEnvironment environment, String strSVGName, Point[][] points, Dimension[] dimensions, int[] rotateAngles)
         {
+            this.environment = environment;
             m_strSVGName = strSVGName;
             m_points = points;
             m_dimensions = dimensions;
@@ -53,8 +57,9 @@ import java.io.Serializable;
             m_rotate_degrees = rotateAngles;
             m_bHasRotation = true;
         }
-       public ENESVGAction(String strSVGName, Point[][] points, Dimension[] dimensions)
+       public ENESVGAction(ENEColoursEnvironment environment, String strSVGName, Point[][] points, Dimension[] dimensions)
         {
+            this.environment = environment;
             m_strSVGName = strSVGName;
             m_points = points;
             m_dimensions = dimensions;
@@ -117,7 +122,7 @@ import java.io.Serializable;
 @Override public void drawPattern(Graphics g, ENEFillItem colour, ENEColoursElementPattern pattern, Color pageColour)
 {
     // do nothing for now
-    SVGDocument doc = ENEColoursEnvironment.getInstance().getSVGDocument(m_strSVGName);
+    SVGDocument doc = environment.getSVGDocument(m_strSVGName);
     convertColour(doc, "colour0", colour.getText());
     int nColours = pattern.getColourCount();
     for(int i = 1; i <= nColours; i++)
@@ -127,7 +132,7 @@ import java.io.Serializable;
     
     Rectangle[] aRectangles = getAWTRectangles();
     // TO DO: rotating about centre of rectangle - ideally should be centre of resized image
-    GraphicsNode gn = ENEColoursEnvironment.getInstance().createGraphicsNode(doc);
+    GraphicsNode gn = environment.createGraphicsNode(doc);
     for(int i = 0; i < aRectangles.length; i++)
     {
        fillShape((Graphics2D)g, gn, aRectangles[i]);
@@ -146,7 +151,7 @@ private void convertColour(Document doc, String strId, String strColour)
    g.drawRect((int)rectangle.getX(), (int)rectangle.getY(), (int)rectangle.getWidth(), (int)rectangle.getHeight());
    g.translate(rectangle.getX(), rectangle.getY());
 
-   AffineTransform transform = ENEColoursEnvironment.getInstance().transformGraphicsNode(gn.getBounds(), rectangle);
+   AffineTransform transform = environment.transformGraphicsNode(gn.getBounds(), rectangle);
    
    gn.setTransform(transform);
 

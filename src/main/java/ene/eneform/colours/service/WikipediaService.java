@@ -11,13 +11,14 @@ import ene.eneform.mero.colours.ENERacingColours;
 import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.factory.ENEMeroFactory;
 import ene.eneform.mero.factory.SVGFactoryUtils;
-import ene.eneform.mero.parse.ENEColoursParser;
+import ene.eneform.mero.service.MeroService;
 import ene.eneform.smartform.factory.SmartformRunnerFactory;
 import ene.eneform.utils.FileUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 
@@ -39,6 +40,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class WikipediaService {
+    private final MeroService meroService;
+    private final ENEColoursEnvironment environment;
 
     private final WikipediaImageService wikipediaImageService;
     private final RacingColoursParseService rcpService;
@@ -46,7 +49,7 @@ public class WikipediaService {
     private final UnregisteredColourSyntaxService ucsService;
     private final BasicRaceService raceService;
     private final ColourRunnerService runnerService;
-        private final AdditionalRaceDataRepository ardRepository;
+    private final AdditionalRaceDataRepository ardRepository;
     @Value("${ene.eneform.colours.svg_output_dir}")
     private static String SVG_OUTPUT_DIRECTORY;
  
@@ -87,9 +90,7 @@ public class WikipediaService {
    {
         String strOwnerName = getOwnerName(owner.getOwner());
         String strFileName = getOwnerFileName(strOwnerName);
-        ENERacingColours colours = ENEColoursEnvironment.getInstance().createRacingColours("en", ENEColoursEnvironment.getInstance().createJacket("en", owner.getJacket()),
-                ENEColoursEnvironment.getInstance().createSleeves("en",owner.getSleeves()),
-                ENEColoursEnvironment.getInstance().createCap("en",owner.getCap()));
+        ENERacingColours colours = meroService.createRacingColours("en", owner.getOwner(), owner);
         colours.setDescription(owner.getColours());        
         createWikipediaImageFile(strFileName, strOwnerName, colours, strComment, strLanguage, bCompress, bOverwrite);
         return strOwnerName;
@@ -150,13 +151,13 @@ public class WikipediaService {
    }
     public void createImageFile(String strFileName, ENERacingColours colours, String strLanguage, boolean bCompress, boolean bOverwrite) throws IOException
     {
-        Document document = (new ENEMeroFactory(colours, strLanguage)).generateSVGDocument("", 1, null);    // transparent background
+        Document document = (new ENEMeroFactory(environment, colours, strLanguage)).generateSVGDocument("", 1, null);    // transparent background
         String strSVG = createImageContent(colours, strLanguage, bCompress);
         FileUtils.writeFile(strFileName, strSVG, StandardCharsets.ISO_8859_1, bOverwrite);
     }
     public String createImageContent(String strColours, String strLanguage, boolean bCompress) throws IOException
     {
-        ENERacingColours colours = new ENEColoursParser("en", strColours, "").parse();
+        ENERacingColours colours = meroService.createFullRacingColours("en", strColours, "").getColours();
         return createImageContent(colours, strLanguage, bCompress);
     }
     public String createImageContent2(String strColours, String strLanguage, boolean bCompress) throws IOException
@@ -167,7 +168,7 @@ public class WikipediaService {
     }
     public String createImageContent(ENERacingColours colours, String strLanguage, boolean bCompress) throws IOException
     {
-        Document document = (new ENEMeroFactory(colours, strLanguage)).generateSVGDocument("", 1, null);    // transparent background
+        Document document = meroService.generateSVGDocument(colours, strLanguage, "", 1, null);    // transparent background
         String strSVG = SVGFactoryUtils.convertSVGNode2String(document, bCompress);
         return strSVG;
     }
@@ -426,7 +427,7 @@ public String generateRace123Wikipedia(BasicRaceInfo race, String strTitle, Stri
      }
     catch(Exception e)
     {
-        ENEColoursEnvironment.getInstance().trace("generateDailyRaceTableWikipedia: " + e.getMessage());
+       log.info("generateDailyRaceTableWikipedia: " + e.getMessage());
         e.printStackTrace();
     }
     //System.out.println(strContent);
@@ -542,7 +543,7 @@ public String generateRace123HTML(BasicRace race, String strTitle, String strLan
      }
     catch(Exception e)
     {
-        ENEColoursEnvironment.getInstance().trace("generateDailyRaceTableHTML: " + e.getMessage());
+        log.info("generateDailyRaceTableHTML: " + e.getMessage());
         e.printStackTrace();
     }
     //System.out.println(strContent);
@@ -579,20 +580,10 @@ public String generateRace123HTML(BasicRace race, String strTitle, String strLan
     }
 
     public ENERacingColours createRacingColours(UnregisteredColourSyntax ucs, String strLanguage, String strJockeyColours, String strVersion) {
-        ENERacingColours colours = null;
-        if (ucs != null) {
-            colours = ENEColoursEnvironment.getInstance().createRacingColours(strLanguage, ENEColoursEnvironment.getInstance().createJacket(strLanguage, ucs.getJacket()),
-                    ENEColoursEnvironment.getInstance().createSleeves(strLanguage, ucs.getSleeves()),
-                    ENEColoursEnvironment.getInstance().createCap(strLanguage, ucs.getCap()));
+        ENERacingColours colours = meroService.createRacingColours(strLanguage, strJockeyColours, ucs);
             colours.setDescription(strJockeyColours);
-            rcpService.insertRacingColoursParse(strVersion, colours, "", "", "");
-        } else {
-            ENEColoursParser parser = new ENEColoursParser(strLanguage, strJockeyColours, "");
-            colours = parser.parse();
-
-            rcpService.insertRacingColoursParse(strVersion, colours, parser.getRemainder(), parser.getExpanded(), parser.getSyntax());
-        }
-        return colours;
+            //rcpService.insertRacingColoursParse(strVersion, colours, "", "", "");
+         return colours;
     }
 
 }

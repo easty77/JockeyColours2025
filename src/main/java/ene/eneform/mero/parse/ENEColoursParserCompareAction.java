@@ -16,6 +16,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import ene.eneform.mero.parse.ENEColoursParserMatch;
+import ene.eneform.mero.service.ParserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -24,8 +27,12 @@ import org.xml.sax.helpers.DefaultHandler;
  *
  * @author Simon
  */
+@Component
 public class ENEColoursParserCompareAction implements Serializable {
-
+    @Autowired
+private ENEColoursEnvironment environment;
+    @Autowired
+private ParserService parserService;
     private String m_strLanguage;
     private String m_strName;
     private String m_strMatch;
@@ -41,7 +48,7 @@ public class ENEColoursParserCompareAction implements Serializable {
         m_strLanguage = strLanguage;
     }
 
-    public ene.eneform.mero.parse.ENEColoursParserMatch match(ENEColoursElement element, String strDescription)
+    public ENEColoursParserMatch match(ENEColoursElement element, String strDescription)
     {
         Matcher matcher = m_pattern.matcher(strDescription);
         if (matcher.find())
@@ -62,7 +69,7 @@ public class ENEColoursParserCompareAction implements Serializable {
 	try
         {
             InputStream in = new ByteArrayInputStream(m_strProcessXML.getBytes("UTF-8"));
-            ENEColoursEnvironment.getInstance().parse(new BufferedInputStream(in), new CompareProcessHandler(matcher, element));
+            parserService.parse(new BufferedInputStream(in), new CompareProcessHandler(matcher, element));
 	}
         catch ( Exception e )
         {
@@ -120,11 +127,11 @@ private class CompareProcessHandler extends DefaultHandler
                     bNumberSuffix = true;
                     strPattern = strPattern.substring(0, strPattern.length() - 1);
                 }
-                strPattern = ENEColoursEnvironment.getInstance().convertSynonym(m_element.getType(), strPattern.trim(), m_strLanguage);
+                strPattern = environment.convertSynonym(m_element.getType(), strPattern.trim(), m_strLanguage);
                 if (bNumberSuffix)
                     strPattern += strLastChar;
             
-                m_currentPattern = new ENEColoursElementPattern(m_strLanguage, strPattern);
+                m_currentPattern = new ENEColoursElementPattern(environment, m_strLanguage, strPattern);
                 String strPropagate = attributes.getValue("propagate");
                 if ("no".equalsIgnoreCase(strPropagate))
                     m_currentPattern.setPropagate(false);

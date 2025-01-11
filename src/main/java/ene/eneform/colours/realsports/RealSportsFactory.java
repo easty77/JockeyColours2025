@@ -16,6 +16,7 @@ import ene.eneform.smartform.bos.SmartformDailyRunner;
 import ene.eneform.smartform.bos.SmartformRace;
 import ene.eneform.utils.ENEStatement;
 import ene.eneform.utils.HorseRacingUtils;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.File;
 import java.sql.PreparedStatement;
@@ -31,6 +32,11 @@ import java.util.concurrent.TimeUnit;
  * @author Simon
  */
 public class RealSportsFactory {
+    @Value("${ene.eneform.mero.SVG_OUTPUT_DIRECTORY}")
+    private static String SVG_OUTPUT_DIRECTORY;
+    @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
+    private static String SVG_IMAGE_PATH;
+
        private static final String[][] sm_astrPrices6a =  
        {
 //{"6/1","5/1","6/4","5/1","3/1","6/1"},
@@ -530,7 +536,7 @@ public static void generateImages(ENEStatement statement)
         for(int j = 0; j < aRaces.length; j++)
         {
             int nRace = aRaces[j];
-            String strDirectory = ENEColoursEnvironment.getInstance().getVariable("SVG_OUTPUT_DIRECTORY") + ENEColoursEnvironment.getInstance().getVariable("SVG_IMAGE_PATH");
+            String strDirectory = SVG_OUTPUT_DIRECTORY + SVG_IMAGE_PATH;
             SmartformRace race = ENEColoursFactory.getSmartformRace(statement, nRace);
             ArrayList<SmartformDailyRunner> alRunners = ENEColoursRunnerFactory.getRacecardRunnerList(statement, race.getRaceId());
             String strRaceDirectory = strDirectory + "realsports/hdd3";

@@ -13,6 +13,7 @@ import ene.eneform.mero.config.ConfigColours;
 import ene.eneform.mero.config.ConfigXML;
 import ene.eneform.mero.config.ENEOrganisation;
 import ene.eneform.mero.config.ENEOrganisationList;
+import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -22,13 +23,15 @@ import org.xml.sax.helpers.DefaultHandler;
  * @author Simon
  */
 public class ConfigOrganisations extends ConfigXML {
-    
+
+    @Value("${ene.eneform.mero.organisations}")
+    private static String FILE_NAME;
     // no language
     private HashMap<String, ene.eneform.mero.config.ENEOrganisation> m_hmOrganisations = new HashMap<String, ene.eneform.mero.config.ENEOrganisation>();
     
-    public ConfigOrganisations(SAXParser parser, String strFileName)
+    public ConfigOrganisations(SAXParser parser)
     {
-        super(parser, strFileName);
+        super(parser, FILE_NAME);
     }
     public boolean load(ene.eneform.mero.config.ConfigColours cc)
     {

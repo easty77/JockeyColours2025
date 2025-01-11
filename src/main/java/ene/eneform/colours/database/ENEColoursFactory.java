@@ -7,7 +7,7 @@ package ene.eneform.colours.database;
 
 import ene.eneform.colours.bos.*;
 import ene.eneform.mero.colours.ENERacingColours;
-import ene.eneform.mero.parse.ENEColoursParser;
+import ene.eneform.mero.service.ParserService;
 import ene.eneform.smartform.bos.SmartformRace;
 import ene.eneform.smartform.factory.SmartformRaceFactory;
 import ene.eneform.utils.ENEStatement;
@@ -144,8 +144,8 @@ public class ENEColoursFactory {
     }
     public static ENERacingColours createENEColours(String strLanguage, String strDescription, String strOwner)
     {
-        ENEColoursParser parser = new ENEColoursParser(strLanguage, strDescription, strOwner);
-        return parser.parse();
+        // to do: use MeroService
+ return null;
     }
 
 

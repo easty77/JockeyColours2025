@@ -9,6 +9,7 @@ import ene.eneform.smartform.bos.SmartformHorse;
 import ene.eneform.smartform.bos.SmartformHorseDefinition;
 import ene.eneform.smartform.bos.SmartformOwner;
 import ene.eneform.smartform.bos.SmartformTrainer;
+import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -28,18 +29,17 @@ import java.util.Iterator;
  * @author Simon
  */
 public class ConfigCareer extends ConfigXML implements Serializable{
-    
+    @Value("${ene.eneform.mero.career}")
+    private static String FILE_NAME;
+
     private HashMap<String,String> m_hmCareerRaceNames = new HashMap<String,String>();
      private HashMap<String,CareerDefinition> m_hmCareers = new HashMap<String,CareerDefinition>();
 
-   public ConfigCareer(SAXParser parser, String strFileName)
+   public ConfigCareer(SAXParser parser)
     {
-        super(parser, strFileName);
-    }
-    public boolean load()
-    {
+        super(parser, FILE_NAME);
         setHandler(new CareerDefinitionsHandler());
-        return loadXML();
+        loadXML();
     }
 
 public CareerDefinition getCareer(String strId)

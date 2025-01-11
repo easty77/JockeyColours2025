@@ -28,9 +28,10 @@ import java.io.FileNotFoundException;
 public class ColoursController {
 
     private final WikipediaService wikipediaService;
+    private final ENEColoursEnvironment environment;
     @GetMapping("/resetEnvironment")
     public String resetEnvironment(ModelMap model) {
-        ENEColoursEnvironment.getInstance().reset();
+        environment.reset();
         ENEColoursDBEnvironment.getInstance().reset();
         model.put("message", "resetEnvironment");
         return "message";

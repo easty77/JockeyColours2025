@@ -22,6 +22,8 @@ import java.util.Set;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+
+import lombok.Getter;
 import org.apache.batik.anim.dom.SVGOMTextElement;
 import org.apache.batik.bridge.BridgeContext;
 import org.apache.batik.bridge.DocumentLoader;
@@ -29,304 +31,154 @@ import org.apache.batik.bridge.GVTBuilder;
 import org.apache.batik.bridge.UserAgent;
 import org.apache.batik.bridge.UserAgentAdapter;
 import org.apache.batik.gvt.GraphicsNode;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.w3c.dom.svg.SVGDocument;
 import org.w3c.dom.svg.SVGGElement;
 import org.w3c.dom.svg.SVGRect;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+@Component
+@Getter
+public class ENEColoursEnvironment implements Serializable {
 
-public class ENEColoursEnvironment implements Serializable, StandardPatternHandler {
+    @Value("${ene.eneform.mero.DEFAULT_LANGUAGE}")
+    public static String DEFAULT_LANGUAGE;
+    @Value("${ene.eneform.mero.SVG_MERO_DIRECTORY}")
+    private String SVG_MERO_DIRECTORY;
+    @Value("${ene.eneform.mero.SVG_SHAPE_DIRECTORY}")
+    private String SVG_SHAPE_DIRECTORY;
 
-    protected static ENEColoursEnvironment sm_coloursEnvironment = null;
+    private double dTartanShrinkFactor = 4.0;   // to do: read from xml config file
 
-    private double m_dTartanShrinkFactor = 4.0;   // to do: read from xml config file
+    private Color backgroundColour = Color.white;
 
-    private Color m_backgroundColour = Color.white;
+    private SAXParser parser;
+    private ConfigExpands configExpands;
+    private ConfigPatterns configPatterns;
+    private ConfigColours configColours;
+    private ConfigFabrics configFabrics;
+    private ConfigTartans configTartans;
+    private ConfigCompares configCompares;
+    private ConfigOrganisations configOrganisations;
+    private ConfigSvg configSvg;
+    private AbbreviationsHandler abbreviationsHandler;
 
-    private int m_nDebugLevel = 1;      // decreased from 2
-        
-    private static transient SAXParser sm_parser = null;
-    
-    public static String DEFAULT_LANGUAGE = "en";
-    
-    private int m_nMaxExpandIterations = 0;
-    
-    private ene.eneform.mero.config.ConfigMero m_configMero = null;
-    private ene.eneform.mero.config.ConfigSvg m_configSvg = null;
-    private ene.eneform.mero.config.ConfigAbbreviations m_configAbbreviations = null;
-    private ene.eneform.mero.config.ConfigColours m_configColours = null;
-    private ene.eneform.mero.config.ConfigExpands m_configExpands = null;
-    private ene.eneform.mero.config.ConfigCompares m_configCompares = null;
-    private ene.eneform.mero.config.ConfigOrganisations m_configOrganisations = null;
-    private ene.eneform.mero.config.ConfigTartans m_configTartans = null;
-    private ene.eneform.mero.config.ConfigFabrics m_configFabrics = null;
-    private ene.eneform.mero.config.ConfigPatterns m_configPatterns = null;
-    
+    GVTBuilder builder = null;
+    BridgeContext ctx = null;
 
-    public static synchronized ENEColoursEnvironment getInstance()
-    {
-        if (sm_coloursEnvironment == null)
-        {
-            sm_coloursEnvironment = new ENEColoursEnvironment();
-            sm_coloursEnvironment.initialise();
-            //sm_coloursEnvironment = (ENEColoursEnvironment) MeroUtils.deserialize("d:/Users/Simon/Documents/horses/betwise/tmp/config.ser");
-        }
-
-        return sm_coloursEnvironment;
-    }
-    GVTBuilder m_builder = null;
-    BridgeContext m_ctx = null;
-
-    protected ENEColoursEnvironment()
-    {
-    }
-    public ENEPatternAction createStandardAction(String strStdClassName, String strCurrentElement)
-    {
-        // only useful implementation is for AWT version
-        return null;
-    }
-    public void initialise()
-    {
-        // this has to be public
-        // as can't be called because need AWTColoursEnvironment to behave differently
-
-        // load configuration files
-        //System.out.println(System.getProperty("user.dir"));
-
-        boolean bSuccess = createParsers();
-        if (bSuccess)
-        {
-          // load references to the files
-            m_configMero = new ConfigMero(sm_parser, "enecoloursconfig.xml");
- 
-            if (m_configMero.load())
-            {
-                m_nMaxExpandIterations = getIntegerVariable("MAX_NR_EXPAND_ITERATIONS");
-
-                 // use file references from config
-                //bSuccess = loadConfigurationFile(m_hmFiles.get("abbreviations"), new ENEAbbreviationsHandler());
-                String strFileAbbreviations = m_configMero.getFileName("abbreviations");
-                if (strFileAbbreviations.indexOf(".xml") > 0)
-                {
-                    m_configAbbreviations = new ene.eneform.mero.config.ConfigAbbreviations(sm_parser, strFileAbbreviations);
-                    m_configAbbreviations.load();
-                }
-                else
-                {
-                    //bSuccess = MeroUtils.serialize(configAbbreviations, getVariable("TMP_OUTPUT_DIRECTORY") + "/abbreviations.ser");
-                    //m_configAbbreviations = (ConfigAbbreviations) MeroUtils.deserialize(getVariable("TMP_OUTPUT_DIRECTORY") + "/abbreviations.ser");
-                    m_configAbbreviations = (ConfigAbbreviations) MeroUtils.deserialize(strFileAbbreviations);
-                }
-                String strFileColours = m_configMero.getFileName("colours");
-                if (strFileColours.indexOf(".xml") > 0)
-                {
-                    m_configColours = new ene.eneform.mero.config.ConfigColours(sm_parser, strFileColours);
-                    m_configColours.load();
-                }
-                else
-                {
-                    m_configColours = (ConfigColours) MeroUtils.deserialize(strFileColours);
-                }
-                String strFileTartans = m_configMero.getFileName("tartans");
-                if (strFileTartans.indexOf(".xml") > 0)
-                {
-                    m_configTartans = new ene.eneform.mero.config.ConfigTartans(sm_parser, strFileTartans);
-                    m_configTartans.load();
-                }
-                else
-                {
-                    m_configTartans = (ConfigTartans) MeroUtils.deserialize(strFileTartans);
-                }
-                String strFileFabrics = m_configMero.getFileName("fabrics");
-                if (strFileFabrics.indexOf(".xml") > 0)
-                {
-                    m_configFabrics = new ene.eneform.mero.config.ConfigFabrics(sm_parser, strFileFabrics);
-                    m_configFabrics.load();
-                }
-                else
-                {
-                    m_configFabrics = (ConfigFabrics) MeroUtils.deserialize(strFileFabrics);
-                }
-                String strFilePatterns = m_configMero.getFileName("patterns");
-                if (strFilePatterns.indexOf(".xml") > 0)
-                {
-                    m_configPatterns = new ene.eneform.mero.config.ConfigPatterns(sm_parser, strFilePatterns);
-                    m_configPatterns.load(this);
-                }
-                else
-                {
-                    m_configPatterns = (ConfigPatterns) MeroUtils.deserialize(strFilePatterns);
-                }
-
-                m_configSvg = new ConfigSvg(getVariable("SVG_MERO_DIRECTORY"), getVariable("SVG_SHAPE_DIRECTORY"));
-                m_configSvg.loadMeroSVG();
-                // load all SVG files listed in config
-                //m_configMeroSvg.loadSVG("rising sun");
-
-                String strFileExpands = m_configMero.getFileName("expands");
-                if (strFileExpands.indexOf(".xml") > 0)
-                {
-                    m_configExpands = new ene.eneform.mero.config.ConfigExpands(sm_parser, strFileExpands);
-                    m_configExpands.load(m_configColours, m_configPatterns, m_configFabrics);
-                }
-                else
-                {
-                    m_configExpands = (ConfigExpands) MeroUtils.deserialize(strFileExpands);
-                }
-                String strFileCompares = m_configMero.getFileName("compares");
-                if (strFileCompares.indexOf(".xml") > 0)
-                {
-                    m_configCompares = new ene.eneform.mero.config.ConfigCompares(sm_parser, strFileCompares);
-                    m_configCompares.load(m_configColours, m_configPatterns, m_configFabrics);
-                }
-                else
-                {
-                    m_configCompares = (ConfigCompares) MeroUtils.deserialize(strFileCompares);
-                }
-                String strFileOrganisations = m_configMero.getFileName("organisations");
-                if (strFileOrganisations.indexOf(".xml") > 0)
-                {
-                    m_configOrganisations = new ene.eneform.mero.config.ConfigOrganisations(sm_parser, strFileOrganisations);
-                    m_configOrganisations.load(m_configColours);
-                }
-                else
-                {
-                    m_configOrganisations = (ConfigOrganisations) MeroUtils.deserialize(strFileOrganisations);
-                }
-             }
+    public ENEColoursEnvironment() {
+        SAXParserFactory parserFactory = SAXParserFactory.newInstance();
+        try {
+            parser = parserFactory.newSAXParser();
+            initialise();
+        } catch ( Exception saxe ) {
+            System.out.println("Error setting up the XML Parser. Loading aborted.");
         }
     }
-    
-    private boolean createParsers()
-    {
-       SAXParserFactory parserFactory = SAXParserFactory.newInstance();
-	try {
-	  sm_parser = parserFactory.newSAXParser();
-	} catch ( ParserConfigurationException pce ) {
-	    System.out.println("Error setting up the XML Parser. The parser is not properly configured. Loading aborted.");
-            return false;
-	} catch ( SAXException saxe ) {
-	    System.out.println("Error setting up the XML Parser. Loading aborted.");
-            return false;
-	}
+private void initialise() {
+    configPatterns = new ConfigPatterns(parser);
+    configColours = new ConfigColours(parser);
+    configFabrics = new ConfigFabrics(parser);
+    configTartans = new ConfigTartans(parser);
+    abbreviationsHandler = new AbbreviationsHandler(new ConfigAbbreviations(parser), configColours, configFabrics);
+    configCompares = new ConfigCompares(parser);
+    configExpands = new ConfigExpands(parser, configColours, configPatterns, configFabrics);
+    configOrganisations = new ConfigOrganisations(parser);
+    configSvg = new ConfigSvg();
 
-
-        return true;
-    }
+}
     public SVGDocument getSVGDocument(String strShape)
     {
-        if (m_configSvg != null)
-            return m_configSvg.getSVGDocument(strShape);
+        if (configSvg != null)
+            return configSvg.getSVGDocument(strShape);
 
         return null;
     }
     public Area getSVGArea(String strShape)
     {
-        ene.eneform.mero.config.SvgXML xml = new ene.eneform.mero.config.SvgXML(sm_parser, strShape, getVariable("SVG_SHAPE_DIRECTORY"));
+        SvgXML xml = new SvgXML(parser, strShape, SVG_SHAPE_DIRECTORY);
         xml.load();
         return xml.getArea();
     }
     public Area getSVGArea(InputStream is)
     {
-        ene.eneform.mero.config.SvgXML xml = new SvgXML(sm_parser, "", getVariable("SVG_SHAPE_DIRECTORY"));
+        SvgXML xml = new SvgXML(parser, "", SVG_SHAPE_DIRECTORY);
         xml.load(is);
         return xml.getArea();
     }
 
 public GraphicsNode getSVGGraphicsNode(String strShape) 
 {
-    SVGDocument doc =  m_configSvg.getSVGDocument(strShape);
+    SVGDocument doc =  configSvg.getSVGDocument(strShape);
     return createGraphicsNode(doc);
 }
 
 public String getSVGContent(String strShape) 
 {
-    return m_configSvg.getSVGContent(strShape);
+    return configSvg.getSVGContent(strShape);
 }
 
 public SVGDocument getSVGContentDocument(String strSVGContent) 
 {
-    return m_configSvg.getSVGContentDocument(strSVGContent);
+    return configSvg.getSVGContentDocument(strSVGContent);
 }
 public GraphicsNode getSVGContentGraphicsNode(String strSVGContent) 
 {
-    SVGDocument doc = m_configSvg.getSVGContentDocument(strSVGContent);
+    SVGDocument doc = configSvg.getSVGContentDocument(strSVGContent);
     return createGraphicsNode(doc);
 }
-    public String replaceAbbreviation(String strOriginal, String strLanguage)
-    {
-     if (m_configAbbreviations != null)
-        return m_configAbbreviations.replaceAbbreviation(strOriginal, strLanguage);
 
-    return null;
-    }
-
-    public String getFilename(String strFile)
-    {
-        return m_configMero.getFileName(strFile);
-    }
-    public int getMaxNrExpandIterations()
-    {
-        return m_nMaxExpandIterations;
-    }
     public void reset()
     {
-        sm_coloursEnvironment = null;
+        initialise();
     }
 
     public Color getBackgroundColour()
     {
-        return m_backgroundColour;
+        return backgroundColour;
     }
     public void setBackgroundColour(Color colour)
     {
-        m_backgroundColour = colour;
+        backgroundColour = colour;
     }
 
     public double getTartanShrinkFactor()
     {
-        return m_dTartanShrinkFactor;
+        return dTartanShrinkFactor;
     }
     private SAXParser getParser()
     {
-        return sm_parser;
+        return parser;
     }
     public synchronized void parse(InputStream is, DefaultHandler dh) throws SAXException, IOException
     {
-        sm_parser.parse(new InputSource(is), dh);
-    }
-    public void trace(String strText)
-    {
-        if (m_nDebugLevel > 1)
-            System.out.println(strText);
-    }
-    public void debug(String strText)
-    {
-        if (m_nDebugLevel > 0)
-            System.out.println(strText);
+        parser.parse(new InputSource(is), dh);
     }
 
     public Set<String> getOrganisations()
     {
-        return m_configOrganisations.getOrganisations();
+        return configOrganisations.getOrganisations();
     }
     public ENEOrganisation getOrganisation(String strOrganisation)
     {
-        return m_configOrganisations.getOrganisation(strOrganisation);
+        return configOrganisations.getOrganisation(strOrganisation);
     }
     
    public Set<String> getColours(String strLanguage)
     {
-        return m_configColours.getColours(strLanguage);
+        return configColours.getColours(strLanguage);
     }
    public Set<String> getTartans()
     {
-        return m_configTartans.getTartans();
+        return configTartans.getTartans();
     }
    public Set<String> getFabrics(String strLanguage)
     {
-        return m_configFabrics.getFabrics(strLanguage);
+        return configFabrics.getFabrics(strLanguage);
     }
     public ENEColourItem getColourItem(String strColour, String strLanguage)
     {
@@ -338,71 +190,71 @@ public GraphicsNode getSVGContentGraphicsNode(String strSVGContent)
         }
         else
         {
-            return m_configColours.getColourItem(strColour, strLanguage);
+            return configColours.getColourItem(strColour, strLanguage);
         }
     }
  
    public ENETartan getTartan(String strTartan)
     {
-        return m_configTartans.getTartan(strTartan);
+        return configTartans.getTartan(strTartan);
     }
    public boolean isTartan(String strTartan)
     {
-         return m_configTartans.isTartan(strTartan);
+         return configTartans.isTartan(strTartan);
     }
    public String getTartanSVG(String strTartan)
     {
-         return m_configTartans.getTartanSVG(strTartan); 
+         return configTartans.getTartanSVG(strTartan); 
     }
    public ArrayList<ENETartan> getTartanList()
     {
-        return m_configTartans.getTartanList();
+        return configTartans.getTartanList();
     }
    public boolean isFabric(String strFabric, String strLanguage)
     {
-         return m_configFabrics.isFabric(strFabric, strLanguage);
+         return configFabrics.isFabric(strFabric, strLanguage);
     }
    public ENEFabricItem getFabricItem(String strFabric, String strLanguage)
     {
-         return m_configFabrics.getFabricItem(strFabric, strLanguage);
+         return configFabrics.getFabricItem(strFabric, strLanguage);
     }
      public Iterator<ENEColourItem> getColourIterator(String strLanguage)
     {
-        //return m_hmColours.values().iterator();
-        return m_configColours.getColourIterator(strLanguage);
+        //return hmColours.values().iterator();
+        return configColours.getColourIterator(strLanguage);
     }
     public boolean isPattern(String strPattern, String strLanguage)
     {
-        return m_configPatterns.isPattern(strPattern, strLanguage);
+        return configPatterns.isPattern(strPattern, strLanguage);
     }
     public String convertSynonym(String strType, String strSynonym, String strLanguage)
     {
         // strType is ENEJacket, ENESleeves, ENECap
-        return m_configPatterns.convertSynonym(strType, strSynonym, strLanguage);
+        return configPatterns.convertSynonym(strType, strSynonym, strLanguage);
     }
     public String getPatternListRegExAll(String strLanguage)
     {
-        return m_configPatterns.getPatternListRegExAll(strLanguage);
+        return configPatterns.getPatternListRegExAll(strLanguage);
     }
     public String getPatternListRegEx(String strType, String strLanguage)
     {
         // strType is ENEJacket, ENESleeves, ENECap
-        return m_configPatterns.getPatternListRegEx(strType, strLanguage);
+        return configPatterns.getPatternListRegEx(strType, strLanguage);
     }
     public String getPatternMapping(String strType, String strPattern, String strLanguage)
     {
         // strType is ENEJacket, ENESleeves, ENECap
-        return m_configPatterns.getPatternMapping(strType, strPattern, strLanguage);
+        return configPatterns.getPatternMapping(strType, strPattern, strLanguage);
     }
     public ArrayList<ENEPattern> getPatternList(String strType, String strLanguage)
     {
         // strType is ENEJacket, ENESleeves, ENECap
-        return m_configPatterns.getPatternList(strType, strLanguage);
+        return configPatterns.getPatternList(strType, strLanguage);
     }
    public ArrayList<String> getPatternNameList(String strType, String strLanguage)
     {
         // strType is ENEJacket, ENESleeves, ENECap
-        return m_configPatterns.getPatternNameList(strType, strLanguage);
+        return configPatterns.getPatternNameList(strType, strLanguage);
     }
 
     public ENEPattern getDefaultPattern(String strType, String strPattern)
@@ -411,54 +263,31 @@ public GraphicsNode getSVGContentGraphicsNode(String strSVGContent)
     } 
     public ENEPattern getPattern(String strType, String strPattern, String strLanguage)
     {
-        return m_configPatterns.getPattern(strType, strPattern, strLanguage);
+        return configPatterns.getPattern(strType, strPattern, strLanguage);
     }
     public ENEPatternAction getPatternAction(String strType, String strPattern, String strLanguage)
     {
-       return m_configPatterns.getPatternAction(strType, strPattern, strLanguage);
+       return configPatterns.getPatternAction(strType, strPattern, strLanguage);
     }
     public boolean isDerivePattern(String strType, String strPattern, String strLanguage)
     {
-        return m_configPatterns.isDerivePattern(strType, strPattern, strLanguage);
+        return configPatterns.isDerivePattern(strType, strPattern, strLanguage);
      }
     public boolean isPrimaryPattern(String strType, String strPattern, String strLanguage)
     {
         // strType is ENEJacket, ENESleeves, ENECap
-       return m_configPatterns.isPrimaryPattern(strType, strPattern, strLanguage);
+       return configPatterns.isPrimaryPattern(strType, strPattern, strLanguage);
     }
     
-    public String getColourListRegEx(String strLanguage)
-    {
-    	// problem with order of execution of static elements
-        return m_configColours.getColourListRegEx(strLanguage);
-        //return "blue|red|black";
-    }
-
-
-    public String getFabricListRegEx(String strLanguage)
-    {
-        return m_configFabrics.getFabricListRegEx(strLanguage);
-    }
-
-    public String getFullColourListRegEx(String strLanguage)
-    {
-    	// including fabrics
-        // 20130222 put fabrics first (as longer)
-        return getFabricListRegEx(strLanguage) + "|" + getColourListRegEx(strLanguage);
-    }
-    public ArrayList<ENEColoursParserExpand> getExpandList(String strLanguage)
-    {
-        return m_configExpands.getExpandList(strLanguage);
-    }
-    public ArrayList<ENEColoursParserCompareAction> getCompareList(String strType, String strLanguage)
+     public ArrayList<ENEColoursParserCompareAction> getCompareList(String strType, String strLanguage)
     {
         // strType is ENEJacket, ENESleeves, ENECap
-       return m_configCompares.getCompareList(strType, strLanguage);
+       return configCompares.getCompareList(strType, strLanguage);
     }
-
+/*
     public String getVariable(String strId)
     {
-        String strValue = m_configMero.getVariable(strId);
+        String strValue = configMero.getVariable(strId);
         if (strValue == null)
         {
              System.out.println("Config Variable not found: " + strId);
@@ -470,7 +299,7 @@ public GraphicsNode getSVGContentGraphicsNode(String strSVGContent)
     public int getIntegerVariable(String strId)
     {
         int nValue = -1;
-        String strValue = m_configMero.getVariable(strId);
+        String strValue = configMero.getVariable(strId);
         if (strValue == null)
         {
              System.out.println("Config Integer Variable not found: " + strId);
@@ -485,44 +314,13 @@ public GraphicsNode getSVGContentGraphicsNode(String strSVGContent)
             
         }
         return nValue;
-    }
+    } */
     public InputStream loadShapeSVG(String strShape)
     {
-        return m_configSvg.getSVGStream(strShape);
+        return configSvg.getSVGStream(strShape);
     }
     
-   public ENEColoursElement createJacket(String strLanguage) {
-        return new ENEColoursElement(strLanguage, ENEColoursElement.JACKET);
-    }
 
-    public ENEColoursElement createJacket(String strLanguage, String strDefinition) {
-        return new ENEColoursElement(strLanguage, ENEColoursElement.JACKET, strDefinition);
-    }
-
-    public ENEColoursElement createCap(String strLanguage) {
-        return new ENEColoursElement(strLanguage, ENEColoursElement.CAP);
-    }
-
-    public ENEColoursElement createCap(String strLanguage, String strDefinition) {
-        return new ENEColoursElement(strLanguage, ENEColoursElement.CAP, strDefinition);
-    }
-
-    public ENEColoursElement createSleeves(String strLanguage) {
-        return new ENEColoursElement(strLanguage, ENEColoursElement.SLEEVES);
-    }
-
-    public ENEColoursElement createSleeves(String strLanguage, String strDefinition) {
-        return new ENEColoursElement(strLanguage, ENEColoursElement.SLEEVES, strDefinition);
-    }
-
-   public ENERacingColours createRacingColours(String strLanguage, String strDescription, String strOwner)
-    {
-        return new ENERacingColours(strLanguage, strDescription, strOwner);
-    }
-    public ENERacingColours createRacingColours(String strLanguage, ENEColoursElement jacket, ENEColoursElement sleeves, ENEColoursElement cap)
-    {
-         return new ENERacingColours(strLanguage, jacket, sleeves, cap);
-     }
 public AffineTransform transformGraphicsNode(Rectangle2D bounds, Rectangle rectangle)
 {
    System.out.println("GraphicsNode SVG: " + bounds.getX() + "+" + bounds.getWidth() + " - " + bounds.getY() + "+" + bounds.getHeight());
@@ -578,34 +376,61 @@ public AffineTransform transformGraphicsNode(Rectangle2D bounds, Rectangle recta
     }
 
     BridgeContext getContext() {
-        if (m_ctx == null) {
+        if (ctx == null) {
             UserAgent userAgent;
             DocumentLoader loader;
             userAgent = new UserAgentAdapter();
             loader = new DocumentLoader(userAgent);
-            m_ctx = new BridgeContext(userAgent, loader);
-            m_ctx.setDynamicState(BridgeContext.DYNAMIC);
+            ctx = new BridgeContext(userAgent, loader);
+            ctx.setDynamicState(BridgeContext.DYNAMIC);
         }
-        return m_ctx;
+        return ctx;
     }
 
     GVTBuilder getBuilder() {
-        if (m_builder == null) {
-            m_builder = new GVTBuilder();
+        if (builder == null) {
+            builder = new GVTBuilder();
         }
-        return m_builder;
+        return builder;
     }
 
     public Rectangle getGBBox(SVGDocument svgdoc, SVGGElement g)
     {
-        ENEColoursEnvironment.getInstance().createGraphicsNode(svgdoc);
+        createGraphicsNode(svgdoc);
         SVGRect rect = g.getBBox();
         return MeroUtils.convertSVGRectangle(rect);
     }
     public Rectangle getTextBBox(SVGDocument svgdoc, SVGOMTextElement text)
     {
-        ENEColoursEnvironment.getInstance().createGraphicsNode(svgdoc);
+        createGraphicsNode(svgdoc);
         SVGRect rect = text.getBBox();
         return MeroUtils.convertSVGRectangle(rect);
     }
+    // moved from ENEColours
+    public Color convertColour(String strColour, String strLanguage)
+    {
+        ENEColourItem item = getColourItem(strColour, strLanguage);
+
+        if (item == null)
+            return null;
+        else
+            return item.getColour();
+    }
+
+    public Set<String> getColourNames(String strLanguage)
+    {
+        return getColours(strLanguage);
+    }
+    public ArrayList<String> getOrganisationColourNames(String strOrganisation)
+    {
+        ENEOrganisation organisation = getOrganisation(strOrganisation);
+        ENEOrganisationList list = organisation.getList("colours");
+        return list.getList();
+    }
+
+    public boolean isColour(String strColour, String strLanguage)
+    {
+        return ((getColourItem(strColour, strLanguage) != null) || false); // ENETartan.isTartan(strColour));
+    }
+
 }

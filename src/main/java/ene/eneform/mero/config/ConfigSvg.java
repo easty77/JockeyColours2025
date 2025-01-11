@@ -18,6 +18,7 @@ import ene.eneform.mero.config.ConfigFile;
 import org.apache.batik.anim.dom.SAXSVGDocumentFactory;
 import org.apache.batik.util.XMLResourceDescriptor;
 import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.w3c.dom.svg.SVGDocument;
 
 /**
@@ -25,21 +26,18 @@ import org.w3c.dom.svg.SVGDocument;
  * @author Simon
  */
 public class ConfigSvg extends ConfigFile implements Serializable{
-    
-    private String m_strMeroDirectory;
-    private String m_strShapeDirectory;
+    @Value("${ene.eneform.mero.SVG_MERO_DIRECTORY}")
+    private static String SVG_MERO_DIRECTORY;
+    @Value("${ene.eneform.mero.SVG_SHAPE_DIRECTORY}")
+    private static String SVG_SHAPE_DIRECTORY;
+
      private HashMap<String,String> m_hmSvgFileContent = new HashMap<String,String>();
      // Only store document objects for Mero, as for others want to replace colours, tags etc and not easy to take copy
      private transient HashMap<String,SVGDocument> m_hmSvgDocuments = new HashMap<String,SVGDocument>();
      private transient SAXSVGDocumentFactory m_svgFactory = new SAXSVGDocumentFactory(XMLResourceDescriptor.getXMLParserClassName());
      
-    ConfigSvg(String strMeroDirectory, String strShapeDirectory)
+    ConfigSvg()
      {
-         m_strMeroDirectory = strMeroDirectory;
-         m_strShapeDirectory = strShapeDirectory;
-     }
-public void loadMeroSVG()
-{
     String[] astrSVGFiles = {"jacket", "sleeves", "cap" };
     
     for(int i = 0; i < astrSVGFiles.length; i++)
@@ -47,7 +45,7 @@ public void loadMeroSVG()
         String strFileName = astrSVGFiles[i];
         try
          {
-             SVGDocument document = loadSVGShapeFile(strFileName , strFileName, m_strMeroDirectory);
+             SVGDocument document = loadSVGShapeFile(strFileName , strFileName, SVG_MERO_DIRECTORY);
              m_hmSvgDocuments.put(strFileName, document);
          }
          catch(IOException e)
@@ -110,7 +108,7 @@ public boolean loadSVG(String strFileName)
     
      private SVGDocument loadSVGShapeFile(String strShape) throws IOException
     {
-        return loadSVGShapeFile(strShape, strShape, m_strShapeDirectory);
+        return loadSVGShapeFile(strShape, strShape, SVG_SHAPE_DIRECTORY);
     }
     private SVGDocument loadSVGShapeFile(String strShape, String strFileName, String strDirectory) throws IOException
     {
@@ -135,7 +133,7 @@ public boolean loadSVG(String strFileName)
     public InputStream getSVGStream(String strShape)
     {
         InputStream is = null;
-        String strShapeDirectory = m_strShapeDirectory;
+        String strShapeDirectory = SVG_SHAPE_DIRECTORY;
         String strFilename = strShapeDirectory + "/" + strShape + ".svg";
         try
         {

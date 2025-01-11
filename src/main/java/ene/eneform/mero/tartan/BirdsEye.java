@@ -7,33 +7,33 @@ package ene.eneform.mero.tartan;
 
 import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.fabric.ENEFabricItem;
+import lombok.RequiredArgsConstructor;
+
 import java.awt.Color;
 
 /**
  *
  * @author Simon
  */
+@RequiredArgsConstructor
 public class BirdsEye extends ENEFabricItem
 {
+    private final ENEColoursEnvironment environment;
     private Color m_colour1 = Color.WHITE;
     private Color m_colour2 = Color.BLUE;;
 
     private int m_nHeight = 14;
     private int m_nWidth = 16;
 
-	public BirdsEye()
-        {
-        }
-
 	public void setData(String strData)
         {
             String strColour1 = strData.split(",")[0].trim();
             String strColour2 = strData.split(",")[1].trim();
 
-            if (ENEColoursEnvironment.getInstance().getColourItem(strColour1, ENEColoursEnvironment.DEFAULT_LANGUAGE) != null)
-                m_colour1 = ENEColoursEnvironment.getInstance().getColourItem(strColour1, ENEColoursEnvironment.DEFAULT_LANGUAGE).getColour();
-            if (ENEColoursEnvironment.getInstance().getColourItem(strColour2, ENEColoursEnvironment.DEFAULT_LANGUAGE) != null)
-                m_colour2 = ENEColoursEnvironment.getInstance().getColourItem(strColour2, ENEColoursEnvironment.DEFAULT_LANGUAGE).getColour();
+            if (environment.getColourItem(strColour1, ENEColoursEnvironment.DEFAULT_LANGUAGE) != null)
+                m_colour1 = environment.getColourItem(strColour1, ENEColoursEnvironment.DEFAULT_LANGUAGE).getColour();
+            if (environment.getColourItem(strColour2, ENEColoursEnvironment.DEFAULT_LANGUAGE) != null)
+                m_colour2 = environment.getColourItem(strColour2, ENEColoursEnvironment.DEFAULT_LANGUAGE).getColour();
         }
   	public @Override void setName(String strName)
 	{

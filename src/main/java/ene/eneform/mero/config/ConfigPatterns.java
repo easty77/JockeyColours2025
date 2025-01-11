@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import javax.xml.parsers.SAXParser;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -25,17 +27,20 @@ import org.xml.sax.helpers.DefaultHandler;
  * @author Simon
  */
 public class ConfigPatterns  extends ConfigXML {
-    
+
+    @Value("${ene.eneform.mero.patterns}")
+    private static String FILE_NAME;
+
     // by language
     private HashMap<String, ENEConfigPatterns> m_hmLanguages= new HashMap<String, ENEConfigPatterns>();
  
-    public ConfigPatterns(SAXParser parser, String strFileName)
+    public ConfigPatterns(SAXParser parser)
     {
-        super(parser, strFileName);
+        super(parser, FILE_NAME);
     }
     public boolean load(StandardPatternHandler standard)
     {
-        setHandler(new ENEPatternsHandler(standard));
+        setHandler(new ENEPatternsHandler());
         return loadXML();
     }
     public Iterator<ENEPatternCollection> getPatternIterator(String strLanguage)
@@ -252,10 +257,9 @@ private class ENEPatternsHandler extends DefaultHandler implements Serializable
    private String m_strCurrentElement = "";             // element is ENEJacket, ENESleeves or ENECap
   private ENEPatternAction m_currentStdAction = null;   
   private String m_strCurrentMeroMapping = "";
-private StandardPatternHandler m_standardHandler;
-    public ENEPatternsHandler(StandardPatternHandler standard)
+    public ENEPatternsHandler()
     {
-        m_standardHandler = standard;
+
      }
    @Override public void startDocument ()
     {
@@ -351,13 +355,6 @@ private StandardPatternHandler m_standardHandler;
                     {
                        m_currentStdAction = createSVGAction(strStdClassName, attributes);
                     }
-                    else
-                    {
-                        m_currentStdAction = m_standardHandler.createStandardAction(strStdClassName, m_strCurrentElement);
-
-                        // mero uses SVG Action data - so no need for specific
-                        m_strCurrentMeroMapping = attributes.getValue("ene/eneform/mero");
-                   }
                     if (m_currentStdAction != null)
                     pattern.setAction(m_currentStdAction);
                 }
@@ -403,10 +400,6 @@ private StandardPatternHandler m_standardHandler;
                if (strStdClassName.indexOf("SVGAction") > 0)
                 {
                    action = createSVGAction(strStdClassName, attributes);
-                }
-                else
-                {
-                    action = m_standardHandler.createStandardAction(strStdClassName, m_strCurrentElement);
                 }
 
                 String strPattern = iter.next();

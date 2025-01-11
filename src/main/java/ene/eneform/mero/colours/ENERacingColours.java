@@ -35,21 +35,13 @@ public class ENERacingColours implements Serializable{
     protected String m_strCaption=null; // text for inclusion in generated svg file
     
     private String m_strTitle=null;   // used for SVG title
-   public ENERacingColours(String strLanguage, String strDescription, String strOwner)
-    {
-        m_strLanguage = strLanguage;
-        m_strDescription = strDescription;
-        m_strOwner = strOwner;
-        m_jacket = ENEColoursEnvironment.getInstance().createJacket(strLanguage);
-        m_sleeves = ENEColoursEnvironment.getInstance().createSleeves(strLanguage);
-        m_cap = ENEColoursEnvironment.getInstance().createCap(strLanguage);
-    }
+
     public ENERacingColours(String strLanguage, ENEColoursElement jacket, ENEColoursElement sleeves, ENEColoursElement cap)
     {
         this(strLanguage, "", "", jacket, sleeves, cap);
      }
 
-    private ENERacingColours(String strLanguage, String strDescription, String strOwner, ENEColoursElement jacket, ENEColoursElement sleeves, ENEColoursElement cap)
+    public ENERacingColours(String strLanguage, String strDescription, String strOwner, ENEColoursElement jacket, ENEColoursElement sleeves, ENEColoursElement cap)
     {
         m_strLanguage = strLanguage;
         m_strDescription = strDescription;
