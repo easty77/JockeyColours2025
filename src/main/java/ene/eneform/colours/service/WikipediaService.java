@@ -9,7 +9,6 @@ import ene.eneform.colours.domain.*;
 import ene.eneform.colours.repository.AdditionalRaceDataRepository;
 import ene.eneform.mero.colours.ENERacingColours;
 import ene.eneform.mero.config.ENEColoursEnvironment;
-import ene.eneform.mero.factory.ENEMeroFactory;
 import ene.eneform.mero.factory.SVGFactoryUtils;
 import ene.eneform.mero.service.MeroService;
 import ene.eneform.smartform.factory.SmartformRunnerFactory;
@@ -40,7 +39,6 @@ import java.util.List;
 @Slf4j
 public class WikipediaService {
     private final MeroService meroService;
-    private final ENEColoursEnvironment environment;
 
     private final WikipediaImageService wikipediaImageService;
     private final RacingColoursParseService rcpService;
@@ -150,7 +148,7 @@ public class WikipediaService {
    }
     public void createImageFile(String strFileName, ENERacingColours colours, String strLanguage, boolean bCompress, boolean bOverwrite) throws IOException
     {
-        Document document = (new ENEMeroFactory(environment, colours, strLanguage)).generateSVGDocument("", 1, null);    // transparent background
+        Document document = meroService.generateSVGDocument(colours, strLanguage, "", 1, null);    // transparent background
         String strSVG = createImageContent(colours, strLanguage, bCompress);
         FileUtils.writeFile(strFileName, strSVG, StandardCharsets.ISO_8859_1, bOverwrite);
     }

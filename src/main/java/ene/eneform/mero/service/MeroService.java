@@ -5,12 +5,13 @@
 package ene.eneform.mero.service;
 
 import ene.eneform.colours.domain.RacingColours;
-import ene.eneform.mero.colours.ENEColoursElement;
+import ene.eneform.mero.colours.ENEParsedRacingColours;
 import ene.eneform.mero.colours.ENERacingColours;
-import ene.eneform.mero.colours.FullRacingColours;
 import ene.eneform.mero.config.*;
 import ene.eneform.mero.factory.ENEMeroFactory;
 import ene.eneform.mero.factory.SVGFactoryUtils;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.batik.svggen.SVGGeneratorContext;
 import org.apache.batik.svggen.SVGGraphics2D;
 import org.apache.batik.transcoder.TranscoderInput;
@@ -31,8 +32,11 @@ import java.util.HashMap;
  * @author Simon
  */
 @Service
+@RequiredArgsConstructor
+@Slf4j
 public class MeroService {
     private final ENEColoursEnvironment environment;
+    private final RacingColoursHandler handler;
 
     @Value("${ene.eneform.mero.MAX_NR_EXPAND_ITERATIONS}")
     private Integer MAX_NR_EXPAND_ITERATIONS;
@@ -45,55 +49,54 @@ public class MeroService {
     private ConfigOrganisations configOrganisations;
     private AbbreviationsHandler abbreviationsHandler;
 
-    public MeroService(ENEColoursEnvironment environment) {
-        this.environment = environment;
-    }
     public String parseDescription(String strDescription)
     {
         String strLanguage = environment.DEFAULT_LANGUAGE;
-        FullRacingColours colours = createFullRacingColours(strLanguage, strDescription, "");
+        ENEParsedRacingColours colours = handler.createParsedRacingColours(strLanguage, strDescription, "");
         
         return colours.getColours().getDefinition();
     }
+    public String generateSVGContentFromDescription(String description) {
+        return generateSVGContentFromDefinition(parseDescription(description));
+    }
 
-    public String generateSVGContent(String strDefinition)
+    public String generateSVGContentFromDefinition(String strDefinition)
     {
-        return generateSVGContent(strDefinition, null, null, false);
+        log.info("generateSVGContent {}", strDefinition);
+        return generateSVGContentFromDefinition(strDefinition, null, null, false);
     }
-   public String generateSVGContent(String strDefinition, String strBackgroundColour)
+   public String generateSVGContentFromDefinition(String strDefinition, String strBackgroundColour)
    {
-       return generateSVGContent(strDefinition, strBackgroundColour, null, false);
+       return generateSVGContentFromDefinition(strDefinition, strBackgroundColour, null, false);
    }
-   public Rectangle getViewBox(Point capOrigin)
-    {
-        ENEMeroFactory factory = new ENEMeroFactory(environment, null, environment.DEFAULT_LANGUAGE);
-        if (capOrigin != null)
-            factory.setCapOrigin(capOrigin);
-        
-        return factory.getViewBox(capOrigin);
-    }
-public String generateSVGContent(String strDefinition, String strBackgroundColour, Point capOrigin, boolean bCompress)
+public String generateSVGContentFromDefinition(String strDefinition, String strBackgroundColour, Point capOrigin, boolean bCompress)
     {
         String strSVGContent = "";
         String strLanguage = environment.DEFAULT_LANGUAGE;
         String[] astrElements = strDefinition.split("\\|");
-        ENERacingColours colours = createRacingColours(strLanguage, "",
-                astrElements[0],
-                astrElements[1],
-                astrElements[2]);
-        ENEMeroFactory factory = new ENEMeroFactory(environment, colours, strLanguage);
-        if (capOrigin != null)
-            factory.setCapOrigin(capOrigin);
-        Document document = factory.generateSVGDocument("", 1, strBackgroundColour);
-        strSVGContent = SVGFactoryUtils.convertSVGNode2String(document, bCompress);
+        if (astrElements.length == 3) {
+            ENERacingColours colours = createRacingColours(strLanguage, "",
+                    astrElements[0],
+                    astrElements[1],
+                    astrElements[2]);
+            ENEMeroFactory factory = new ENEMeroFactory(environment, colours, strLanguage);
+            if (capOrigin != null)
+                factory.setCapOrigin(capOrigin);
+            Document document = factory.generateSVGDocument("", 1, strBackgroundColour);
+            strSVGContent = SVGFactoryUtils.convertSVGNode2String(document, bCompress);
+        }
         return strSVGContent;
     }
-    public void generateSVG(String strDefinition, String strDirectory, String strFileName, String strBackgroundColour, Point capOrigin, boolean bCompress)
+    public void generateSVGFileFromDescription(String description, String strDirectory, String strFileName, String strBackgroundColour, Point capOrigin, boolean bCompress)
+    {
+        generateSVGFileFromDefinition(parseDescription(description), strDirectory, strFileName, strBackgroundColour, capOrigin, bCompress);
+    }
+    public void generateSVGFileFromDefinition(String strDefinition, String strDirectory, String strFileName, String strBackgroundColour, Point capOrigin, boolean bCompress)
     {
         try
         {
             OutputStreamWriter writer = createWriter(strDirectory, strFileName);
-            String strSVG = generateSVGContent(strDefinition, strBackgroundColour, capOrigin, bCompress);
+            String strSVG = generateSVGContentFromDefinition(strDefinition, strBackgroundColour, capOrigin, bCompress);
             writer.write(strSVG, 0, strSVG.length());
             writer.close();
         }
@@ -145,8 +148,8 @@ public String generateSVGContent(String strDefinition, String strBackgroundColou
         
        return writer;
    }
-public FullRacingColours createFullRacingColours(String language, String description, String owner) {
-        return new FullRacingColours(environment,
+public ENEParsedRacingColours createFullRacingColours(String language, String description, String owner) {
+        return handler.createParsedRacingColours(
                     language, description, owner);
 }
 
@@ -163,11 +166,7 @@ public ENERacingColours createRacingColours(String language, String description,
 
     public ENERacingColours createRacingColours(String language, String description, String jacket, String sleeves, String cap) {
 
-            ENERacingColours colours = new ENERacingColours(language,
-                    createJacket(language, jacket),
-                    createSleeves(language,sleeves),
-                    createCap(language, cap));
-            colours.setDescription(description);
+            ENERacingColours colours = handler.createRacingColours(language, description, jacket, sleeves, cap);
 
         //RacingColoursParse.onCreate();
 
@@ -175,17 +174,7 @@ public ENERacingColours createRacingColours(String language, String description,
 
     }
     // from ENEColoursEnvironment
-    public ENEColoursElement createJacket(String language, String strDefinition) {
-        return new ENEColoursElement(environment, language, ENEColoursElement.JACKET, strDefinition);
-    }
 
-    public ENEColoursElement createCap(String language, String strDefinition) {
-        return new ENEColoursElement(environment, language, ENEColoursElement.CAP, strDefinition);
-    }
-
-    public ENEColoursElement createSleeves(String language, String strDefinition) {
-        return new ENEColoursElement(environment, language, ENEColoursElement.SLEEVES, strDefinition);
-    }
     public Document generateSVGDocument(ENERacingColours racingcolours, String strLanguage,
                                String strMeroId, double dScale, String strBackgroundColour) {
     ENEMeroFactory factory = new ENEMeroFactory(environment, racingcolours,  strLanguage);
@@ -193,7 +182,7 @@ public ENERacingColours createRacingColours(String language, String description,
     }
     public String addJockeySilks(SVGGraphics2D svgGenerator, SVGGeneratorContext ctx, ENERacingColours colours, String strColours, String strLanguage, double dScale, String strSuffix, HashMap<String,Element> hmDefintions, String strBackgroundColour)
     {
-        // called when ading multiple Mero images to a document
+        // called when adding multiple Mero images to a document
         Element element = buildJockeySilks(ctx, colours, strColours, strLanguage, dScale, strSuffix, hmDefintions, strBackgroundColour);
         svgGenerator.getDOMTreeManager().addOtherDef(element);
         return element.getAttributeNS(null, "id");

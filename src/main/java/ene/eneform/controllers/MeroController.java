@@ -13,14 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @Slf4j
 public class MeroController {
-    private static String COLOURS = "Red, blue star, green cap, white diamonds";
+    private static String COLOURS1 = "Red, blue star, green cap, white diamonds";
+    private static String COLOURS2 = "Red and white stripes";
+    private static String COLOURS3 = "Red and white (halved), sleeves reversed, blue cap";
+    private static String COLOURS4 = "Red and yellow hoops, quartered cap";
     private final MeroService meroService;
     @GetMapping("/colours")
     public String generateSVGContent(ModelMap model) {
-        String definition = meroService.parseDescription(COLOURS);
-        log.info("generateSVGContent definition: {}", definition);
-        String content = meroService.generateSVGContent(definition);
-         model.put("svg", content);
+         model.put("svg1", meroService.generateSVGContentFromDefinition(meroService.parseDescription(COLOURS1)));
+        model.put("svg2", meroService.generateSVGContentFromDefinition(meroService.parseDescription(COLOURS2)));
+        model.put("svg3", meroService.generateSVGContentFromDefinition(meroService.parseDescription(COLOURS3)));
+        model.put("svg4", meroService.generateSVGContentFromDefinition(meroService.parseDescription(COLOURS4)));
         return "svg_content";
     }
 }

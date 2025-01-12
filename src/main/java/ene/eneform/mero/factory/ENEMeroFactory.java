@@ -90,7 +90,7 @@ public void setCapOrigin(Point capOrigin)
 {
     m_capOrigin = capOrigin;
 }
-public static Rectangle getViewBox(Point capOrigin)
+private Rectangle getViewBox(Point capOrigin)
 {
     // Assumed that the cap is either directly above (0, 5) or top right
     // standard (0, -20): 194, 200, 207, 320
