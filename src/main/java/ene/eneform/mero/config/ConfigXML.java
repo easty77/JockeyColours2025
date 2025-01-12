@@ -4,21 +4,22 @@
  */
 package ene.eneform.mero.config;
 
-import java.io.InputStream;
-import java.io.Serializable;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
-import ene.eneform.mero.config.ConfigFile;
+import lombok.extern.slf4j.Slf4j;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.InputStream;
+import java.io.Serializable;
 
 /**
  *
  * @author Simon
  */
+@Slf4j
 public abstract class ConfigXML extends ConfigFile implements Serializable{
     
     protected String m_strFileName;
@@ -28,8 +29,10 @@ public abstract class ConfigXML extends ConfigFile implements Serializable{
     protected ConfigXML(SAXParser parser, String strFileName)
     {
         m_parser = parser;
+        log.info("ConfigXML {}", strFileName);
         m_strFileName = strFileName;
     }
+
     protected void setHandler(DefaultHandler handler)
     {
         m_handler = handler;
@@ -53,6 +56,7 @@ public abstract class ConfigXML extends ConfigFile implements Serializable{
 protected boolean loadXML()
     {
         initialise();
+        log.info("loadXML {}", m_strFileName);
         InputStream is = loadFile(m_strFileName);
          if (is == null)
          {

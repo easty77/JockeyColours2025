@@ -33,9 +33,9 @@ import java.util.Iterator;
 @RequiredArgsConstructor
 public class RegisteredOwnerFactory {
     @Value("${ene.eneform.mero.SVG_OUTPUT_DIRECTORY}")
-    private static String SVG_OUTPUT_DIRECTORY;
+    private String SVG_OUTPUT_DIRECTORY;
     @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
-    private static String SVG_IMAGE_PATH;
+    private String SVG_IMAGE_PATH;
 
     private final WikipediaService wikipediaService;
     private final ColoursSearch coloursSearch;

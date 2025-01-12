@@ -8,7 +8,6 @@ package ene.eneform.mero.parse;
 import ene.eneform.mero.colours.ENEColoursElement;
 import ene.eneform.mero.colours.ENEColoursElementPattern;
 import ene.eneform.mero.config.ENEColoursEnvironment;
-import org.springframework.stereotype.Component;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -24,7 +23,6 @@ import java.util.regex.Pattern;
  *
  * @author Simon
  */
-@Component
 public class ENEColoursParserCompareAction implements Serializable {
 private ENEColoursEnvironment environment;
 

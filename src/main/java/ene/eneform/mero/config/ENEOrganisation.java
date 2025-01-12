@@ -5,8 +5,6 @@
 
 package ene.eneform.mero.config;
 
-import ene.eneform.mero.config.ENEOrganisationList;
-
 import java.io.Serializable;
 
 

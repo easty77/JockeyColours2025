@@ -4,57 +4,47 @@
  */
 package ene.eneform.mero.config;
 
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Set;
-import javax.xml.parsers.SAXParser;
-
-import ene.eneform.mero.config.ConfigColours;
-import ene.eneform.mero.config.ConfigXML;
-import ene.eneform.mero.config.ENEOrganisation;
-import ene.eneform.mero.config.ENEOrganisationList;
-import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Set;
 
 /**
  *
  * @author Simon
  */
 public class ConfigOrganisations extends ConfigXML {
-
-    @Value("${ene.eneform.mero.organisations}")
-    private static String FILE_NAME;
     // no language
-    private HashMap<String, ene.eneform.mero.config.ENEOrganisation> m_hmOrganisations = new HashMap<String, ene.eneform.mero.config.ENEOrganisation>();
+    private HashMap<String, ENEOrganisation> m_hmOrganisations = new HashMap<String, ENEOrganisation>();
     
-    public ConfigOrganisations(SAXParser parser)
+    public ConfigOrganisations(ENEColoursEnvironment environment, SAXParser parser, String fileName)
     {
-        super(parser, FILE_NAME);
-    }
-    public boolean load(ene.eneform.mero.config.ConfigColours cc)
-    {
-        setHandler(new ENEOrganisationsHandler(cc));
-        return loadXML();
+        super(parser, fileName);
+
+        setHandler(new ENEOrganisationsHandler(environment.getConfigColours()));
+        loadXML();
     }
     public Set<String> getOrganisations()
     {
         return m_hmOrganisations.keySet();
     }
-    public ene.eneform.mero.config.ENEOrganisation getOrganisation(String strOrganisation)
+    public ENEOrganisation getOrganisation(String strOrganisation)
     {
         return m_hmOrganisations.get(strOrganisation);
     }
 
 private class ENEOrganisationsHandler extends DefaultHandler implements Serializable
 {
-    private ene.eneform.mero.config.ENEOrganisation m_currentOrganisation = null;
+    private ENEOrganisation m_currentOrganisation = null;
     private ENEOrganisationList m_currentOrganisationList = null;
     private String m_strCurrentList="";
     private String m_strCurrentLanguage = "";
     
-    private transient ene.eneform.mero.config.ConfigColours m_cc;
+    private transient ConfigColours m_cc;
     
     public ENEOrganisationsHandler(ConfigColours cc)
     {

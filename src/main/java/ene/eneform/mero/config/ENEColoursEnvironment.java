@@ -7,11 +7,11 @@ import ene.eneform.mero.parse.ENEColoursParserCompareAction;
 import ene.eneform.mero.tartan.ENETartan;
 import ene.eneform.mero.utils.ENEColourItem;
 import ene.eneform.mero.utils.MeroUtils;
+import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import org.apache.batik.anim.dom.SVGOMTextElement;
 import org.apache.batik.bridge.*;
 import org.apache.batik.gvt.GraphicsNode;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.svg.SVGDocument;
 import org.w3c.dom.svg.SVGGElement;
@@ -36,12 +36,10 @@ import java.util.Set;
 @Getter
 public class ENEColoursEnvironment implements Serializable {
 
-    @Value("${ene.eneform.mero.DEFAULT_LANGUAGE}")
-    public static String DEFAULT_LANGUAGE;
-    @Value("${ene.eneform.mero.SVG_MERO_DIRECTORY}")
-    private String SVG_MERO_DIRECTORY;
-    @Value("${ene.eneform.mero.SVG_SHAPE_DIRECTORY}")
-    private String SVG_SHAPE_DIRECTORY;
+    //@Value("${ene.eneform.mero.DEFAULT_LANGUAGE}")
+    public static String DEFAULT_LANGUAGE = "en";
+    private String SVG_MERO_DIRECTORY="svg/mero/";
+    private String SVG_SHAPE_DIRECTORY="svg/";
 
     private double dTartanShrinkFactor = 4.0;   // to do: read from xml config file
 
@@ -65,23 +63,25 @@ public class ENEColoursEnvironment implements Serializable {
         SAXParserFactory parserFactory = SAXParserFactory.newInstance();
         try {
             parser = parserFactory.newSAXParser();
-            initialise();
         } catch ( Exception saxe ) {
             System.out.println("Error setting up the XML Parser. Loading aborted.");
         }
     }
-private void initialise() {
-    configPatterns = new ConfigPatterns(parser);
-    configColours = new ConfigColours(parser);
-    configFabrics = new ConfigFabrics(parser);
-    configTartans = new ConfigTartans(parser);
-    abbreviationsHandler = new AbbreviationsHandler(new ConfigAbbreviations(parser), configColours, configFabrics);
-    configExpands = new ConfigExpands(parser, configColours, configPatterns, configFabrics);
-    configOrganisations = new ConfigOrganisations(parser);
-    configSvg = new ConfigSvg();
-    configCompares = new ConfigCompares(this, parser);
+    @PostConstruct
+    private void initialise() {
+        configPatterns = new ConfigPatterns(parser, "xml/patterns.xml");
+        configColours = new ConfigColours(parser, "xml/colours.xml");
+        configFabrics = new ConfigFabrics(parser, "xml/fabrics.xml");
+        configTartans = new ConfigTartans(parser, "xml/tartans.xml");
+        abbreviationsHandler = new AbbreviationsHandler(
+                new ConfigAbbreviations(parser, "xml/abbreviations.xml"),
+                configColours, configFabrics);
+        configExpands = new ConfigExpands(this, parser, "xml/expands.xml");
+        configOrganisations = new ConfigOrganisations(this, parser, "xml/organisations.xml");
+        configSvg = new ConfigSvg(SVG_MERO_DIRECTORY, SVG_SHAPE_DIRECTORY);
+        configCompares = new ConfigCompares(this, parser, "xml/compares.xml");
 
-}
+    }
     public SVGDocument getSVGDocument(String strShape)
     {
         if (configSvg != null)

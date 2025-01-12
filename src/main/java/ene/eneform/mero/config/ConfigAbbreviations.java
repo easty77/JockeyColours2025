@@ -4,15 +4,13 @@
  */
 package ene.eneform.mero.config;
 
-import java.io.Serializable;
-import java.util.HashMap;
-import javax.xml.parsers.SAXParser;
-
-import ene.eneform.mero.config.ConfigXML;
-import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
+import java.io.Serializable;
+import java.util.HashMap;
 
 /**
  *
@@ -20,15 +18,12 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class ConfigAbbreviations extends ConfigXML {
 
-    @Value("${ene.eneform.mero.abbreviations}")
-    private static String FILE_NAME;
-
     // abbreviations.xml
      private HashMap<String, ENEAbbreviations> m_hmLanguages = new HashMap<String, ENEAbbreviations>();
      
-    public ConfigAbbreviations(SAXParser parser)
+    public ConfigAbbreviations(SAXParser parser, String fileName)
     {
-        super(parser, FILE_NAME);
+        super(parser, fileName);
         setHandler(new ENEAbbreviationsHandler());
         loadXML();
     }

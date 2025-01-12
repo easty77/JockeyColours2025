@@ -5,7 +5,6 @@
 package ene.eneform.mero.config;
 
 import ene.eneform.mero.parse.ENEColoursParserCompareAction;
-import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -20,15 +19,13 @@ import java.util.HashMap;
  * @author Simon
  */
 public class ConfigCompares extends ConfigXML {
-    @Value("${ene.eneform.mero.compares}")
-    private static String FILE_NAME;
 
     // by language
     private HashMap<String, ENECompares> m_hmLanguages= new HashMap<String, ENECompares>();
  
-    public ConfigCompares(ENEColoursEnvironment environment, SAXParser parser)
+    public ConfigCompares(ENEColoursEnvironment environment, SAXParser parser, String fileName)
     {
-        super(parser, FILE_NAME);
+        super(parser, fileName);
         setHandler(new ENEComparesHandler(environment));
         loadXML();
     }

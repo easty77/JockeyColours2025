@@ -4,35 +4,30 @@
  */
 package ene.eneform.mero.config;
 
-import ene.eneform.mero.config.ConfigXML;
 import ene.eneform.mero.tartan.ENETartan;
 import ene.eneform.mero.tartan.ENETartanUtils;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
-import javax.xml.parsers.SAXParser;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
  * @author Simon
  */
 public class ConfigTartans extends ConfigXML {
-    @Value("${ene.eneform.mero.tartans}")
-    private static String FILE_NAME;
-
     // no language
         private HashMap<String,ENETartan> m_hmTartans = new HashMap<String,ENETartan>();
     private ArrayList<ENETartan> m_alTartans = new ArrayList<ENETartan>();
 
-    public ConfigTartans(SAXParser parser)
+    public ConfigTartans(SAXParser parser, String fileName)
     {
-        super(parser, FILE_NAME);
+        super(parser, fileName);
         setHandler(new ENETartansHandler());
        loadXML();
     }

@@ -4,9 +4,6 @@
  */
 package ene.eneform.mero.action;
 
-import ene.eneform.mero.action.ENESVGAction;
-import ene.eneform.mero.config.ENEColoursEnvironment;
-
 import java.awt.*;
 import java.io.Serializable;
 
@@ -14,7 +11,7 @@ import java.io.Serializable;
  *
  * @author Simon
  */
-public class ENESleevesSVGAction extends ene.eneform.mero.action.ENESVGAction implements Serializable {
+public class ENESleevesSVGAction extends ENESVGAction implements Serializable {
     
     // Note that Mero have twice number of Standard, as Standard is currently reflected
             private static Dimension[] sm_size_rectangle = {new Dimension(25, 25), new Dimension(40, 40)};
@@ -23,9 +20,9 @@ public class ENESleevesSVGAction extends ene.eneform.mero.action.ENESVGAction im
                 {new Point(205, 360), new Point(350, 360)}
             };
 
-       public ENESleevesSVGAction(ENEColoursEnvironment environment, String strSVGName)
+       public ENESleevesSVGAction(String strSVGName)
        {
-           super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
+           super(strSVGName, sm_rectangle_points, sm_size_rectangle);
        }
         public static class Three extends ENESVGAction {
     
@@ -36,9 +33,9 @@ public class ENESleevesSVGAction extends ene.eneform.mero.action.ENESVGAction im
                 new Point(355, 360), new Point(360, 410), new Point(355, 460)}  // left sleeve
             };
 
-       public Three(ENEColoursEnvironment environment, String strSVGName)
+       public Three(String strSVGName)
        {
-           super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
+           super(strSVGName, sm_rectangle_points, sm_size_rectangle);
        }
 }
 }

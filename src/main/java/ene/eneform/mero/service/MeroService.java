@@ -5,25 +5,12 @@
 package ene.eneform.mero.service;
 
 import ene.eneform.colours.domain.RacingColours;
-import ene.eneform.mero.action.ENEJacketSVGAction;
-import ene.eneform.mero.action.ENEPatternAction;
-import ene.eneform.mero.action.ENESVGAction;
 import ene.eneform.mero.colours.ENEColoursElement;
-import ene.eneform.mero.colours.ENEColoursElementPattern;
 import ene.eneform.mero.colours.ENERacingColours;
 import ene.eneform.mero.colours.FullRacingColours;
 import ene.eneform.mero.config.*;
-import ene.eneform.mero.fabric.ENEFabricItem;
 import ene.eneform.mero.factory.ENEMeroFactory;
 import ene.eneform.mero.factory.SVGFactoryUtils;
-import ene.eneform.mero.tartan.ENETartan;
-import ene.eneform.mero.tartan.ENETartanItem;
-import ene.eneform.mero.tartan.ENETartanUtils;
-import ene.eneform.mero.utils.ENEColourItem;
-import ene.eneform.mero.utils.ENEFillItem;
-import org.apache.batik.anim.dom.SVGDOMImplementation;
-import org.apache.batik.anim.dom.SVGOMPatternElement;
-import org.apache.batik.anim.dom.SVGOMTextElement;
 import org.apache.batik.svggen.SVGGeneratorContext;
 import org.apache.batik.svggen.SVGGraphics2D;
 import org.apache.batik.transcoder.TranscoderInput;
@@ -31,20 +18,13 @@ import org.apache.batik.transcoder.TranscoderOutput;
 import org.apache.batik.transcoder.image.PNGTranscoder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.w3c.dom.*;
-import org.w3c.dom.svg.SVGDocument;
-import org.w3c.dom.svg.SVGGElement;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import java.awt.*;
 import java.io.*;
-import java.math.RoundingMode;
 import java.nio.file.Paths;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 /**
  *
@@ -55,7 +35,7 @@ public class MeroService {
     private final ENEColoursEnvironment environment;
 
     @Value("${ene.eneform.mero.MAX_NR_EXPAND_ITERATIONS}")
-    private static Integer MAX_NR_EXPAND_ITERATIONS;
+    private Integer MAX_NR_EXPAND_ITERATIONS;
 
     private ConfigExpands configExpands;
     private ConfigPatterns configPatterns;
@@ -73,7 +53,7 @@ public class MeroService {
         String strLanguage = environment.DEFAULT_LANGUAGE;
         FullRacingColours colours = createFullRacingColours(strLanguage, strDescription, "");
         
-        return colours.getDescription();
+        return colours.getColours().getDefinition();
     }
 
     public String generateSVGContent(String strDefinition)

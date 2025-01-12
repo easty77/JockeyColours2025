@@ -4,9 +4,6 @@
  */
 package ene.eneform.mero.action;
 
-import ene.eneform.mero.action.ENESVGAction;
-import ene.eneform.mero.config.ENEColoursEnvironment;
-
 import java.awt.*;
 import java.io.Serializable;
 
@@ -14,7 +11,7 @@ import java.io.Serializable;
  *
  * @author Simon
  */
-public class ENECapSVGAction extends ene.eneform.mero.action.ENESVGAction implements Serializable{
+public class ENECapSVGAction extends ENESVGAction implements Serializable{
     
     private static final int MERO_CAP_XOFFSET = 265;
     private static final int MERO_CAP_YOFFSET = 205;
@@ -25,11 +22,11 @@ public class ENECapSVGAction extends ene.eneform.mero.action.ENESVGAction implem
                 {new Point(MERO_CAP_XOFFSET+10, MERO_CAP_YOFFSET+10)}
             };
        
-       public ENECapSVGAction(ENEColoursEnvironment environment, String strSVGName)
+       public ENECapSVGAction(String strSVGName)
        {
-                super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
+                super(strSVGName, sm_rectangle_points, sm_size_rectangle);
        }
-       public static class FiveAround extends ene.eneform.mero.action.ENESVGAction
+       public static class FiveAround extends ENESVGAction
        {
             // add approx (240, 340) for Standard -> Mero
             private static Dimension[] sm_size_rectangle = {new Dimension(14, 14), new Dimension(20, 20)};
@@ -44,9 +41,9 @@ public class ENECapSVGAction extends ene.eneform.mero.action.ENESVGAction implem
             };
             private static int[] sm_rotate_degrees = {0, -70, -140, -220, -290};
            
-            public FiveAround(ENEColoursEnvironment environment, String strSVGName)
+            public FiveAround(String strSVGName)
             {
-                super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle, sm_rotate_degrees);
+                super(strSVGName, sm_rectangle_points, sm_size_rectangle, sm_rotate_degrees);
             }
       }
       public static class Front extends ENESVGAction
@@ -63,9 +60,9 @@ public class ENECapSVGAction extends ene.eneform.mero.action.ENESVGAction implem
             }
             };
             
-            public Front(ENEColoursEnvironment environment, String strSVGName)
+            public Front(String strSVGName)
             {
-                super(environment, strSVGName, sm_rectangle_points, sm_size_rectangle);
+                super(strSVGName, sm_rectangle_points, sm_size_rectangle);
             }
       }
 }

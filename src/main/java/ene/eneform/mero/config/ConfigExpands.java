@@ -4,36 +4,29 @@
  */
 package ene.eneform.mero.config;
 
-import ene.eneform.mero.config.ConfigColours;
-import ene.eneform.mero.config.ConfigFabrics;
-import ene.eneform.mero.config.ConfigPatterns;
-import ene.eneform.mero.config.ConfigXML;
 import ene.eneform.mero.parse.ENEColoursParserExpand;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import javax.xml.parsers.SAXParser;
-
-import org.springframework.beans.factory.annotation.Value;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
  * @author Simon
  */
 public class ConfigExpands extends ConfigXML {
-    @Value("${ene.eneform.mero.expands}")
-    private static String FILE_NAME;
-
     // by language
     private HashMap<String, ENEExpands> m_hmLanguages = new HashMap<String, ENEExpands>();
  
-   public ConfigExpands(SAXParser parser, ConfigColours cc, ConfigPatterns cp, ConfigFabrics cf)
+   public ConfigExpands(ENEColoursEnvironment environment, SAXParser parser, String fileName)
     {
-        super(parser, FILE_NAME);
-        setHandler(new ENEExpandsHandler(cc, cp, cf));
+        super(parser, fileName);
+        setHandler(new ENEExpandsHandler(environment.getConfigColours(),
+                environment.getConfigPatterns(), environment.getConfigFabrics()));
         loadXML();
     }
     public ArrayList<ENEColoursParserExpand> getExpandList(String strLanguage)
@@ -60,7 +53,7 @@ private class ENEExpandsHandler extends DefaultHandler implements Serializable
     private String m_strCurrentTo = "";
     private String m_strCurrentLabel = "";
 
-    private transient ene.eneform.mero.config.ConfigColours m_cc;
+    private transient ConfigColours m_cc;
     private transient ConfigPatterns m_cp;
     private transient ConfigFabrics m_cf;
     

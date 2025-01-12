@@ -4,7 +4,11 @@
  */
 package ene.eneform.mero.config;
 
-import java.awt.Shape;
+import org.apache.batik.parser.AWTPathProducer;
+import org.apache.batik.parser.AWTPolygonProducer;
+import org.xml.sax.Attributes;
+
+import java.awt.*;
 import java.awt.font.TextAttribute;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.GeneralPath;
@@ -13,9 +17,6 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.Hashtable;
 import java.util.Map;
-import org.apache.batik.parser.AWTPathProducer;
-import org.apache.batik.parser.AWTPolygonProducer;
-import org.xml.sax.Attributes;
 
 /**
  *

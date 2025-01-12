@@ -12,7 +12,6 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Properties;
 
 /**
  *
@@ -27,8 +26,11 @@ protected InputStream loadFile(String strFileName)
     try
     {
         log.info("Loading File {}-{}", strFileName, getClass().getClassLoader().getResource(strFileName));
-        File file = new File(getClass().getClassLoader().getResource(strFileName).getFile());
-        is = new FileInputStream(file);
+        URL url = getClass().getClassLoader().getResource(strFileName);
+        if (url != null) {
+            File file = new File(url.getFile());
+            is = new FileInputStream(file);
+        }
     }
     catch(FileNotFoundException e)
     {
@@ -42,9 +44,12 @@ protected InputStream loadFile(String strFileName)
         try
         {
             log.info("Loading URL {}-{}", strFileName, getClass().getClassLoader().getResource(strFileName));
-            File file = new File(getClass().getClassLoader().getResource(strFileName).getFile());
-            InputStream is = new FileInputStream(file);
-            url = file.toURI().toURL();;
+            URL url1 = getClass().getClassLoader().getResource(strFileName);
+            if (url1 != null) {
+                File file = new File(url1.getFile());
+                InputStream is = new FileInputStream(file);
+                url = file.toURI().toURL();
+            }
         }
         catch(FileNotFoundException e)
         {

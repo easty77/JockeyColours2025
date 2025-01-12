@@ -1,17 +1,18 @@
 package ene.eneform.mero.colours;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import ene.eneform.mero.config.*;
+import ene.eneform.mero.config.ConfigPatterns;
+import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.parse.ENEColoursParserCompareAction;
 import ene.eneform.mero.parse.ENEColoursParserExpand;
 import ene.eneform.mero.parse.ENEColoursParserMatch;
+import ene.eneform.mero.tartan.ENETartanItem;
 import ene.eneform.mero.utils.ENEColourItem;
 import ene.eneform.mero.utils.ENEFillItem;
-import ene.eneform.mero.tartan.ENETartanItem;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 @Slf4j
 @Getter
@@ -32,25 +33,26 @@ public class FullRacingColours {
 	{
         this.environment = environment;
     	this.original = description;
+        this.description = description.toLowerCase();
         this.owner = owner;
         this.language = language;
-        colours = new ENERacingColours(language, original, owner,
+        colours = new ENERacingColours(language, this.description, owner,
                 new ENEColoursElement(environment, language, ENEColoursElement.JACKET),
                 new ENEColoursElement(environment, language, ENEColoursElement.SLEEVES),
                 new ENEColoursElement(environment, language, ENEColoursElement.CAP)
                 );
-	this.description = environment.getAbbreviationsHandler().replaceAbbreviations(original, language);
+	this.description = environment.getAbbreviationsHandler().replaceAbbreviations(this.description, language);
         this.description += ".";    // end with full stop, because easier to detect than end of string
         log.info("NEW: " + this.description);
 
-        this.expanded = expandDescription();
+        this.expanded = expandDescription(this.description);
 
         log.info("EXPANDED: " + this.expanded);
 
         parse();
  	}
 
-    private String expandDescription()
+    private String expandDescription(String description)
     {
         String expanded="";
         Iterator<ENEColoursParserExpand> iter = environment.getConfigExpands().getExpandList(language).iterator();
@@ -86,7 +88,7 @@ public class FullRacingColours {
 
    private void parse()
     {
-    	parse1(description);
+    	parse1(expanded);
         
         resolveImplications();
 

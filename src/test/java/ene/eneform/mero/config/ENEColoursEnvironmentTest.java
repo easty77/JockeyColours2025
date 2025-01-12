@@ -1,18 +1,18 @@
 package ene.eneform.mero.config;
 
-import ene.eneform.mero.config.ENEColoursEnvironment;
-import lombok.extern.slf4j.Slf4j;
+import ene.eneform.JockeyColours2025Application;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 
-@Slf4j
 @SpringBootTest
+@ContextConfiguration(classes = JockeyColours2025Application.class)
 public class ENEColoursEnvironmentTest {
     @Autowired
     ENEColoursEnvironment env;
     @Test
-    void initialise() {
-        log.info(env.toString());
+    void resetEnvironment() {
+        env.reset();
     }
 }

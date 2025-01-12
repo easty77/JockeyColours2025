@@ -18,7 +18,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 
@@ -51,7 +50,7 @@ public class WikipediaService {
     private final ColourRunnerService runnerService;
     private final AdditionalRaceDataRepository ardRepository;
     @Value("${ene.eneform.colours.svg_output_dir}")
-    private static String SVG_OUTPUT_DIRECTORY;
+    private String SVG_OUTPUT_DIRECTORY;
  
     private static String sm_strOpenHeader= "{{Jockey colours header$LINE_BREAK$| name = %s}}$LINE_BREAK$";
     private static String sm_strOpenFullHeader= "{{Jockey colours full header$LINE_BREAK$| name = %s}}$LINE_BREAK$";

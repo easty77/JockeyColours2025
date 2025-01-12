@@ -5,43 +5,31 @@
 package ene.eneform.mero.factory;
 
 import ene.eneform.mero.action.ENEJacketSVGAction;
-import ene.eneform.mero.colours.ENEColoursElementPattern;
 import ene.eneform.mero.action.ENEPatternAction;
 import ene.eneform.mero.action.ENESVGAction;
 import ene.eneform.mero.colours.ENEColoursElement;
+import ene.eneform.mero.colours.ENEColoursElementPattern;
 import ene.eneform.mero.colours.ENERacingColours;
-import ene.eneform.mero.utils.ENEColourItem;
 import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.fabric.ENEFabricItem;
-import ene.eneform.mero.utils.ENEFillItem;
 import ene.eneform.mero.tartan.ENETartan;
 import ene.eneform.mero.tartan.ENETartanItem;
 import ene.eneform.mero.tartan.ENETartanUtils;
+import ene.eneform.mero.utils.ENEColourItem;
+import ene.eneform.mero.utils.ENEFillItem;
+import org.apache.batik.anim.dom.SVGDOMImplementation;
+import org.apache.batik.anim.dom.SVGOMPatternElement;
+import org.apache.batik.anim.dom.SVGOMTextElement;
+import org.w3c.dom.*;
+import org.w3c.dom.svg.SVGDocument;
+import org.w3c.dom.svg.SVGGElement;
 
-import java.awt.Point;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-
-import lombok.RequiredArgsConstructor;
-import org.apache.batik.anim.dom.SVGDOMImplementation;
-import org.apache.batik.anim.dom.SVGOMPatternElement;
-import org.apache.batik.anim.dom.SVGOMTextElement;
-import org.apache.batik.svggen.SVGGeneratorContext;
-import org.apache.batik.svggen.SVGGraphics2D;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.svg.SVGDocument;
-import org.w3c.dom.svg.SVGGElement;
 
 /**
  *
@@ -278,7 +266,7 @@ private void createTextPattern(Element parentNode, String strElement, String str
      ENEPatternAction action = environment.getPatternAction("ENE" + strElement, strMapping, "en");
      if ((action == null) || (action.getClass().getName().indexOf("SVGAction") < 0)) // need full name as use enclosed classes
      {
-         action = new ENEJacketSVGAction(environment, "text");
+         action = new ENEJacketSVGAction("text");
      }
      // place in specified location
      textNode = getSVGActionElement(svgTextDoc, g, ((ENESVGAction)action).getMeroRectangles(), rect);

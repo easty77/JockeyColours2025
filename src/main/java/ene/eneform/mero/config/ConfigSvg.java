@@ -4,40 +4,31 @@
  */
 package ene.eneform.mero.config;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.Serializable;
-import java.io.StringReader;
-import java.util.HashMap;
-
-import ene.eneform.mero.config.ConfigFile;
 import org.apache.batik.anim.dom.SAXSVGDocumentFactory;
 import org.apache.batik.util.XMLResourceDescriptor;
 import org.apache.commons.io.IOUtils;
-import org.springframework.beans.factory.annotation.Value;
 import org.w3c.dom.svg.SVGDocument;
+
+import java.io.*;
+import java.util.HashMap;
 
 /**
  *
  * @author Simon
  */
 public class ConfigSvg extends ConfigFile implements Serializable{
-    @Value("${ene.eneform.mero.SVG_MERO_DIRECTORY}")
-    private static String SVG_MERO_DIRECTORY;
-    @Value("${ene.eneform.mero.SVG_SHAPE_DIRECTORY}")
-    private static String SVG_SHAPE_DIRECTORY;
 
+private String SVG_MERO_DIRECTORY;
+private String  SVG_SHAPE_DIRECTORY;
      private HashMap<String,String> m_hmSvgFileContent = new HashMap<String,String>();
      // Only store document objects for Mero, as for others want to replace colours, tags etc and not easy to take copy
      private transient HashMap<String,SVGDocument> m_hmSvgDocuments = new HashMap<String,SVGDocument>();
      private transient SAXSVGDocumentFactory m_svgFactory = new SAXSVGDocumentFactory(XMLResourceDescriptor.getXMLParserClassName());
      
-    ConfigSvg()
+    ConfigSvg(String SVG_MERO_DIRECTORY, String SVG_SHAPE_DIRECTORY)
      {
+         this.SVG_MERO_DIRECTORY = SVG_MERO_DIRECTORY;
+         this.SVG_SHAPE_DIRECTORY = SVG_SHAPE_DIRECTORY;
     String[] astrSVGFiles = {"jacket", "sleeves", "cap" };
     
     for(int i = 0; i < astrSVGFiles.length; i++)

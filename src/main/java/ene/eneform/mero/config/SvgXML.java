@@ -4,22 +4,16 @@
  */
 package ene.eneform.mero.config;
 
-import java.awt.Shape;
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
+import java.awt.*;
 import java.awt.geom.Area;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.io.StringReader;
-import javax.xml.parsers.SAXParser;
-
-import ene.eneform.mero.config.ConfigXML;
-import ene.eneform.mero.config.ENEShapeUtils;
-import org.xml.sax.Attributes;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *

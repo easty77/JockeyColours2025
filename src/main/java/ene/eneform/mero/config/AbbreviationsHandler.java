@@ -1,10 +1,7 @@
 package ene.eneform.mero.config;
 
 import ene.eneform.mero.utils.MeroUtils;
-import org.springframework.stereotype.Service;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

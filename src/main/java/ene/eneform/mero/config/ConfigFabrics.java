@@ -4,41 +4,34 @@
  */
 package ene.eneform.mero.config;
 
-import ene.eneform.mero.config.ConfigXML;
 import ene.eneform.mero.fabric.ENEFabric;
 import ene.eneform.mero.fabric.ENEFabricItem;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
-import javax.xml.parsers.SAXParser;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
  * @author Simon
  */
 public class ConfigFabrics extends ConfigXML {
-    @Value("${ene.eneform.mero.fabrics}")
-    private static String FILE_NAME;
-
     // by language
     private HashMap<String, ENEConfigFabrics> m_hmLanguages= new HashMap<String, ENEConfigFabrics>();
 
  
-    public ConfigFabrics(SAXParser parser)
+    public ConfigFabrics(SAXParser parser, String fileName)
     {
-        super(parser, FILE_NAME);
-    }
-    public boolean load()
-    {
+        super(parser,fileName);
+
         setHandler(new ENEFabricsHandler());
-        return loadXML();
+        loadXML();
     }
    public Set<String> getFabrics(String strLanguage)
     {

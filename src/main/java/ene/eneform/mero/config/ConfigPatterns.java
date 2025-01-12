@@ -9,18 +9,17 @@ import ene.eneform.mero.action.ENESVGAction;
 import ene.eneform.mero.colours.ENEPattern;
 import ene.eneform.mero.colours.ENEPatternCollection;
 import ene.eneform.mero.utils.MeroUtils;
-import java.awt.Rectangle;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
+import java.awt.*;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import javax.xml.parsers.SAXParser;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
@@ -28,20 +27,14 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class ConfigPatterns  extends ConfigXML {
 
-    @Value("${ene.eneform.mero.patterns}")
-    private static String FILE_NAME;
-
     // by language
     private HashMap<String, ENEConfigPatterns> m_hmLanguages= new HashMap<String, ENEConfigPatterns>();
  
-    public ConfigPatterns(SAXParser parser)
+    public ConfigPatterns(SAXParser parser, String fileName)
     {
-        super(parser, FILE_NAME);
-    }
-    public boolean load(StandardPatternHandler standard)
-    {
+        super(parser, fileName);
         setHandler(new ENEPatternsHandler());
-        return loadXML();
+       loadXML();
     }
     public Iterator<ENEPatternCollection> getPatternIterator(String strLanguage)
     {
@@ -343,6 +336,7 @@ private class ENEPatternsHandler extends DefaultHandler implements Serializable
             {
                 pattern = createPattern(attributes);
 
+                m_strCurrentMeroMapping = attributes.getValue("mero");
                 String strStdClassName = attributes.getValue("standard");
 
                 //m_currentStdAction = null;

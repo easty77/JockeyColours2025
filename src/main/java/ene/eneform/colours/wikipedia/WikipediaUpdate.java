@@ -48,9 +48,9 @@ import java.util.regex.Pattern;
 @RequiredArgsConstructor
 public class WikipediaUpdate {
     @Value("${ene.eneform.mero.SVG_OUTPUT_DIRECTORY}")
-    private static String SVG_OUTPUT_DIRECTORY;
+    private String SVG_OUTPUT_DIRECTORY;
     @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
-    private static String SVG_IMAGE_PATH;
+    private String SVG_IMAGE_PATH;
 
     private final WikipediaService wikipediaService;
 private Pattern sm_refRP = Pattern.compile("\\{\\{Racing Post[a-z0-9\\|\\-\\s]+\\}\\}");

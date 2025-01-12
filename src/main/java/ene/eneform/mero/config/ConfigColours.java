@@ -4,22 +4,19 @@
  */
 package ene.eneform.mero.config;
 
-import ene.eneform.mero.config.ConfigXML;
-import ene.eneform.mero.config.ENEColoursEnvironment;
 import ene.eneform.mero.utils.ENEColourItem;
 import ene.eneform.mero.utils.MeroUtils;
-import java.awt.Color;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
+import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
-import javax.xml.parsers.SAXParser;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
@@ -27,15 +24,13 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class ConfigColours extends ConfigXML {
 
-    @Value("${ene.eneform.mero.colours}")
-    private static String FILE_NAME;
 
     // by language
     private HashMap<String, ENEColoursConfig> m_hmLanguages = new HashMap<String, ENEColoursConfig>();
      
-    public ConfigColours(SAXParser parser)
+    public ConfigColours(SAXParser parser, String fileName)
     {
-        super(parser, FILE_NAME);
+        super(parser, fileName);
         setHandler(new ENEColoursHandler());
         loadXML();
     }
