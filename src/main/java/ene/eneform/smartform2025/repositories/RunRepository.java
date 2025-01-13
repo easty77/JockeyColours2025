@@ -12,8 +12,11 @@ public interface RunRepository extends CrudRepository<Run, RunId> {
 
     List<Run> findByHorseName(String name);
 
-        @Query("FROM Run u JOIN FETCH u.historicRace JOIN FETCH u.dailyRace JOIN FETCH u.dailyRunner WHERE u.horse.name = :name")
-        List<Run> findRunsByHorseName(@Param("name") String name);
+    @Query("FROM Run u JOIN FETCH u.historicRace JOIN FETCH u.dailyRace JOIN FETCH u.dailyRunner WHERE u.horse.name = :name")
+    List<Run> findRunsByHorseName(@Param("name") String name);
+
+    @Query("FROM Run u JOIN FETCH u.historicRace JOIN FETCH u.dailyRace JOIN FETCH u.dailyRunner WHERE u.id.raceId = :raceId")
+    List<Run> findRunsByRaceId(@Param("raceId") Integer raceId);
 
     List<Run> findByIdRunnerId(Integer runnerId);
 }
