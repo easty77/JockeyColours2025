@@ -15,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
 public class AdditionalRaceData {
     @Id
-    private final String id;
      @Column(name = "ard_name")
      private String name;
     @Column(name = "ard_title")

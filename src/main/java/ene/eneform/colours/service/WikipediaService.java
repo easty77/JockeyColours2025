@@ -257,8 +257,9 @@ public class WikipediaService {
         // no id specified - retrieve from additional_race_link
         List<? extends BasicRaceInfo> aRaces = arlService.findByRaceName(strDescription);
         //WikipediaFactory.updateAdditionalRaceLink(aRaces.get(0).getRace(), strDescription);
-        AdditionalRaceData ard = ardRepository.findByName(strDescription);
-        return generateRaces123Wikipedia(ard.getTitle(), aRaces, strLanguage, strLineBreak);
+        return ardRepository.findById(strDescription).map(
+                ard->generateRaces123Wikipedia(ard.getTitle(), aRaces, strLanguage, strLineBreak)
+        ).orElse("");
     }
     
     public String generateRace(JSONObject obj, String strLanguage, String strLineBreak) {

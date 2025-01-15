@@ -1,14 +1,14 @@
 package ene.eneform.smartform2025.repositories;
 
 import ene.eneform.smartform2025.entities.Run;
-import ene.eneform.smartform2025.entities.RunId;
+import ene.eneform.smartform2025.entities.EntryId;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface RunRepository extends CrudRepository<Run, RunId> {
+public interface RunRepository extends CrudRepository<Run, EntryId> {
 
     List<Run> findByHorseName(String name);
 

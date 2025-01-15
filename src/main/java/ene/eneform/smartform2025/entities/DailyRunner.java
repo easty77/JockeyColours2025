@@ -13,7 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor(force=true)
 public class DailyRunner {
     @EmbeddedId
-    public RunId id;
+    public EntryId id;
 
     public Integer cloth_number;
     public Integer stall_number;

@@ -12,7 +12,7 @@ import lombok.ToString;
 @NoArgsConstructor(force=true)
 public class Run {
     @EmbeddedId
-    public RunId id;
+    public EntryId id;
 
     public Integer cloth_number;
     public Integer stall_number;

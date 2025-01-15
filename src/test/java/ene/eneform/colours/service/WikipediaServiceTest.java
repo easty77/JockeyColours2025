@@ -12,7 +12,8 @@ import java.io.IOException;
 public class WikipediaServiceTest {
     private static String COLOURS = "Red, blue star, green cap, white diamonds";
     private static String OWNER_NAME="Mr K Abdulla";
-
+private static String RACE_NAME="Derby";
+private static Integer RACE_YEAR = 2010;
     @Autowired
     private WikipediaService service;
 
@@ -30,6 +31,11 @@ public class WikipediaServiceTest {
         catch(IOException e) {
             e.printStackTrace();
         }
+    }
+    @Test
+    void generateRace() {
+        String content = service.generateRace(RACE_NAME, RACE_YEAR, "en", "br />");
+        log.info(content);
     }
 
 }

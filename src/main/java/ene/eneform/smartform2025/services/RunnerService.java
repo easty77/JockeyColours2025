@@ -12,11 +12,11 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class RunService {
+public class RunnerService {
     private final RunRepository runRepository;
     private final MeroService meroService;
 
-    public List<Runner> findRunsByRaceId(Integer raceId) {
+    public List<Runner> findRunnersByRaceId(Integer raceId) {
         List<Run> runs = runRepository.findRunsByRaceId(raceId);
         return map(runs);
     }

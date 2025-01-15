@@ -13,8 +13,7 @@ import lombok.Value;
 @NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
 public class ColourRunner {
     @EmbeddedId
-    BasicRaceId id;
-    Integer clothNumber;
+    ColourRunnerId id;
     String name;
     String ownerName;
     String jockeyColours;
