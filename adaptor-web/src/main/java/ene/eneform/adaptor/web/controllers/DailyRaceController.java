@@ -1,13 +1,13 @@
 package ene.eneform.adaptor.web.controllers;
 
-import ene.eneform.smartform2025.dtos.Declaration;
-import ene.eneform.smartform2025.dtos.Runner;
-import ene.eneform.smartform2025.entities.DailyRace;
-import ene.eneform.smartform2025.entities.Run;
-import ene.eneform.smartform2025.repositories.DailyRaceRepository;
-import ene.eneform.smartform2025.repositories.RunRepository;
-import ene.eneform.smartform2025.services.DeclarationService;
-import ene.eneform.smartform2025.services.RunnerService;
+import ene.eneform.service.smartform2025.dtos.Declaration;
+import ene.eneform.service.smartform2025.dtos.Runner;
+import ene.eneform.service.smartform2025.entities.DailyRace;
+import ene.eneform.service.smartform2025.entities.Run;
+import ene.eneform.service.smartform2025.repositories.DailyRaceRepository;
+import ene.eneform.service.smartform2025.repositories.RunRepository;
+import ene.eneform.service.smartform2025.service.DeclarationService;
+import ene.eneform.service.smartform2025.service.RunnerService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

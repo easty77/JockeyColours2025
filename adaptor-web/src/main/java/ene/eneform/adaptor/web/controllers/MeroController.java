@@ -1,6 +1,6 @@
 package ene.eneform.adaptor.web.controllers;
 
-import ene.eneform.mero.service.MeroService;
+import ene.eneform.service.mero.service.MeroService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

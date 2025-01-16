@@ -6,17 +6,15 @@
 package ene.eneform.adaptor.web.controllers;
 
 
-import ene.eneform.colours.bos.ENEColoursDBEnvironment;
-import ene.eneform.colours.service.WikipediaService;
-import ene.eneform.mero.config.ENEColoursEnvironment;
+import ene.eneform.service.colours.bos.ENEColoursDBEnvironment;
+import ene.eneform.service.colours.service.WikipediaService;
+import ene.eneform.service.mero.config.ENEColoursEnvironment;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.io.FileNotFoundException;
 
 /**
  *

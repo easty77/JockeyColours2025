@@ -5,7 +5,7 @@
 
 package ene.eneform.adaptor.web.controllers;
 
-import ene.eneform.smartform.bos.SmartformEnvironment;
+import ene.eneform.service.smartform.bos.SmartformEnvironment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;

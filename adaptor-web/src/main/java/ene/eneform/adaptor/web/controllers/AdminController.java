@@ -1,6 +1,6 @@
 package ene.eneform.adaptor.web.controllers;
 
-import ene.eneform.smartform2025.entities.DailyRace;
+import ene.eneform.service.smartform2025.entities.DailyRace;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
