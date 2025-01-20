@@ -5,11 +5,13 @@
 
 package ene.eneform.service.smartform.bos;
 
+import ene.eneform.port.in.smartform.SmartformEnvironmentInterface;
 import ene.eneform.service.smartform.bos.day.SmartformDay;
 import ene.eneform.service.smartform.bos.meeting.SmartformMeeting;
 import ene.eneform.service.smartform.factory.SmartformRaceFactory;
 import ene.eneform.service.utils.ENEStatement;
 import ene.eneform.service.utils.SmartformConnectionPool;
+import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -19,7 +21,8 @@ import java.util.*;
  *
  * @author Simon
  */
-public class SmartformEnvironment {
+@Service
+public class SmartformEnvironment implements SmartformEnvironmentInterface {
 
     private static SmartformEnvironment sm_environment = null;
     private static final SimpleDateFormat sm_gmtDate;

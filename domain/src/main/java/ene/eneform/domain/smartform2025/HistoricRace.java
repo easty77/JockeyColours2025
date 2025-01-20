@@ -4,9 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -14,7 +12,8 @@ import java.time.LocalDate;
 @Table(name="historic_races")
 @Getter
 @ToString
-@NoArgsConstructor(force=true)
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED, force=true)
 public class HistoricRace {
     @Id
     public Integer raceId;
