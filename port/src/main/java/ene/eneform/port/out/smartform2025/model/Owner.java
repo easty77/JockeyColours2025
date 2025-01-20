@@ -15,5 +15,5 @@ public class Owner {
     private final String name;
     private final String colours;
     private String svgContent;
-    private ParseInfo parsedRacingColours;
+    private ParseInfo parseInfo;
 }

@@ -28,7 +28,7 @@ public class DeclarationService implements DeclarationServiceInterface {
     private Declaration map(Entry entry) {
         Owner owner = map(entry.owner);
         ENEParsedRacingColours parsedColours = meroService.createFullRacingColours("en", owner.getColours(), owner.getName());
-        //owner.setParsedRacingColours(parsedColours);
+        owner.setParseInfo(parsedColours.getParseInfo());
         owner.setSvgContent(meroService.generateSVGContentFromDefinition(parsedColours.getColours().getDefinition()));
         return new Runner(
                 map(entry.getId().runnerId, entry.horse),

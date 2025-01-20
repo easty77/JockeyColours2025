@@ -10,7 +10,8 @@ import java.time.LocalDate;
 @Getter
 @ToString
 @RequiredArgsConstructor
-//@NoArgsConstructor(access= AccessLevel.PROTECTED, force=true)
+@AllArgsConstructor
+@NoArgsConstructor(access= AccessLevel.PROTECTED, force=true)
 public class DailyRace {
     @Id
     public final Integer raceId;

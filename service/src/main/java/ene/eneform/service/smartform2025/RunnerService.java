@@ -33,7 +33,7 @@ public class RunnerService implements RunnerServiceInterface {
     private Runner map(Run run) {
         Owner owner = map(run.owner, run.dailyRunner.owner);
         ENEParsedRacingColours parsedColours = meroService.createFullRacingColours("en", owner.getColours(), owner.getName());
-        owner.setParsedRacingColours(parsedColours.getParseInfo());
+        owner.setParseInfo(parsedColours.getParseInfo());
         owner.setSvgContent(meroService.generateSVGContentFromDefinition(parsedColours.getColours().getDefinition()));
         return new Runner(
                 map(run.getId().runnerId, run.horse),
