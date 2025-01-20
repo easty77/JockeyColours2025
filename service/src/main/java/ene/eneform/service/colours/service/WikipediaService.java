@@ -4,12 +4,13 @@
  */
 package ene.eneform.service.colours.service;
 
+import ene.eneform.domain.colours.*;
+import ene.eneform.port.in.colours.WikipediaServiceInterface;
+import ene.eneform.port.out.colours.AdditionalRaceDataRepository;
 import ene.eneform.service.colours.database.WikipediaFactory;
-import ene.eneform.service.colours.domain.*;
-import ene.eneform.service.colours.repository.AdditionalRaceDataRepository;
-import ene.eneform.service.mero.colours.ENERacingColours;
 import ene.eneform.service.mero.config.ENEColoursEnvironment;
 import ene.eneform.service.mero.factory.SVGFactoryUtils;
+import ene.eneform.service.mero.model.colours.ENERacingColours;
 import ene.eneform.service.mero.service.MeroService;
 import ene.eneform.service.smartform.factory.SmartformRunnerFactory;
 import ene.eneform.service.utils.FileUtils;
@@ -37,7 +38,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class WikipediaService {
+public class WikipediaService implements WikipediaServiceInterface {
     private final MeroService meroService;
 
     private final WikipediaImageService wikipediaImageService;
@@ -83,7 +84,7 @@ public class WikipediaService {
     }
       
 
-   public String generateWikipediaOwner(OwnerColours owner, String strComment, String strLanguage, boolean bCompress, boolean bOverwrite) throws FileNotFoundException, UnsupportedEncodingException, IOException
+   public String generateWikipediaOwner(OwnerColours owner, String strComment, String strLanguage, boolean bCompress, boolean bOverwrite)
    {
         String strOwnerName = getOwnerName(owner.getOwner());
         String strFileName = getOwnerFileName(strOwnerName);
@@ -93,7 +94,7 @@ public class WikipediaService {
         return strOwnerName;
    }
  
-   public String generateWikipediaOwner(String strOwnerName, String strDescription, String strComment, String strLanguage, boolean bCompress, boolean bOverwrite) throws FileNotFoundException, UnsupportedEncodingException, IOException
+   public String generateWikipediaOwner(String strOwnerName, String strDescription, String strComment, String strLanguage, boolean bCompress, boolean bOverwrite)
    {
         strOwnerName = getOwnerName(strOwnerName);
         String strFileName = getOwnerFileName(strOwnerName);
@@ -146,7 +147,7 @@ public class WikipediaService {
         
        return strFileName;
    }
-    public void createImageFile(String strFileName, ENERacingColours colours, String strLanguage, boolean bCompress, boolean bOverwrite) throws IOException
+    public void createImageFile(String strFileName, ENERacingColours colours, String strLanguage, boolean bCompress, boolean bOverwrite)
     {
         Document document = meroService.generateSVGDocument(colours, strLanguage, "", 1, null);    // transparent background
         String strSVG = createImageContent(colours, strLanguage, bCompress);
@@ -163,7 +164,7 @@ public class WikipediaService {
         ENERacingColours colours = createColours(strLanguage, strColours);
         return createImageContent(colours, strLanguage, bCompress);
     }
-    public String createImageContent(ENERacingColours colours, String strLanguage, boolean bCompress) throws IOException
+    public String createImageContent(ENERacingColours colours, String strLanguage, boolean bCompress)
     {
         Document document = meroService.generateSVGDocument(colours, strLanguage, "", 1, null);    // transparent background
         String strSVG = SVGFactoryUtils.convertSVGNode2String(document, bCompress);
@@ -179,7 +180,7 @@ public class WikipediaService {
             wikipediaImageService.insertWikipediaImage(strOwner, colours.getJacket().getDefinition(), colours.getSleeves().getDefinition(), colours.getCap().getDefinition(), colours.getTitle(), strComment, true);
         }
     }
-    public void createWikipediaImageFile(String strFileName, String strOwner, ENERacingColours colours, String strComment, String strLanguage, boolean bCompress, boolean bOverwrite) throws IOException
+    public void createWikipediaImageFile(String strFileName, String strOwner, ENERacingColours colours, String strComment, String strLanguage, boolean bCompress, boolean bOverwrite)
     {
         // specific for wikipedia owners - generate image and add to wikipedia_images table
         createImageFile(strFileName, colours, strLanguage, bCompress, bOverwrite);
@@ -283,11 +284,12 @@ public class WikipediaService {
         AdditionalRaceLink arl = arlService.findLatestByRaceName(strDescription);
         return generateSingleRace123Wikipedia(arl, strLanguage, strLineBreak);
     }
-    public String generateRace(int nRace, String strSource, String strLanguage, String strLineBreak) {
+    public String generateRace(Integer nRace, String strSource, String strLanguage, String strLineBreak) {
         BasicRace arl = raceService.findById(strSource, nRace);
        return generateSingleRace123Wikipedia(arl, strLanguage, strLineBreak);
     }
-   public String generateRace(String strDescription, int nYear, String strLanguage, String strLineBreak) {
+    @Override
+   public String generateRace(String strDescription, Integer nYear, String strLanguage, String strLineBreak) {
         // no id specified - retrieve from additiona_race_link for given year
        // SmartForm only
        String strRaceContent="";

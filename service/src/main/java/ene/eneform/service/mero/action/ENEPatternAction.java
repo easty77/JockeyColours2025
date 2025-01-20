@@ -1,7 +1,7 @@
 package ene.eneform.service.mero.action;
 
-import ene.eneform.service.mero.colours.ENEColoursElementPattern;
-import ene.eneform.service.mero.utils.ENEFillItem;
+import ene.eneform.service.mero.model.ENEColoursElementPattern;
+import ene.eneform.service.mero.model.ENEFillItem;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

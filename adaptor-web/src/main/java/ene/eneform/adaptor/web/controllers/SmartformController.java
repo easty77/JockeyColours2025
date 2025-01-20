@@ -5,7 +5,8 @@
 
 package ene.eneform.adaptor.web.controllers;
 
-import ene.eneform.service.smartform.bos.SmartformEnvironment;
+import ene.eneform.port.in.smartform.SmartformEnvironmentInterface;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +18,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/smartform")
+@RequiredArgsConstructor
 public class SmartformController {
+    private final SmartformEnvironmentInterface environment;
     @GetMapping("/resetEnvironment")
     public String resetEnvironment(ModelMap model) {
-      SmartformEnvironment.getInstance().reset();
+      environment.reset();
         model.put("message", "resetEnvironment");
         return "message";
     }

@@ -4,7 +4,7 @@
  */
 package ene.eneform.service.mero.config;
 
-import ene.eneform.service.mero.utils.ENEColourItem;
+import ene.eneform.service.mero.model.ENEColourItem;
 import ene.eneform.service.mero.utils.MeroUtils;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

@@ -8,8 +8,8 @@ import ene.eneform.service.colours.bos.ENEOwnerColours;
 import ene.eneform.service.colours.bos.ENERegisteredColours;
 import ene.eneform.service.colours.bos.ENERegisteredOwner;
 import ene.eneform.service.colours.service.WikipediaService;
-import ene.eneform.service.mero.colours.ENERacingColours;
 import ene.eneform.service.mero.config.ENEColoursEnvironment;
+import ene.eneform.service.mero.model.colours.ENERacingColours;
 import ene.eneform.service.mero.service.MeroService;
 import ene.eneform.service.smartform.bos.UnregisteredColourSyntax;
 import ene.eneform.service.smartform.factory.SmartformRunnerFactory;
@@ -18,8 +18,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -121,16 +119,6 @@ public class RegisteredOwnerFactory {
                             System.out.println("createUnregisteredColourSyntax returned NULL: " + strOwnerId);
                         }
                         nCount++;
-                    }
-                    catch(FileNotFoundException e)
-                    {
-                        System.out.println("createSVGOwnerColoursList FileNotFoundException: " + strOwnerId);
-                         e.printStackTrace();
-                   }
-                    catch(IOException e)
-                    {
-                        System.out.println("createSVGOwnerColoursList IOException: " + strOwnerId);
-                        e.printStackTrace();
                     }
                     catch(Exception e)
                     {

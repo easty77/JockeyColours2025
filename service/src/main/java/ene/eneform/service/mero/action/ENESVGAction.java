@@ -6,8 +6,8 @@ package ene.eneform.service.mero.action;
 
 //import ene.racingcolours.shapes.svg.ENEShapeSVG;
 
-import ene.eneform.service.mero.colours.ENEColoursElementPattern;
-import ene.eneform.service.mero.utils.ENEFillItem;
+import ene.eneform.service.mero.model.ENEColoursElementPattern;
+import ene.eneform.service.mero.model.ENEFillItem;
 import org.apache.batik.anim.dom.SAXSVGDocumentFactory;
 import org.apache.batik.bridge.*;
 import org.apache.batik.gvt.GraphicsNode;

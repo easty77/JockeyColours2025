@@ -5,19 +5,16 @@
 
 package ene.eneform.service.colours.database;
 
+import ene.eneform.port.in.colours.WikipediaServiceInterface;
+import ene.eneform.port.in.mero.MeroServiceInterface;
 import ene.eneform.service.colours.bos.ENETopRace;
 import ene.eneform.service.colours.bos.ENETopRaceWinner;
-import ene.eneform.service.colours.service.WikipediaService;
-import ene.eneform.service.mero.colours.ENERacingColours;
-import ene.eneform.service.mero.service.MeroService;
 import ene.eneform.service.utils.DbUtils;
 import ene.eneform.service.utils.ENEStatement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -35,8 +32,8 @@ public class ENETopRacesFactory {
     @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
     private String SVG_IMAGE_PATH;
 
-private final WikipediaService wikipediaService;
-    private final MeroService meroService;
+private final WikipediaServiceInterface wikipediaService;
+    private final MeroServiceInterface meroService;
 public ENETopRace getTopRace(ENEStatement statement, int nRace)
 {
     ENETopRace race = null;
@@ -145,7 +142,7 @@ public ArrayList<ENETopRaceWinner> getTopRaceWinners(ENEStatement statement, Str
         System.out.println("getTopRaceWinners: " + alWinners.size());
         return alWinners;
     }
-
+/*
     public void generateSVGTopRaceWinners(ENEStatement statement, int nRace, String strWhere)
     {
         String strWhere1 = getTopRaceWinnersWhereClause(nRace) + " " + strWhere;
@@ -159,22 +156,12 @@ public ArrayList<ENETopRaceWinner> getTopRaceWinners(ENEStatement statement, Str
             int nYear = winner.getYear();
             String strColours = winner.getColours();
             ENERacingColours colours = meroService.createFullRacingColours("en", strColours, "").getColours();
-            try
-            {
+
                 String strFileName = getTopRaceFileName(String.valueOf(nYear), nRace);
                 wikipediaService.createImageFile(strFileName, colours, "en", true, true);
-            }
-            catch(FileNotFoundException e)
-            {
-
-            }
-            catch(IOException e)
-            {
-
-            }
         }
 
-     }  
+     }
     public String getTopRaceWinnersWhereClause(int nRace)
     {
         return ("thw_race_id = " + nRace);
@@ -192,6 +179,6 @@ public ArrayList<ENETopRaceWinner> getTopRaceWinners(ENEStatement statement, Str
         String strFullDirectory = SVG_OUTPUT_DIRECTORY + SVG_IMAGE_PATH + "races/" + nRace + "/mero";
         String strFullFileName = strFullDirectory + "/" + strFileName + ".svg";
         return strFullFileName;
-    }
+    }*/
  
 }

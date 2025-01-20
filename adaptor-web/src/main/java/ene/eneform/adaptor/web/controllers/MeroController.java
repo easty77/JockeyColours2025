@@ -1,6 +1,6 @@
 package ene.eneform.adaptor.web.controllers;
 
-import ene.eneform.service.mero.service.MeroService;
+import ene.eneform.port.in.mero.MeroServiceInterface;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MeroController {
     private static String COLOURS1 = "Red, blue star, green cap, white diamonds";
     private static String COLOURS2 = "Red and white stripes";
-    private static String COLOURS3 = "Red and white (halved), sleeves reversed, blue cap";
+    private static String COLOURS3 = "Yellow and white (halved), sleeves reversed, blue cap";
     private static String COLOURS4 = "Red and yellow hoops, quartered cap";
-    private final MeroService meroService;
+    private final MeroServiceInterface meroService;
     @GetMapping("/colours")
     public String generateSVGContent(ModelMap model) {
          model.put("svg1", meroService.generateSVGContentFromDefinition(meroService.parseDescription(COLOURS1)));

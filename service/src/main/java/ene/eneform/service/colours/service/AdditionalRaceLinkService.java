@@ -1,8 +1,8 @@
 package ene.eneform.service.colours.service;
 
-import ene.eneform.service.colours.domain.AdditionalRaceLink;
-import ene.eneform.service.colours.domain.BasicRaceId;
-import ene.eneform.service.colours.repository.AdditionalRaceLinkRepository;
+import ene.eneform.domain.colours.AdditionalRaceLink;
+import ene.eneform.domain.colours.BasicRaceId;
+import ene.eneform.port.out.colours.AdditionalRaceLinkRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

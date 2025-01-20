@@ -4,12 +4,13 @@
  */
 package ene.eneform.service.mero.service;
 
-import ene.eneform.service.colours.domain.RacingColours;
-import ene.eneform.service.mero.colours.ENEParsedRacingColours;
-import ene.eneform.service.mero.colours.ENERacingColours;
+import ene.eneform.domain.colours.RacingColours;
+import ene.eneform.port.in.mero.MeroServiceInterface;
+import ene.eneform.service.mero.model.ENEParsedRacingColours;
 import ene.eneform.service.mero.config.*;
 import ene.eneform.service.mero.factory.ENEMeroFactory;
 import ene.eneform.service.mero.factory.SVGFactoryUtils;
+import ene.eneform.service.mero.model.colours.ENERacingColours;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.batik.svggen.SVGGeneratorContext;
@@ -34,7 +35,7 @@ import java.util.HashMap;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class MeroService {
+public class MeroService implements MeroServiceInterface {
     private final ENEColoursEnvironment environment;
     private final RacingColoursHandler handler;
 
@@ -48,7 +49,7 @@ public class MeroService {
     private ConfigCompares configCompares;
     private ConfigOrganisations configOrganisations;
     private AbbreviationsHandler abbreviationsHandler;
-
+@Override
     public String parseDescription(String strDescription)
     {
         String strLanguage = environment.DEFAULT_LANGUAGE;
@@ -56,19 +57,22 @@ public class MeroService {
         
         return colours.getColours().getDefinition();
     }
+    @Override
     public String generateSVGContentFromDescription(String description) {
         return generateSVGContentFromDefinition(parseDescription(description));
     }
-
+@Override
     public String generateSVGContentFromDefinition(String strDefinition)
     {
         log.info("generateSVGContent {}", strDefinition);
         return generateSVGContentFromDefinition(strDefinition, null, null, false);
     }
+    @Override
    public String generateSVGContentFromDefinition(String strDefinition, String strBackgroundColour)
    {
        return generateSVGContentFromDefinition(strDefinition, strBackgroundColour, null, false);
    }
+   @Override
 public String generateSVGContentFromDefinition(String strDefinition, String strBackgroundColour, Point capOrigin, boolean bCompress)
     {
         String strSVGContent = "";
@@ -87,10 +91,12 @@ public String generateSVGContentFromDefinition(String strDefinition, String strB
         }
         return strSVGContent;
     }
+    @Override
     public void generateSVGFileFromDescription(String description, String strDirectory, String strFileName, String strBackgroundColour, Point capOrigin, boolean bCompress)
     {
         generateSVGFileFromDefinition(parseDescription(description), strDirectory, strFileName, strBackgroundColour, capOrigin, bCompress);
     }
+    @Override
     public void generateSVGFileFromDefinition(String strDefinition, String strDirectory, String strFileName, String strBackgroundColour, Point capOrigin, boolean bCompress)
     {
         try
@@ -105,6 +111,7 @@ public String generateSVGContentFromDefinition(String strDefinition, String strB
             e.printStackTrace();
         }
     }
+    @Override
     public void generatePNG(String strDefinition, String strDirectory, String strFileName, String strBackgroundColour, Point capOrigin, boolean bCompress)
     {
         //String strSVG = generateSVGContent(strDefinition, strBackgroundColour, capOrigin, bCompress);
@@ -128,8 +135,9 @@ public String generateSVGContentFromDefinition(String strDefinition, String strB
         {
             e.printStackTrace();
         }
-    }       
- private OutputStreamWriter createWriter(String strDirectory, String strFileName) throws FileNotFoundException, UnsupportedEncodingException
+    }
+
+    private OutputStreamWriter createWriter(String strDirectory, String strFileName) throws FileNotFoundException, UnsupportedEncodingException
    {
        boolean bOverwrite = true;
        OutputStreamWriter writer = null;

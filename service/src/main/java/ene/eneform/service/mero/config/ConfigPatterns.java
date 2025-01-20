@@ -6,8 +6,8 @@ package ene.eneform.service.mero.config;
 
 import ene.eneform.service.mero.action.ENEPatternAction;
 import ene.eneform.service.mero.action.ENESVGAction;
-import ene.eneform.service.mero.colours.ENEPattern;
-import ene.eneform.service.mero.colours.ENEPatternCollection;
+import ene.eneform.service.mero.model.colours.ENEPattern;
+import ene.eneform.service.mero.model.colours.ENEPatternCollection;
 import ene.eneform.service.mero.utils.MeroUtils;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -453,7 +453,7 @@ private class ENEPatternsHandler extends DefaultHandler implements Serializable
         String strSVGName = attributes.getValue("svg");
         
         ENESVGAction action = null;
-        String strFullClassName = "ene.eneform.mero.action.";
+        String strFullClassName = "ene.eneform.service.mero.action.";
         String[] astrClassNames = strStdClassName.split("\\.");
         strFullClassName += astrClassNames[0];
         if (astrClassNames.length > 1)  

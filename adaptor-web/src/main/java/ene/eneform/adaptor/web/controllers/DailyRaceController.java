@@ -1,13 +1,13 @@
 package ene.eneform.adaptor.web.controllers;
 
-import ene.eneform.service.smartform2025.dtos.Declaration;
-import ene.eneform.service.smartform2025.dtos.Runner;
-import ene.eneform.service.smartform2025.entities.DailyRace;
-import ene.eneform.service.smartform2025.entities.Run;
-import ene.eneform.service.smartform2025.repositories.DailyRaceRepository;
-import ene.eneform.service.smartform2025.repositories.RunRepository;
-import ene.eneform.service.smartform2025.service.DeclarationService;
-import ene.eneform.service.smartform2025.service.RunnerService;
+import ene.eneform.domain.smartform2025.DailyRace;
+import ene.eneform.domain.smartform2025.Run;
+import ene.eneform.port.in.smartform2025.DeclarationServiceInterface;
+import ene.eneform.port.in.smartform2025.RunnerServiceInterface;
+import ene.eneform.port.out.smartform2025.DailyRaceRepository;
+import ene.eneform.port.out.smartform2025.RunRepository;
+import ene.eneform.port.out.smartform2025.model.Declaration;
+import ene.eneform.port.out.smartform2025.model.Runner;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +30,9 @@ public class DailyRaceController {
     @Autowired
     private final RunRepository runRepository;
     @Autowired
-    private final RunnerService runService;
+    private final RunnerServiceInterface runService;
     @Autowired
-    private final DeclarationService declarationService;
+    private final DeclarationServiceInterface declarationService;
 
     @GetMapping("/today")
     String hello(ModelMap model) {

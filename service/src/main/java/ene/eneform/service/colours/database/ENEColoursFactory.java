@@ -6,7 +6,7 @@
 package ene.eneform.service.colours.database;
 
 import ene.eneform.service.colours.bos.*;
-import ene.eneform.service.mero.colours.ENERacingColours;
+import ene.eneform.service.mero.model.colours.ENERacingColours;
 import ene.eneform.service.smartform.bos.SmartformRace;
 import ene.eneform.service.smartform.factory.SmartformRaceFactory;
 import ene.eneform.service.utils.ENEStatement;

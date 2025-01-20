@@ -1,11 +1,12 @@
 package ene.eneform.service.mero.config;
 
+import ene.eneform.port.in.mero.ENEColoursEnvironmentInterface;
 import ene.eneform.service.mero.action.ENEPatternAction;
-import ene.eneform.service.mero.colours.ENEPattern;
-import ene.eneform.service.mero.fabric.ENEFabricItem;
+import ene.eneform.service.mero.model.ENEColourItem;
+import ene.eneform.service.mero.model.colours.ENEPattern;
+import ene.eneform.service.mero.model.fabric.ENEFabricItem;
+import ene.eneform.service.mero.model.tartan.ENETartan;
 import ene.eneform.service.mero.parse.ENEColoursParserCompareAction;
-import ene.eneform.service.mero.tartan.ENETartan;
-import ene.eneform.service.mero.utils.ENEColourItem;
 import ene.eneform.service.mero.utils.MeroUtils;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
@@ -34,14 +35,13 @@ import java.util.Iterator;
 import java.util.Set;
 @Component
 @Getter
-public class ENEColoursEnvironment implements Serializable {
+public class ENEColoursEnvironment implements ENEColoursEnvironmentInterface, Serializable {
 
     //@Value("${ene.eneform.mero.DEFAULT_LANGUAGE}")
     public static String DEFAULT_LANGUAGE = "en";
     private String SVG_MERO_DIRECTORY="svg/mero/";
     private String SVG_SHAPE_DIRECTORY="svg/";
 
-    private double dTartanShrinkFactor = 4.0;   // to do: read from xml config file
 
     private Color backgroundColour = Color.white;
 
@@ -137,10 +137,6 @@ public GraphicsNode getSVGContentGraphicsNode(String strSVGContent)
         backgroundColour = colour;
     }
 
-    public double getTartanShrinkFactor()
-    {
-        return dTartanShrinkFactor;
-    }
     private SAXParser getParser()
     {
         return parser;

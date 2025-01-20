@@ -6,7 +6,6 @@
 package ene.eneform.service.colours.database;
 
 import ene.eneform.service.colours.bos.ENEOwnerColours;
-import ene.eneform.service.colours.bos.ENETopRaceWinner;
 import ene.eneform.service.utils.DbUtils;
 import ene.eneform.service.utils.ENEStatement;
 import ene.eneform.service.utils.StringUtils;
@@ -28,9 +27,9 @@ import java.util.Iterator;
 @RequiredArgsConstructor
 public class ColoursSearch {
 
-    private final ENETopRacesFactory eneTopRacesFactory;
+    //private final ENETopRacesFactory eneTopRacesFactory;
 private String sm_strDisplayNameDefn = "case when ro_display_name is null or ro_display_name='' then replace(trim(concat(ro_title, ' ', ro_first_name, ' ', ro_family_name, ' ', ro_suffix)),'  ', ' ') else ro_display_name end";
-
+/*
 public JSONObject searchTopRacesOwnersJSON(ENEStatement statement, String strOwnerAttribute, String strWhere, String strOrder, int nPageSize, int nMatches, int nFirst, boolean bAscending, boolean bOwners)
 {
     int nLast = 0;
@@ -95,7 +94,7 @@ public JSONObject searchTopRacesOwnersJSON(ENEStatement statement, String strOwn
     }
     
     return objSearch;
-}
+} */
 public JSONObject searchOwnersJSON(ENEStatement statement, String strOwnerAttribute, String strWhere, String strOrder, int nPageSize, int nMatches, int nFirst)
 {
     int nLast = 0;
@@ -184,19 +183,22 @@ public JSONObject getColourSearchJSON(ENEStatement statement, String strOwnerAtt
 
     if (strOrganisation == null)
         strOrganisation = "";
- 
+    if (false) {
+        return new JSONObject();
+    }
+/*
     if ("top_races_owners".equals(strOrganisation))
     {
         String strWhere = ENETopRacesOwnerFactory.getOwnerColoursWhereClause(strOwnerSearch, strColoursSearch);
 
        return searchTopRacesOwnersJSON(statement, strOwnerAttribute, strWhere, "", nPageSize, nMatches, nFirst, bAscending, true);
     }
-    else if ("top_race_winner".equals(strOrganisation))
+  else if ("top_race_winner".equals(strOrganisation))
     {
         String strWhere = eneTopRacesFactory.getTopRaceWinnersWhereClause(nRace);
         // need bAscending
         return searchTopRacesOwnersJSON(statement, strOwnerAttribute, strWhere, "", nPageSize, nMatches, nFirst, bAscending, false);
-    }
+    } */
     else
     {
     String strWhere = getOwnerColoursWhereClause(

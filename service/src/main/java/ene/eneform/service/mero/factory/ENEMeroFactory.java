@@ -7,16 +7,17 @@ package ene.eneform.service.mero.factory;
 import ene.eneform.service.mero.action.ENEJacketSVGAction;
 import ene.eneform.service.mero.action.ENEPatternAction;
 import ene.eneform.service.mero.action.ENESVGAction;
-import ene.eneform.service.mero.colours.ENEColoursElement;
-import ene.eneform.service.mero.colours.ENEColoursElementPattern;
-import ene.eneform.service.mero.colours.ENERacingColours;
 import ene.eneform.service.mero.config.ENEColoursEnvironment;
-import ene.eneform.service.mero.fabric.ENEFabricItem;
-import ene.eneform.service.mero.tartan.ENETartan;
-import ene.eneform.service.mero.tartan.ENETartanItem;
-import ene.eneform.service.mero.tartan.ENETartanUtils;
-import ene.eneform.service.mero.utils.ENEColourItem;
-import ene.eneform.service.mero.utils.ENEFillItem;
+import ene.eneform.service.mero.model.ENEColourItem;
+import ene.eneform.service.mero.model.ENEColoursElement;
+import ene.eneform.service.mero.model.ENEColoursElementPattern;
+import ene.eneform.service.mero.model.ENEFillItem;
+import ene.eneform.service.mero.model.colours.ENERacingColours;
+import ene.eneform.service.mero.model.fabric.ENEFabricItem;
+import ene.eneform.service.mero.model.tartan.ENETartan;
+import ene.eneform.service.mero.model.tartan.ENETartanItem;
+import ene.eneform.service.mero.utils.ENETartanUtils;
+import ene.eneform.service.mero.utils.MeroUtils;
 import org.apache.batik.anim.dom.SVGDOMImplementation;
 import org.apache.batik.anim.dom.SVGOMPatternElement;
 import org.apache.batik.anim.dom.SVGOMTextElement;
@@ -600,7 +601,7 @@ private String convertColourReference(String strReference, ENEFillItem colour0, 
                 }
                 else
                 {
-                    strColour0 = ((ENEColourItem)colour0).getHexRGB();
+                    strColour0 = MeroUtils.getHexRGB(((ENEColourItem)colour0).getColour());
                     return strColour0;
                 }
             }
@@ -616,7 +617,7 @@ private String convertColourReference(String strReference, ENEFillItem colour0, 
                 }
                 else
                 {
-                    strColourN = ((ENEColourItem)colourN).getHexRGB();
+                    strColourN = MeroUtils.getHexRGB(((ENEColourItem)colourN).getColour());
                     return strColourN;
                 }
             }

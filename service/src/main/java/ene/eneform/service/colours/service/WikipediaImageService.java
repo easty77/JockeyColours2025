@@ -1,7 +1,7 @@
 package ene.eneform.service.colours.service;
 
-import ene.eneform.service.colours.domain.WikipediaImage;
-import ene.eneform.service.colours.repository.WikipediaImageRepository;
+import ene.eneform.domain.colours.WikipediaImage;
+import ene.eneform.port.out.colours.WikipediaImageRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

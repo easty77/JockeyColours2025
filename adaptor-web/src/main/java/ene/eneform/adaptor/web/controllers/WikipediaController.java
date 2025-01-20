@@ -1,6 +1,6 @@
 package ene.eneform.adaptor.web.controllers;
 
-import ene.eneform.service.colours.service.WikipediaService;
+import ene.eneform.port.in.colours.WikipediaServiceInterface;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @AllArgsConstructor
 @Slf4j
 public class WikipediaController {
-    private final WikipediaService wikipediaService;
+    private final WikipediaServiceInterface wikipediaService;
 
     @GetMapping("/generateRace/{raceName}/{year}")
     String generateRaceYear(@PathVariable("raceName") String raceName, @PathVariable("year") Integer year, ModelMap model) {

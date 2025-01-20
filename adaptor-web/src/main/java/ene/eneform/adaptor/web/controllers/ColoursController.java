@@ -6,9 +6,8 @@
 package ene.eneform.adaptor.web.controllers;
 
 
-import ene.eneform.service.colours.bos.ENEColoursDBEnvironment;
-import ene.eneform.service.colours.service.WikipediaService;
-import ene.eneform.service.mero.config.ENEColoursEnvironment;
+import ene.eneform.port.in.colours.WikipediaServiceInterface;
+import ene.eneform.port.in.mero.ENEColoursEnvironmentInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -25,12 +24,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 public class ColoursController {
 
-    private final WikipediaService wikipediaService;
-    private final ENEColoursEnvironment environment;
+    private final WikipediaServiceInterface wikipediaService;
+    private final ENEColoursEnvironmentInterface environment;
     @GetMapping("/resetEnvironment")
     public String resetEnvironment(ModelMap model) {
         environment.reset();
-        ENEColoursDBEnvironment.getInstance().reset();
         model.put("message", "resetEnvironment");
         return "message";
     }

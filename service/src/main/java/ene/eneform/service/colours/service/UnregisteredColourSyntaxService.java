@@ -1,7 +1,7 @@
 package ene.eneform.service.colours.service;
 
-import ene.eneform.service.colours.domain.UnregisteredColourSyntax;
-import ene.eneform.service.colours.repository.UnregisteredColourSyntaxRepository;
+import ene.eneform.domain.colours.UnregisteredColourSyntax;
+import ene.eneform.port.out.colours.UnregisteredColourSyntaxRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

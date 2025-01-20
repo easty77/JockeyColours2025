@@ -1,17 +1,14 @@
 package ene.eneform.service.mero.service;
 
-import ene.eneform.service.mero.colours.ENEColoursElement;
-import ene.eneform.service.mero.colours.ENEColoursElementPattern;
-import ene.eneform.service.mero.colours.ENEParsedRacingColours;
-import ene.eneform.service.mero.colours.ENERacingColours;
+import ene.eneform.port.out.mero.model.ParseInfo;
 import ene.eneform.service.mero.config.ConfigPatterns;
 import ene.eneform.service.mero.config.ENEColoursEnvironment;
+import ene.eneform.service.mero.model.*;
+import ene.eneform.service.mero.model.colours.ENERacingColours;
+import ene.eneform.service.mero.model.tartan.ENETartanItem;
 import ene.eneform.service.mero.parse.ENEColoursParserCompareAction;
 import ene.eneform.service.mero.parse.ENEColoursParserExpand;
 import ene.eneform.service.mero.parse.ENEColoursParserMatch;
-import ene.eneform.service.mero.tartan.ENETartanItem;
-import ene.eneform.service.mero.utils.ENEColourItem;
-import ene.eneform.service.mero.utils.ENEFillItem;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,12 +28,12 @@ public class RacingColoursHandler {
                                 String language, String description, String owner)
 	{
         ENEParsedRacingColours racingColours = new ENEParsedRacingColours(language, description, owner);
-       ENERacingColours  colours = createRacingColours(language,
+       ENERacingColours colours = createRacingColours(language,
                racingColours.getDescription(), owner,
                 null, null, null
                 );
        String updated = environment.getAbbreviationsHandler().replaceAbbreviations(racingColours.getDescription(), language).toLowerCase() + ".";
-        ENEParsedRacingColours.ParseInfo parseInfo = new ENEParsedRacingColours.ParseInfo(updated);
+        ParseInfo parseInfo = new ParseInfo(updated);
 
         expandDescription(parseInfo, language);
 
@@ -51,7 +48,7 @@ public class RacingColoursHandler {
         return racingColours;
     }
 
-    private ENEParsedRacingColours.ParseInfo expandDescription(ENEParsedRacingColours.ParseInfo parseInfo, String language)
+    private ParseInfo expandDescription(ParseInfo parseInfo, String language)
     {
         String description = parseInfo.getDescription();
         String expanded="";
@@ -87,10 +84,10 @@ public class RacingColoursHandler {
         return parseInfo;
     }
 
-     private ENEParsedRacingColours.ParseInfo parse(ENEParsedRacingColours.ParseInfo parseInfo, ENERacingColours colours, String language) {
+     private ParseInfo parse(ParseInfo parseInfo, ENERacingColours colours, String language) {
         return parse1(parseInfo, parseInfo.getExpanded(), colours, language);
      }
-    private ENEParsedRacingColours.ParseInfo parse1(ENEParsedRacingColours.ParseInfo parseInfo, String strDescription, ENERacingColours colours, String language) {
+    private ParseInfo parse1(ParseInfo parseInfo, String strDescription, ENERacingColours colours, String language) {
 
 String strOriginal = strDescription;
          //ENEColoursParserMatch jacketMatch = parseJacket(strDescription);
@@ -188,7 +185,7 @@ String strOriginal = strDescription;
              }
          }
      }
-     private ENEParsedRacingColours.ParseInfo resolveImplications(ENEParsedRacingColours.ParseInfo parseInfo, ENERacingColours colours, String language)
+     private ParseInfo resolveImplications(ParseInfo parseInfo, ENERacingColours colours, String language)
      {
     	 ENEColoursElement jacket = colours.getJacket();
     	 ENEColoursElementPattern primaryJacket = jacket.getPrimaryPattern();

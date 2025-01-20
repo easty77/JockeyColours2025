@@ -4,8 +4,8 @@
  */
 package ene.eneform.service.mero.config;
 
-import ene.eneform.service.mero.fabric.ENEFabric;
-import ene.eneform.service.mero.fabric.ENEFabricItem;
+import ene.eneform.service.mero.model.fabric.ENEFabric;
+import ene.eneform.service.mero.model.fabric.ENEFabricItem;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;

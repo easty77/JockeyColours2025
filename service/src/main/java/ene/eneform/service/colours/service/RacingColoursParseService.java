@@ -1,9 +1,9 @@
 package ene.eneform.service.colours.service;
 
-import ene.eneform.service.colours.domain.RacingColoursParse;
-import ene.eneform.service.colours.domain.RacingColoursParseId;
-import ene.eneform.service.colours.repository.RacingColoursParseRepository;
-import ene.eneform.service.mero.colours.ENERacingColours;
+import ene.eneform.domain.colours.RacingColoursParse;
+import ene.eneform.domain.colours.RacingColoursParseId;
+import ene.eneform.port.out.colours.RacingColoursParseRepository;
+import ene.eneform.service.mero.model.colours.ENERacingColours;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

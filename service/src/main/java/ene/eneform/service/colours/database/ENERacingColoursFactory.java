@@ -1,6 +1,6 @@
 package ene.eneform.service.colours.database;
 
-import ene.eneform.service.mero.colours.ENERacingColours;
+import ene.eneform.service.mero.model.colours.ENERacingColours;
 import ene.eneform.service.smartform.bos.SmartformColoursRunner;
 import ene.eneform.service.smartform.bos.UnregisteredColourSyntax;
 import ene.eneform.service.smartform.factory.SmartformRunnerFactory;

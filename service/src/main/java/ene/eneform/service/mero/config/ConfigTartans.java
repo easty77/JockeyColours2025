@@ -4,8 +4,8 @@
  */
 package ene.eneform.service.mero.config;
 
-import ene.eneform.service.mero.tartan.ENETartan;
-import ene.eneform.service.mero.tartan.ENETartanUtils;
+import ene.eneform.service.mero.model.tartan.ENETartan;
+import ene.eneform.service.mero.utils.ENETartanUtils;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;

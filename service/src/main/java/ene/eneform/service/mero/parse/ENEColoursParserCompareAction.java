@@ -5,9 +5,9 @@
 
 package ene.eneform.service.mero.parse;
 
-import ene.eneform.service.mero.colours.ENEColoursElement;
-import ene.eneform.service.mero.colours.ENEColoursElementPattern;
 import ene.eneform.service.mero.config.ENEColoursEnvironment;
+import ene.eneform.service.mero.model.ENEColoursElement;
+import ene.eneform.service.mero.model.ENEColoursElementPattern;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
