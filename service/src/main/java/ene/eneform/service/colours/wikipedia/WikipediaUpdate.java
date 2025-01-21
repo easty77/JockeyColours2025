@@ -4,6 +4,7 @@
  */
 package ene.eneform.service.colours.wikipedia;
 
+import ene.eneform.port.in.colours.WikipediaServiceInterface;
 import ene.eneform.service.colours.bos.AdditionalRaceData;
 import ene.eneform.service.colours.bos.AdditionalRaceWikipedia;
 import ene.eneform.service.colours.bos.ENEColoursDBEnvironment;
@@ -11,7 +12,6 @@ import ene.eneform.service.colours.database.AdditionalRaceLinkFactory;
 import ene.eneform.service.colours.database.JCEventsFactory;
 import ene.eneform.service.colours.database.WikipediaFactory;
 import ene.eneform.service.colours.database.WikipediaImagesFactory;
-import ene.eneform.service.colours.service.WikipediaService;
 import ene.eneform.service.colours.web.atr.AtTheRacesRacecards;
 import ene.eneform.service.colours.web.rp.RacingPostCourse;
 import ene.eneform.service.colours.web.rp.RacingPostRaceSummary;
@@ -25,7 +25,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.wikipedia.*;
+import org.wikipedia.Wiki;
 
 import javax.security.auth.login.FailedLoginException;
 import javax.security.auth.login.LoginException;
@@ -52,7 +52,7 @@ public class WikipediaUpdate {
     @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
     private String SVG_IMAGE_PATH;
 
-    private final WikipediaService wikipediaService;
+    private final WikipediaServiceInterface wikipediaService;
 private Pattern sm_refRP = Pattern.compile("\\{\\{Racing Post[a-z0-9\\|\\-\\s]+\\}\\}");
 private Pattern sm_refRPDate = Pattern.compile("\\/[\\d]+\\-[\\d]+\\-[\\d]+\\/");
     private String sm_strUser = "JockeyColours";
@@ -581,8 +581,10 @@ private Pattern sm_refRPDate = Pattern.compile("\\/[\\d]+\\-[\\d]+\\-[\\d]+\\/")
     }
     private JSONObject insertNewJockeyColoursRace(ENEStatement statement, JSONObject obj, String strContent)
     {
+        return null;
             //System.out.println(strSection);
             // HTMLCleaner is no use as simply stored as text
+        /* SE 2025
             int nJockeyColoursRowStart = strContent.indexOf("\n{{Jockey colours row");
             if (nJockeyColoursRowStart >= 0)
             {
@@ -626,7 +628,7 @@ private Pattern sm_refRPDate = Pattern.compile("\\/[\\d]+\\-[\\d]+\\-[\\d]+\\/")
                 obj.put("error", "JockeyColours content not found");
             }
             
-            return obj;
+            return obj; */
     }
     private String insertNewJockeyColoursRace(ENEStatement statement, AdditionalRaceData ard, String strContent)
     {

@@ -1,7 +1,6 @@
-package ene.eneform.service.smartform2025.entities;
+package ene.eneform.adaptor.db.smartform2025;
 
-import ene.eneform.service.smartform2025.entities.Run;
-import ene.eneform.service.smartform2025.repositories.RunRepository;
+import ene.eneform.domain.smartform2025.Run;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,9 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 @SpringBootTest
-public class RunTests {
+public class RunJpaRepositoryTest {
     @Autowired
-    private RunRepository runRepository;
+    private RunJpaRepository runRepository;
 
     @Test
     public void findRunnersByName()  {

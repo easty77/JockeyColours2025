@@ -155,7 +155,7 @@ public ArrayList<ENETopRaceWinner> getTopRaceWinners(ENEStatement statement, Str
             ENETopRaceWinner winner = alWinners.get(i);
             int nYear = winner.getYear();
             String strColours = winner.getColours();
-            ENERacingColours colours = meroService.createFullRacingColours("en", strColours, "").getColours();
+            ENERacingColours colours = meroService.createParsedRacingColours("en", strColours, "").getColours();
 
                 String strFileName = getTopRaceFileName(String.valueOf(nYear), nRace);
                 wikipediaService.createImageFile(strFileName, colours, "en", true, true);

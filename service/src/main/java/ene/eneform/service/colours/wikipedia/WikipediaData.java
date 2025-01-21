@@ -4,7 +4,7 @@
  */
 package ene.eneform.service.colours.wikipedia;
 
-import ene.eneform.service.colours.service.WikipediaService;
+import ene.eneform.port.in.colours.WikipediaServiceInterface;
 import ene.eneform.service.mero.config.ENEColoursEnvironment;
 import ene.eneform.service.utils.ENEStatement;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +27,7 @@ public class WikipediaData {
     @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
     private String SVG_IMAGE_PATH;
 
-    private final WikipediaService wikipediaService;
+    private final WikipediaServiceInterface wikipediaService;
     private String sm_strTranscript = "";
     public void runWP(ENEStatement statement) throws FileNotFoundException, UnsupportedEncodingException, IOException
     {
@@ -102,7 +102,8 @@ public class WikipediaData {
        //generateWikipediaIreland2014(statement);
    }   
     private void generateHorseSequence(ENEStatement statement, String strHorse, String strBred) {
-        addToTranscript(wikipediaService.generateHorseSequence(strHorse, strBred, ENEColoursEnvironment.DEFAULT_LANGUAGE, "\r\n"));
+       // SE 2025
+       // addToTranscript(wikipediaService.generateHorseSequence(strHorse, strBred, ENEColoursEnvironment.DEFAULT_LANGUAGE, "\r\n"));
     }
 
     private void generateRaceSequence(ENEStatement statement, String strDescription) {
@@ -110,7 +111,8 @@ public class WikipediaData {
     }
 
     private void generateRace(ENEStatement statement, String strDescription) {
-         addToTranscript(wikipediaService.generateRace(strDescription, ENEColoursEnvironment.DEFAULT_LANGUAGE, "\r\n"));
+        // SE 2025
+        //addToTranscript(wikipediaService.generateRace(strDescription, ENEColoursEnvironment.DEFAULT_LANGUAGE, "\r\n"));
     }
     private void generateRace(ENEStatement statement, int nRace) {
          addToTranscript(wikipediaService.generateRace(nRace, "SF", ENEColoursEnvironment.DEFAULT_LANGUAGE, "\r\n"));   // Assume Smartform

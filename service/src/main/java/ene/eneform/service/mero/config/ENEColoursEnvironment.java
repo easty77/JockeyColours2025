@@ -1,6 +1,5 @@
 package ene.eneform.service.mero.config;
 
-import ene.eneform.port.in.mero.ENEColoursEnvironmentInterface;
 import ene.eneform.service.mero.action.ENEPatternAction;
 import ene.eneform.service.mero.model.ENEColourItem;
 import ene.eneform.service.mero.model.colours.ENEPattern;
@@ -13,7 +12,7 @@ import lombok.Getter;
 import org.apache.batik.anim.dom.SVGOMTextElement;
 import org.apache.batik.bridge.*;
 import org.apache.batik.gvt.GraphicsNode;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.w3c.dom.svg.SVGDocument;
 import org.w3c.dom.svg.SVGGElement;
 import org.w3c.dom.svg.SVGRect;
@@ -33,15 +32,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
-@Component
+
+@Service
 @Getter
-public class ENEColoursEnvironment implements ENEColoursEnvironmentInterface, Serializable {
+public class ENEColoursEnvironment implements Serializable {
 
     //@Value("${ene.eneform.mero.DEFAULT_LANGUAGE}")
     public static String DEFAULT_LANGUAGE = "en";
     private String SVG_MERO_DIRECTORY="svg/mero/";
     private String SVG_SHAPE_DIRECTORY="svg/";
-
 
     private Color backgroundColour = Color.white;
 

@@ -5,4 +5,7 @@ public interface WikipediaServiceInterface {
     String generateRace(String raceName, Integer year, String language, String lineBreak);
     String generateRaceSequence(String raceName, String language, String lineBreak);
     String generateRace(Integer raceId, String source, String language, String lineBreak);
+    String generateRace(String raceName, String language, String lineBreak);
+    String getOwnerFileName(String ownerName);
+    String createImageContent(String colours, String language, boolean compress);
 }

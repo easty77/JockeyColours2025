@@ -4,7 +4,7 @@ import ene.eneform.domain.smartform2025.DailyRunner;
 import ene.eneform.domain.smartform2025.Entry;
 import ene.eneform.domain.smartform2025.Horse;
 import ene.eneform.port.in.smartform2025.DeclarationServiceInterface;
-import ene.eneform.service.mero.model.ENEParsedRacingColours;
+import ene.eneform.port.out.mero.model.ENEParsedRacingColours;
 import ene.eneform.port.out.smartform2025.EntryRepository;
 import ene.eneform.port.out.smartform2025.model.*;
 import ene.eneform.service.mero.service.MeroService;
@@ -27,9 +27,9 @@ public class DeclarationService implements DeclarationServiceInterface {
     }
     private Declaration map(Entry entry) {
         Owner owner = map(entry.owner);
-        ENEParsedRacingColours parsedColours = meroService.createFullRacingColours("en", owner.getColours(), owner.getName());
+        ENEParsedRacingColours parsedColours = meroService.createParsedRacingColours("en", owner.getColours(), owner.getName());
         owner.setParseInfo(parsedColours.getParseInfo());
-        owner.setSvgContent(meroService.generateSVGContentFromDefinition(parsedColours.getColours().getDefinition()));
+        owner.setSvgContent(meroService.generateSVGContentFromDefinition(parsedColours.getParseInfo().getDefinition()));
         return new Runner(
                 map(entry.getId().runnerId, entry.horse),
                 map(entry.jockey),

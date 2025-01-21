@@ -1,11 +1,12 @@
 package ene.eneform.service.colours.service;
 
+import ene.eneform.port.in.colours.WikipediaServiceInterface;
+import ene.eneform.port.out.colours.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.io.IOException;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 @Slf4j
 @SpringBootTest
@@ -15,7 +16,20 @@ public class WikipediaServiceTest {
 private static String RACE_NAME="Derby";
 private static Integer RACE_YEAR = 2010;
     @Autowired
-    private WikipediaService service;
+    private WikipediaServiceInterface service;
+
+    @MockitoBean
+    AdditionalRaceLinkRepository arlRepository;
+    @MockitoBean
+    BasicRaceRepository raceRepository;
+    @MockitoBean
+    ColourRunnerRepository runnerRepository;
+    @MockitoBean
+    RacingColoursParseRepository rcpRepository;
+    @MockitoBean
+    UnregisteredColourSyntaxRepository ucsRepository;
+    @MockitoBean
+    WikipediaImageRepository wiRepository;
 
     @Test
     void getOwnerFileName() {
@@ -24,13 +38,9 @@ private static Integer RACE_YEAR = 2010;
     }
     @Test
     void createImageContent() {
-        try {
+
             String output = service.createImageContent(COLOURS, "en", false);
             log.info(output);
-        }
-        catch(IOException e) {
-            e.printStackTrace();
-        }
     }
     @Test
     void generateRace() {

@@ -1,7 +1,6 @@
-package ene.eneform.service.smartform2025.entities;
+package ene.eneform.adaptor.db.smartform2025;
 
-import ene.eneform.service.smartform2025.entities.DailyRace;
-import ene.eneform.service.smartform2025.repositories.DailyRaceRepository;
+import ene.eneform.domain.smartform2025.DailyRace;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,9 +10,9 @@ import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
-public class DailyRaceTests {
+public class DailyRaceJpaRepositoryTest {
     @Autowired
-    private DailyRaceRepository raceRepository;
+    private DailyRaceJpaRepository raceRepository;
 
     @Test
     public void findDailyRaceById()  {

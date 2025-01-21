@@ -1,9 +1,15 @@
 package ene.eneform.service.mero.service;
 
+import ene.eneform.domain.colours.RacingColours;
+import ene.eneform.port.out.mero.model.ENEParsedRacingColours;
 import ene.eneform.port.out.mero.model.ParseInfo;
 import ene.eneform.service.mero.config.ConfigPatterns;
 import ene.eneform.service.mero.config.ENEColoursEnvironment;
-import ene.eneform.service.mero.model.*;
+import ene.eneform.service.mero.factory.ENEMeroFactory;
+import ene.eneform.service.mero.model.ENEColourItem;
+import ene.eneform.service.mero.model.ENEColoursElement;
+import ene.eneform.service.mero.model.ENEColoursElementPattern;
+import ene.eneform.service.mero.model.ENEFillItem;
 import ene.eneform.service.mero.model.colours.ENERacingColours;
 import ene.eneform.service.mero.model.tartan.ENETartanItem;
 import ene.eneform.service.mero.parse.ENEColoursParserCompareAction;
@@ -12,9 +18,14 @@ import ene.eneform.service.mero.parse.ENEColoursParserMatch;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.batik.svggen.SVGGeneratorContext;
+import org.apache.batik.svggen.SVGGraphics2D;
 import org.springframework.stereotype.Service;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 @Slf4j
@@ -23,6 +34,34 @@ import java.util.Iterator;
 @Service
 public class RacingColoursHandler {
     private final ENEColoursEnvironment environment;
+
+    public ENERacingColours createRacingColours(String language, String description, RacingColours racingColours) {
+            return createRacingColours(language, description, racingColours.getJacket(),
+                    racingColours.getSleeves(), racingColours.getCap());
+    }
+    public ENERacingColours createRacingColours(
+            String language, String description, String owner) {
+        ENEParsedRacingColours racingColours = new ENEParsedRacingColours(language, description, owner);
+        ENERacingColours colours = createRacingColours(language,
+                racingColours.getDescription(), owner,
+                null, null, null
+        );
+        String updated = environment.getAbbreviationsHandler().replaceAbbreviations(racingColours.getDescription(), language).toLowerCase() + ".";
+        ParseInfo parseInfo = new ParseInfo(updated);
+
+        expandDescription(parseInfo, language);
+
+        parseInfo = parse(parseInfo, colours, language);
+
+        parseInfo = resolveImplications(parseInfo, colours, language);
+
+        resolveHues(colours);
+        racingColours.setParseInfo(parseInfo);
+        parseInfo.setDefinition(colours.getDefinition());
+        //racingColours.setColours(colours);
+
+        return colours;
+    }
 
     public ENEParsedRacingColours createParsedRacingColours(
                                 String language, String description, String owner)
@@ -43,9 +82,31 @@ public class RacingColoursHandler {
 
         resolveHues(colours);
         racingColours.setParseInfo(parseInfo);
-       racingColours.setColours(colours);
+        parseInfo.setDefinition(colours.getDefinition());
+       //racingColours.setColours(colours);
 
         return racingColours;
+    }
+    // from ENEColoursEnvironment
+
+    public Document generateSVGDocument(ENERacingColours racingcolours, String strLanguage,
+                                        String strMeroId, double dScale, String strBackgroundColour) {
+        ENEMeroFactory factory = new ENEMeroFactory(environment, racingcolours,  strLanguage);
+        return factory.generateSVGDocument(strMeroId, dScale, strBackgroundColour);
+    }
+    public String addJockeySilks(SVGGraphics2D svgGenerator, SVGGeneratorContext ctx, ENERacingColours colours, String strColours, String strLanguage, double dScale, String strSuffix, HashMap<String, Element> hmDefintions, String strBackgroundColour)
+    {
+        // called when adding multiple Mero images to a document
+        Element element = buildJockeySilks(ctx, colours, strColours, strLanguage, dScale, strSuffix, hmDefintions, strBackgroundColour);
+        svgGenerator.getDOMTreeManager().addOtherDef(element);
+        return element.getAttributeNS(null, "id");
+    }
+    public Element buildJockeySilks(SVGGeneratorContext ctx, ENERacingColours colours, String strColours, String strLanguage, double dScale, String strSuffix, HashMap<String,Element> hmDefinitions, String strBackgroundColour) {
+        // called when adding multiple Mero images to a document
+        Document document = ctx.getDOMFactory();
+        ENEMeroFactory factory = new ENEMeroFactory(environment, colours, strLanguage, document, strSuffix, hmDefinitions); //use strSuffix to differentiate between multiple instances of the same SVG pattern
+        document = factory.generateSVGDocument(strColours, dScale, strBackgroundColour);     // use strColours as id
+        return document.getDocumentElement();
     }
 
     private ParseInfo expandDescription(ParseInfo parseInfo, String language)

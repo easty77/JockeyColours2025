@@ -5,7 +5,7 @@ import ene.eneform.domain.smartform2025.HistoricRunner;
 import ene.eneform.domain.smartform2025.Horse;
 import ene.eneform.domain.smartform2025.Run;
 import ene.eneform.port.in.smartform2025.RunnerServiceInterface;
-import ene.eneform.service.mero.model.ENEParsedRacingColours;
+import ene.eneform.port.out.mero.model.ENEParsedRacingColours;
 import ene.eneform.port.out.smartform2025.RunRepository;
 import ene.eneform.port.out.smartform2025.model.Jockey;
 import ene.eneform.port.out.smartform2025.model.Owner;
@@ -32,9 +32,9 @@ public class RunnerService implements RunnerServiceInterface {
     }
     private Runner map(Run run) {
         Owner owner = map(run.owner, run.dailyRunner.owner);
-        ENEParsedRacingColours parsedColours = meroService.createFullRacingColours("en", owner.getColours(), owner.getName());
+        ENEParsedRacingColours parsedColours = meroService.createParsedRacingColours("en", owner.getColours(), owner.getName());
         owner.setParseInfo(parsedColours.getParseInfo());
-        owner.setSvgContent(meroService.generateSVGContentFromDefinition(parsedColours.getColours().getDefinition()));
+        owner.setSvgContent(meroService.generateSVGContentFromDefinition(parsedColours.getParseInfo().getDefinition()));
         return new Runner(
                 map(run.getId().runnerId, run.horse),
                 map(run.jockey),

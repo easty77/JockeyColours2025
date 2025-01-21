@@ -10,9 +10,10 @@ import lombok.Setter;
 
 public class ParseInfo {
         private final String description;
+    private String definition = "";
         private String expanded = "";
         private String remainder = "";
-        private String syntax = "";
+    private String syntax = "";
 
         public void addSyntax(String add)
         {

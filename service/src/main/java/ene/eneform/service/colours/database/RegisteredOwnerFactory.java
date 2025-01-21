@@ -4,15 +4,13 @@
  */
 package ene.eneform.service.colours.database;
 
+import ene.eneform.port.in.colours.WikipediaServiceInterface;
+import ene.eneform.port.in.mero.MeroServiceInterface;
 import ene.eneform.service.colours.bos.ENEOwnerColours;
 import ene.eneform.service.colours.bos.ENERegisteredColours;
 import ene.eneform.service.colours.bos.ENERegisteredOwner;
-import ene.eneform.service.colours.service.WikipediaService;
 import ene.eneform.service.mero.config.ENEColoursEnvironment;
 import ene.eneform.service.mero.model.colours.ENERacingColours;
-import ene.eneform.service.mero.service.MeroService;
-import ene.eneform.service.smartform.bos.UnregisteredColourSyntax;
-import ene.eneform.service.smartform.factory.SmartformRunnerFactory;
 import ene.eneform.service.utils.ENEStatement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,7 +19,9 @@ import org.springframework.stereotype.Service;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  *
@@ -35,9 +35,9 @@ public class RegisteredOwnerFactory {
     @Value("${ene.eneform.mero.SVG_IMAGE_PATH}")
     private String SVG_IMAGE_PATH;
 
-    private final WikipediaService wikipediaService;
-    private final ColoursSearch coloursSearch;
-    private final MeroService meroService;
+    private final WikipediaServiceInterface wikipediaService;
+    // private final ColoursSearch coloursSearch;
+    private final MeroServiceInterface meroService;
 
     private String getRCPVersion (String strVersion, String strOrganisation, String strOrgType, int nYear)
     {
@@ -83,9 +83,11 @@ public class RegisteredOwnerFactory {
      }
     public int generateSVGRegisteredOwnerFiles(ENEStatement statement, String strVersion, String strOrganisation, String strOrgType, int nYear, String strFormat)
     {
+        return 0;
+        /* SE 20256
         int nCount = 0;
         String strRCPVersion = getRCPVersion(strVersion, strOrganisation, strOrgType, nYear);
-        ArrayList<ENEOwnerColours> alColours = getENEColoursRegisteredOwnerList(statement, strOrganisation, strOrgType, nYear);
+        List<ENEOwnerColours> alColours = getENEColoursRegisteredOwnerList(statement, strOrganisation, strOrgType, nYear);
 
         System.out.println("generateSVGRegisteredOwnerFiles: " + strOrganisation + "-" + nYear + ", Number of colours: " + alColours.size());
 
@@ -135,10 +137,12 @@ public class RegisteredOwnerFactory {
         }  
 
        
-         return nCount;
+         return nCount; */
     }
     public ENERacingColours createRegisteredOwnerColours(ENEStatement statement, String strLanguage, String strJockeyColours, String strOrganisation, String strRCPVersion)
     {
+        return null;
+        /* SE 2026
         ENERacingColours colours = null;
         UnregisteredColourSyntax ucs = createRCPUnregisteredColourSyntax(statement, strJockeyColours, strOrganisation, strRCPVersion);
         colours = meroService.createRacingColours("en", strJockeyColours, ucs.getJacket(), ucs.getSleeves(), ucs.getCap());
@@ -171,7 +175,7 @@ public UnregisteredColourSyntax createRCPUnregisteredColourSyntax(ENEStatement s
         }
     }  
     
-    return ucs;
+    return ucs; */
 }
 public void generateRegisteredOwnersSVG(ENEStatement statement, String strVersion, String strFormat) 
     {
@@ -215,6 +219,8 @@ public void generateRegisteredOwnersSVG(ENEStatement statement, String strVersio
     }
     private ENERacingColours createRunnerColours(ENEOwnerColours ownercolours)
     {
+        return null;
+        /* SE 2025
         String strLanguage = ownercolours.getLanguage();
             String strJockeyColours = ownercolours.getColours();
             ENERacingColours colours = null;
@@ -231,10 +237,10 @@ public void generateRegisteredOwnersSVG(ENEStatement statement, String strVersio
                 //strJockeyColours = strJockeyColours.toLowerCase();
                 //strJockeyColours = strJockeyColours.substring(0, 1).toUpperCase() + strJockeyColours.substring(1);
 
-                colours = meroService.createFullRacingColours(strLanguage, strJockeyColours, "").getColours();
+                colours = meroService.createParsedRacingColours(strLanguage, strJockeyColours, "").getColours();
 
             }
-        return colours;
+        return colours; */
     }
    public ArrayList<ENERegisteredOwner> getRegisteredOwners(ENEStatement statement, String strOrganisation, String strOrgType, int nYear, String strFirstFilter, String strLastFilter)
     {
@@ -324,15 +330,15 @@ public void generateRegisteredOwnersSVG(ENEStatement statement, String strVersio
  
         return lst;
     }
-   public ArrayList<ENEOwnerColours> getENEColoursRegisteredOwnerList(ENEStatement statement, String strOrganisation, String strOrgType, int nYear)
+   public List<ENEOwnerColours> getENEColoursRegisteredOwnerList(ENEStatement statement, String strOrganisation, String strOrgType, int nYear)
     {
 
-        String strWhere = coloursSearch.getOwnerColoursWhereClause("ro_display_name", "", "", strOrganisation, strOrgType, nYear);
-        String strOrder = coloursSearch.getOwnerColoursOrderClause("ro_item", "", "", strOrganisation, strOrgType, nYear);
+        String strWhere = "";   // coloursSearch.getOwnerColoursWhereClause("ro_display_name", "", "", strOrganisation, strOrgType, nYear);
+        String strOrder = ""; // coloursSearch.getOwnerColoursOrderClause("ro_item", "", "", strOrganisation, strOrgType, nYear);
         //strWhere += " and rc_item in (17657, 1930, 1328, 6950, 14686, 6944, 15533, 11041, 14168, 7644, 4103, 18529, 8803, 4587, 15841)";
         strWhere += " and ro_family_name like 'ab%'";
         // Those specified in syntax only FOR NOW
-        return coloursSearch.findOwnerColours(statement, strWhere, "ro_display_name", strOrder, 1, 0, false);    // return all - no LIMIT
+        return Collections.emptyList();  // coloursSearch.findOwnerColours(statement, strWhere, "ro_display_name", strOrder, 1, 0, false);    // return all - no LIMIT
     }
 
     public String getOrganisationYearFileName(String strFileName, String strOrganisation, int nYear) {

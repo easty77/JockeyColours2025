@@ -11,7 +11,7 @@ import ene.eneform.service.colours.database.WikipediaFactory;
 import ene.eneform.service.mero.config.ENEColoursEnvironment;
 import ene.eneform.service.mero.factory.SVGFactoryUtils;
 import ene.eneform.service.mero.model.colours.ENERacingColours;
-import ene.eneform.service.mero.service.MeroService;
+import ene.eneform.service.mero.service.RacingColoursHandler;
 import ene.eneform.service.smartform.factory.SmartformRunnerFactory;
 import ene.eneform.service.utils.FileUtils;
 import lombok.RequiredArgsConstructor;
@@ -39,7 +39,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class WikipediaService implements WikipediaServiceInterface {
-    private final MeroService meroService;
+    private final RacingColoursHandler  meroHandler;
 
     private final WikipediaImageService wikipediaImageService;
     private final RacingColoursParseService rcpService;
@@ -88,12 +88,12 @@ public class WikipediaService implements WikipediaServiceInterface {
    {
         String strOwnerName = getOwnerName(owner.getOwner());
         String strFileName = getOwnerFileName(strOwnerName);
-        ENERacingColours colours = meroService.createRacingColours("en", owner.getOwner(), owner);
+        ENERacingColours colours = meroHandler.createRacingColours("en", owner.getOwner(), owner);
         colours.setDescription(owner.getColours());        
         createWikipediaImageFile(strFileName, strOwnerName, colours, strComment, strLanguage, bCompress, bOverwrite);
         return strOwnerName;
    }
- 
+ @Override
    public String generateWikipediaOwner(String strOwnerName, String strDescription, String strComment, String strLanguage, boolean bCompress, boolean bOverwrite)
    {
         strOwnerName = getOwnerName(strOwnerName);
@@ -101,7 +101,8 @@ public class WikipediaService implements WikipediaServiceInterface {
         ENERacingColours colours = createColours(strLanguage, strDescription);
         createWikipediaImageFile(strFileName, strOwnerName, colours, strComment, strLanguage, bCompress, bOverwrite);
         return strOwnerName;
-   } 
+   }
+
    public String generateWikipediaOwner(ColourRunner runner, String strLanguage) throws FileNotFoundException, UnsupportedEncodingException, IOException
    {
        String strPrimaryOwner = runner.getPrimaryOwner();   // use primary owner if exists i.e. if already record in Wikipedia_Images
@@ -141,6 +142,7 @@ public class WikipediaService implements WikipediaServiceInterface {
    {
        return strOwnerName.trim().replace(" & ", " and ").replace("& ", " and ").replace("&", " and ").replace(" / ", " and ").replace("/ ", " and ").replace("/", " and ").replace(":", "-");      // remove bad chars for file name
    }
+@Override
    public String getOwnerFileName(String strOwnerName)
    {
         String strFileName = SVG_OUTPUT_DIRECTORY + "/owners/owner_" + strOwnerName + ".svg";
@@ -149,13 +151,14 @@ public class WikipediaService implements WikipediaServiceInterface {
    }
     public void createImageFile(String strFileName, ENERacingColours colours, String strLanguage, boolean bCompress, boolean bOverwrite)
     {
-        Document document = meroService.generateSVGDocument(colours, strLanguage, "", 1, null);    // transparent background
+        Document document = meroHandler.generateSVGDocument(colours, strLanguage, "", 1, null);    // transparent background
         String strSVG = createImageContent(colours, strLanguage, bCompress);
         FileUtils.writeFile(strFileName, strSVG, StandardCharsets.ISO_8859_1, bOverwrite);
     }
-    public String createImageContent(String strColours, String strLanguage, boolean bCompress) throws IOException
+    @Override
+    public String createImageContent(String strColours, String strLanguage, boolean bCompress)
     {
-        ENERacingColours colours = meroService.createFullRacingColours("en", strColours, "").getColours();
+        ENERacingColours colours = meroHandler.createRacingColours("en", strColours, "");
         return createImageContent(colours, strLanguage, bCompress);
     }
     public String createImageContent2(String strColours, String strLanguage, boolean bCompress) throws IOException
@@ -166,7 +169,7 @@ public class WikipediaService implements WikipediaServiceInterface {
     }
     public String createImageContent(ENERacingColours colours, String strLanguage, boolean bCompress)
     {
-        Document document = meroService.generateSVGDocument(colours, strLanguage, "", 1, null);    // transparent background
+        Document document = meroHandler.generateSVGDocument(colours, strLanguage, "", 1, null);    // transparent background
         String strSVG = SVGFactoryUtils.convertSVGNode2String(document, bCompress);
         return strSVG;
     }
@@ -253,7 +256,7 @@ public class WikipediaService implements WikipediaServiceInterface {
         //WikipediaFactory.updateAdditionalRaceLink(aRaces.get(0).getRace(), strDescription);
          return generateHorseRaces123HTML(strHorse, aRaces, strLanguage, strLineBreak);
     }
-
+@Override
    public String generateRaceSequence(String strDescription, String strLanguage, String strLineBreak) {
         // no id specified - retrieve from additional_race_link
         List<? extends BasicRaceInfo> aRaces = arlService.findByRaceName(strDescription);
@@ -262,7 +265,7 @@ public class WikipediaService implements WikipediaServiceInterface {
                 ard->generateRaces123Wikipedia(ard.getTitle(), aRaces, strLanguage, strLineBreak)
         ).orElse("");
     }
-    
+
     public String generateRace(JSONObject obj, String strLanguage, String strLineBreak) {
         // JSONObject from web interface containing name, url, id, source, date attributes
         Date dt = null;
@@ -279,11 +282,13 @@ public class WikipediaService implements WikipediaServiceInterface {
                 Integer.parseInt(obj.get("id").toString()), null, dt.getYear());
         return generateSingleRace123Wikipedia(arl, strLanguage, strLineBreak);
     }
+    @Override
     public String generateRace(String strDescription, String strLanguage, String strLineBreak) {
         // no id specified - retrieve latest from additional_race_link - looks in both SF and SL 
         AdditionalRaceLink arl = arlService.findLatestByRaceName(strDescription);
         return generateSingleRace123Wikipedia(arl, strLanguage, strLineBreak);
     }
+    @Override
     public String generateRace(Integer nRace, String strSource, String strLanguage, String strLineBreak) {
         BasicRace arl = raceService.findById(strSource, nRace);
        return generateSingleRace123Wikipedia(arl, strLanguage, strLineBreak);
@@ -580,7 +585,7 @@ public String generateRace123HTML(BasicRace race, String strTitle, String strLan
     }
 
     public ENERacingColours createRacingColours(UnregisteredColourSyntax ucs, String strLanguage, String strJockeyColours, String strVersion) {
-        ENERacingColours colours = meroService.createRacingColours(strLanguage, strJockeyColours, ucs);
+        ENERacingColours colours = meroHandler.createRacingColours(strLanguage, strJockeyColours, ucs);
             colours.setDescription(strJockeyColours);
             //rcpService.insertRacingColoursParse(strVersion, colours, "", "", "");
          return colours;
