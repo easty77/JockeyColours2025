@@ -36,21 +36,21 @@ public interface PreviousRaceJpaRepository extends PreviousRaceRepository, JpaRe
     and (:year is null or
     :year = year(hra.meeting_date))
    and ((:month1 is null or :month2 is null) or
-   (:month1 <= month(hra.meeting_date) and :month2 >= month(hra.meeting_date))
+   (:month1 <= month(hra.meeting_date) and :month2 >= month(hra.meeting_date)))
    and (:quarter is null or
    (
     (:quarter=1 and month(hra.meeting_date) in (1, 2, 3)) or
     (:quarter=2 and month(hra.meeting_date) in (4, 5, 6)) or
     (:quarter=3 and month(hra.meeting_date) in (7, 8, 9)) or
     (:quarter=4 and month(hra.meeting_date) in (10, 11, 12))
-   )
+   ))
    and (:month is null or
      (:month = month(hra.meeting_date))
    and (:half is null or
    (
     (:half='first' and day(hra.meeting_date) < 16) or
     (:half='second' and day(hra.meeting_date) >= 16)
-   )
+   ))
     and (:age='' or
     (:age = hra.min_age and :age = hra.max_age))
    and (:grade is null or
@@ -58,9 +58,8 @@ public interface PreviousRaceJpaRepository extends PreviousRaceRepository, JpaRe
     (:grade='1' and group_race=1) or
     (:grade='2' and group_race=2 or
     (:grade='3' and group_race=3) or
-    (:grade not in ('1', '2','3') and group_race is not null) or
-    (:month = month(hra.meeting_date))
-   )
+    (:grade not in ('1', '2','3') and group_race is not null)
+   ))
    and (:raceType='' or
     :raceType = hra.race_type)
     and (:money is null or
