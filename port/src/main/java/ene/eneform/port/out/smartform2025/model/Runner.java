@@ -1,5 +1,8 @@
 package ene.eneform.port.out.smartform2025.model;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 public class Runner extends Declaration {
     Performance performance;
 

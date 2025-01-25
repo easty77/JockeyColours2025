@@ -1,5 +1,6 @@
 package ene.eneform.port.out.smartform2025.model;
 
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import lombok.experimental.NonFinal;
@@ -7,6 +8,7 @@ import lombok.experimental.NonFinal;
 @Value
 @NonFinal
 @RequiredArgsConstructor
+@NoArgsConstructor(force = true)
 public class Declaration {
     Horse horse;
     Jockey jockey;

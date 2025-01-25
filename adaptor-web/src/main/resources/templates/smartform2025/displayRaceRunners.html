@@ -7,6 +7,11 @@
 </head>
 <body>
 <h2>Runs:</h2>
+<form method="post" th:object="${runnerSearch}" th:action="@{/smartform2025/displayRaceRunners}">
+    <input placeholder="Find by Race Id" size="10" th:field="*{raceId}" type="number" >
+    <button class="btn btn-info" type="submit">Search</button>
+    <button class="btn btn-info" type="submit">Reset</button>
+</form>
 <table>
 <tr>
     <th>Name</th>
