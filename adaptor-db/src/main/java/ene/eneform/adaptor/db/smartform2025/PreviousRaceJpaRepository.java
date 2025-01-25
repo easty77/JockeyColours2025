@@ -29,43 +29,15 @@ public interface PreviousRaceJpaRepository extends PreviousRaceRepository, JpaRe
     left outer join additional_race_link on arl_source='SF' and arl_race_id=hra.race_id)
     where
     1=1
-    and (:title='' or
-    locate(:title , race_name) > 0)
     and (:course='' or
     :course = hra.course)
-    and (:year is null or
-    :year = year(hra.meeting_date))
-   and ((:month1 is null or :month2 is null) or
-   (:month1 <= month(hra.meeting_date) and :month2 >= month(hra.meeting_date)))
-   and (:quarter is null or
-   (
-    (:quarter=1 and month(hra.meeting_date) in (1, 2, 3)) or
-    (:quarter=2 and month(hra.meeting_date) in (4, 5, 6)) or
-    (:quarter=3 and month(hra.meeting_date) in (7, 8, 9)) or
-    (:quarter=4 and month(hra.meeting_date) in (10, 11, 12))
-   ))
-   and (:month is null or
-     (:month = month(hra.meeting_date))
-   and (:half is null or
-   (
-    (:half='first' and day(hra.meeting_date) < 16) or
-    (:half='second' and day(hra.meeting_date) >= 16)
-   ))
-    and (:age='' or
-    (:age = hra.min_age and :age = hra.max_age))
-   and (:grade is null or
+   and (:grade='' or
    (
     (:grade='1' and group_race=1) or
-    (:grade='2' and group_race=2 or
+    (:grade='2' and group_race=2) or
     (:grade='3' and group_race=3) or
     (:grade not in ('1', '2','3') and group_race is not null)
    ))
-   and (:raceType='' or
-    :raceType = hra.race_type)
-    and (:money is null or
-    :money <= hra.added_money/1000)
-    and (:furlongs is null or
-    :furlongs = cast(hra.distance_yards/220 as unsigned))
     order by year(hra.meeting_date)
     """,
                 nativeQuery = true)

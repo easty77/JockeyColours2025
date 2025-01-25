@@ -17,7 +17,7 @@ public class PreviousRace {
     @Column(name="d")
     Integer day;
     Integer furlongs;
-    Integer age;
+    String age;
     Integer groupRace;
     Integer previousRaceId;
     @Column(name="year")
